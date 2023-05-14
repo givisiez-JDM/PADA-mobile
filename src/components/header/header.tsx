@@ -1,13 +1,14 @@
 import { Fragment } from "react";
-import { ContainerHeader } from "./header-style";
+import { ContainerBack, ContainerHeader } from "./header-style";
 import Elipse from "../../assets/elipse01.png";
 import Elipse1 from "../../assets/elipse02.png";
 import { Dimensions, Image } from "react-native";
+import Icon from "react-native-vector-icons/Ionicons";
 interface checkBack {
   status: boolean;
 }
 
-const Header = () => {
+const Header = ({ status }: checkBack) => {
   const widthElipse = Dimensions.get("screen").width;
 
   return (
@@ -37,6 +38,11 @@ const Header = () => {
           }}
         />
       </ContainerHeader>
+      {status !== false ? (
+        <ContainerBack>
+          <Icon name="chevron-back-outline" size={15} color="#4C7ABB" />
+        </ContainerBack>
+      ) : null}
     </Fragment>
   );
 };
