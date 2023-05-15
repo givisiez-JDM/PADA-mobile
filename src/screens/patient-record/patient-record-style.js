@@ -16,41 +16,6 @@ export const TitleForm = styled.Text`
   margin-bottom: 5px;
 `;
 
-export const ContainerIconForm = styled.View`
-  position: relative;
-  display: flex;
-  flex-direction: row;
-`;
-
-export const IconForm = styled.View`
-  width: 25px;
-  height: 25px;
-  background: #253248;
-  border-radius: 50px;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  top: 15px;
-`;
-
-export const ContainerIconInput = styled.View`
-  width: 25px;
-  border-bottom-width: 2px;
-  border-bottom-color: #4c7abb;
-  padding: 10px;
-  position: relative;
-  left: 2px;
-`;
-
-export const Input = styled.TextInput`
-  width: 260px;
-  border-bottom-width: 2px;
-  border-bottom-color: #4c7abb;
-  padding: 10px;
-  color: #334c76;
-  z-index: 1;
-`;
-
 export const ContainerViewCheckBox = styled.TouchableHighlight`
   display: flex;
   flex-direction: row;

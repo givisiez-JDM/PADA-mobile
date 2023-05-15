@@ -21,19 +21,20 @@ const Header = ({ status }: checkBack) => {
             height: 200,
             zIndex: 2,
             position: "absolute",
-            right: 5,
+            right: 0,
+            top: -5,
             resizeMode: "contain",
           }}
         />
         <Image
           source={Elipse1}
           style={{
-            width: widthElipse + 20,
+            width: widthElipse + 30,
             height: 220,
             zIndex: 1,
             position: "relative",
-            top: 2,
-            left: -10,
+            top: 0,
+            left: -15,
             resizeMode: "contain",
           }}
         />

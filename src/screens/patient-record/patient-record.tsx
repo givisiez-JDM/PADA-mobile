@@ -8,15 +8,12 @@ import {
   Check,
   TitleCheck,
   ContainerFormPatient,
-  ContainerIconForm,
-  ContainerIconInput,
   ContainerViewCheckBox,
-  IconForm,
-  Input,
   TextButton,
   TitleForm,
 } from "./patient-record-style";
 import { Text, TouchableOpacity, View } from "react-native";
+import FormPatientRecord from "../../components/form-patient-record/form-patient-record";
 
 const PatientRecord = () => {
   const [checked, setChecked] = useState(false);
@@ -35,6 +32,13 @@ const PatientRecord = () => {
     });
   };
 
+  const arrayNamePlaceholder = [
+    ["person", "Nome de usuários"],
+    ["mail", "E-mail"],
+    ["key", "Senha"],
+    ["key", "Repetir Senha"],
+  ];
+
   const handleCheckbox = () => {
     setChecked(!checked);
   };
@@ -45,6 +49,32 @@ const PatientRecord = () => {
       <ContainerFormPatient>
         <TitleForm>Crie sua conta</TitleForm>
 
+        {arrayNamePlaceholder.map(([icon, place], index: number) => (
+          <FormPatientRecord iconName={icon} placeholder={place} key={index} />
+        ))}
+
+        <ContainerViewCheckBox onPress={handleCheckbox}>
+          <ButtonViewCheckBox>
+            <Check checked={checked}>
+              {checked && (
+                <Icon name="checkmark-outline" size={15} color="#fff" />
+              )}
+            </Check>
+            <TitleCheck>Lembre da senha</TitleCheck>
+          </ButtonViewCheckBox>
+        </ContainerViewCheckBox>
+        <Button>
+          <TextButton>Cadastre-se</TextButton>
+        </Button>
+      </ContainerFormPatient>
+      <Footer />
+    </Fragment>
+  );
+};
+
+export default PatientRecord;
+
+/*
         <ContainerIconForm>
           <ContainerIconInput>
             <IconForm>
@@ -100,23 +130,4 @@ const PatientRecord = () => {
             placeholder="Repetir Senha"
           />
         </ContainerIconForm>
-        <ContainerViewCheckBox onPress={handleCheckbox}>
-          <ButtonViewCheckBox>
-            <Check checked={checked}>
-              {checked && (
-                <Icon name="checkmark-outline" size={15} color="#fff" />
-              )}
-            </Check>
-            <TitleCheck>Lembre da senha</TitleCheck>
-          </ButtonViewCheckBox>
-        </ContainerViewCheckBox>
-        <Button>
-          <TextButton>Cadastre-se</TextButton>
-        </Button>
-      </ContainerFormPatient>
-      <Footer />
-    </Fragment>
-  );
-};
-
-export default PatientRecord;
+        */
