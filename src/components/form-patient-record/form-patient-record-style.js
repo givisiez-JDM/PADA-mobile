@@ -9,7 +9,7 @@ export const ContainerIconForm = styled.View`
 export const IconForm = styled.View`
   width: 25px;
   height: 25px;
-  background: #253248;
+  background: #4c7abb;
   border-radius: 50px;
   justify-content: center;
   align-items: center;

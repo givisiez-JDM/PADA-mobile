@@ -11,9 +11,10 @@ export const ContainerFormPatient = styled.View`
 `;
 
 export const TitleForm = styled.Text`
-  color: #334c76;
-  font-size: 20px;
+  color: #4c7abb;
+  font-size: 25px;
   margin-bottom: 5px;
+  font-weight: 700;
 `;
 
 export const ContainerViewCheckBox = styled.TouchableHighlight`
@@ -40,12 +41,12 @@ export const Check = styled.View`
   border-radius: 2px;
   justify-content: center;
   align-items: center;
-  border-color: ${({ checked }) => (checked ? "#334C76" : "#000")};
-  background: ${({ checked }) => (checked ? "#334C76" : "#F1F2F3")};
+  border-color: ${({ checked }) => (checked ? "#4C7ABB" : "#4C7ABB")};
+  background: ${({ checked }) => (checked ? "#4C7ABB" : "#F1F2F3")};
 `;
 
 export const TitleCheck = styled.Text`
-  color: #334c76;
+  color: #4c7abb;
   font-size: 12.8px;
   font-weight: 300;
 `;
@@ -55,7 +56,7 @@ export const Button = styled.TouchableOpacity`
   height: 50px;
   margin-top: 20px;
   border-radius: 50px;
-  background: #334c76;
+  background: #4c7abb;
   border: none;
   justify-content: center;
   align-items: center;

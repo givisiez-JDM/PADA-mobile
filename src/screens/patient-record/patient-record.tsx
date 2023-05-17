@@ -24,14 +24,6 @@ const PatientRecord = () => {
     repeatPass: "",
   });
 
-  const handleInputChange = (event: any) => {
-    const value = event.target.value;
-    setStatePatient({
-      ...statePatient,
-      [event.target.name]: value,
-    });
-  };
-
   const arrayNamePlaceholder = [
     ["person", "Nome de usuários"],
     ["mail", "E-mail"],
