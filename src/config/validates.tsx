@@ -1,8 +1,3 @@
-interface IValidate {
-  value: any;
-  err: any;
-}
-
 export const validar = (value: any, err: any) => {
   const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   let error = false;

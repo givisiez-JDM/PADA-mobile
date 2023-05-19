@@ -53,28 +53,6 @@ const FormPatientRecord = ({
         </ContainerErrorText>
       )}
     </ContainerFormPatientRecord>
-    /*<ContainerIconForm>
-      <ContainerIconInput>
-        <IconForm>
-          <Icon name={iconName} size={20} color="#fff" />
-        </IconForm>
-      </ContainerIconInput>
-
-      <ContainerTextInput>
-        <Input
-          onChangeText={handleInputChange}
-          value={state}
-          placeholder={placeholder}
-          secureTextEntry={
-            placeholder === "Senha" || placeholder === "Repetir Senha"
-              ? true
-              : false
-          }
-          placeholderTextColor={err ? "red" : "gray"}
-        />
-        {err !== "" && <InputText style={{ color: "red" }}>{err}</InputText>}
-      </ContainerTextInput>
-    </ContainerIconForm>*/
   );
 };
 

@@ -18,7 +18,6 @@ export const CheckImgae = styled.Image`
 export const TextTitle = styled.Text`
   width: 250px;
   height: 73px;
-  font-family: "Noto Sans KR";
   font-style: normal;
   font-weight: 700;
   font-size: 25px;

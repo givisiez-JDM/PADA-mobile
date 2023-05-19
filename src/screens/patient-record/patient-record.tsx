@@ -14,25 +14,61 @@ import {
 } from "./patient-record-style";
 import { Text, TouchableOpacity, View } from "react-native";
 import FormPatientRecord from "../../components/form-patient-record/form-patient-record";
+import { validar } from "../../config/validates";
+import CheckBox from "../../components/checkbox/checkbox";
+
+interface PatientRecordState {
+  name: string;
+  mail: string;
+  pass: string;
+  repeatPass: string;
+}
 
 const PatientRecord = () => {
-  const [checked, setChecked] = useState(false);
-  const [statePatient, setStatePatient] = useState({
-    name: "",
-    mail: "",
-    pass: "",
-    repeatPass: "",
-  });
+  const [name, setName] = useState("");
+  const [mail, setMail] = useState("");
+  const [pass, setPass] = useState("");
+  const [repeatPass, setRepeatPass] = useState("");
+  const [errorName, setErrorName] = useState("");
+  const [errorMail, setErrorMail] = useState("");
+  const [errorPass, setErrorPass] = useState("");
+  const [errorRepeatPass, setErrorRepeatPass] = useState("");
+
+  const handleInputChange = (name: string, value: string) => {
+    if (name === "Nome de usuários") {
+      setName(value);
+      setErrorName("");
+    }
+    if (name === "E-mail") {
+      setMail(value);
+      setErrorMail("");
+    }
+    if (name === "Senha") {
+      setPass(value);
+      setErrorPass("");
+    }
+    if (name === "Repetir Senha") {
+      setRepeatPass(value);
+      setErrorRepeatPass("");
+    }
+  };
 
   const arrayNamePlaceholder = [
-    ["person", "Nome de usuários"],
-    ["mail", "E-mail"],
-    ["key", "Senha"],
-    ["key", "Repetir Senha"],
+    ["person", name, "Nome de usuários", errorName],
+    ["mail", mail, "E-mail", errorMail],
+    ["key", pass, "Senha", errorPass],
+    ["key", repeatPass, "Repetir Senha", errorRepeatPass],
   ];
 
-  const handleCheckbox = () => {
-    setChecked(!checked);
+  const savePatient = () => {
+    if (
+      validar(
+        { name, mail, pass, repeatPass },
+        { setErrorName, setErrorMail, setErrorPass, setErrorRepeatPass }
+      )
+    ) {
+      console.log("Foi");
+    }
   };
 
   return (
@@ -41,85 +77,33 @@ const PatientRecord = () => {
       <ContainerFormPatient>
         <TitleForm>Crie sua conta</TitleForm>
 
-        {arrayNamePlaceholder.map(([icon, place], index: number) => (
-          <FormPatientRecord iconName={icon} placeholder={place} key={index} />
-        ))}
+        {arrayNamePlaceholder.map(
+          ([icon, valueState, place, err], index: number) => (
+            <FormPatientRecord
+              iconName={icon}
+              placeholder={place}
+              handleInputChange={(text: string) => {
+                handleInputChange(place, text);
+              }}
+              state={valueState}
+              err={err}
+              key={index}
+            />
+          )
+        )}
 
-        <ContainerViewCheckBox onPress={handleCheckbox}>
-          <ButtonViewCheckBox>
-            <Check checked={checked}>
-              {checked && (
-                <Icon name="checkmark-outline" size={15} color="#fff" />
-              )}
-            </Check>
-            <TitleCheck>Lembre da senha</TitleCheck>
-          </ButtonViewCheckBox>
-        </ContainerViewCheckBox>
-        <Button>
+        <CheckBox />
+
+        <Button
+          onPress={() => {
+            savePatient();
+          }}
+        >
           <TextButton>Cadastre-se</TextButton>
         </Button>
       </ContainerFormPatient>
-      <Footer />
     </Fragment>
   );
 };
 
 export default PatientRecord;
-
-/*
-        <ContainerIconForm>
-          <ContainerIconInput>
-            <IconForm>
-              <Icon name="person" size={20} color="#fff" />
-            </IconForm>
-          </ContainerIconInput>
-
-          <Input
-            onChangeText={handleInputChange}
-            value={statePatient.name}
-            placeholder="Nome de usuário"
-          />
-        </ContainerIconForm>
-
-        <ContainerIconForm>
-          <ContainerIconInput>
-            <IconForm>
-              <Icon name="mail" size={20} color="#fff" />
-            </IconForm>
-          </ContainerIconInput>
-
-          <Input
-            onChangeText={handleInputChange}
-            value={statePatient.mail}
-            placeholder="E-mail"
-          />
-        </ContainerIconForm>
-
-        <ContainerIconForm>
-          <ContainerIconInput>
-            <IconForm>
-              <Icon name="key" size={20} color="#fff" />
-            </IconForm>
-          </ContainerIconInput>
-
-          <Input
-            onChangeText={handleInputChange}
-            value={statePatient.pass}
-            placeholder="Senha"
-          />
-        </ContainerIconForm>
-
-        <ContainerIconForm>
-          <ContainerIconInput>
-            <IconForm>
-              <Icon name="key" size={20} color="#fff" />
-            </IconForm>
-          </ContainerIconInput>
-
-          <Input
-            onChangeText={handleInputChange}
-            value={statePatient.repeatPass}
-            placeholder="Repetir Senha"
-          />
-        </ContainerIconForm>
-        */
