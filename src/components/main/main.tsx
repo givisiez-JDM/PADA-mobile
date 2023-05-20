@@ -13,15 +13,16 @@ import logoPaciente from "../../assets/logoPaciente.png"
 
 
 const Login = () => {
-  const screenWidth = Dimensions.get("window").width;
-  const screenHeight = Dimensions.get("screen").height;
+  //const screenWidth = Dimensions.get("window").width;
+  //const screenHeight = Dimensions.get("screen").height;
    return (
         
     <ContainerMain
-    syle={{
-      width: screenWidth,
-      height:screenHeight
-    }}
+   // syle={{
+     // width: screenWidth,
+     // height:screenHeight
+    //}
+ // }
     >
       <Header/>
        

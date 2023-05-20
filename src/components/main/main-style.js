@@ -1,11 +1,17 @@
 import styled from "styled-components/native";
 
+
  export const ContainerMain = styled.View`
-  display: flex;
+  //display: flex;
+  flex:1;
+  flex-grow: 1;
+ //flex-basis: auto;
   justify-content: center;
   align-items: center;
   width: 100%;
+ height: 100%;
   position: relative;
+  z-index: -100;
 `;
 
 
