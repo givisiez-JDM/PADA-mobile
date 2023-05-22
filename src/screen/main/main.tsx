@@ -2,13 +2,12 @@ import React from "react";
 import {TextAcesso, ContainerMain} from "./main-style";
 import logo from "../../assets/logo.png"
 
-import { Dimensions, Image, Text, View } from "react-native";
-import { TextButton } from "../buttonDoctor/buttonDoctor-style";
+import { Image } from "react-native";
 import logoMedico from "../../assets/logoMedico.png"
-import CheckBox from "../checkBox/checkBox";
-import ButtonDoctor from "../buttonDoctor/buttonDoctor";
-import Header from "../header/header";
-import Footer from "../footer/footer";
+import CheckBox from "../../components/checkBox/checkBox";
+import ButtonDoctor from "../../components/buttonDoctor/buttonDoctor";
+import Header from "../../components/header/header";
+import Footer from "../../components/footer/footer";
 import logoPaciente from "../../assets/logoPaciente.png"
 
 

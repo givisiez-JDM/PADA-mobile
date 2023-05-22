@@ -1,7 +1,7 @@
 import { Fragment } from "react";
 import headerCurtoImg from "../../assets/headerCurto.png"
 import { Dimensions, Image } from "react-native";
-import { ContainerMain } from "../main/main-style";
+import { ContainerMain } from "../../screen/main/main-style";
 
 const Header = () => {
 

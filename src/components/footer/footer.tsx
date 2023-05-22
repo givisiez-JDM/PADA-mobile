@@ -2,7 +2,7 @@ import { Dimensions, Image } from "react-native";
 import footerCurtoImg from "../../assets/footerCurto.png"
 import { ContainerFooter } from "./footer-style";
 import { Fragment } from "react";
-import { ContainerMain } from "../main/main-style";
+import { ContainerMain } from "../../screen/main/main-style";
 
 const Footer = () => {
   const screenWidth = Dimensions.get("window").width;
