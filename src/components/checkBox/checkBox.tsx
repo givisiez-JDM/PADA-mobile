@@ -1,34 +1,26 @@
-import { useState } from "react";
 import Icon from "react-native-vector-icons/Ionicons";
 import {
   ButtonViewCheckBox,
   Check,
-  TitleCheck,
   ContainerViewCheckBox,
+  TitleCheck,
 } from "./checkBox-style";
-
+import { useState } from "react";
 
 const CheckBox = () => {
   const [checked, setChecked] = useState(false);
-
   const handleCheckbox = () => {
     setChecked(!checked);
   };
-
   return (
-   
-        <ContainerViewCheckBox onPress={handleCheckbox}>
-          <ButtonViewCheckBox>
-            <Check checked={checked}>
-              {checked && (
-                <Icon name="checkmark-outline" size={10} color="#fff" />
-              )}
-            </Check>
-            <TitleCheck>Lembrar minha escolha</TitleCheck>
-          </ButtonViewCheckBox>
-        </ContainerViewCheckBox>
-        
+    <ContainerViewCheckBox onPress={handleCheckbox} underlayColor="#00000000">
+      <ButtonViewCheckBox>
+        <Check checked={checked}></Check>
+        <TitleCheck>Lembrar minha escolha</TitleCheck>
+      </ButtonViewCheckBox>
+    </ContainerViewCheckBox>
   );
 };
+
 
 export default CheckBox;

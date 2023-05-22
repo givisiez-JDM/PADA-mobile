@@ -5,7 +5,7 @@ import { ContainerMain } from "../main/main-style";
 
 const Header = () => {
 
-  const screenWidth = Dimensions.get("screen").width;
+  const screenWidth = Dimensions.get("window").width;
   
 
   return (
@@ -18,7 +18,7 @@ const Header = () => {
             width: screenWidth, 
             height: 200,  
             zIndex: 1,
-            resizeMode:"contain"
+            resizeMode:"stretch"
           }}
           
         />
