@@ -11,11 +11,13 @@ import {
   ContainerViewCheckBox,
   TextButton,
   TitleForm,
+  ImageLogo,
 } from "./patient-record-style";
 import { Text, TouchableOpacity, View } from "react-native";
 import FormPatientRecord from "../../components/form-patient-record/form-patient-record";
 import { validar } from "../../config/validates";
 import CheckBox from "../../components/checkbox/checkbox";
+import Logo from "../../assets/logo.png";
 
 interface PatientRecordState {
   name: string;
@@ -75,6 +77,7 @@ const PatientRecord = () => {
     <Fragment>
       <Header status={false} />
       <ContainerFormPatient>
+        <ImageLogo source={Logo} />
         <TitleForm>Crie sua conta</TitleForm>
 
         {arrayNamePlaceholder.map(

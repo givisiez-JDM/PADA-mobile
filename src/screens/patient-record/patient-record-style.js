@@ -8,6 +8,12 @@ export const ContainerFormPatient = styled.View`
   justify-content: center;
   align-items: center;
   text-align: center;
+  margin-top: -50px;
+`;
+
+export const ImageLogo = styled.Image`
+  width: 60px;
+  height: 70px;
 `;
 
 export const TitleForm = styled.Text`
