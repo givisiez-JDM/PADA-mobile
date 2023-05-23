@@ -1,7 +1,8 @@
 import { Fragment } from "react";
 import headerCurtoImg from "../../assets/headerCurto.png"
 import { Dimensions, Image } from "react-native";
-import { ContainerMain } from "../../screen/main/main-style";
+import { NavigationContainer } from "@react-navigation/native";
+
 
 const Header = () => {
 
@@ -18,7 +19,7 @@ const Header = () => {
             width: screenWidth, 
             height: 200,  
             zIndex: 1,
-            resizeMode:"stretch"
+           // resizeMode:"stretch"
           }}
           
         />

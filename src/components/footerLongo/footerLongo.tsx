@@ -1,5 +1,7 @@
 import { Dimensions, Image } from "react-native";
-import footerCurtoImg from "../../assets/footerCurto.png"
+import footerLongoImg from "../../assets/footerLongo.png"
+import { ContainerFooter } from "./footerLongo-style";
+import { Fragment } from "react";
 import { ContainerMain } from "../../screen/loginCadastro/loginCadastro-style";
 
 const Footer = () => {
@@ -9,12 +11,11 @@ const Footer = () => {
     <ContainerMain>
         <Image
 
-          source={footerCurtoImg}
+          source={footerLongoImg}
           style={{
-            width: screenWidth, 
-            height: 200,  
-            zIndex: 1,
-            resizeMode:"stretch",
+            width: screenWidth,  
+            zIndex: 100,
+            //resizeMode:"stretch",
           }}
         />
         </ContainerMain>

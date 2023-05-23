@@ -2,16 +2,14 @@ import styled from "styled-components/native";
 
 
  export const ContainerMain = styled.View`
-  //display: flex;
   flex:1;
   flex-grow: 1;
- //flex-basis: auto;
   justify-content: center;
   align-items: center;
   width: 100%;
- height: 100%;
-  position: relative;
+  height: 100%;
   z-index: -100;
+  //position: absolute;
 `;
 
 
@@ -26,7 +24,3 @@ export const TextAcesso = styled.Text`
   margin-bottom: 44px;
   
 `;
-
-
-
-
