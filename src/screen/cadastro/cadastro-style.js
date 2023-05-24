@@ -64,7 +64,8 @@ export const TitleCheck = styled.Text`
 export const Button = styled.TouchableOpacity`
   width: 180px;
   height: 50px;
-  margin-top: 20px;
+  position: relative;
+  bottom: 50px;
   border-radius: 50px;
   background: #4c7abb;
   border: none;

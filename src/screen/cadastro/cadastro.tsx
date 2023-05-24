@@ -1,20 +1,16 @@
 import { Fragment, useState } from "react";
 import Footer from "../../components/footer/footer";
 import Header from "../../components/header/header";
-import Icon from "react-native-vector-icons/Ionicons";
+
 import {
   Button,
-  ButtonViewCheckBox,
-  Check,
-  TitleCheck,
   ContainerFormPatient,
-  ContainerViewCheckBox,
   TextButton,
   TitleForm,
   ImageLogo,
   ContainerFormInputsPatients,
 } from "./cadastro-style";
-import { Text, TouchableOpacity, View } from "react-native";
+
 import FormPatientRecord from "../../components/form-patient-record/form-patient-record";
 import { validar } from "../../config/validates";
 import CheckBox from "../../components/checkBox/checkBox";
@@ -101,6 +97,7 @@ const PatientRecord = () => {
           <TextButton>Cadastre-se</TextButton>
         </Button>
       </ContainerFormPatient>
+      <Footer />
     </Fragment>
   );
 };
