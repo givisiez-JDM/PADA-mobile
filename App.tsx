@@ -1,7 +1,16 @@
 import React from "react";
+import Route from "./src/routes/Stack/index";
+import { NavigationContainer } from "@react-navigation/native";
 
-import Footer from "./src/components/footer/footer";
 
 export default function App() {
-  return <Footer />;
+  return ( 
+  
+    <NavigationContainer>
+  <Route/>
+  </NavigationContainer>
+
+  )
+  
+  
 }
