@@ -23,6 +23,10 @@ export const TitleForm = styled.Text`
   font-weight: 700;
 `;
 
+export const ContainerFormInputsPatients = styled.View`
+  margin-top: 50px;
+`;
+
 export const ContainerViewCheckBox = styled.TouchableHighlight`
   display: flex;
   flex-direction: row;
