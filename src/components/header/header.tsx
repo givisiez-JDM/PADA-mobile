@@ -19,7 +19,7 @@ const Header = () => {
             width: screenWidth, 
             height: 200,  
             zIndex: 1,
-           // resizeMode:"stretch"
+           resizeMode:"stretch"
           }}
           
         />
