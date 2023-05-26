@@ -1,14 +1,8 @@
-<<<<<<< HEAD
-node_modules/
-.expo
-.DS_Store
-=======
-# Expo
+Expo
 .expo
 
-# macOS
+macOS
 .DS_Store
 
-# Node
+Node
 node_modules
->>>>>>> b92eba2cced819014d45e56a0a96c245b3d005c8
