@@ -1,31 +1,27 @@
-import React from "react";
-import {TextAcesso, ContainerMain} from "./loginCadastro-style";
-import logo from "../../assets/logo.png"
+import React, { Fragment } from "react";
+import { TextAcesso, ContainerMain } from "./loginCadastro-style";
+import logo from "../../assets/logo.png";
 import { Image } from "react-native";
 import ButtonLogin from "../../components/buttonLogin/buttonLogin";
-import ButtonCadastrar from "../../components/buttonCadastrar/buttonCadastrar"
+import ButtonCadastrar from "../../components/buttonCadastrar/buttonCadastrar";
 import Header from "../../components/header/header";
-import FooterLongo from "../../components/footerLongo/footerLongo"
-import Login from "../login/login"
-
+import FooterLongo from "../../components/footerLongo/footerLongo";
+import Login from "../login/login";
 
 const LoginCadastro = () => {
+  return (
+    <Fragment>
+      <Header />
+      <ContainerMain>
+        <Image source={logo}></Image>
 
-   return (
-        <>
+        <ButtonLogin />
 
+        <ButtonCadastrar />
+      </ContainerMain>
 
-        <Header/>
-    <ContainerMain >
-      <Image source={logo}></Image>
-    
-      <ButtonLogin/>
-
-      <ButtonCadastrar/>
-     </ContainerMain>
-
-     <FooterLongo/>
-     </>
+      <FooterLongo />
+    </Fragment>
   );
 };
 

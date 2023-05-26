@@ -1,10 +1,11 @@
-import { NativeStackNavigationProp } from "@react-navigation/native-stack"
+import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 
 export type propsNavigationStack = {
-  LoginCadastro: undefined
+  LoginCadastro: undefined;
   Login?: {
-    name: string
-  } 
-}
+    name: string;
+  };
+  Cadastro: undefined;
+};
 
-export type propsStack = NativeStackNavigationProp<propsNavigationStack>
+export type propsStack = NativeStackNavigationProp<propsNavigationStack>;

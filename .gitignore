@@ -1,8 +1,8 @@
-# Expo
+#Expo
 .expo
 
-# macOS
+#macOS
 .DS_Store
 
-# Node
+#Node
 node_modules
