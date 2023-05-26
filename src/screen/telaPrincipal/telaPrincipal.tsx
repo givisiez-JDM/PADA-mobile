@@ -1,15 +1,13 @@
-import React from "react"
-import { Text } from "react-native"
+import React, { Fragment } from "react";
+import { Text } from "react-native";
+import HeaderFluxo from "../../components/headerFluxo/header-fluxo";
 
 const telaPrincipal = () => {
+  return (
+    <Fragment>
+      <HeaderFluxo title="Bem vinda !" subtitle="Olá, Amanda Costa" />
+    </Fragment>
+  );
+};
 
-return (
-<Text>Tela Principal</Text>
-
-)
-
-}
-
-
-
-export default telaPrincipal
+export default telaPrincipal;
