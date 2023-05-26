@@ -11,7 +11,7 @@ function ButtonEntrar(){
   const navigation = useNavigation<propsStack>()
   return (
     
-    <TouchableOpacity onPress={() => navigation.navigate("Login", {name:"Login"})}>
+    <TouchableOpacity onPress={() => navigation.navigate("TelaPrincipal")}>
     <ButtonLoginContainer>       
           <TextButton>Entrar</TextButton>
     </ButtonLoginContainer>
@@ -19,7 +19,7 @@ function ButtonEntrar(){
   )};
 
 
-  
+
 
 
 export default ButtonEntrar
