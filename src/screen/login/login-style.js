@@ -9,7 +9,8 @@ import styled from "styled-components/native";
   width: 100%;
   height: 100%;
   z-index: -100;
-  //position: absolute;
+ margin-top: -40px;
+  //background-color: red;
 `;
 
 
@@ -23,4 +24,10 @@ export const TextAcesso = styled.Text`
   margin-top: 10px;
   margin-bottom: 44px;
   
+`;
+
+export const ButtonImageIcon = styled.View`
+//margin: 12px;
+//padding: 3px;
+padding-bottom: 2px;
 `;

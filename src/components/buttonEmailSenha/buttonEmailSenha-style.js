@@ -1,17 +1,16 @@
 import styled from "styled-components/native";
 
-export const ButtonLoginContainer = styled.View`
+export const ButtonEmailSenhaContainer = styled.View`
   display: flex;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: flex-start;
   align-items: center;
-  width: 220px;
-  height: 44px;
+  width: 240px;
+  height: 50px;
   border-radius: 50px;
-  background: #4C7ABB;
-  border: none;
-  text-align: center;
-  margin-bottom: 7px;
-  margin-top: 120px;
+  background: #fff;
+  margin-bottom: 15px;
+  border: 2px #4C7ABB;
 
   &:hover {
     background: #b4b4b4;
@@ -19,20 +18,22 @@ export const ButtonLoginContainer = styled.View`
 `;
 
 export const TextButton = styled.Text`
-  color: #fff;
+  color: #4C7ABB;
   font-size: 22px;
   font-weight: bold;
   padding: 2px;
   font-weight: bold;
- text-align: center;
  
 `;
 
 export const ButtonImageIcon = styled.View`
-margin: 12px;
+margin-right: 50px;
 padding: 3px;
-padding-bottom: 2px;
+//padding-bottom: 2px;
+
 `;
 
+export const ImageLogo = styled.View`
+  margin-left: 4px;
 
-
+`;

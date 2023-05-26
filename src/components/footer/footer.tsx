@@ -1,12 +1,13 @@
 import { Dimensions, Image } from "react-native";
 import footerCurtoImg from "../../assets/footerCurto.png"
 import { ContainerMain } from "../../screen/loginCadastro/loginCadastro-style";
+import { ContainerFooter } from "./footer-style";
 
 const Footer = () => {
   const screenWidth = Dimensions.get("window").width;
   return (
     
-    <ContainerMain>
+    <ContainerFooter>
         <Image
 
           source={footerCurtoImg}
@@ -17,7 +18,7 @@ const Footer = () => {
             resizeMode:"stretch",
           }}
         />
-        </ContainerMain>
+        </ContainerFooter>
     
   );
 };

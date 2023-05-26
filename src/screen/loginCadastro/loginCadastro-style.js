@@ -9,6 +9,7 @@ import styled from "styled-components/native";
   width: 100%;
   height: 100%;
   z-index: -100;
+  margin-top: -30px;
   //position: absolute;
 `;
 

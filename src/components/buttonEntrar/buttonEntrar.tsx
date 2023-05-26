@@ -1,5 +1,4 @@
-
-import { ButtonLoginContainer, TextButton } from './buttonLogin-style';
+import { ButtonLoginContainer, TextButton } from './buttonEntrar-style';
 import React from 'react';
 import {
   TouchableOpacity,
@@ -8,13 +7,13 @@ import { useNavigation } from '@react-navigation/native';
 
 import { propsStack } from '../../routes/Stack/Models';
 
-function ButtonLogin(){
+function ButtonEntrar(){
   const navigation = useNavigation<propsStack>()
   return (
     
     <TouchableOpacity onPress={() => navigation.navigate("Login", {name:"Login"})}>
     <ButtonLoginContainer>       
-          <TextButton>Login</TextButton>
+          <TextButton>Entrar</TextButton>
     </ButtonLoginContainer>
     </TouchableOpacity>
   )};
@@ -22,4 +21,4 @@ function ButtonLogin(){
 
 
 
-export default ButtonLogin
+export default ButtonEntrar

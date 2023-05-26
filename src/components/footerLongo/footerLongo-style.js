@@ -4,5 +4,4 @@ export const ContainerFooter = styled.View`
 
  position: relative;
  bottom:0;
- margin-top: 500px;
 `;
