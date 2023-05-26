@@ -13,7 +13,7 @@ const Header = () => {
         style={{
           width: screenWidth,
           height: 200,
-          zIndex: -1,
+          zIndex: 1,
           resizeMode: "stretch",
         }}
       />

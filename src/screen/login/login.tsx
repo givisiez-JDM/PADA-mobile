@@ -1,30 +1,30 @@
 import React from "react";
-import {TextAcesso, ContainerMain} from "./login-style";
+import { ContainerMain} from "./login-style";
 import logo from "../../assets/logo.png"
-
 import { Image } from "react-native";
 
-import ButtonLogin from "../../components/buttonLogin/buttonLogin";
-import ButtonCadastrar from "../../components/buttonCadastrar/buttonCadastrar"
+import ButtonEmailSenha from "../../components/buttonEmailSenha/buttonEmailSenha";
 import Header from "../../components/header/header";
-import FooterLongo from "../../components/footerLongo/footerLongo"
-import logoPaciente from "../../assets/logoPaciente.png"
-
+import FooterCurto from "../../components/footer/footer"
+import logoEmail from "../../assets/logoEmail.png"
+import logoSenha from "../../assets/logoSenha.png"
+import ButtonEntrar from "../../components/buttonEntrar/buttonEntrar";
 
 const Login = () => {
-
+  
    return (
-        <>
-        <Header/>
-    <ContainerMain >
-      <Image source={logo}></Image>
-    
-      
-
-      <ButtonCadastrar/>
+    <>
+    <Header/>
+    <ContainerMain>
+      <Image source={logo} 
+       style={{ 
+        marginBottom:80,
+      }} />
+       <ButtonEmailSenha imageButton={logoEmail} labelButton={"E-mail"}/>
+       <ButtonEmailSenha imageButton={logoSenha} labelButton={"Senha"}/>  
+       <ButtonEntrar></ButtonEntrar>
      </ContainerMain>
-
-     <FooterLongo/>
+     <FooterCurto/>
      </>
   );
 };
