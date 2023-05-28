@@ -14,7 +14,7 @@ interface TTitle {
 
 const HeaderFluxo = ({ title, subtitle }: TTitle) => {
   return (
-    <SafeAreaView style={{ flex: 1 }}>
+    <SafeAreaView style={{ flex: 1, zIndex: 2 }}>
       <Fragment>
         <ContainerHeaderFluxo>
           <ContainerTitles>
