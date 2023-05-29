@@ -2,7 +2,7 @@ import styled from "styled-components/native";
 
 export const ContainerTagFluxo = styled.View`
   position: relative;
-  top: -120px;
+  top: -100px;
   width: 110px;
   height: 159px;
   display: flex;
