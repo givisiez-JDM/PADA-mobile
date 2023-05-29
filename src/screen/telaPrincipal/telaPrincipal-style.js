@@ -11,3 +11,13 @@ export const ContainerTelaPrincipal = styled.View`
   z-index: 0;
   background: #e3e3e3;
 `;
+
+
+export const Tab = styled.View`
+
+flex:1;
+justify-content: center;
+align-items: center;
+
+`;
+
