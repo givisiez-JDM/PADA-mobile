@@ -1,4 +1,3 @@
-import { Fragment } from "react";
 import {
   ContainerTagFluxo,
   ImageTagFluxo,
@@ -14,15 +13,13 @@ const TagFluxo = (props: {
   imageTag: ImageSource;
 }) => {
   return (
-    <Fragment>
-      <ContainerTagFluxo>
-        <ImageTagFluxo>
-          <Image source={props.imageTag} />
-        </ImageTagFluxo>
-        <TitleTagFluxo>{props.title}</TitleTagFluxo>
-        <TextFlagFluxo>{props.text}</TextFlagFluxo>
-      </ContainerTagFluxo>
-    </Fragment>
+    <ContainerTagFluxo>
+      <ImageTagFluxo>
+        <Image source={props.imageTag} />
+      </ImageTagFluxo>
+      <TitleTagFluxo>{props.title}</TitleTagFluxo>
+      <TextFlagFluxo>{props.text}</TextFlagFluxo>
+    </ContainerTagFluxo>
   );
 };
 

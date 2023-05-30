@@ -1,14 +1,22 @@
 import styled from "styled-components/native";
 
-export const ContainerFormPatient = styled.View`
-  width: 100%;
+export const ContainerSafe = styled.KeyboardAvoidingView`
+  flex: 1;
   display: flex;
+`;
+
+export const Scroll = styled.ScrollView`
+  flex: 1;
+`;
+
+export const ContainerFormPatient = styled.View`
+  display: flex;
+  margin-top: 40%;
   flex-direction: column;
   row-gap: 5px;
   justify-content: center;
   align-items: center;
   text-align: center;
-  margin-top: -50px;
 `;
 
 export const ImageLogo = styled.Image`
@@ -24,7 +32,7 @@ export const TitleForm = styled.Text`
 `;
 
 export const ContainerFormInputsPatients = styled.View`
-  margin-top: 50px;
+  margin-top: 25px;
 `;
 
 export const ContainerViewCheckBox = styled.TouchableHighlight`
@@ -65,7 +73,7 @@ export const Button = styled.TouchableOpacity`
   width: 180px;
   height: 50px;
   position: relative;
-  bottom: 50px;
+  bottom: 100px;
   border-radius: 50px;
   background: #4c7abb;
   border: none;

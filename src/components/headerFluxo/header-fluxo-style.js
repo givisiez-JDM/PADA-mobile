@@ -1,5 +1,10 @@
 import styled from "styled-components/native";
 
+export const ContainerSafeHeader = styled.SafeAreaView`
+  flex: 1;
+  z-index: 1;
+`;
+
 export const ContainerHeaderFluxo = styled.View`
   display: flex;
   flex-direction: column;

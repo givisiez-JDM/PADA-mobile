@@ -1,25 +1,20 @@
-import { Dimensions, Image } from "react-native";
-import footerCurtoImg from "../../assets/footerCurto.png"
-import { ContainerMain } from "../../screen/loginCadastro/loginCadastro-style";
-import { ContainerFooter } from "./footer-style";
+import { Dimensions } from "react-native";
+import footerCurtoImg from "../../assets/footerCurto.png";
+import { ContainerFooter, ImageFooterCurto } from "./footer-style";
+import { Fragment } from "react";
 
 const Footer = () => {
   const screenWidth = Dimensions.get("window").width;
-  return (
-    
-    <ContainerFooter>
-        <Image
 
+  return (
+    <Fragment>
+      <ContainerFooter>
+        <ImageFooterCurto
           source={footerCurtoImg}
-          style={{
-            width: screenWidth, 
-            height: 200,  
-            zIndex: 1,
-            resizeMode:"stretch",
-          }}
+          screenWidth={JSON.stringify(screenWidth) + "px"}
         />
-        </ContainerFooter>
-    
+      </ContainerFooter>
+    </Fragment>
   );
 };
 

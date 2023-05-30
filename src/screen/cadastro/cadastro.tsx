@@ -1,5 +1,5 @@
-import { Fragment, useState } from "react";
-import Footer from "../../components/footer/footer";
+import { useEffect, useState } from "react";
+import FooterCurto from "../../components/footer/footer";
 import Header from "../../components/header/header";
 
 import {
@@ -9,6 +9,8 @@ import {
   TitleForm,
   ImageLogo,
   ContainerFormInputsPatients,
+  ContainerSafe,
+  Scroll,
 } from "./cadastro-style";
 
 import FormPatientRecord from "../../components/form-patient-record/form-patient-record";
@@ -16,12 +18,7 @@ import { validar } from "../../config/validates";
 import CheckBox from "../../components/checkBox/checkBox";
 import Logo from "../../assets/logo.png";
 
-interface PatientRecordState {
-  name: string;
-  mail: string;
-  pass: string;
-  repeatPass: string;
-}
+import { Keyboard, Platform } from "react-native";
 
 const PatientRecord = () => {
   const [mail, setMail] = useState("");
@@ -31,6 +28,29 @@ const PatientRecord = () => {
   const [errorMail, setErrorMail] = useState("");
   const [errorPass, setErrorPass] = useState("");
   const [errorRepeatPass, setErrorRepeatPass] = useState("");
+
+  const [keyboardVisible, setKeyboardVisible] = useState(false);
+
+  useEffect(() => {
+    const keyboardDidShowListener = Keyboard.addListener(
+      "keyboardDidShow",
+      () => {
+        setKeyboardVisible(true);
+      }
+    );
+
+    const keyboardDidHideListener = Keyboard.addListener(
+      "keyboardDidHide",
+      () => {
+        setKeyboardVisible(false);
+      }
+    );
+
+    return () => {
+      keyboardDidShowListener.remove();
+      keyboardDidHideListener.remove();
+    };
+  }, []);
 
   const handleInputChange = (name: string, value: string) => {
     if (name === "E-mail") {
@@ -65,40 +85,43 @@ const PatientRecord = () => {
   };
 
   return (
-    <Fragment>
-      <Header />
-      <ContainerFormPatient>
-        <ImageLogo source={Logo} />
-        <TitleForm>Crie sua conta</TitleForm>
-        <ContainerFormInputsPatients>
-          {arrayNamePlaceholder.map(
-            ([icon, valueState, place, err], index: number) => (
-              <FormPatientRecord
-                iconName={icon}
-                placeholder={place}
-                handleInputChange={(text: string) => {
-                  handleInputChange(place, text);
-                }}
-                state={valueState}
-                err={err}
-                key={index}
-              />
-            )
-          )}
-        </ContainerFormInputsPatients>
+    <ContainerSafe behavior={Platform.OS === "ios" ? "padding" : "height"}>
+      <Scroll>
+        <Header />
+        <ContainerFormPatient>
+          <ImageLogo source={Logo} />
+          <TitleForm>Crie sua conta</TitleForm>
+          <ContainerFormInputsPatients>
+            {arrayNamePlaceholder.map(
+              ([icon, valueState, place, err], index: number) => (
+                <FormPatientRecord
+                  iconName={icon}
+                  placeholder={place}
+                  handleInputChange={(text: string) => {
+                    handleInputChange(place, text);
+                  }}
+                  state={valueState}
+                  err={err}
+                  key={index}
+                />
+              )
+            )}
+          </ContainerFormInputsPatients>
 
-        <CheckBox />
+          <CheckBox />
 
-        <Button
-          onPress={() => {
-            savePatient();
-          }}
-        >
-          <TextButton>Cadastre-se</TextButton>
-        </Button>
-      </ContainerFormPatient>
-      <Footer />
-    </Fragment>
+          <Button
+            onPress={() => {
+              savePatient();
+            }}
+          >
+            <TextButton>Cadastre-se</TextButton>
+          </Button>
+        </ContainerFormPatient>
+
+        <FooterCurto />
+      </Scroll>
+    </ContainerSafe>
   );
 };
 

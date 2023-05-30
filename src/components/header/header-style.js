@@ -1,7 +1,17 @@
 import styled from "styled-components/native";
 
 export const ContainerHeader = styled.View`
-  width: 100vw;
+  position: absolute;
+  top: 0;
+  width: 100%;
+`;
+
+export const ImageHeader = styled.Image.attrs({
+  resizeMode: "stretch",
+})`
+  width: ${(props) => props.screenWidth};
+  height: 200px;
+  z-index: 1;
 `;
 
 export const ContainerBack = styled.View`
@@ -9,7 +19,7 @@ export const ContainerBack = styled.View`
   height: 25px;
   left: 35px;
   top: 35px;
-  background: #E3E3E3;
+  background: #e3e3e3;
   border-radius: 50px;
   justify-content: center;
   align-items: center;

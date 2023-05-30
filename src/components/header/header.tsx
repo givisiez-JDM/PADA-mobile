@@ -1,22 +1,19 @@
 import { Fragment } from "react";
 import headerCurtoImg from "../../assets/headerCurto.png";
-import { Dimensions, Image } from "react-native";
-import { NavigationContainer } from "@react-navigation/native";
+import { Dimensions } from "react-native";
+import { ContainerHeader, ImageHeader } from "./header-style";
 
 const Header = () => {
   const screenWidth = Dimensions.get("window").width;
 
   return (
     <Fragment>
-      <Image
-        source={headerCurtoImg}
-        style={{
-          width: screenWidth,
-          height: 200,
-          zIndex: 1,
-          resizeMode: "stretch",
-        }}
-      />
+      <ContainerHeader>
+        <ImageHeader
+          source={headerCurtoImg}
+          screenWidth={JSON.stringify(screenWidth) + "px"}
+        />
+      </ContainerHeader>
     </Fragment>
   );
 };

@@ -1,29 +1,24 @@
-import React, { Fragment } from "react";
+import React from "react";
 import {
   ContainerHeaderFluxo,
+  ContainerSafeHeader,
   ContainerTitles,
-  SubTitleHeaderFluxo,
   TitleHeaderFluxo,
 } from "./header-fluxo-style";
-import { SafeAreaView } from "react-native";
 
 interface TTitle {
   title: string;
-  subtitle: string;
 }
 
-const HeaderFluxo = ({ title, subtitle }: TTitle) => {
+const HeaderFluxo = ({ title }: TTitle) => {
   return (
-    <SafeAreaView style={{ flex: 1, zIndex: 2 }}>
-      <Fragment>
-        <ContainerHeaderFluxo>
-          <ContainerTitles>
-            <TitleHeaderFluxo>{title}</TitleHeaderFluxo>
-            <SubTitleHeaderFluxo>{subtitle}</SubTitleHeaderFluxo>
-          </ContainerTitles>
-        </ContainerHeaderFluxo>
-      </Fragment>
-    </SafeAreaView>
+    <ContainerSafeHeader>
+      <ContainerHeaderFluxo>
+        <ContainerTitles>
+          <TitleHeaderFluxo>{title}</TitleHeaderFluxo>
+        </ContainerTitles>
+      </ContainerHeaderFluxo>
+    </ContainerSafeHeader>
   );
 };
 
