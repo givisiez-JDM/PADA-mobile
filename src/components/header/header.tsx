@@ -1,6 +1,6 @@
 import { Fragment } from "react";
 import headerCurtoImg from "../../assets/headerCurto.png";
-import { Dimensions } from "react-native";
+import { Dimensions, StatusBar } from "react-native";
 import { ContainerHeader, ImageHeader } from "./header-style";
 
 const Header = () => {
@@ -8,6 +8,7 @@ const Header = () => {
 
   return (
     <Fragment>
+      <StatusBar barStyle="light-content" backgroundColor="#000" />
       <ContainerHeader>
         <ImageHeader
           source={headerCurtoImg}

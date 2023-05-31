@@ -2,7 +2,8 @@ import styled from "styled-components/native";
 
 export const ContainerTagFluxo = styled.View`
   position: relative;
-  top: -100px;
+  top: -80px;
+  left: 10%;
   width: 110px;
   height: 159px;
   display: flex;
@@ -11,8 +12,11 @@ export const ContainerTagFluxo = styled.View`
   align-items: center;
   row-gap: 10px;
   border-radius: 20px;
-  box-shadow: rgba(0, 0, 0, 0.25) 4px 4px 9px;
-  elevation: 5;
+  shadow-color: rgb(0, 0, 0);
+  shadow-offset: -2px 4px;
+  shadow-opacity: 0.8;
+  shadow-radius: 4px;
+  elevation: 8;
   background: #fff;
 `;
 

@@ -1,6 +1,6 @@
 import styled from "styled-components/native";
 
-export const ContainerSafeHeader = styled.SafeAreaView`
+export const ContainerSafeHeader = styled.View`
   flex: 1;
   z-index: 1;
 `;

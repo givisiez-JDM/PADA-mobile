@@ -1,16 +1,6 @@
-import {
-  ButtonCadastrarContainer,
-  ButtonImageIcon,
-  TextButton,
-} from "./buttonCadastrar-style";
+import { ButtonCadastrarContainer, TextButton } from "./buttonCadastrar-style";
 import React from "react";
-import {
-  Image,
-  ImageSourcePropType,
-  TouchableOpacity,
-  View,
-} from "react-native";
-import logoMedico from "../../assets/logoMedico.png";
+import { TouchableOpacity } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
 import { propsStack } from "../../routes/Stack/Models";
@@ -25,8 +15,5 @@ function ButtonDoctor() {
     </TouchableOpacity>
   );
 }
-
-
-
 
 export default ButtonDoctor;

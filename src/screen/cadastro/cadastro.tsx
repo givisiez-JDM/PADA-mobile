@@ -29,29 +29,6 @@ const PatientRecord = () => {
   const [errorPass, setErrorPass] = useState("");
   const [errorRepeatPass, setErrorRepeatPass] = useState("");
 
-  const [keyboardVisible, setKeyboardVisible] = useState(false);
-
-  useEffect(() => {
-    const keyboardDidShowListener = Keyboard.addListener(
-      "keyboardDidShow",
-      () => {
-        setKeyboardVisible(true);
-      }
-    );
-
-    const keyboardDidHideListener = Keyboard.addListener(
-      "keyboardDidHide",
-      () => {
-        setKeyboardVisible(false);
-      }
-    );
-
-    return () => {
-      keyboardDidShowListener.remove();
-      keyboardDidHideListener.remove();
-    };
-  }, []);
-
   const handleInputChange = (name: string, value: string) => {
     if (name === "E-mail") {
       setMail(value);
