@@ -14,7 +14,7 @@ import { ContainerTelaPrincipal } from "../telaPrincipal/telaPrincipal-style";
 const Login = () => {
   return (
     <ContainerTelaPrincipal>
-      <Header />
+      <Header back={true} />
       <ContainerMain>
         <ImageIconLogo source={logo} />
         <ButtonEmailSenha imageButton={logoEmail} labelButton={"E-mail"} />

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import FooterCurto from "../../components/footer/footer";
 import Header from "../../components/header/header";
 
@@ -18,7 +18,7 @@ import { validar } from "../../config/validates";
 import CheckBox from "../../components/checkBox/checkBox";
 import Logo from "../../assets/logo.png";
 
-import { Keyboard, Platform } from "react-native";
+import { Platform } from "react-native";
 
 const PatientRecord = () => {
   const [mail, setMail] = useState("");
@@ -64,7 +64,7 @@ const PatientRecord = () => {
   return (
     <ContainerSafe behavior={Platform.OS === "ios" ? "padding" : "height"}>
       <Scroll>
-        <Header />
+        <Header back={true} />
         <ContainerFormPatient>
           <ImageLogo source={Logo} />
           <TitleForm>Crie sua conta</TitleForm>

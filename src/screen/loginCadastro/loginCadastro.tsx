@@ -11,7 +11,7 @@ import { ContainerTelaPrincipal } from "../telaPrincipal/telaPrincipal-style";
 const LoginCadastro = () => {
   return (
     <ContainerTelaPrincipal>
-      <Header />
+      <Header back={false} />
 
       <ContainerMain>
         <Image source={logo}></Image>

@@ -14,12 +14,13 @@ export const ImageHeader = styled.Image.attrs({
   z-index: 1;
 `;
 
-export const ContainerBack = styled.View`
+export const ContainerBack = styled.TouchableOpacity`
+  position: absolute;
   width: 25px;
   height: 25px;
-  left: 35px;
-  top: 35px;
-  background: #e3e3e3;
+  left: 15px;
+  top: 10px;
+  background: #fff;
   border-radius: 50px;
   justify-content: center;
   align-items: center;
