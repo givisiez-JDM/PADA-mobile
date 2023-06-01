@@ -1,5 +1,5 @@
 import React from "react";
-import { ContainerMain } from "./login-style";
+import { ContainerMain, ImageIconLogo } from "./login-style";
 import logo from "../../assets/logo.png";
 import { Image } from "react-native";
 
@@ -16,12 +16,7 @@ const Login = () => {
     <ContainerTelaPrincipal>
       <Header />
       <ContainerMain>
-        <Image
-          source={logo}
-          style={{
-            marginBottom: 80,
-          }}
-        />
+        <ImageIconLogo source={logo} />
         <ButtonEmailSenha imageButton={logoEmail} labelButton={"E-mail"} />
         <ButtonEmailSenha imageButton={logoSenha} labelButton={"Senha"} />
         <ButtonEntrar></ButtonEntrar>

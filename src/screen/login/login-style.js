@@ -28,3 +28,7 @@ export const ButtonImageIcon = styled.View`
   //padding: 3px;
   padding-bottom: 2px;
 `;
+
+export const ImageIconLogo = styled.Image`
+  margin-bottom: 80;
+`;

@@ -1,10 +1,8 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
-const { Screen, Navigator } = createBottomTabNavigator();
-import Home from "../../assets/home.png";
-import Login from "../../screen/login/login";
 import TelaPrincipal from "../../screen/telaPrincipal/telaPrincipal";
 import { Image } from "react-native";
+
+const { Screen, Navigator } = createBottomTabNavigator();
 
 export function TabRoutes() {
   const getOverviewTabIcon = (focused: boolean, nome: string) => {
