@@ -1,21 +1,17 @@
-import { Dimensions, Image } from "react-native";
+import { Dimensions } from "react-native";
 import footerLongoImg from "../../assets/footerLongo.png";
-import { ContainerFooter } from "./footerLongo-style";
+import { ContainerFooter, ImageFooterLongo } from "./footerLongo-style";
 
-const Footer = () => {
+const FooterLongo = () => {
   const screenWidth = Dimensions.get("window").width;
   return (
     <ContainerFooter>
-      <Image
+      <ImageFooterLongo
         source={footerLongoImg}
-        style={{
-          width: screenWidth,
-          zIndex: 1,
-          resizeMode: "stretch",
-        }}
+        screenWidth={JSON.stringify(screenWidth) + "px"}
       />
     </ContainerFooter>
   );
 };
 
-export default Footer;
+export default FooterLongo;

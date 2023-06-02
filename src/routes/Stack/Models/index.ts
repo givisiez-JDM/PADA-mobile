@@ -6,7 +6,8 @@ export type propsNavigationStack = {
     name: string;
   };
   Cadastro: undefined;
-  TelaPrincipal: undefined
+  TelaPrincipal: undefined;
+  TabRoutes: undefined;
 };
 
 export type propsStack = NativeStackNavigationProp<propsNavigationStack>;
