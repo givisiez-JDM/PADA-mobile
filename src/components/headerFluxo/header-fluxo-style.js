@@ -16,6 +16,19 @@ export const ContainerHeaderFluxo = styled.View`
   border-bottom-right-radius: 10px;
 `;
 
+export const ContainerBackFluxo = styled.TouchableOpacity`
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  right: 15px;
+  top: 23px;
+  background: #fff;
+  border-radius: 50px;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
+`;
+
 export const ContainerTitles = styled.View`
   margin-top: 38px;
   margin-left: 40px;

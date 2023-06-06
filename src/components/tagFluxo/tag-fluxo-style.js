@@ -1,6 +1,6 @@
 import styled from "styled-components/native";
 
-export const ContainerTagFluxo = styled.View`
+export const ContainerTagFluxo = styled.TouchableOpacity`
   position: relative;
   top: -80px;
   left: 10%;

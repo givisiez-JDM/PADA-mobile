@@ -5,13 +5,15 @@ import Login from "../../screen/login/login";
 import { propsNavigationStack } from "./Models";
 import PatientRecord from "../../screen/cadastro/cadastro";
 import TelaPrincipal from "../../screen/telaPrincipal/telaPrincipal";
-import { createNativeStackNavigator, NativeStackNavigationProp } from "@react-navigation/native-stack";
+import {
+  createNativeStackNavigator,
+  NativeStackNavigationProp,
+} from "@react-navigation/native-stack";
 import { TabRoutes } from "../TabRoutes";
-
+import PatientList from "../../screen/listaPacientes/lista-pacientes";
 
 const { Navigator, Screen } =
   createNativeStackNavigator<propsNavigationStack>();
-
 
 export default function () {
   return (
@@ -23,11 +25,8 @@ export default function () {
       <Screen name="Login" component={Login} />
       <Screen name="Cadastro" component={PatientRecord} />
       <Screen name="TelaPrincipal" component={TabRoutes} />
+      <Screen name="ListaPacientes" component={PatientList} />
       {/* <Screen name="TabRoutes" component={TabRoutes} /> */}
     </Navigator>
-
-
-
   );
 }
-

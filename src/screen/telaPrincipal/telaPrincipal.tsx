@@ -14,11 +14,11 @@ import { useNavigation } from "@react-navigation/native";
 
 const TelaPrincipal = () => {
   const navigation = useNavigation();
-  const role = "patient";
+  let role = "doctor";
 
   return (
     <ContainerSafePrincipal>
-      <HeaderFluxo title="Olá" />
+      <HeaderFluxo title="Olá" backButton={false} />
       <ContainerPrincipal>
         {role === "patient" ? (
           <>
