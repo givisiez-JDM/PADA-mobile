@@ -2,6 +2,8 @@ import { FlatList } from "react-native-gesture-handler";
 import Patient from "../../assets/imgPaciente.png";
 import { ContainerGrid, ImageItem, Item, TextItem } from "./grid-menu-style";
 import { ImageSourcePropType } from "react-native";
+import { useNavigation } from "@react-navigation/native";
+import { propsStack } from "../../routes/Stack/Models";
 
 interface Item {
   id: number;
@@ -10,6 +12,7 @@ interface Item {
 }
 
 const GridMenu = () => {
+  const navigation = useNavigation<propsStack>();
   const data = [
     { id: 1, title: "Item 1", image: require("../../assets/imgUserItem.png") },
     { id: 2, title: "Item 2", image: require("../../assets/imgUserItem.png") },
@@ -23,7 +26,7 @@ const GridMenu = () => {
   ];
   const renderGridItem: React.FC<{ item: Item }> = ({ item }) => {
     return (
-      <Item>
+      <Item onPress={() => navigation.navigate("Paciente")}>
         <ImageItem source={item.image} />
         <TextItem>{item.title}</TextItem>
       </Item>

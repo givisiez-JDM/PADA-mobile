@@ -11,6 +11,7 @@ import {
 } from "@react-navigation/native-stack";
 import { TabRoutes } from "../TabRoutes";
 import PatientList from "../../screen/listaPacientes/lista-pacientes";
+import Patient from "../../screen/paciente/patient";
 
 const { Navigator, Screen } =
   createNativeStackNavigator<propsNavigationStack>();
@@ -26,6 +27,7 @@ export default function () {
       <Screen name="Cadastro" component={PatientRecord} />
       <Screen name="TelaPrincipal" component={TabRoutes} />
       <Screen name="ListaPacientes" component={PatientList} />
+      <Screen name="Paciente" component={Patient} />
       {/* <Screen name="TabRoutes" component={TabRoutes} /> */}
     </Navigator>
   );
