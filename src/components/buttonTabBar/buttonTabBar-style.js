@@ -10,23 +10,22 @@ export const ContainerTabBar = styled.View`
 `;
 
 export const ButtonTabBarHome = styled.View`
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
 background-color: #334C76;
 width: 50%;
-`
+`;
+
+export const CustomTouchableOpacity = styled.TouchableOpacity`
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+`;
+
 export const ButtonTabBarLogout = styled.View`
-
-display: flex;
-align-items: center;
-justify-content: center;
-background-color: #D1D1D1;
-width: 50%;
-
-
-`
+  background-color: #D1D1D1;
+  width: 50%;
+`;
 
 export const TextButtonTabBarInicio = styled.Text`
   color: #fff;

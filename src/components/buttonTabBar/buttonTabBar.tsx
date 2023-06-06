@@ -5,6 +5,7 @@ import {
     ButtonTabBarLogout,
     TextButtonTabBarInicio,
     TextButtonTabBarLogout,
+    CustomTouchableOpacity,
 } from '../buttonTabBar/buttonTabBar-style';
 import { ImageSource } from 'react-native-vector-icons/Icon';
 import {
@@ -23,23 +24,25 @@ const TabBar = () => {
     return (
         <ContainerTabBar>
             <ButtonTabBarHome>
-                <TouchableOpacity
+                <CustomTouchableOpacity 
                     onPress={() => navigation.navigate('TelaPrincipal')}
                 >
                     <ImageLogo>
                         <Image source={home}></Image>
                     </ImageLogo>
                     <TextButtonTabBarInicio>{'Início'}</TextButtonTabBarInicio>
-                </TouchableOpacity>
+                </CustomTouchableOpacity>
             </ButtonTabBarHome>
-
+            
             <ButtonTabBarLogout>
-                <TouchableOpacity onPress={() => navigation.navigate('Login')}>
+                <CustomTouchableOpacity 
+                    onPress={() => navigation.navigate('Login')}
+                >
                     <ImageLogo>
                         <Image source={Logout}></Image>
                     </ImageLogo>
                     <TextButtonTabBarLogout>{'Sair'}</TextButtonTabBarLogout>
-                </TouchableOpacity>
+                </CustomTouchableOpacity>
             </ButtonTabBarLogout>
         </ContainerTabBar>
     );
