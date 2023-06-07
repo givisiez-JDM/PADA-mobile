@@ -16,6 +16,40 @@ export const ContainerHeaderFluxo = styled.View`
   border-bottom-right-radius: 10px;
 `;
 
+export const ContainerButtonVaccine = styled.View`
+  position: absolute;
+  width: 101px;
+  height: 43px;
+  left: 27px;
+  top: 100px;
+  background-color: rgba(0, 0, 0, 0.25);
+  border-radius: 50px;
+`;
+
+export const ContainerShadowVaccine = styled.View`
+  width: 101px;
+  height: 38px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 50px;
+  background-color: #76a7ed;
+  opacity: 0.8;
+  shadow-color: #000;
+  shadow-offset: 0px 4px;
+  shadow-opacity: 1;
+  shadow-radius: 4;
+`;
+
+export const TextButtonVaccine = styled.Text`
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 26px;
+  color: #ffffff;
+`;
+
 export const ContainerBackFluxo = styled.TouchableOpacity`
   position: absolute;
   width: 25px;

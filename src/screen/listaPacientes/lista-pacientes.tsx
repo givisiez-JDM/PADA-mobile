@@ -14,7 +14,7 @@ const PatientList = () => {
       behavior={Platform.OS === "ios" ? "padding" : "height"}
     >
       <Scroll>
-        <HeaderFluxo title="Olá" backButton={true} />
+        <HeaderFluxo title="Olá" backButton={true} buttonVaccine={false} />
         <ContainerPacientes>
           <GridMenu />
           <AddPatient />

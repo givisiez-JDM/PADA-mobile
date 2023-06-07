@@ -18,7 +18,7 @@ const Patient = () => {
   return (
     <ContainerSafePrincipalPaciente>
       <Scroll>
-        <HeaderFluxo title="Amanda" backButton={true} />
+        <HeaderFluxo title="Amanda" backButton={true} buttonVaccine={true} />
         <DataPatient
           name={data.name}
           telefone={data.telefone}
