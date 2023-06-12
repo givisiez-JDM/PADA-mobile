@@ -9,8 +9,10 @@ import TagFluxo from "../../components/tagFluxo/tag-fluxo";
 import Coracao from "../../assets/imgCoracao.png";
 import Remedio from "../../assets/imgRemedio.png";
 import Paciente from "../../assets/imgPaciente.png";
+import Home from "../../assets/home.png"
 
 import { useNavigation } from "@react-navigation/native";
+import TabBar from "../../components/buttonTabBar/buttonTabBar";
 
 const TelaPrincipal = () => {
   const navigation = useNavigation();
@@ -40,7 +42,10 @@ const TelaPrincipal = () => {
             text="Conheça cada um dos seus pacientes"
           />
         )}
+
+         
       </ContainerPrincipal>
+      <TabBar/>
     </ContainerSafePrincipal>
   );
 };

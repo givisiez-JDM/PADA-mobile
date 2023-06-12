@@ -2,6 +2,7 @@ import styled from "styled-components/native";
 
 export const ContainerSafePrincipal = styled.SafeAreaView`
   flex: 1;
+  
 `;
 
 export const ContainerPrincipal = styled.View`
@@ -9,11 +10,11 @@ export const ContainerPrincipal = styled.View`
   flex-direction: row;
   column-gap: 40px;
   width: 100%;
-  height: 100%;
+  height: 90%;
   align-items: center;
   justify-content: flex-start;
   z-index: 0;
-  background: #d1d1d1;
+  background:rgba(#d1d1d1, .2) ;
 `;
 
 export const ContainerTelaPrincipal = styled.View`
