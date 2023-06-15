@@ -73,7 +73,8 @@ export const Button = styled.TouchableOpacity`
   width: 180px;
   height: 50px;
   position: relative;
-  bottom: 100px;
+  bottom: -50px;
+  margin-bottom: 100px;
   border-radius: 50px;
   background: #4c7abb;
   border: none;

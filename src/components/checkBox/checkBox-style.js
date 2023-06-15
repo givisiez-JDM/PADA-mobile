@@ -18,8 +18,8 @@ export const ButtonViewCheckBox = styled.View`
 `;
 
 export const Check = styled.View`
-  width: 15px;
-  height: 15px;
+  width: ${({ size }) => size};
+  height: ${({ size }) => size};
   border-width: 1px;
   border-radius: 2px;
   justify-content: center;
@@ -36,6 +36,4 @@ export const TitleCheck = styled.Text`
   color: #273047;
   font-size: 18px;
   font-weight: 300;
-  
 `;
-

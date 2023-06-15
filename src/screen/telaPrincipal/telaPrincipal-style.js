@@ -5,15 +5,19 @@ export const ContainerSafePrincipal = styled.SafeAreaView`
 `;
 
 export const ContainerPrincipal = styled.View`
+  position: relative;
+  top: 50%;
+  right: 17%;
   display: flex;
-  flex-direction: row;
-  column-gap: 40px;
+  flex-flow: row wrap;
+  column-gap: 50px;
+  row-gap: 30px;
   width: 100%;
-  height: 100%;
-  align-items: center;
-  justify-content: flex-start;
+  height: 90%;
+  align-items: flex-end;
+  justify-content: flex-end;
   z-index: 0;
-  background: #d1d1d1;
+  background: rgba(#d1d1d1, 0.2);
 `;
 
 export const ContainerTelaPrincipal = styled.View`

@@ -1,3 +1,4 @@
+import TabBar from "../../components/buttonTabBar/buttonTabBar";
 import DataPatient from "../../components/dataPatient/data-patient";
 import HeaderFluxo from "../../components/headerFluxo/header-fluxo";
 import { ContainerSafePrincipalPaciente, Scroll } from "./patient-style";
@@ -32,6 +33,7 @@ const Patient = () => {
           fim={data.fim}
         />
       </Scroll>
+      <TabBar />
     </ContainerSafePrincipalPaciente>
   );
 };

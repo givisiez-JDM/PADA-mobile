@@ -1,6 +1,9 @@
 export const validar = (value: any, err: any) => {
   const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   let error = false;
+  if (value.name === "") {
+    err.setErrorName("Preencha o campo do nome.");
+  }
   if (value.mail === "") {
     err.setErrorMail("Preencha o campo do email.");
     error = true;

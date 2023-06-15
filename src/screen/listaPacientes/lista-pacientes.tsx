@@ -7,6 +7,7 @@ import {
   ContainerSafePrincipalPacientes,
   Scroll,
 } from "./lista-pacientes-style";
+import TabBar from "../../components/buttonTabBar/buttonTabBar";
 
 const PatientList = () => {
   return (
@@ -20,6 +21,7 @@ const PatientList = () => {
           <AddPatient />
         </ContainerPacientes>
       </Scroll>
+      <TabBar />
     </ContainerSafePrincipalPacientes>
   );
 };

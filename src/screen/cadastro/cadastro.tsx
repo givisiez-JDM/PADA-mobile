@@ -15,21 +15,38 @@ import {
 
 import FormPatientRecord from "../../components/form-patient-record/form-patient-record";
 import { validar } from "../../config/validates";
-import CheckBox from "../../components/checkBox/checkBox";
+import checkFlag from "../../assets/checkflag.png";
+import errorFlag from "../../assets/errorflag.png";
 import Logo from "../../assets/logo.png";
 
 import { Platform } from "react-native";
+import apiPADA from "../../service/api";
+import ModalInfo from "../../components/modalInfo/modal-info";
 
 const PatientRecord = () => {
+  const [name, setName] = useState("");
   const [mail, setMail] = useState("");
   const [pass, setPass] = useState("");
   const [repeatPass, setRepeatPass] = useState("");
-
+  const [errorName, setErrorName] = useState("");
   const [errorMail, setErrorMail] = useState("");
   const [errorPass, setErrorPass] = useState("");
   const [errorRepeatPass, setErrorRepeatPass] = useState("");
+  const [modalVisible, setModalVisible] = useState(false);
+
+  const openModal = () => {
+    setModalVisible(true);
+  };
+
+  const closeModal = () => {
+    setModalVisible(false);
+  };
 
   const handleInputChange = (name: string, value: string) => {
+    if (name === "Nome de usuário") {
+      setName(value);
+      setErrorName("");
+    }
     if (name === "E-mail") {
       setMail(value);
       setErrorMail("");
@@ -45,19 +62,53 @@ const PatientRecord = () => {
   };
 
   const arrayNamePlaceholder = [
+    ["person", name, "Nome de usuário", errorName],
     ["mail", mail, "E-mail", errorMail],
     ["key", pass, "Senha", errorPass],
     ["key", repeatPass, "Repetir Senha", errorRepeatPass],
   ];
 
-  const savePatient = () => {
+  const savePatient = async () => {
     if (
       validar(
-        { mail, pass, repeatPass },
-        { setErrorMail, setErrorPass, setErrorRepeatPass }
+        { name, mail, pass, repeatPass },
+        { setErrorName, setErrorMail, setErrorPass, setErrorRepeatPass }
       )
     ) {
-      console.log("Foi");
+      try {
+        await apiPADA
+          .post("/patient", {
+            name: name,
+            email: mail,
+            password: pass,
+            role: "patient",
+          })
+          .then((response: any) => {
+            setTimeout(() => {
+              openModal();
+            }, 5000);
+            <ModalInfo
+              visible={modalVisible}
+              onClose={closeModal}
+              image={checkFlag}
+              text="Sucesso!"
+            />;
+            setName("");
+            setMail("");
+            setPass("");
+            setRepeatPass("");
+          })
+          .catch((err: unknown) => {
+            <ModalInfo
+              visible={modalVisible}
+              onClose={closeModal}
+              image={errorFlag}
+              text="Erro!"
+            />;
+          });
+      } catch (error: unknown) {
+        console.log(error);
+      }
     }
   };
 
@@ -84,8 +135,6 @@ const PatientRecord = () => {
               )
             )}
           </ContainerFormInputsPatients>
-
-          <CheckBox />
 
           <Button
             onPress={() => {
