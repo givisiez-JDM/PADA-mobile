@@ -7,11 +7,6 @@ import {
   TextModal,
 } from "./modal-info-style";
 
-interface ModalProps {
-  visible: boolean;
-  onClose: () => void;
-}
-
 const ModalInfo = (props: {
   visible: boolean;
   onClose: () => void;

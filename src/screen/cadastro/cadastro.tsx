@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import FooterCurto from "../../components/footer/footer";
 import Header from "../../components/header/header";
 
@@ -22,6 +22,7 @@ import Logo from "../../assets/logo.png";
 import { Platform } from "react-native";
 import apiPADA from "../../service/api";
 import ModalInfo from "../../components/modalInfo/modal-info";
+import LoadingModal from "../../components/loadingModal/loading-modal";
 
 const PatientRecord = () => {
   const [name, setName] = useState("");
@@ -33,6 +34,16 @@ const PatientRecord = () => {
   const [errorPass, setErrorPass] = useState("");
   const [errorRepeatPass, setErrorRepeatPass] = useState("");
   const [modalVisible, setModalVisible] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [mesageTextModal, setMessageTextModal] = useState("");
+
+  const openLoading = () => {
+    setLoading(true);
+  };
+
+  const closeLoading = () => {
+    setLoading(false);
+  };
 
   const openModal = () => {
     setModalVisible(true);
@@ -76,35 +87,34 @@ const PatientRecord = () => {
       )
     ) {
       try {
+        /*openLoading();
+        setTimeout(() => {
+          closeLoading();
+          openModal();
+        }, 5000);*/
+
         await apiPADA
-          .post("/patient", {
+          .post("/doctor", {
             name: name,
             email: mail,
             password: pass,
-            role: "patient",
+            role: "doctor",
+            created_At: new Date().toISOString(),
           })
           .then((response: any) => {
             setTimeout(() => {
+              closeLoading();
+              setMessageTextModal("Sucesso!");
               openModal();
             }, 5000);
-            <ModalInfo
-              visible={modalVisible}
-              onClose={closeModal}
-              image={checkFlag}
-              text="Sucesso!"
-            />;
+
             setName("");
             setMail("");
             setPass("");
             setRepeatPass("");
           })
           .catch((err: unknown) => {
-            <ModalInfo
-              visible={modalVisible}
-              onClose={closeModal}
-              image={errorFlag}
-              text="Erro!"
-            />;
+            console.log(err);
           });
       } catch (error: unknown) {
         console.log(error);
@@ -135,7 +145,6 @@ const PatientRecord = () => {
               )
             )}
           </ContainerFormInputsPatients>
-
           <Button
             onPress={() => {
               savePatient();
@@ -143,6 +152,13 @@ const PatientRecord = () => {
           >
             <TextButton>Cadastre-se</TextButton>
           </Button>
+          <LoadingModal visible={loading} onClose={closeLoading} />
+          <ModalInfo
+            visible={modalVisible}
+            onClose={closeModal}
+            image={checkFlag}
+            text={mesageTextModal}
+          />
         </ContainerFormPatient>
 
         <FooterCurto />

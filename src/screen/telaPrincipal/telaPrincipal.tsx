@@ -16,7 +16,7 @@ import TabBar from "../../components/buttonTabBar/buttonTabBar";
 
 const TelaPrincipal = () => {
   const navigation = useNavigation();
-  let role = "patient";
+  let role = "doctor";
 
   return (
     <ContainerSafePrincipal>

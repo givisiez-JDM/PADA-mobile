@@ -1,3 +1,46 @@
+const complexityOptions = {
+  min: 8,
+  max: 30,
+  lowerCase: 1,
+  upperCase: 1,
+  numeric: 1,
+  symbol: 1,
+  requirementCount: 4,
+};
+
+const checkPassword = (password: string) => {
+  if (
+    password.length < complexityOptions.min ||
+    password.length > complexityOptions.max
+  ) {
+    return false;
+  }
+  let requirementCount = 0;
+
+  // Verifica a presença de caracteres minúsculos
+  if (/[a-z]/.test(password)) {
+    requirementCount++;
+  }
+
+  // Verifica a presença de caracteres maiúsculos
+  if (/[A-Z]/.test(password)) {
+    requirementCount++;
+  }
+
+  // Verifica a presença de caracteres numéricos
+  if (/[0-9]/.test(password)) {
+    requirementCount++;
+  }
+
+  // Verifica a presença de caracteres especiais
+  if (/[!@#$%^&*(),.?":{}|<>]/.test(password)) {
+    requirementCount++;
+  }
+
+  // Verifica se a contagem de requisitos atende ao requirementCount
+  return requirementCount >= complexityOptions.requirementCount ? true : false;
+};
+
 export const validar = (value: any, err: any) => {
   const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   let error = false;
@@ -18,8 +61,14 @@ export const validar = (value: any, err: any) => {
     err.setErrorPass("Preencha o campo da senha.");
     error = true;
   }
+  if (checkPassword(value.pass) === false) {
+    err.setErrorPass(
+      "Preencha os requisitos da senha:\n 1. Mínimo de 8 caracteres.\n 2. Máximo de 30 caracteres. \n 3. Possuir pelo menos 1 letra minúscula e 1 maíscula. \n 4. Possuir pelo menos 1 número e 1 caracter especial."
+    );
+    error = true;
+  }
   if (value.repeatPass === "") {
-    err.setErrorRepeatPass("Preencha o campo da senha.");
+    err.setErrorRepeatPass("Preencha o campo igual ao da senha.");
     error = true;
   }
 
