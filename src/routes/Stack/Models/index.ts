@@ -9,7 +9,7 @@ export type propsNavigationStack = {
   TelaPrincipal: undefined;
   TabRoutes: undefined;
   ListaPacientes: undefined;
-  Paciente: undefined;
+  MeuPerfil: undefined;
 };
 
 export type propsStack = NativeStackNavigationProp<propsNavigationStack>;

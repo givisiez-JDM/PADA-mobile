@@ -5,19 +5,26 @@ export const ContainerSafePrincipal = styled.SafeAreaView`
 `;
 
 export const ContainerPrincipal = styled.View`
-  position: relative;
-  top: 50%;
-  right: 17%;
   display: flex;
-  flex-flow: row wrap;
-  column-gap: 50px;
-  row-gap: 30px;
+  justify-content: center;
   width: 100%;
   height: 90%;
-  align-items: flex-end;
-  justify-content: flex-end;
   z-index: 0;
   background: rgba(#d1d1d1, 0.2);
+`;
+
+export const ContainerListTagFluxo = styled.View`
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const ContainerListDoctor = styled.View`
+  display: flex;
+  width: 100%;
+  margin-left: 12%;
+  margin-top: -45%;
 `;
 
 export const ContainerTelaPrincipal = styled.View`

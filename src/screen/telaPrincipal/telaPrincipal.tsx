@@ -1,6 +1,8 @@
 import React from "react";
 import HeaderFluxo from "../../components/headerFluxo/header-fluxo";
 import {
+  ContainerListDoctor,
+  ContainerListTagFluxo,
   ContainerPrincipal,
   ContainerSafePrincipal,
 } from "./telaPrincipal-style";
@@ -13,39 +15,68 @@ import Perfil from "../../assets/imgPerfil.png";
 
 import { useNavigation } from "@react-navigation/native";
 import TabBar from "../../components/buttonTabBar/buttonTabBar";
+import { FlatList } from "react-native-gesture-handler";
+import { ImageSourcePropType } from "react-native";
+
+interface Item {
+  image: ImageSourcePropType;
+  title: string;
+  text: string;
+}
 
 const TelaPrincipal = () => {
+  const array = [
+    [
+      { image: Coracao, title: "Minha saúde", text: "Seu histórico de saúde" },
+      {
+        image: Remedio,
+        title: "Minhas vacinas",
+        text: "Seu histórico de medicamentos",
+      },
+      {
+        image: Perfil,
+        title: "Meu perfil",
+        text: "Suas informações de cadastro",
+      },
+    ],
+    [
+      {
+        image: Paciente,
+        title: "Pacientes",
+        text: "Conheça cada um dos seus pacientes",
+      },
+    ],
+  ];
   const navigation = useNavigation();
-  let role = "doctor";
+  let role = "patient";
+
+  const renderItem: React.FC<{ item: Item }> = ({ item }) => {
+    return (
+      <TagFluxo imageTag={item.image} title={item.title} text={item.text} />
+    );
+  };
 
   return (
     <ContainerSafePrincipal>
       <HeaderFluxo title="Olá" backButton={false} buttonVaccine={false} />
       <ContainerPrincipal>
         {role === "patient" ? (
-          <>
-            <TagFluxo
-              imageTag={Coracao}
-              title="Minha sáude"
-              text="Seu histórico de saúde"
+          <ContainerListTagFluxo>
+            <FlatList
+              data={array[0]}
+              renderItem={renderItem}
+              keyExtractor={(item) => item.title}
+              numColumns={2}
             />
-            <TagFluxo
-              imageTag={Remedio}
-              title="Minhas Vacinas"
-              text="Seu histórico de medicamentos"
-            />
-            <TagFluxo
-              imageTag={Perfil}
-              title="Meu perfil"
-              text="Suas informações de cadastro"
-            />
-          </>
+          </ContainerListTagFluxo>
         ) : (
-          <TagFluxo
-            imageTag={Paciente}
-            title="Pacientes"
-            text="Conheça cada um dos seus pacientes"
-          />
+          <ContainerListDoctor>
+            <TagFluxo
+              imageTag={Paciente}
+              title={"Pacientes"}
+              text={"Conheça cada um dos seus pacientes"}
+            />
+          </ContainerListDoctor>
         )}
       </ContainerPrincipal>
       <TabBar />

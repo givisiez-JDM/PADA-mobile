@@ -1,9 +1,6 @@
 import styled from "styled-components/native";
 
 export const ContainerTagFluxo = styled.TouchableOpacity`
-  position: relative;
-  top: -80px;
-  left: 10%;
   width: 110px;
   height: 159px;
   display: flex;
@@ -18,6 +15,10 @@ export const ContainerTagFluxo = styled.TouchableOpacity`
   shadow-radius: 4px;
   elevation: 8;
   background: #fff;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  margin-left: 20px;
+  margin-right: 20px;
 `;
 
 export const ImageTagFluxo = styled.View`

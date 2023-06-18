@@ -26,7 +26,7 @@ const GridMenu = () => {
   ];
   const renderGridItem: React.FC<{ item: Item }> = ({ item }) => {
     return (
-      <Item onPress={() => navigation.navigate("Paciente")}>
+      <Item>
         <ImageItem source={item.image} />
         <TextItem>{item.title}</TextItem>
       </Item>
