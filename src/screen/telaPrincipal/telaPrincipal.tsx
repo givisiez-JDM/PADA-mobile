@@ -26,27 +26,19 @@ interface Item {
 
 const TelaPrincipal = () => {
   const array = [
-    [
-      { image: Coracao, title: "Minha saúde", text: "Seu histórico de saúde" },
-      {
-        image: Remedio,
-        title: "Minhas vacinas",
-        text: "Seu histórico de medicamentos",
-      },
-      {
-        image: Perfil,
-        title: "Meu perfil",
-        text: "Suas informações de cadastro",
-      },
-    ],
-    [
-      {
-        image: Paciente,
-        title: "Pacientes",
-        text: "Conheça cada um dos seus pacientes",
-      },
-    ],
+    { image: Coracao, title: "Minha saúde", text: "Seu histórico de saúde" },
+    {
+      image: Remedio,
+      title: "Minhas vacinas",
+      text: "Seu histórico de medicamentos",
+    },
+    {
+      image: Perfil,
+      title: "Meu perfil",
+      text: "Suas informações de cadastro",
+    },
   ];
+
   const navigation = useNavigation();
   let role = "patient";
 
@@ -63,7 +55,7 @@ const TelaPrincipal = () => {
         {role === "patient" ? (
           <ContainerListTagFluxo>
             <FlatList
-              data={array[0]}
+              data={array}
               renderItem={renderItem}
               keyExtractor={(item) => item.title}
               numColumns={2}
