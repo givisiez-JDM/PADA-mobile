@@ -4,6 +4,8 @@ import {
   ContainerFormPatientRecord,
   ContainerIconInput,
   ContainerInput,
+  ContainerLogin,
+  Input,
   InputText,
 } from "./form-patient-login-style";
 import Icon from "react-native-vector-icons/Ionicons";
@@ -29,26 +31,42 @@ const FormPatientLoginRecord = ({
 }: PatientRecordValues) => {
   return (
     <ContainerFormPatientRecord>
-      <ContainerInput>
-        <ButtonImageIcon>
+    
+
+          
+        
+        
+        <ContainerLogin>
+
           <ImageLogo>
-            <Image source={imageButton}></Image>
+          <Image source={imageButton}></Image>
           </ImageLogo>
-        </ButtonImageIcon>
-        <ContainerIconInput
+ <Input
           onChangeText={handleInputChange}
           value={state}
-          placeholder={placeholder}
-          secureTextEntry={placeholder === "Senha" ? true : false}
-        />
-      </ContainerInput>
+          placeholder={placeholder} 
+          
+         
+        >
 
-      {err !== "" && (
+          
+        </Input>
+        </ContainerLogin>
+
+       
+
+         
+
+{err !== "" && (
         <ContainerErrorText>
           <Icon name="alert-circle-outline" color="#FF0000" />
           <InputText>{err}</InputText>
         </ContainerErrorText>
       )}
+
+     
+
+      
     </ContainerFormPatientRecord>
   );
 };

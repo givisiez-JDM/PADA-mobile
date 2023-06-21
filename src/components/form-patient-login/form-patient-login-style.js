@@ -4,15 +4,31 @@ export const ContainerFormPatientRecord = styled.View`
   display: flex;
   flex-direction: column;
   row-gap: 2px;
+  
 `;
 
 export const ContainerInput = styled.View`
   position: relative;
-  left: -20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+`;
+
+export const ContainerLogin = styled.View`
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  width: 240px;
+  height: 50px;
+  border-radius: 50px;
+  background: #fff;
+  margin-bottom: 15px;
+  margin-top: 15px;
+  border: 2px #4c7abb;
+ 
 `;
 
 export const ContainerIconInput = styled.TextInput`
@@ -27,6 +43,7 @@ export const ContainerIconInput = styled.TextInput`
   margin-top: 15px;
   border: 2px #4c7abb;
   z-index: -1;
+  border: 2px solid green;
 `;
 
 export const IconForm = styled.View`
@@ -36,13 +53,15 @@ export const IconForm = styled.View`
   border-radius: 50px;
   justify-content: center;
   align-items: center;
+  
 `;
 
 export const Input = styled.TextInput`
   width: 260px;
   padding: 10px;
   color: #334c76;
-  z-index: 1;
+ 
+ 
 `;
 
 export const ContainerErrorText = styled.View`

@@ -28,8 +28,8 @@ export const ButtonImageIcon = styled.View`
 `;
 
 export const ImageIconLogo = styled.Image`
-  margin-top: 75px;
-  margin-bottom: 80;
+  margin-top: 20px;
+  margin-bottom: 30px;
 `;
 
 export const ContainerSafe = styled.KeyboardAvoidingView`

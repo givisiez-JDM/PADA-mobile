@@ -11,7 +11,8 @@ export const ButtonLoginContainer = styled.View`
   border: none;
   text-align: center;
   //margin-bottom: 7px;
-  margin-top: 40px;
+  margin-top: 60px;
+  margin-bottom: 40px;
 
   &:hover {
     background: #b4b4b4;
