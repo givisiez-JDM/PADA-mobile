@@ -41,6 +41,37 @@ const checkPassword = (password: string) => {
   return requirementCount >= complexityOptions.requirementCount ? true : false;
 };
 
+export const validarLogin = (
+  mail: string,
+  pass: string,
+  setErrorMail: React.Dispatch<React.SetStateAction<string>>,
+  setErrorPass: React.Dispatch<React.SetStateAction<string>>
+) => {
+  const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  let error = false;
+  if (mail === "") {
+    setErrorMail("Preencha o campo do email.");
+    error = true;
+  }
+  if (!regex.test(mail)) {
+    setErrorMail(
+      "Preencha o campo do email de forma correta. (Ex: exemplo@gmail.com)"
+    );
+    error = true;
+  }
+  if (pass === "") {
+    setErrorPass("Preencha o campo da senha.");
+    error = true;
+  }
+  if (checkPassword(pass) === false) {
+    setErrorPass(
+      "Preencha os requisitos da senha:\n 1. Mínimo de 8 caracteres.\n 2. Máximo de 30 caracteres. \n 3. Possuir pelo menos 1 letra minúscula e 1 maíscula. \n 4. Possuir pelo menos 1 número e 1 caracter especial."
+    );
+    error = true;
+  }
+  return error;
+};
+
 export const validar = (value: any, err: any) => {
   const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   let error = false;

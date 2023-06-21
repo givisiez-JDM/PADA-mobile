@@ -17,7 +17,7 @@ export const ButtonEmailSenhaContainer = styled.View`
   }
 `;
 
-export const TextButton = styled.Text`
+export const TextInputButton = styled.Text`
   color: #4C7ABB;
   font-size: 22px;
   font-weight: bold;
@@ -27,10 +27,10 @@ export const TextButton = styled.Text`
 `;
 
 export const ButtonImageIcon = styled.View`
-margin-right: 50px;
+margin-left: 5px;
 padding: 3px;
 //padding-bottom: 2px;
-
+border: 2px solid red;
 `;
 
 export const ImageLogo = styled.View`

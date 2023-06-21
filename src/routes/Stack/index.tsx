@@ -26,6 +26,8 @@ export default function () {
       <Screen name="Login" component={Login} />
       <Screen name="Cadastro" component={PatientRecord} />
       <Screen name="TelaPrincipal" component={TelaPrincipal} />
+
+     
       <Screen name="ListaPacientes" component={PatientList} />
       <Screen name="Paciente" component={Patient} />
       {/* <Screen name="TabRoutes" component={TabRoutes} /> */}

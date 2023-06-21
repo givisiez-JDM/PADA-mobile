@@ -11,11 +11,12 @@ const LoadingModal = (props: { visible: boolean; onClose: () => void }) => {
       onRequestClose={props.onClose}
     >
       <ContainerModalLoading>
-        <GIF
+       <GIF
           source={gifLoading}
           resizeMode="contain"
           style={{ width: 200, height: 200 }}
         />
+        
       </ContainerModalLoading>
     </LoadingComponent>
   );
