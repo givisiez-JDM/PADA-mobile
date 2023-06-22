@@ -23,6 +23,9 @@ import { Platform } from "react-native";
 import apiPADA from "../../service/api";
 import ModalInfo from "../../components/modalInfo/modal-info";
 import LoadingModal from "../../components/loadingModal/loading-modal";
+import { User, createUser } from "../../service/requests";
+import { useNavigation } from "@react-navigation/native";
+import { propsNavigationStack } from "../../routes/Stack/Models";
 
 const PatientRecord = () => {
   const [name, setName] = useState("");
@@ -34,8 +37,10 @@ const PatientRecord = () => {
   const [errorPass, setErrorPass] = useState("");
   const [errorRepeatPass, setErrorRepeatPass] = useState("");
   const [modalVisible, setModalVisible] = useState(false);
+  const [flag, setFlag] = useState("");
   const [loading, setLoading] = useState(false);
   const [mesageTextModal, setMessageTextModal] = useState("");
+  const navigation = useNavigation<propsNavigationStack>();
 
   const openLoading = () => {
     setLoading(true);
@@ -86,39 +91,29 @@ const PatientRecord = () => {
         { setErrorName, setErrorMail, setErrorPass, setErrorRepeatPass }
       )
     ) {
-      try {
-        /*openLoading();
-        setTimeout(() => {
-          closeLoading();
-          openModal();
-        }, 5000);*/
-
-        await apiPADA
-          .post("/doctor", {
-            name: name,
-            email: mail,
-            password: pass,
-            role: "doctor",
-            created_At: new Date().toISOString(),
-          })
-          .then((response: any) => {
-            setTimeout(() => {
-              closeLoading();
-              setMessageTextModal("Sucesso!");
-              openModal();
-            }, 5000);
-
-            setName("");
-            setMail("");
-            setPass("");
-            setRepeatPass("");
-          })
-          .catch((err: unknown) => {
-            console.log(err);
-          });
-      } catch (error: unknown) {
-        console.log(error);
-      }
+      const user: User = {
+        name: name,
+        email: mail,
+        password: pass,
+        about: "Médico",
+        CRM: "555555/SP",
+        specialty: "Coração",
+        photo: "1",
+      };
+      createUser(
+        user,
+        {
+          setFlag,
+          setName,
+          setMail,
+          setPass,
+          setRepeatPass,
+          setMessageTextModal,
+        },
+        openLoading,
+        closeLoading,
+        openModal
+      );
     }
   };
 
@@ -156,7 +151,7 @@ const PatientRecord = () => {
           <ModalInfo
             visible={modalVisible}
             onClose={closeModal}
-            image={checkFlag}
+            image={flag === "check" ? checkFlag : errorFlag}
             text={mesageTextModal}
           />
         </ContainerFormPatient>

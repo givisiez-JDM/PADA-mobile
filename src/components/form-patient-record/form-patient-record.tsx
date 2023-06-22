@@ -40,7 +40,7 @@ const FormPatientRecord = ({
           value={state}
           placeholder={placeholder}
           secureTextEntry={
-            placeholder === "Senha"
+            placeholder === "Senha" || placeholder === "Repetir Senha"
               ? true
               : false
           }

@@ -1,6 +1,16 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import apiPADA from "./api";
 
+export interface User {
+  name: string;
+  email: string;
+  password: string;
+  about: string;
+  CRM: string;
+  specialty: string;
+  photo: string;
+}
+
 export const loginUser = async (email: string, password: string, nav: any) => {
   try {
     await apiPADA
@@ -19,6 +29,56 @@ export const loginUser = async (email: string, password: string, nav: any) => {
       });
   } catch (err: unknown) {
     console.log(err);
+  }
+};
+
+export const createUser = async (
+  user: User,
+  setStates: any,
+  openLoading: () => void,
+  closeLoading: () => void,
+  openModal: () => void
+) => {
+  try {
+    /*openLoading();
+        setTimeout(() => {
+          closeLoading();
+          openModal();
+        }, 5000);*/
+
+    await apiPADA
+      .post("/doctor", {
+        name: user.name,
+        email: user.email,
+        password: user.password,
+        about: user.about,
+        CRM: user.CRM,
+        specialty: user.specialty,
+        photo: user.photo,
+      })
+      .then((response: any) => {
+        openLoading();
+        setTimeout(() => {
+          closeLoading();
+          if (response.status === 201) {
+            setStates.setMessageTextModal("Sucesso!");
+            setStates.setFlag("check");
+          } else {
+            setStates.setMessageTextModal("Erro!");
+          }
+          openModal();
+        }, 5000);
+
+        setStates.setName("");
+        setStates.setMail("");
+        setStates.setPass("");
+        setStates.setRepeatPass("");
+      })
+      .catch((err: unknown) => {
+        console.log(err);
+      });
+  } catch (error: unknown) {
+    console.log(error);
   }
 };
 
