@@ -34,6 +34,6 @@ border: 2px solid red;
 `;
 
 export const ImageLogo = styled.View`
-  margin-left: 4px;
+  margin-left: 85px;
 
 `;
