@@ -5,6 +5,7 @@ import { useNavigation } from "@react-navigation/native";
 
 import { propsStack } from "../../routes/Stack/Models";
 import { validar } from "../../config/validates";
+import { loginUser } from "../../service/requests";
 
 function ButtonEntrar(props: {
   mail: string;
@@ -20,7 +21,7 @@ function ButtonEntrar(props: {
   const setErrorPass = props.setErrorPass;
   const Logar = () => {
     if (validar({ mail, pass }, { setErrorMail, setErrorPass })) {
-      console.log("ok");
+      loginUser(mail, pass, navigation);
     }
   };
 

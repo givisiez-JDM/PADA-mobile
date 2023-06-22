@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import HeaderFluxo from "../../components/headerFluxo/header-fluxo";
 import {
   ContainerListDoctor,
@@ -17,6 +17,8 @@ import { useNavigation } from "@react-navigation/native";
 import TabBar from "../../components/buttonTabBar/buttonTabBar";
 import { FlatList } from "react-native-gesture-handler";
 import { ImageSourcePropType } from "react-native";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import { getDataUserStorage } from "../../service/requests";
 
 interface Item {
   image: ImageSourcePropType;
@@ -25,6 +27,9 @@ interface Item {
 }
 
 const TelaPrincipal = () => {
+  const [roleUser, setRoleUser] = useState();
+  getDataUserStorage(setRoleUser);
+
   const array = [
     { image: Coracao, title: "Minha saúde", text: "Seu histórico de saúde" },
     {
@@ -39,9 +44,6 @@ const TelaPrincipal = () => {
     },
   ];
 
-  const navigation = useNavigation();
-  let role = "patient";
-
   const renderItem: React.FC<{ item: Item }> = ({ item }) => {
     return (
       <TagFluxo imageTag={item.image} title={item.title} text={item.text} />
@@ -52,7 +54,7 @@ const TelaPrincipal = () => {
     <ContainerSafePrincipal>
       <HeaderFluxo title="Olá" backButton={false} buttonVaccine={false} />
       <ContainerPrincipal>
-        {role === "patient" ? (
+        {roleUser === "patient" ? (
           <ContainerListTagFluxo>
             <FlatList
               data={array}
