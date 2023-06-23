@@ -16,15 +16,11 @@ import logoEmail from "../../assets/logoEmail.png";
 import logoSenha from "../../assets/logoSenha.png";
 import ButtonEntrar from "../../components/buttonEntrar/buttonEntrar";
 
-import {
-  ContainerFormInputsPatients,
-  ImageLogo,
-} from "../cadastro/cadastro-style";
-import { TextInput } from "react-native-gesture-handler";
+import { ContainerFormInputsPatients } from "../cadastro/cadastro-style";
+
 import FormPatientLoginRecord from "../../components/form-patient-login/form-patient-login";
-import { ContainerInput } from "../../components/form-patient-login/form-patient-login-style";
-import { Platform, Text, TouchableOpacity } from "react-native";
-import { validar, validarLogin } from "../../config/validates";
+
+import { Platform } from "react-native";
 
 const PatientLogin = () => {
   const [mail, setMail] = useState("");

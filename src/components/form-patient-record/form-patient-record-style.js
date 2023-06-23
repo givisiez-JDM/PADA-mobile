@@ -35,7 +35,7 @@ export const Input = styled.TextInput`
   border-bottom-width: 2px;
   border-bottom-color: #4c7abb;
   padding: 10px;
-  color: #334c76;
+  color: #4c7abb; //#334c76;
   z-index: 1;
 `;
 
@@ -51,49 +51,3 @@ export const InputText = styled.Text`
   font-size: 10px;
   width: 250px;
 `;
-
-/*export const ContainerIconForm = styled.View`
-  position: relative;
-  display: flex;
-`;
-
-export const IconForm = styled.View`
-  width: 25px;
-  height: 25px;
-  background: #4c7abb;
-  border-radius: 50px;
-  justify-content: center;
-  align-items: center;
-`;
-
-export const ContainerIconInput = styled.View`
-  width: 25px;
-  height: 26px;
-  border-bottom-width: 2px;
-  border-bottom-color: #4c7abb;
-  padding: 10px;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  top: 23px;
-  left: -20px;
-`;
-
-export const ContainerTextInput = styled.View`
-  display: flex;
-  flex-direction: column;
-`;
-
-export const Input = styled.TextInput`
-  width: 260px;
-  border-bottom-width: 2px;
-  border-bottom-color: #4c7abb;
-  padding: 10px;
-  color: #334c76;
-  z-index: 1;
-`;
-
-export const InputText = styled.Text`
-  color: "red";
-`;
-*/

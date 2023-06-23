@@ -11,7 +11,13 @@ export interface User {
   photo: string;
 }
 
-export const loginUser = async (email: string, password: string, nav: any) => {
+export const loginUser = async (
+  email: string,
+  password: string,
+  openLoading: () => void,
+  closeLoading: () => void,
+  nav: any
+) => {
   try {
     await apiPADA
       .post("/login/doctor", {
@@ -23,9 +29,13 @@ export const loginUser = async (email: string, password: string, nav: any) => {
         AsyncStorage.setItem("name", JSON.stringify(response.data.user.name));
         AsyncStorage.setItem("role", JSON.stringify(response.data.user.role));
         AsyncStorage.setItem("token", JSON.stringify(response.data.token));
-        if (response.status === 200) {
-          nav.navigate("TelaPrincipal");
-        }
+        openLoading();
+        setTimeout(() => {
+          if (response.status === 200) {
+            nav.navigate("TelaPrincipal");
+          }
+          closeLoading();
+        }, 3000);
       });
   } catch (err: unknown) {
     console.log(err);
@@ -40,12 +50,6 @@ export const createUser = async (
   openModal: () => void
 ) => {
   try {
-    /*openLoading();
-        setTimeout(() => {
-          closeLoading();
-          openModal();
-        }, 5000);*/
-
     await apiPADA
       .post("/doctor", {
         name: user.name,

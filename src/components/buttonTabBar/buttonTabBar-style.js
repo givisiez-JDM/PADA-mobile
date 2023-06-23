@@ -10,8 +10,8 @@ export const ContainerTabBar = styled.View`
 `;
 
 export const ButtonTabBarHome = styled.View`
-background-color: #334C76;
-width: 50%;
+  background-color: #334c76;
+  width: 50%;
 `;
 
 export const CustomTouchableOpacity = styled.TouchableOpacity`
@@ -23,7 +23,7 @@ export const CustomTouchableOpacity = styled.TouchableOpacity`
 `;
 
 export const ButtonTabBarLogout = styled.View`
-  background-color: #D1D1D1;
+  background-color: #d1d1d1;
   width: 50%;
 `;
 
@@ -34,7 +34,9 @@ export const TextButtonTabBarInicio = styled.Text`
 `;
 
 export const TextButtonTabBarLogout = styled.Text`
-  color:  #334C76;
+  color: #334c76;
   font-size: 10px;
   text-align: center;
 `;
+
+export const ImageLogo = styled.View``;

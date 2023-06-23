@@ -38,9 +38,8 @@ const PatientRecord = () => {
   const [errorRepeatPass, setErrorRepeatPass] = useState("");
   const [modalVisible, setModalVisible] = useState(false);
   const [flag, setFlag] = useState("");
-  const [loading, setLoading] = useState(false);
   const [mesageTextModal, setMessageTextModal] = useState("");
-  const navigation = useNavigation<propsNavigationStack>();
+  const [loading, setLoading] = useState(false);
 
   const openLoading = () => {
     setLoading(true);

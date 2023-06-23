@@ -73,6 +73,7 @@ const TelaPrincipal = () => {
           </ContainerListDoctor>
         )}
       </ContainerPrincipal>
+      <TabBar />
     </ContainerSafePrincipal>
   );
 };

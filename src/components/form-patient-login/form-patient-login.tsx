@@ -31,61 +31,27 @@ const FormPatientLoginRecord = ({
 }: PatientRecordValues) => {
   return (
     <ContainerFormPatientRecord>
-    
-
-          
-        
-        
-        <ContainerLogin>
-
-          <ImageLogo>
+      <ContainerLogin>
+        <ImageLogo>
           <Image source={imageButton}></Image>
-          </ImageLogo>
- <Input
+        </ImageLogo>
+        <Input
           onChangeText={handleInputChange}
           value={state}
-          placeholder={placeholder} 
-          
-         
-        >
+          placeholder={placeholder}
+          placeholderTextColor="#4c7abb"
+          secureTextEntry={placeholder === "Senha" ? true : false}
+        ></Input>
+      </ContainerLogin>
 
-          
-        </Input>
-        </ContainerLogin>
-
-       
-
-         
-
-{err !== "" && (
+      {err !== "" && (
         <ContainerErrorText>
           <Icon name="alert-circle-outline" color="#FF0000" />
           <InputText>{err}</InputText>
         </ContainerErrorText>
       )}
-
-     
-
-      
     </ContainerFormPatientRecord>
   );
 };
 
 export default FormPatientLoginRecord;
-
-/*
-<ContainerIconInput>
-          <ButtonImageIcon>
-            <ImageLogo>
-              <Image source={imageButton}></Image>
-            </ImageLogo>
-          </ButtonImageIcon>
-        </ContainerIconInput>
-        <Input
-          onChangeText={handleInputChange}
-          value={state}
-          placeholder={placeholder}
-          secureTextEntry={placeholder === "Senha" ? true : false}
-        />
-
-*/
