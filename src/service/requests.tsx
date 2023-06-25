@@ -86,6 +86,18 @@ export const createUser = async (
   }
 };
 
+export const RemoveStorage = async (nav: any) => {
+  try {
+    await AsyncStorage.removeItem("token");
+    await AsyncStorage.removeItem("id");
+    await AsyncStorage.removeItem("name");
+    await AsyncStorage.removeItem("role");
+    nav.navigate("LoginCadastro");
+  } catch (err: unknown) {
+    console.log("Error: ", err);
+  }
+};
+
 export const getDataUserStorage = async (setState: any) => {
   try {
     let role = await AsyncStorage.getItem("role");
@@ -93,5 +105,16 @@ export const getDataUserStorage = async (setState: any) => {
     //return role !== null ? JSON.parse(role) : null;
   } catch (err: unknown) {
     console.log(err);
+  }
+};
+
+export const checkLoginStatus = async () => {
+  try {
+    const token = await AsyncStorage.getItem("token");
+    const userID = await AsyncStorage.getItem("id");
+    return !!token && !!userID;
+  } catch (err: unknown) {
+    console.log("Error checking login status: ", err);
+    return false;
   }
 };
