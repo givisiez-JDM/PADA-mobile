@@ -82,9 +82,6 @@ const DataPatient = (props: {
         <SubTitlePatient>Início: {props.inicio}</SubTitlePatient>
         <SubTitlePatient>Fim: {props.fim}</SubTitlePatient>
       </ContainerData>
-      <ButtonPatient>
-        <TextButtonPatient>Editar Tratamento</TextButtonPatient>
-      </ButtonPatient>
     </ContainerDataPatient>
   );
 };

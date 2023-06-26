@@ -7,6 +7,7 @@ export const ContainerDataPatient = styled.View`
   row-gap: 15px;
   margin-left: 49px;
   margin-top: 20px;
+  margin-bottom: 20px;
 `;
 
 export const ContainerData = styled.View`

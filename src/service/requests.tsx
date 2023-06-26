@@ -20,7 +20,7 @@ export const loginUser = async (
 ) => {
   try {
     await apiPADA
-      .post("/login/doctor", {
+      .post("/login/patient", {
         email,
         password,
       })

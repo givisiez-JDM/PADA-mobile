@@ -20,7 +20,8 @@ const TagFluxo = (props: {
     if (props.title === "Pacientes") {
       navigation.navigate("ListaPacientes");
     }
-    if (props.title === "Meu Perfil") {
+    if (props.title === "Meu perfil") {
+      navigation.navigate("Paciente");
     }
   };
 

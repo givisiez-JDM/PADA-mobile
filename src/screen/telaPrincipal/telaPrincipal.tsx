@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import HeaderFluxo from "../../components/headerFluxo/header-fluxo";
 import {
   ContainerListDoctor,
@@ -27,7 +27,8 @@ interface Item {
 }
 
 const TelaPrincipal = () => {
-  const [roleUser, setRoleUser] = useState();
+  const [roleUser, setRoleUser] = useState("");
+  let role = roleUser;
   getDataUserStorage(setRoleUser);
 
   const array = [
@@ -54,7 +55,7 @@ const TelaPrincipal = () => {
     <ContainerSafePrincipal>
       <HeaderFluxo title="Olá" backButton={false} buttonVaccine={false} />
       <ContainerPrincipal>
-        {roleUser === "patient" ? (
+        {role.length === 9 ? (
           <ContainerListTagFluxo>
             <FlatList
               data={array}
