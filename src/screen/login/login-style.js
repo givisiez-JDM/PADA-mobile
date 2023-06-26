@@ -41,16 +41,16 @@ export const Scroll = styled.ScrollView`
 `;
 
 export const InputLogin = styled.View`
-display: flex;
-flex-direction: row;
-justify-content: space-around;
-align-items: center;
-width: 240px;
-height: 50px;
-border-radius: 50px;
-background: red;
-margin-bottom: 15px;
-border: 2px #4c7abb;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 240px;
+  height: 50px;
+  border-radius: 50px;
+  background: red;
+  margin-bottom: 15px;
+  border: 2px #4c7abb;
 `;
 
 export const TextInput = styled.View`
@@ -65,5 +65,9 @@ export const PatientInput = styled.TextInput`
   flex: 1 0;
   font-size: 22px;
   font-weight: bold;
-  margin-left: 10px;;
-`
+  margin-left: 10px;
+`;
+
+export const ContainerFooterBottom = styled.View`
+  margin-top: 15px;
+`;

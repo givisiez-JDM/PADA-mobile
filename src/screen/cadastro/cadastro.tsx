@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import FooterCurto from "../../components/footer/footer";
 import Header from "../../components/header/header";
 
@@ -11,6 +11,7 @@ import {
   ContainerFormInputsPatients,
   ContainerSafe,
   Scroll,
+  ContainerFooterBottom,
 } from "./cadastro-style";
 
 import FormPatientRecord from "../../components/form-patient-record/form-patient-record";
@@ -20,12 +21,9 @@ import errorFlag from "../../assets/errorflag.png";
 import Logo from "../../assets/logo.png";
 
 import { Platform } from "react-native";
-import apiPADA from "../../service/api";
 import ModalInfo from "../../components/modalInfo/modal-info";
 import LoadingModal from "../../components/loadingModal/loading-modal";
 import { User, createUser } from "../../service/requests";
-import { useNavigation } from "@react-navigation/native";
-import { propsNavigationStack } from "../../routes/Stack/Models";
 
 const PatientRecord = () => {
   const [name, setName] = useState("");
@@ -154,8 +152,9 @@ const PatientRecord = () => {
             text={mesageTextModal}
           />
         </ContainerFormPatient>
-
-        <FooterCurto />
+        <ContainerFooterBottom>
+          <FooterCurto />
+        </ContainerFooterBottom>
       </Scroll>
     </ContainerSafe>
   );

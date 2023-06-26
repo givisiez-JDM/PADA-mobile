@@ -92,3 +92,7 @@ export const TextButton = styled.Text`
   font-size: 22px;
   font-weight: bold;
 `;
+
+export const ContainerFooterBottom = styled.View`
+  margin-top: 18px;
+`;

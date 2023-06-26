@@ -1,12 +1,10 @@
 import React, { useState } from "react";
 import {
-  ButtonImageIcon,
+  ContainerFooterBottom,
   ContainerMain,
   ContainerSafe,
   ImageIconLogo,
-  InputLogin,
   Scroll,
-  TextAcesso,
 } from "./login-style";
 import logo from "../../assets/logo.png";
 
@@ -74,7 +72,9 @@ const PatientLogin = () => {
             setErrorPass={setErrorPass}
           />
         </ContainerMain>
-        <FooterCurto />
+        <ContainerFooterBottom>
+          <FooterCurto />
+        </ContainerFooterBottom>
       </Scroll>
     </ContainerSafe>
   );
