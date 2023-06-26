@@ -33,5 +33,5 @@ export const ButtonImageIcon = styled.View`
 `;
 
 export const ImageLogo = styled.View`
-  margin-left: 85px;
+  margin-left: 10px;
 `;

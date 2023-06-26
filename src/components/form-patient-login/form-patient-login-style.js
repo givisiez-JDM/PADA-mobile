@@ -19,7 +19,7 @@ export const ContainerInput = styled.View`
 export const ContainerLogin = styled.View`
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   width: 240px;
   height: 50px;
@@ -53,7 +53,6 @@ export const IconForm = styled.View`
   border-radius: 50px;
   justify-content: center;
   align-items: center;
-  
 `;
 
 export const Input = styled.TextInput`

@@ -35,6 +35,7 @@ export const Input = styled.TextInput`
   border-bottom-width: 2px;
   border-bottom-color: #4c7abb;
   padding: 10px;
+  font-size: 20px;
   color: #4c7abb; //#334c76;
   z-index: 1;
 `;

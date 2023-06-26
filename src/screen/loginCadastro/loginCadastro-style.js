@@ -8,7 +8,7 @@ export const ContainerMain = styled.View`
   width: 100%;
   height: 100%;
   z-index: -100;
-  margin-top: 50px;
+  margin-top: 100px;
   //position: absolute;
 `;
 

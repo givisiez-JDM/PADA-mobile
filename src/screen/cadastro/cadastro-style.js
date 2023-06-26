@@ -11,7 +11,7 @@ export const Scroll = styled.ScrollView`
 
 export const ContainerFormPatient = styled.View`
   display: flex;
-  margin-top: 40%;
+  margin-top: 35%;
   flex-direction: column;
   row-gap: 5px;
   justify-content: center;

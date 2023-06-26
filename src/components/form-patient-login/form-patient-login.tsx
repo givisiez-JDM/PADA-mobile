@@ -13,6 +13,7 @@ import { Image, Text } from "react-native";
 import { ImageSource } from "react-native-vector-icons/Icon";
 import { ButtonImageIcon } from "../buttonLogin/buttonLogin-style";
 import { ImageLogo } from "../buttonEmailSenha/buttonEmailSenha-style";
+import { InputLogin, PatientInput } from "../../screen/login/login-style";
 
 interface PatientRecordValues {
   placeholder: string;
@@ -35,13 +36,13 @@ const FormPatientLoginRecord = ({
         <ImageLogo>
           <Image source={imageButton}></Image>
         </ImageLogo>
-        <Input
+        <PatientInput
           onChangeText={handleInputChange}
           value={state}
           placeholder={placeholder}
           placeholderTextColor="#4c7abb"
           secureTextEntry={placeholder === "Senha" ? true : false}
-        ></Input>
+        ></PatientInput>
       </ContainerLogin>
 
       {err !== "" && (
