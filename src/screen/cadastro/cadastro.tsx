@@ -92,10 +92,6 @@ const PatientRecord = () => {
         name: name,
         email: mail,
         password: pass,
-        about: "Médico",
-        CRM: "555555/SP",
-        specialty: "Coração",
-        photo: "1",
       };
       createUser(
         user,

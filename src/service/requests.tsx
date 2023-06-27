@@ -5,10 +5,6 @@ export interface User {
   name: string;
   email: string;
   password: string;
-  about: string;
-  CRM: string;
-  specialty: string;
-  photo: string;
 }
 
 export const loginUser = async (
@@ -55,10 +51,6 @@ export const createUser = async (
         name: user.name,
         email: user.email,
         password: user.password,
-        about: user.about,
-        CRM: user.CRM,
-        specialty: user.specialty,
-        photo: user.photo,
       })
       .then((response: any) => {
         openLoading();
