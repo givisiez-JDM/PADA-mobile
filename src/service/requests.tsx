@@ -93,7 +93,10 @@ export const RemoveStorage = async (nav: any) => {
 export const getDataUserStorage = async (setState: any) => {
   try {
     let role = await AsyncStorage.getItem("role");
-    setState(role);
+    let name = await AsyncStorage.getItem("name");
+
+    setState.setRoleUser(role);
+    setState.setName(name);
     //return role !== null ? JSON.parse(role) : null;
   } catch (err: unknown) {
     console.log(err);

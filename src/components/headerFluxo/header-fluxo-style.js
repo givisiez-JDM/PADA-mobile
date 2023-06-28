@@ -26,6 +26,34 @@ export const ContainerButtonVaccine = styled.View`
   border-radius: 50px;
 `;
 
+export const ContainerHeaderInformationPerson = styled.View`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const ContainerImagePerson = styled.View`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 66px;
+  height: 66px;
+  left: 40px;
+  top: 40px;
+  border-radius: 50px;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+`;
+
+export const ImagePerson = styled.Image.attrs({
+  resizeMode: "stretch",
+})`
+  width: 80px;
+  height: 80px;
+  z-index: 1;
+`;
+
 export const ContainerShadowVaccine = styled.View`
   width: 101px;
   height: 38px;
@@ -64,22 +92,128 @@ export const ContainerBackFluxo = styled.TouchableOpacity`
 `;
 
 export const ContainerTitles = styled.View`
-  margin-top: 38px;
-  margin-left: 40px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
+  position: absolute;
+  left: 125px;
+  top: 50px;
 `;
 
 export const TitleHeaderFluxo = styled.Text`
-  font-style: normal;
-  font-weight: 900;
-  font-size: 30px;
-  line-height: 43px;
-  color: #ffffff;
-`;
-
-export const SubTitleHeaderFluxo = styled.Text`
   font-style: normal;
   font-weight: 700;
   font-size: 20px;
   line-height: 29px;
   color: #ffffff;
+`;
+
+export const SubTitleHeaderFluxo = styled.Text`
+  font-style: normal;
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 14px;
+  width: 133px;
+  height: 29px;
+  color: #ffffff;
+`;
+
+export const ContainerDataPatient = styled.View`
+  display: flex;
+  flex-direction: row;
+  column-gap: 5px;
+  margin-top: 5px;
+`;
+
+export const TextDataPatient = styled.Text`
+  width: 133px;
+  height: 16px;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 12px;
+  line-height: 17px;
+  color: #ffffff;
+`;
+
+export const ImageCalendar = styled.Image.attrs({
+  resizeMode: "stretch",
+})`
+  z-index: 1;
+`;
+
+export const ContainerButtonsHeaderFluxo = styled.View`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  column-gap: 10px;
+`;
+
+export const ButtonNextVaccine = styled.TouchableOpacity`
+  margin-top: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 105px;
+  height: 34px;
+  background: rgba(118, 167, 237, 0.6);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  border-radius: 10px;
+`;
+
+export const TextButtonNextVaccine = styled.Text`
+  width: 85.77px;
+  height: 27.3px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 14px;
+  text-align: center;
+  color: #ffffff;
+`;
+
+export const IconButtonNextVaccine = styled.View`
+  position: relative;
+  right: 5;
+  display: flex;
+  width: 20.4px;
+  height: 21.18px;
+  background: #fff;
+  border-radius: 50px;
+  justify-content: center;
+  align-items: center;
+  transform: rotate(179.15deg);
+`;
+
+export const ButtonRemember = styled.TouchableOpacity`
+  display: flex;
+  flex-direction: row;
+  column-gap: 5px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 73px;
+  height: 20px;
+  background: #49895b;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  margin-top: 5px;
+`;
+
+export const TextButtonRemember = styled.Text`
+  width: 43.4px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 10px;
+  text-align: center;
+  color: #ffffff;
+`;
+
+export const IconTime = styled.Image.attrs({
+  resizeMode: "stretch",
+})`
+  width: 9.9px;
+  height: 10.28px;
+  transform: rotate(179.15deg);
 `;

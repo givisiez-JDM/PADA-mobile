@@ -11,14 +11,13 @@ import TagFluxo from "../../components/tagFluxo/tag-fluxo";
 import Coracao from "../../assets/imgCoracao.png";
 import Remedio from "../../assets/imgRemedio.png";
 import Paciente from "../../assets/imgPaciente.png";
+import ProfissionalSaude from "../../assets/profissionalSaude.png";
 import Perfil from "../../assets/imgPerfil.png";
-
-import { useNavigation } from "@react-navigation/native";
 import TabBar from "../../components/buttonTabBar/buttonTabBar";
 import { FlatList } from "react-native-gesture-handler";
 import { ImageSourcePropType } from "react-native";
-import AsyncStorage from "@react-native-async-storage/async-storage";
 import { getDataUserStorage } from "../../service/requests";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 interface Item {
   image: ImageSourcePropType;
@@ -28,15 +27,25 @@ interface Item {
 
 const TelaPrincipal = () => {
   const [roleUser, setRoleUser] = useState("");
+  const [name, setName] = useState("");
   let role = roleUser;
-  getDataUserStorage(setRoleUser);
+  getDataUserStorage({ setRoleUser, setName });
 
   const array = [
-    { image: Coracao, title: "Minha saúde", text: "Seu histórico de saúde" },
+    {
+      image: Coracao,
+      title: "Minha saúde",
+      text: "Seu histórico de saúde",
+    },
     {
       image: Remedio,
       title: "Minhas vacinas",
       text: "Seu histórico de medicamentos",
+    },
+    {
+      image: ProfissionalSaude,
+      title: "Profissional de saúde",
+      text: "Conheça o especialista",
     },
     {
       image: Perfil,
@@ -53,7 +62,12 @@ const TelaPrincipal = () => {
 
   return (
     <ContainerSafePrincipal>
-      <HeaderFluxo title="Olá" backButton={false} buttonVaccine={false} />
+      <HeaderFluxo
+        title={`Olá, ${name}`}
+        backButton={false}
+        buttonVaccine={false}
+        typeHeader="patient"
+      />
       <ContainerPrincipal>
         {role.length === 9 ? (
           <ContainerListTagFluxo>
