@@ -30,12 +30,16 @@ import { propsStack } from "../../routes/Stack/Models";
 import Person from "../../assets/imgUserItem.png";
 import Calendar from "../../assets/calendar.png";
 import Time from "../../assets/time.png";
+import Doctor from "../../assets/imgDoctor.png"
+
+//Style header doctor
+import { ContainerHeaderInformationDoctor, ContainerImageDoctor, ContainerInfoDoctor, ContainerSubtitles, ImageDoctor, SubTitleHeaderName, SubTitleHeaderSpecialty, TitleHeaderDoctor } from "./header-fluxo-doctor-style";
 
 const HeaderFluxo = (props: {
   title: string;
   backButton: boolean;
   buttonVaccine: boolean;
-  typeHeader: string;
+  typeHeader: "patient" | "doctor";
 }) => {
   const navigation = useNavigation<propsStack>();
   return (
@@ -47,7 +51,7 @@ const HeaderFluxo = (props: {
             <Icon name="chevron-back-outline" color="#000" />
           </ContainerBackFluxo>
         ) : null}
-        {props.typeHeader === "patient" ? (
+        {props.typeHeader === "patient" && (
           <ContainerHeaderInformationPerson>
             <ContainerImagePerson>
               <ImagePerson source={Person} />
@@ -77,7 +81,26 @@ const HeaderFluxo = (props: {
               </ContainerButtonsHeaderFluxo>
             </ContainerTitles>
           </ContainerHeaderInformationPerson>
-        ) : null}
+        )}
+        
+         {props.typeHeader === "doctor" && (
+          <ContainerHeaderInformationDoctor>
+          <TitleHeaderDoctor>Profissional responsável</TitleHeaderDoctor>
+          <ContainerInfoDoctor>
+            <ContainerImageDoctor>
+              <ImageDoctor source={Doctor} />
+            </ContainerImageDoctor>
+            <ContainerSubtitles>
+              <SubTitleHeaderName>
+                Dr. Antonio B. C. D.
+              </SubTitleHeaderName>
+              <SubTitleHeaderSpecialty>
+                Clínico Geral
+              </SubTitleHeaderSpecialty>
+            </ContainerSubtitles>
+          </ContainerInfoDoctor>
+        </ContainerHeaderInformationDoctor>
+        )}
       </ContainerHeaderFluxo>
     </ContainerSafeHeader>
   );

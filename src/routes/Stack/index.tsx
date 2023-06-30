@@ -12,6 +12,7 @@ import {
 import { TabRoutes } from "../TabRoutes";
 import PatientList from "../../screen/listaPacientes/lista-pacientes";
 import Patient from "../../screen/paciente/patient";
+import ProfissionalResponsavel from "../../screen/profissionalResponsável/profissionalResponsável";
 
 const { Navigator, Screen } =
   createNativeStackNavigator<propsNavigationStack>();
@@ -30,6 +31,7 @@ export default function () {
      
       <Screen name="ListaPacientes" component={PatientList} />
       <Screen name="Paciente" component={Patient} />
+      <Screen name="ProfissionalResponsavel" component={ProfissionalResponsavel}/>
       {/* <Screen name="TabRoutes" component={TabRoutes} /> */}
     </Navigator>
   );

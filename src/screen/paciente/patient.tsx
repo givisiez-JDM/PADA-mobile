@@ -1,7 +1,9 @@
+import { useState } from "react";
 import TabBar from "../../components/buttonTabBar/buttonTabBar";
 import DataPatient from "../../components/dataPatient/data-patient";
 import HeaderFluxo from "../../components/headerFluxo/header-fluxo";
 import { ContainerSafePrincipalPaciente, Scroll } from "./patient-style";
+import { getDataUserStorage } from "../../service/requests";
 
 const Patient = () => {
   const data = {
@@ -16,10 +18,14 @@ const Patient = () => {
     inicio: "27/03/2023",
     fim: "27/09/2023",
   };
+  const [, setRoleUser] = useState("");
+  const [name, setName] = useState("");
+  getDataUserStorage({ setRoleUser, setName });
+  
   return (
     <ContainerSafePrincipalPaciente>
       <Scroll>
-        <HeaderFluxo title="Amanda" backButton={true} buttonVaccine={true} />
+        <HeaderFluxo title={`Olá, ${name}`} backButton={true} buttonVaccine={true} typeHeader="patient"/>
         <DataPatient
           name={data.name}
           telefone={data.telefone}
