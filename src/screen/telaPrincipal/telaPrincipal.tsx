@@ -28,6 +28,7 @@ interface Item {
 const TelaPrincipal = () => {
   const [roleUser, setRoleUser] = useState("");
   const [name, setName] = useState("");
+
   let role = roleUser;
   getDataUserStorage({ setRoleUser, setName });
 

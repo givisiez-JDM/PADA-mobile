@@ -3,14 +3,12 @@ import {
   ButtonNextVaccine,
   ButtonRemember,
   ContainerBackFluxo,
-  ContainerButtonVaccine,
   ContainerButtonsHeaderFluxo,
   ContainerDataPatient,
   ContainerHeaderFluxo,
   ContainerHeaderInformationPerson,
   ContainerImagePerson,
   ContainerSafeHeader,
-  ContainerShadowVaccine,
   ContainerTitles,
   IconButtonNextVaccine,
   IconTime,
@@ -30,10 +28,19 @@ import { propsStack } from "../../routes/Stack/Models";
 import Person from "../../assets/imgUserItem.png";
 import Calendar from "../../assets/calendar.png";
 import Time from "../../assets/time.png";
-import Doctor from "../../assets/imgDoctor.png"
+import Doctor from "../../assets/imgDoctor.png";
 
 //Style header doctor
-import { ContainerHeaderInformationDoctor, ContainerImageDoctor, ContainerInfoDoctor, ContainerSubtitles, ImageDoctor, SubTitleHeaderName, SubTitleHeaderSpecialty, TitleHeaderDoctor } from "./header-fluxo-doctor-style";
+import {
+  ContainerHeaderInformationDoctor,
+  ContainerImageDoctor,
+  ContainerInfoDoctor,
+  ContainerSubtitles,
+  ImageDoctor,
+  SubTitleHeaderName,
+  SubTitleHeaderSpecialty,
+  TitleHeaderDoctor,
+} from "./header-fluxo-doctor-style";
 
 const HeaderFluxo = (props: {
   title: string;
@@ -74,7 +81,7 @@ const HeaderFluxo = (props: {
                     <Icon name="chevron-back-outline" color="#000" />
                   </IconButtonNextVaccine>
                 </ButtonNextVaccine>
-                <ButtonRemember>
+                <ButtonRemember activeOpacity={0.8}>
                   <TextButtonRemember>Lembrar</TextButtonRemember>
                   <IconTime source={Time} />
                 </ButtonRemember>
@@ -82,24 +89,20 @@ const HeaderFluxo = (props: {
             </ContainerTitles>
           </ContainerHeaderInformationPerson>
         )}
-        
-         {props.typeHeader === "doctor" && (
+
+        {props.typeHeader === "doctor" && (
           <ContainerHeaderInformationDoctor>
-          <TitleHeaderDoctor>Profissional responsável</TitleHeaderDoctor>
-          <ContainerInfoDoctor>
-            <ContainerImageDoctor>
-              <ImageDoctor source={Doctor} />
-            </ContainerImageDoctor>
-            <ContainerSubtitles>
-              <SubTitleHeaderName>
-                Dr. Antonio B. C. D.
-              </SubTitleHeaderName>
-              <SubTitleHeaderSpecialty>
-                Clínico Geral
-              </SubTitleHeaderSpecialty>
-            </ContainerSubtitles>
-          </ContainerInfoDoctor>
-        </ContainerHeaderInformationDoctor>
+            <TitleHeaderDoctor>Profissional responsável</TitleHeaderDoctor>
+            <ContainerInfoDoctor>
+              <ContainerImageDoctor>
+                <ImageDoctor source={Doctor} />
+              </ContainerImageDoctor>
+              <ContainerSubtitles>
+                <SubTitleHeaderName>Dr. Antonio B. C. D.</SubTitleHeaderName>
+                <SubTitleHeaderSpecialty>Clínico Geral</SubTitleHeaderSpecialty>
+              </ContainerSubtitles>
+            </ContainerInfoDoctor>
+          </ContainerHeaderInformationDoctor>
         )}
       </ContainerHeaderFluxo>
     </ContainerSafeHeader>

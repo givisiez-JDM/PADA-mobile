@@ -1,4 +1,4 @@
-import styled from "styled-components/native";
+import styled, { css } from "styled-components/native";
 
 export const ContainerSafeHeader = styled.View`
   flex: 1;
@@ -158,7 +158,6 @@ export const ButtonNextVaccine = styled.TouchableOpacity`
   width: 105px;
   height: 34px;
   background: rgba(118, 167, 237, 0.6);
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   border-radius: 10px;
 `;
 

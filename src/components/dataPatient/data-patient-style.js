@@ -25,7 +25,7 @@ export const TitleDataPatient = styled.Text`
 
 export const SubTitlePatient = styled.Text`
   font-style: normal;
-  font-weight: 350;
+  font-weight: 400;
   font-size: 16px;
   line-height: 23px;
   color: #273047;
