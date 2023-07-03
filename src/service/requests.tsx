@@ -103,6 +103,42 @@ export const getDataUserStorage = async (setState: any) => {
   }
 };
 
+export const getPatientDoctorId = async (id: string) => {
+  try {
+    let tokenUser: string | any = await AsyncStorage.getItem("token");
+    await apiPADA
+      .get(`/patient/${id}`, {
+        headers: {
+          Authorization: `Bearer ${JSON.parse(tokenUser)}`,
+        },
+      })
+      .then((response: any) => {
+        const doctorId = response.body.doctorId;
+        return doctorId;
+      });
+  } catch (err: unknown) {
+    console.log(err);
+  }
+};
+
+export const getDoctorById = async (id: string) => {
+  try {
+    let tokenUser: string | any = await AsyncStorage.getItem("token");
+    await apiPADA
+      .get(`/doctor/${id}`, {
+        headers: {
+          Authorization: `Bearer ${JSON.parse(tokenUser)}`,
+        },
+      })
+      .then((response: any) => {
+        const doctor = response.body;
+        return doctor;
+      });
+  } catch (err: unknown) {
+    console.log(err);
+  }
+};
+
 export const checkLoginStatus = async () => {
   try {
     const token = await AsyncStorage.getItem("token");

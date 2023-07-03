@@ -110,12 +110,4 @@ const HeaderFluxo = (props: {
 };
 
 export default HeaderFluxo;
-/**
- * {props.buttonVaccine === true ? (
-          <ContainerButtonVaccine>
-            <ContainerShadowVaccine>
-              <TextButtonVaccine>Vacinas</TextButtonVaccine>
-            </ContainerShadowVaccine>
-          </ContainerButtonVaccine>
-        ) : null}
- */
+
