@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import TabBar from "../../components/buttonTabBar/buttonTabBar";
 import DataDoctor from "../../components/dataDoctor/data-doctor";
 import HeaderFluxo from "../../components/headerFluxo/header-fluxo";
@@ -14,7 +14,17 @@ const ProfissionalResponsavel = () => {
   // const [, setRoleUser] = useState("");
   // const [name, setName] = useState("");
   // getDataUserStorage({ setRoleUser, setName });
+  const [token, setToken] = useState("");
   
+  const getUserPatient = () => {
+    getDataUserStorage({setToken})
+    console.log (token)
+  }
+
+  useEffect(() => {
+    getUserPatient();
+  }, []);
+
   return (
     <ContainerSafePrincipalPaciente>
       <Scroll>

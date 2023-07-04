@@ -94,9 +94,10 @@ export const getDataUserStorage = async (setState: any) => {
   try {
     let role = await AsyncStorage.getItem("role");
     let name: string | any = await AsyncStorage.getItem("name");
-
+    let token: string | any = await AsyncStorage.getItem("token");
     setState.setRoleUser(role);
     setState.setName(JSON.parse(name));
+    setState.setToken(JSON.parse(token));
     //return role !== null ? JSON.parse(role) : null;
   } catch (err: unknown) {
     console.log(err);
