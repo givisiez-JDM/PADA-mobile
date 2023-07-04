@@ -1,5 +1,7 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import apiPADA from "./api";
+import axios, { AxiosRequestConfig } from "axios";
+import { TDoctor } from "../screen/profissionalResponsável/profissionalResponsável";
 
 export interface User {
   name: string;
@@ -94,46 +96,51 @@ export const getDataUserStorage = async (setState: any) => {
   try {
     let role = await AsyncStorage.getItem("role");
     let name: string | any = await AsyncStorage.getItem("name");
-    let token: string | any = await AsyncStorage.getItem("token");
+
     setState.setRoleUser(role);
     setState.setName(JSON.parse(name));
-    setState.setToken(JSON.parse(token));
+
     //return role !== null ? JSON.parse(role) : null;
   } catch (err: unknown) {
     console.log(err);
   }
 };
 
-export const getPatientDoctorId = async (id: string) => {
+export const getPatientDoctorId = async (
+  setDoctorId: React.Dispatch<React.SetStateAction<string>>
+) => {
   try {
+    let id: string | any = await AsyncStorage.getItem("id");
     let tokenUser: string | any = await AsyncStorage.getItem("token");
+
     await apiPADA
-      .get(`/patient/${id}`, {
+      .get(`/patient/${JSON.parse(id)}`, {
         headers: {
-          Authorization: `Bearer ${JSON.parse(tokenUser)}`,
+          Authorization: JSON.parse(tokenUser),
         },
       })
       .then((response: any) => {
-        const doctorId = response.body.doctorId;
-        return doctorId;
+        setDoctorId(response.data.doctorId);
       });
   } catch (err: unknown) {
     console.log(err);
   }
 };
 
-export const getDoctorById = async (id: string) => {
+export const getDoctorById = async (
+  id: string,
+  setDoctor: React.Dispatch<React.SetStateAction<TDoctor | undefined>>
+) => {
   try {
     let tokenUser: string | any = await AsyncStorage.getItem("token");
     await apiPADA
-      .get(`/doctor/${id}`, {
+      .get(`/doctor/${JSON.parse(id)}`, {
         headers: {
-          Authorization: `Bearer ${JSON.parse(tokenUser)}`,
+          Authorization: JSON.parse(tokenUser),
         },
       })
       .then((response: any) => {
-        const doctor = response.body;
-        return doctor;
+        setDoctor(response.data);
       });
   } catch (err: unknown) {
     console.log(err);

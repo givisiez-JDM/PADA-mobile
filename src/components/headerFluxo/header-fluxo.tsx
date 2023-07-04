@@ -43,7 +43,7 @@ import {
 } from "./header-fluxo-doctor-style";
 
 const HeaderFluxo = (props: {
-  title: string;
+  title: string | undefined;
   backButton: boolean;
   buttonVaccine: boolean;
   typeHeader: "patient" | "doctor";
@@ -98,7 +98,7 @@ const HeaderFluxo = (props: {
                 <ImageDoctor source={Doctor} />
               </ContainerImageDoctor>
               <ContainerSubtitles>
-                <SubTitleHeaderName>Dr. Antonio B. C. D.</SubTitleHeaderName>
+                <SubTitleHeaderName>{props.title}</SubTitleHeaderName>
                 <SubTitleHeaderSpecialty>Clínico Geral</SubTitleHeaderSpecialty>
               </ContainerSubtitles>
             </ContainerInfoDoctor>
@@ -110,4 +110,3 @@ const HeaderFluxo = (props: {
 };
 
 export default HeaderFluxo;
-
