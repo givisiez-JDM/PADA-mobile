@@ -35,6 +35,14 @@ const TelaPrincipal = () => {
   const [roleUser, setRoleUser] = useState("");
   const [name, setName] = useState("");
 
+  const getUserPatient = async () => {
+    try {
+      await getPatientDoctorId(false);
+    } catch (err: unknown) {
+      console.log(err);
+    }
+  };
+
   const getDoctorId = async () => {
     try {
       let id: string | any = await AsyncStorage.getItem("doctorId");
@@ -45,6 +53,7 @@ const TelaPrincipal = () => {
   };
 
   useEffect(() => {
+    getUserPatient();
     getDoctorId();
   }, []);
 
