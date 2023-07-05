@@ -37,6 +37,7 @@ export const loginUser = async (
         AsyncStorage.setItem("name", JSON.stringify(response.data.user.name));
         AsyncStorage.setItem("role", JSON.stringify(response.data.user.role));
         AsyncStorage.setItem("token", JSON.stringify(response.data.token));
+        getPatientDoctorId(true);
         openLoading();
         setTimeout(() => {
           if (response.status === 200) {
@@ -116,7 +117,7 @@ export const getDataUserStorage = async (setState: any) => {
   }
 };
 
-export const getPatientDoctorId = async () => {
+export const getPatientDoctorId = async (doctorId: boolean) => {
   try {
     let id: string | any = await AsyncStorage.getItem("id");
     let tokenUser: string | any = await AsyncStorage.getItem("token");
@@ -128,10 +129,12 @@ export const getPatientDoctorId = async () => {
         },
       })
       .then((response: any) => {
-        AsyncStorage.setItem(
-          "doctorId",
-          JSON.stringify(response.data.doctorId)
-        );
+        if (doctorId === true) {
+          AsyncStorage.setItem(
+            "doctorId",
+            JSON.stringify(response.data.doctorId)
+          );
+        }
       });
   } catch (err: unknown) {
     console.log(err);

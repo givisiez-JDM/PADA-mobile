@@ -34,15 +34,6 @@ interface Item {
 const TelaPrincipal = () => {
   const [roleUser, setRoleUser] = useState("");
   const [name, setName] = useState("");
-  const [doctorId, setDoctorId] = useState("");
-
-  const getUserPatient = async () => {
-    try {
-      await getPatientDoctorId();
-    } catch (err: unknown) {
-      console.log(err);
-    }
-  };
 
   const getDoctorId = async () => {
     try {
@@ -54,7 +45,6 @@ const TelaPrincipal = () => {
   };
 
   useEffect(() => {
-    getUserPatient();
     getDoctorId();
   }, []);
 

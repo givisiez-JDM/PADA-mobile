@@ -4,11 +4,12 @@ export const LoadingComponent = styled.Modal``;
 
 export const ContainerModalLoading = styled.View`
   position: relative;
-  top: 25%;
-  left: 10%;
+  top: 15%;
+  left: 12%;
   display: flex;
   flex-direction: column;
   row-gap: 10px;
+  justify-content: center;
   align-items: center;
   width: 80%;
   height: 250px;
