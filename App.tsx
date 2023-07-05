@@ -3,12 +3,16 @@ import { StyleSheet } from "react-native";
 import "react-native-gesture-handler";
 import Route from "./src/routes/Stack/index";
 import { NavigationContainer } from "@react-navigation/native";
+import store from "./src/store/store";
+import { Provider } from "react-redux";
 
 export default function App() {
   return (
-    <NavigationContainer>
-      <Route />
-    </NavigationContainer>
+    <Provider store={store}>
+      <NavigationContainer>
+        <Route />
+      </NavigationContainer>
+    </Provider>
   );
 }
 

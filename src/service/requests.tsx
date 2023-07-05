@@ -1,7 +1,17 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import apiPADA from "./api";
 import axios, { AxiosRequestConfig } from "axios";
-import { TDoctor } from "../screen/profissionalResponsável/profissionalResponsável";
+import store from "../store/store";
+
+export interface TDoctor {
+  id: string;
+  name: string;
+  email: string;
+  photo: string;
+  about: string;
+  CRM: string;
+  specialty: string;
+}
 
 export interface User {
   name: string;
@@ -106,9 +116,7 @@ export const getDataUserStorage = async (setState: any) => {
   }
 };
 
-export const getPatientDoctorId = async (
-  setDoctorId: React.Dispatch<React.SetStateAction<string>>
-) => {
+export const getPatientDoctorId = async () => {
   try {
     let id: string | any = await AsyncStorage.getItem("id");
     let tokenUser: string | any = await AsyncStorage.getItem("token");
@@ -120,17 +128,17 @@ export const getPatientDoctorId = async (
         },
       })
       .then((response: any) => {
-        setDoctorId(response.data.doctorId);
+        AsyncStorage.setItem(
+          "doctorId",
+          JSON.stringify(response.data.doctorId)
+        );
       });
   } catch (err: unknown) {
     console.log(err);
   }
 };
 
-export const getDoctorById = async (
-  id: string,
-  setDoctor: React.Dispatch<React.SetStateAction<TDoctor | undefined>>
-) => {
+export const getDoctorById = async (id: string) => {
   try {
     let tokenUser: string | any = await AsyncStorage.getItem("token");
     await apiPADA
@@ -140,7 +148,7 @@ export const getDoctorById = async (
         },
       })
       .then((response: any) => {
-        setDoctor(response.data);
+        store.dispatch({ type: "UPDATE_DOCTOR", payload: response.data });
       });
   } catch (err: unknown) {
     console.log(err);

@@ -16,8 +16,14 @@ import Perfil from "../../assets/imgPerfil.png";
 import TabBar from "../../components/buttonTabBar/buttonTabBar";
 import { FlatList } from "react-native-gesture-handler";
 import { ImageSourcePropType } from "react-native";
-import { getDataUserStorage } from "../../service/requests";
+import {
+  TDoctor,
+  getDataUserStorage,
+  getDoctorById,
+  getPatientDoctorId,
+} from "../../service/requests";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import store from "../../store/store";
 
 interface Item {
   image: ImageSourcePropType;
@@ -28,6 +34,29 @@ interface Item {
 const TelaPrincipal = () => {
   const [roleUser, setRoleUser] = useState("");
   const [name, setName] = useState("");
+  const [doctorId, setDoctorId] = useState("");
+
+  const getUserPatient = async () => {
+    try {
+      await getPatientDoctorId();
+    } catch (err: unknown) {
+      console.log(err);
+    }
+  };
+
+  const getDoctorId = async () => {
+    try {
+      let id: string | any = await AsyncStorage.getItem("doctorId");
+      await getDoctorById(id);
+    } catch (err: unknown) {
+      console.log(err);
+    }
+  };
+
+  useEffect(() => {
+    getUserPatient();
+    getDoctorId();
+  }, []);
 
   let role = roleUser;
   getDataUserStorage({ setRoleUser, setName });
