@@ -1,17 +1,21 @@
-const rootReducerPatient = (
+const rootPatient = (
   state: any = {
     id: "",
     name: "",
+    telefone:"",
     email: "",
-    photo: "",
-    about: "",
-    CRM: "",
-    specialty: "",
+    data_nascimento: "",
+    dosagem:"",
+    alergias:"",
+    periodicidade:"",
+    metodo:"",
+    inicio:"",
+    fim:""
   },
   action: any
 ) => {
   switch (action.type) {
-    case "UPDATE_DOCTOR":
+    case "UPDATE_PATIENT":
       return {
         ...state,
         ...action.payload,
@@ -22,4 +26,4 @@ const rootReducerPatient = (
 };
 
 
-export default rootReducerPatient;
+export default rootPatient

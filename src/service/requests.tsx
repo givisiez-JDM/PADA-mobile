@@ -2,6 +2,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import apiPADA from "./api";
 import axios, { AxiosRequestConfig } from "axios";
 import store from "../store/store";
+import storePatient from "../store/storePatient";
 
 export interface TDoctor {
   id: string;
@@ -11,6 +12,19 @@ export interface TDoctor {
   about: string;
   CRM: string;
   specialty: string;
+}
+
+export interface TData {
+  name: string;
+  telefone: string;
+  email: string;
+  data_nascimento: string;
+  dosagem: string;
+  alergias: string[];
+  periodicidade: string;
+  metodo: string;
+  inicio: string;
+  fim: string;
 }
 
 export interface User {
@@ -37,6 +51,7 @@ export const loginUser = async (
         AsyncStorage.setItem("name", JSON.stringify(response.data.user.name));
         AsyncStorage.setItem("role", JSON.stringify(response.data.user.role));
         AsyncStorage.setItem("token", JSON.stringify(response.data.token));
+        getPatientDoctorId(true);
         openLoading();
         setTimeout(() => {
           if (response.status === 200) {
@@ -49,6 +64,52 @@ export const loginUser = async (
     console.log(err);
   }
 };
+
+// export const patientResponse = async (setState: any) => {
+//   try {
+//     let name = await AsyncStorage.getItem("name");
+//     let telephone: string | any = await AsyncStorage.getItem("telephone");
+//     let email: string | any = await AsyncStorage.getItem("email");
+//     let data_nascimento: string | any = await AsyncStorage.getItem("data_nascimento");
+//     let dosagem: string | any = await AsyncStorage.getItem("dosagem");
+//     let alergias: string | any = await AsyncStorage.getItem("alergias");
+//     let periodicidade: string | any = await AsyncStorage.getItem("periodicidade");
+//     let metodo: string | any = await AsyncStorage.getItem("metodo");
+//     let inicio: string | any = await AsyncStorage.getItem("inicio");
+//     let fim: string | any = await AsyncStorage.getItem("fim");
+
+//     setState.setRoleUser(name, email, data_nascimento, telephone, dosagem, alergias, periodicidade, metodo, inicio, fim);
+    
+    
+//   } catch (err: unknown) {
+//     console.log(err);
+//   }
+// };
+
+
+export const patientResponse = async () => {
+  try {
+    let id: string | any = await AsyncStorage.getItem("id");
+    let tokenUser: string | any = await AsyncStorage.getItem("token");
+
+    await apiPADA
+      .get(`/patient/${JSON.parse(id)}`, {
+        headers: {
+          Authorization: JSON.parse(tokenUser),
+        },
+      })
+      .then((response: any) => {
+        AsyncStorage.setItem(
+          "doctorId",
+          JSON.stringify(response.data.doctorId)
+        );
+      });
+  } catch (err: unknown) {
+    console.log(err);
+  }
+};
+
+
 
 export const createUser = async (
   user: User,
@@ -116,7 +177,7 @@ export const getDataUserStorage = async (setState: any) => {
   }
 };
 
-export const getPatientDoctorId = async () => {
+export const getPatientDoctorId = async (doctorId: boolean) => {
   try {
     let id: string | any = await AsyncStorage.getItem("id");
     let tokenUser: string | any = await AsyncStorage.getItem("token");
@@ -128,10 +189,15 @@ export const getPatientDoctorId = async () => {
         },
       })
       .then((response: any) => {
-        AsyncStorage.setItem(
-          "doctorId",
-          JSON.stringify(response.data.doctorId)
-        );
+        if (doctorId === true) {
+          AsyncStorage.setItem(
+            "doctorId",
+            JSON.stringify(response.data.doctorId)
+          );
+        }
+        else {
+          storePatient.dispatch({type: "UPDATE_PATIENT", payload: response.data});
+        }
       });
   } catch (err: unknown) {
     console.log(err);

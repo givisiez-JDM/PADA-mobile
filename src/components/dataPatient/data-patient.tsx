@@ -11,7 +11,7 @@ import {
 
 interface TData {
   name: string;
-  telefone: string;
+  telephone: string;
   email: string;
   data_nascimento: string;
   dosagem: string;

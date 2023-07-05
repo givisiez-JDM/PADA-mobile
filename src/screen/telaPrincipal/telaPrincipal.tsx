@@ -38,7 +38,7 @@ const TelaPrincipal = () => {
 
   const getUserPatient = async () => {
     try {
-      await getPatientDoctorId();
+      await getPatientDoctorId(false);
     } catch (err: unknown) {
       console.log(err);
     }
