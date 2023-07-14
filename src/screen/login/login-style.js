@@ -56,16 +56,14 @@ export const InputLogin = styled.View`
 export const TextInput = styled.View`
   color: #4c7abb;
   font-size: 22px;
-  font-weight: bold;
   padding: 2px;
-  font-weight: bold;
 `;
 
 export const PatientInput = styled.TextInput`
   flex: 1 0;
   font-size: 22px;
-  font-weight: bold;
-  margin-left: 10px;
+  font-weight: regular;
+  padding: 10px;
 `;
 
 export const ContainerFooterBottom = styled.View`
