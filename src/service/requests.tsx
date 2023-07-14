@@ -41,59 +41,44 @@ export const loginUser = async (
     closeLoading: () => void,
     nav: any
 ) => {
-    try {
-        const response = await apiPADA.post('/login/patent', {
-            email,
-            password,
-        });
+
+  
+
+  try {
+ const response =    await apiPADA
+      .post("/login/patient", {
+        email,
+        password,
+      })
+      .then(async (response: any) => {
+        AsyncStorage.setItem("id", JSON.stringify(response.data.user.id));
+        AsyncStorage.setItem("name", JSON.stringify(response.data.user.name));
+        AsyncStorage.setItem("role", JSON.stringify(response.data.user.role));
+        AsyncStorage.setItem("token", JSON.stringify(response.data.token));
+        getPatientDoctorId(true);
+        openLoading();
+        setTimeout(() => {
+          if (response.status === 200) {
+            nav.navigate("TelaPrincipal");
+          }
+          closeLoading();
+        }, 3000);
+
         const { auth } = response.data;
         if (auth) {
-            const { token, msg } = response.data;
-            await AsyncStorage.setItem('token', token);
-            try {
-                await apiPADA
-                    .post('/login/patient', {
-                        email,
-                        password,
-                    })
-                    .then((response: any) => {
-                        AsyncStorage.setItem(
-                            'id',
-                            JSON.stringify(response.data.user.id)
-                        );
-                        AsyncStorage.setItem(
-                            'name',
-                            JSON.stringify(response.data.user.name)
-                        );
-                        AsyncStorage.setItem(
-                            'role',
-                            JSON.stringify(response.data.user.role)
-                        );
-                        AsyncStorage.setItem(
-                            'token',
-                            JSON.stringify(response.data.token)
-                        );
-                        getPatientDoctorId(true);
-                        openLoading();
-                        setTimeout(() => {
-                            if (response.status === 200) {
-                                nav.navigate('TelaPrincipal');
-                            }
-                            closeLoading();
-                        }, 3000);
-                    });
-            } 
-            catch (err: unknown) {
-              console.log(err);
-            }
-        }
-    } catch {
-        Alert.alert('Erro de Login', 'Não foi possivel fazer o login, verifique seus dados');
+          const { token, msg } = response.data;
+          await AsyncStorage.setItem('token', token);}
+
+      });
+  } catch (err: unknown) {
+    console.log(err);
+    Alert.alert('Erro de Login', 'Não foi possivel fazer o login, verifique seus dados');
         setIsLoading(false);
-    }
-
-
+    ;
+  }
 };
+
+
 
 export const patientResponse = async () => {
     try {
