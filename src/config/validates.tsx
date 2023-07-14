@@ -94,7 +94,7 @@ export const validar = (value: any, err: any) => {
   }
   if (checkPassword(value.pass) === false) {
     err.setErrorPass(
-      "Preencha os requisitos da senha:\n 1. Mínimo de 8 caracteres.\n 2. Máximo de 30 caracteres. \n 3. Possuir pelo menos 1 letra minúscula e 1 maíscula. \n 4. Possuir pelo menos 1 número e 1 caracter especial."
+      "Preencha os requisitos da senha:\n 1. Mínimo de 8 caracteres.\n 2. Máximo de 30 caracteres. \n 3. Possuir pelo menos 1 letra minúscula e 1 maíscula. \n 4. Possuir pelo menos 1 número e 1 caracter especial.(Ex: ! @ # $ % & *)"
     );
     error = true;
   }
