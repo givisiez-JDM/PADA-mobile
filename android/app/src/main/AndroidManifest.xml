@@ -22,7 +22,7 @@
     <activity android:name=".MainActivity" 
     android:label="@string/app_name" 
     android:configChanges="keyboard|keyboardHidden|orientation|screenSize|uiMode" android:launchMode="singleTask" 
-    android:screeOrietation="portrait"
+    android:screenOrientation="sensorPortrait"
     android:windowSoftInputMode="adjustResize"
      android:theme="@style/Theme.App.SplashScreen"
       android:exported="true"
