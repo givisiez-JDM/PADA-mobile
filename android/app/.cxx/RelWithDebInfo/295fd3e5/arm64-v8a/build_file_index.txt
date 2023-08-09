@@ -1,0 +1,5 @@
+/home/joaovictor/Projetos_React/React_Native/projeto_pada/padamobile/node_modules/react-native-gesture-handler/android/build/generated/source/codegen/jni/CMakeLists.txt
+/home/joaovictor/Projetos_React/React_Native/projeto_pada/padamobile/node_modules/react-native-safe-area-context/android/src/main/jni/CMakeLists.txt
+/home/joaovictor/Projetos_React/React_Native/projeto_pada/padamobile/node_modules/react-native-screens/android/src/main/jni/CMakeLists.txt
+/home/joaovictor/Projetos_React/React_Native/projeto_pada/padamobile/node_modules/react-native-svg/android/build/generated/source/codegen/jni/CMakeLists.txt
+/home/joaovictor/Projetos_React/React_Native/projeto_pada/padamobile/node_modules/react-native/ReactAndroid/cmake-utils/default-app-setup/CMakeLists.txt

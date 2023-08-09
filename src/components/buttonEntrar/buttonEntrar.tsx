@@ -31,6 +31,7 @@ function ButtonEntrar(props: {
   };
   const Logar = () => {
     if (validar({ mail, pass }, { setErrorMail, setErrorPass })) {
+      console.log(mail, pass);
       loginUser(mail, pass, openLoading, closeLoading, navigation);
     }
   };

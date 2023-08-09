@@ -23,6 +23,24 @@ const Patient = () => {
           typeHeader="patient"
         />
         <DataPatient
+          name={""}
+          telefone={""}
+          email={""}
+          data_nascimento={""}
+          dosagem={""}
+          alergias={[]}
+          periodicidade={""}
+          metodo={""}
+          inicio={""}
+          fim={""}
+        />
+      </Scroll>
+      <TabBar />
+    </ContainerSafePrincipalPaciente>
+  );
+};
+
+/*<DataPatient
           name={patient.name}
           telefone={patient.telefone}
           email={patient.email}
@@ -34,10 +52,18 @@ const Patient = () => {
           inicio={patient.inicio}
           fim={patient.fim}
         />
-      </Scroll>
-      <TabBar />
-    </ContainerSafePrincipalPaciente>
-  );
-};
+         <DataPatient
+          name={patient !== null ? patient.name : ""}
+          telefone={patient !== null ? patient.telefone : ""}
+          email={patient !== null ? patient.email : ""}
+          data_nascimento={patient !== null ? patient.data_nascimento : ""}
+          dosagem={patient !== null ? patient.dosagem : ""}
+          alergias={patient !== null ? patient.alergias : []}
+          periodicidade={patient !== null ? patient.periodicidade : ""}
+          metodo={patient !== null ? patient.metodo : ""}
+          inicio={patient !== null ? patient.inicio : ""}
+          fim={patient !== null ? patient.fim : ""}
+        />
+        */
 
 export default Patient;

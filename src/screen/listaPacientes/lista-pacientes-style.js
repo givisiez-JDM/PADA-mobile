@@ -5,7 +5,7 @@ export const ContainerSafePrincipalPacientes = styled.KeyboardAvoidingView`
   display: flex;
   background: #d1d1d1;
 `;
-export const Scroll = styled.ScrollView`
+export const ScrollPacientes = styled.ScrollView`
   flex: 1;
 `;
 export const ContainerPacientes = styled.View`

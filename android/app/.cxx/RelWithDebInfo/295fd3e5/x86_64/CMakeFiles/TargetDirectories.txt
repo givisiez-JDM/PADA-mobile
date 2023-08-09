@@ -1,0 +1,15 @@
+/home/joaovictor/Projetos_React/React_Native/projeto_pada/padamobile/android/app/.cxx/RelWithDebInfo/295fd3e5/x86_64/CMakeFiles/appmodules.dir
+/home/joaovictor/Projetos_React/React_Native/projeto_pada/padamobile/android/app/.cxx/RelWithDebInfo/295fd3e5/x86_64/CMakeFiles/edit_cache.dir
+/home/joaovictor/Projetos_React/React_Native/projeto_pada/padamobile/android/app/.cxx/RelWithDebInfo/295fd3e5/x86_64/CMakeFiles/rebuild_cache.dir
+/home/joaovictor/Projetos_React/React_Native/projeto_pada/padamobile/android/app/.cxx/RelWithDebInfo/295fd3e5/x86_64/rngesturehandler_codegen_autolinked_build/CMakeFiles/react_codegen_rngesturehandler_codegen.dir
+/home/joaovictor/Projetos_React/React_Native/projeto_pada/padamobile/android/app/.cxx/RelWithDebInfo/295fd3e5/x86_64/rngesturehandler_codegen_autolinked_build/CMakeFiles/edit_cache.dir
+/home/joaovictor/Projetos_React/React_Native/projeto_pada/padamobile/android/app/.cxx/RelWithDebInfo/295fd3e5/x86_64/rngesturehandler_codegen_autolinked_build/CMakeFiles/rebuild_cache.dir
+/home/joaovictor/Projetos_React/React_Native/projeto_pada/padamobile/android/app/.cxx/RelWithDebInfo/295fd3e5/x86_64/safeareacontext_autolinked_build/CMakeFiles/react_codegen_safeareacontext.dir
+/home/joaovictor/Projetos_React/React_Native/projeto_pada/padamobile/android/app/.cxx/RelWithDebInfo/295fd3e5/x86_64/safeareacontext_autolinked_build/CMakeFiles/edit_cache.dir
+/home/joaovictor/Projetos_React/React_Native/projeto_pada/padamobile/android/app/.cxx/RelWithDebInfo/295fd3e5/x86_64/safeareacontext_autolinked_build/CMakeFiles/rebuild_cache.dir
+/home/joaovictor/Projetos_React/React_Native/projeto_pada/padamobile/android/app/.cxx/RelWithDebInfo/295fd3e5/x86_64/rnscreens_autolinked_build/CMakeFiles/react_codegen_rnscreens.dir
+/home/joaovictor/Projetos_React/React_Native/projeto_pada/padamobile/android/app/.cxx/RelWithDebInfo/295fd3e5/x86_64/rnscreens_autolinked_build/CMakeFiles/edit_cache.dir
+/home/joaovictor/Projetos_React/React_Native/projeto_pada/padamobile/android/app/.cxx/RelWithDebInfo/295fd3e5/x86_64/rnscreens_autolinked_build/CMakeFiles/rebuild_cache.dir
+/home/joaovictor/Projetos_React/React_Native/projeto_pada/padamobile/android/app/.cxx/RelWithDebInfo/295fd3e5/x86_64/rnsvg_autolinked_build/CMakeFiles/react_codegen_rnsvg.dir
+/home/joaovictor/Projetos_React/React_Native/projeto_pada/padamobile/android/app/.cxx/RelWithDebInfo/295fd3e5/x86_64/rnsvg_autolinked_build/CMakeFiles/edit_cache.dir
+/home/joaovictor/Projetos_React/React_Native/projeto_pada/padamobile/android/app/.cxx/RelWithDebInfo/295fd3e5/x86_64/rnsvg_autolinked_build/CMakeFiles/rebuild_cache.dir

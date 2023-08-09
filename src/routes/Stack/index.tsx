@@ -23,7 +23,13 @@ export default function () {
       <Screen name="LoginCadastro" component={LoginCadastro} />
       <Screen name="Login" component={Login} />
       <Screen name="Cadastro" component={PatientRecord} />
-      <Screen name="ListaPacientes" component={PatientList} />
+      <Screen name="TelaPrincipal" component={TelaPrincipal} />
+      <Screen name="Paciente" component={Patient} />
+      <Screen
+        name="ProfissionalResponsavel"
+        component={ProfissionalResponsavel}
+      />
+      <Screen name="MyVaccines" component={MyVaccines} />
       {/* <Screen name="TabRoutes" component={TabRoutes} /> */}
     </Navigator>
   );

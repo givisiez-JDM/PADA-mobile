@@ -5,7 +5,7 @@ import HeaderFluxo from "../../components/headerFluxo/header-fluxo";
 import {
   ContainerPacientes,
   ContainerSafePrincipalPacientes,
-  Scroll,
+  ScrollPacientes,
 } from "./lista-pacientes-style";
 import TabBar from "../../components/buttonTabBar/buttonTabBar";
 
@@ -14,13 +14,18 @@ const PatientList = () => {
     <ContainerSafePrincipalPacientes
       behavior={Platform.OS === "ios" ? "padding" : "height"}
     >
-      <Scroll>
-        <HeaderFluxo title="Olá" backButton={true} buttonVaccine={false} typeHeader={"patient"} />
+      <ScrollPacientes>
+        <HeaderFluxo
+          title="Olá"
+          backButton={true}
+          buttonVaccine={false}
+          typeHeader={"patient"}
+        />
         <ContainerPacientes>
           <GridMenu />
           <AddPatient />
         </ContainerPacientes>
-      </Scroll>
+      </ScrollPacientes>
       <TabBar />
     </ContainerSafePrincipalPacientes>
   );

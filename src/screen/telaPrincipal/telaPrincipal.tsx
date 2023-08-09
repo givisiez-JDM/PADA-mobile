@@ -14,7 +14,7 @@ import Paciente from "../../assets/imgPaciente.png";
 import ProfissionalSaude from "../../assets/profissionalSaude.png";
 import Perfil from "../../assets/imgPerfil.png";
 import TabBar from "../../components/buttonTabBar/buttonTabBar";
-import { FlatList } from "react-native-gesture-handler";
+import { FlatList } from "react-native";
 import { ImageSourcePropType } from "react-native";
 import {
   TDoctor,
