@@ -3,6 +3,9 @@
     "name": "padamobile",
     "slug": "padamobile",
     "version": "1.0.0",
+    "development": {
+      "apiUrl": "http://172.168.10.108:3001"
+    },
     "assetBundlePatterns": [
       "**/*"
     ],

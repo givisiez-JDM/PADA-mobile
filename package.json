@@ -21,6 +21,7 @@
     "@types/redux": "^3.6.0",
     "@types/styled-components": "^5.1.26",
     "axios": "^1.4.0",
+    "buffer": "^6.0.3",
     "expo": "^49.0.0",
     "expo-app-loading": "^1.0.3",
     "expo-constants": "~14.4.2",

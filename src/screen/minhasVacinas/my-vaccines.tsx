@@ -2,12 +2,49 @@ import HeaderFluxo from "../../components/headerFluxo/header-fluxo";
 import { Scroll } from "../paciente/patient-style";
 import {
   ContainerItemInformationVaccine,
+  ContainerItemsLegends,
+  ContainerLegend,
+  ContainerProgressBar,
   ContainerVaccinesView,
+  TextContainerLegend,
+  TextSubTitleProgressBar,
+  TextTitleProgressBar,
 } from "./my-vaccines-styles";
 import { ContainerPrincipal } from "../telaPrincipal/telaPrincipal-style";
 import ItemVaccine from "../../components/itemVaccine/item-vaccine";
+import { useEffect, useState } from "react";
+import { getDataUserStorage } from "../../service/requests";
+import ItemLegend from "../../components/itemLegend/item-legend";
+import TabBar from "../../components/buttonTabBar/buttonTabBar";
+import ProgressBar from "../../components/progressBar/progress-bar";
+import storePatient from "../../store/storePatient";
 
 const MyVaccines = () => {
+  const [roleUser, setRoleUser] = useState("");
+  const [progress, setProgress] = useState(20);
+  const [name, setName] = useState("");
+  const patient: any = storePatient.getState();
+  getDataUserStorage({ setRoleUser, setName });
+
+  const arrayLegend = [
+    {
+      text: "Aplicada",
+      color: "#5CED38",
+    },
+    {
+      text: "Aplicada em atraso",
+      color: "#FACB71",
+    },
+    {
+      text: "Não aplicada",
+      color: "#E85656",
+    },
+    {
+      text: "Agendada",
+      color: "#B4B4B4",
+    },
+  ];
+
   const array = [
     {
       data: "05 de Julho de 2023",
@@ -40,16 +77,33 @@ const MyVaccines = () => {
     },
   ];
 
+  /*useEffect(() => {
+    const interval = setInterval(() => {
+      if (progress < 100) {
+        setProgress(progress + 10);
+      } else {
+        clearInterval(interval);
+      }
+    });
+  }, [progress]);*/
+
   return (
     <ContainerVaccinesView>
       <Scroll>
         <HeaderFluxo
-          title={`Olá, João`}
+          title={`Olá, ${name}`}
           backButton={true}
           buttonVaccine={false}
           typeHeader="patient"
+          photo={patient.photo}
         />
         <ContainerPrincipal>
+          <ContainerProgressBar>
+            <TextTitleProgressBar>Você está na Fase 1</TextTitleProgressBar>
+            <ProgressBar progress={progress} />
+            <TextSubTitleProgressBar>Mais detalhes</TextSubTitleProgressBar>
+          </ContainerProgressBar>
+
           <ContainerItemInformationVaccine>
             {array.map((item, index) => (
               <ItemVaccine
@@ -62,58 +116,22 @@ const MyVaccines = () => {
               />
             ))}
           </ContainerItemInformationVaccine>
+
+          <ContainerLegend>
+            <TextContainerLegend>LEGENDA</TextContainerLegend>
+            <ContainerItemsLegends>
+              {arrayLegend.map(
+                (item: { text: string; color: string }, index: number) => (
+                  <ItemLegend color={item.color} text={item.text} />
+                )
+              )}
+            </ContainerItemsLegends>
+          </ContainerLegend>
         </ContainerPrincipal>
       </Scroll>
+      <TabBar />
     </ContainerVaccinesView>
   );
 };
 
 export default MyVaccines;
-
-/*
- <>
-                  <ViewInformationDate>
-                    <TextDateInformation>
-                      05 de Julho de 2023
-                    </TextDateInformation>
-                    <TextHourInformation>10:30 AM</TextHourInformation>
-                  </ViewInformationDate>
-                  <ContainerNameVaccine>
-                    <TextNameVaccine>Vacina 1</TextNameVaccine>
-                  </ContainerNameVaccine>
-                  <ViewItemHidden>
-                    <ImageHidden source={Hidden} />
-                  </ViewItemHidden>
-                  <HiddenContent>
-                    {expanded ? "Conteúdo escondido!" : null}
-                  </HiddenContent>
-                </>
-
-*/
-
-/*
- <ButtonInformationVaccine
-              onPress={toggleExpand}
-              expanded={expanded}
-            >
-              <ViewInformationDate>
-                <TextDateInformation>05 de Julho de 2023</TextDateInformation>
-                <TextHourInformation>10:30 AM</TextHourInformation>
-              </ViewInformationDate>
-              <ContainerNameVaccine>
-                <TextNameVaccine>Vacina 1</TextNameVaccine>
-              </ContainerNameVaccine>
-              <ViewItemHidden>
-                <ImageHidden source={Hidden} expanded={expanded} />
-              </ViewItemHidden>
-
-              <HiddenContent expanded={expanded}>
-                <TextHiddenContent>
-                  Infelizmente, não pude tomar a vacina devido a questões de
-                  saúde. Estava me sentindo mal desde a ultima aplicação.
-                  Priorizei minha recuperação!
-                </TextHiddenContent>
-              </HiddenContent>
-            </ButtonInformationVaccine>
-
-*/

@@ -1,6 +1,6 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import apiPADA from "./api";
-import axios, { AxiosRequestConfig } from "axios";
+import { Buffer } from "buffer";
 import store from "../store/store";
 import storePatient from "../store/storePatient";
 import { Alert } from "react-native";
@@ -9,7 +9,10 @@ export interface TDoctor {
   id: string;
   name: string;
   email: string;
-  photo: string;
+  photo: {
+    type: string;
+    data: [];
+  };
   about: string;
   CRM: string;
   specialty: string;
@@ -183,9 +186,20 @@ export const getPatientDoctorId = async (doctorId: boolean) => {
             JSON.stringify(response.data.doctorId)
           );
         } else {
+          const imageBuffer = response.data.photo.data;
+          const base64Image = Buffer.from(imageBuffer).toString("utf8");
+          const aux = {
+            id: response.data.id,
+            name: response.data.name,
+            email: response.data.email,
+            photo: base64Image,
+            telephone: response.data.telephone,
+            birthDate: response.data.birthDate,
+            doctorId: response.data.doctorId,
+          };
           storePatient.dispatch({
             type: "UPDATE_PATIENT",
-            payload: response.data,
+            payload: aux,
           });
         }
       });
@@ -204,9 +218,20 @@ export const getDoctorById = async (id: string) => {
         },
       })
       .then((response: any) => {
+        const imageBuffer = response.data.photo.data;
+        const base64Image = Buffer.from(imageBuffer).toString("utf8");
+        const aux = {
+          id: response.data.id,
+          name: response.data.name,
+          email: response.data.email,
+          photo: base64Image,
+          about: response.data.about,
+          CRM: response.data.CRM,
+          specialty: response.data.specialty,
+        };
         store.dispatch({
           type: "UPDATE_DOCTOR",
-          payload: response.data,
+          payload: aux,
         });
       });
   } catch (err: unknown) {

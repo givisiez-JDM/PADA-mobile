@@ -1,12 +1,10 @@
-import Icon from "react-native-vector-icons/Ionicons";
 import {
   ButtonViewCheckBox,
   Check,
   ContainerViewCheckBox,
   TitleCheck,
 } from "./checkBox-style";
-import { useState } from "react";
-
+import Icon from "react-native-vector-icons/Ionicons";
 const CheckBox = (props: {
   title: string;
   size: string;
@@ -19,7 +17,11 @@ const CheckBox = (props: {
   return (
     <ContainerViewCheckBox onPress={handleCheckbox} underlayColor="#00000000">
       <ButtonViewCheckBox>
-        <Check checked={props.checked} size={props.size}></Check>
+        <Check checked={props.checked} size={props.size}>
+          {props.checked ? (
+            <Icon name="checkmark-outline" color="#FFFFFF" size={20} />
+          ) : null}
+        </Check>
         <TitleCheck>{props.title}</TitleCheck>
       </ButtonViewCheckBox>
     </ContainerViewCheckBox>

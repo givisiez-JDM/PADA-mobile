@@ -12,9 +12,8 @@ import {
   getDoctorById,
   getPatientDoctorId,
 } from "../../service/requests";
-import AsyncStorage from "@react-native-async-storage/async-storage";
-import apiPADA from "../../service/api";
 import store from "../../store/store";
+import { Buffer } from "buffer";
 
 const ProfissionalResponsavel = () => {
   const doctor: TDoctor = store.getState();
@@ -27,6 +26,7 @@ const ProfissionalResponsavel = () => {
           backButton={true}
           buttonVaccine={true}
           typeHeader="doctor"
+          photo={doctor.photo}
         />
         <DataDoctor
           crm={doctor.CRM}

@@ -47,8 +47,9 @@ export const ContainerImagePerson = styled.View`
 `;
 
 export const ImagePerson = styled.Image.attrs({
-  resizeMode: "stretch",
+  resizeMode: "cover",
 })`
+  border-radius: 50px;
   width: 80px;
   height: 80px;
   z-index: 1;

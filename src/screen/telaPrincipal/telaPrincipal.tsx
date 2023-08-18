@@ -24,6 +24,7 @@ import {
 } from "../../service/requests";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import store from "../../store/store";
+import storePatient from "../../store/storePatient";
 
 interface Item {
   image: ImageSourcePropType;
@@ -34,6 +35,7 @@ interface Item {
 const TelaPrincipal = () => {
   const [roleUser, setRoleUser] = useState("");
   const [name, setName] = useState("");
+  const patient: any = storePatient.getState();
 
   const getUserPatient = async () => {
     try {
@@ -96,6 +98,7 @@ const TelaPrincipal = () => {
         backButton={true}
         buttonVaccine={true}
         typeHeader="patient"
+        photo={patient.photo}
       />
       <ContainerPrincipal>
         {role.length === 9 ? (

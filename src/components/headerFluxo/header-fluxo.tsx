@@ -53,9 +53,11 @@ const HeaderFluxo = (props: {
   backButton: boolean;
   buttonVaccine: boolean;
   typeHeader: "patient" | "doctor";
+  photo?: any;
 }) => {
   const navigation = useNavigation<propsStack>();
   const [date, setDate] = useState("");
+
   return (
     <ContainerSafeHeader>
       <StatusBar barStyle="light-content" backgroundColor="#000" />
@@ -68,7 +70,13 @@ const HeaderFluxo = (props: {
         {props.typeHeader === "patient" && (
           <ContainerHeaderInformationPerson>
             <ContainerImagePerson>
-              <ImagePerson source={Person} />
+              <ImagePerson
+                source={
+                  props.photo
+                    ? { uri: `data:image/jpeg;base64,${props.photo}` }
+                    : Person
+                }
+              />
             </ContainerImagePerson>
             <ContainerTitles>
               <TitleHeaderFluxo>{props.title}</TitleHeaderFluxo>
@@ -138,7 +146,13 @@ const HeaderFluxo = (props: {
             <TitleHeaderDoctor>Profissional responsável</TitleHeaderDoctor>
             <ContainerInfoDoctor>
               <ContainerImageDoctor>
-                <ImageDoctor source={Doctor} />
+                <ImageDoctor
+                  source={
+                    props.photo
+                      ? { uri: `data:image/jpeg;base64,${props.photo}` }
+                      : Person
+                  }
+                />
               </ContainerImageDoctor>
               <ContainerSubtitles>
                 <SubTitleHeaderName>{props.title}</SubTitleHeaderName>

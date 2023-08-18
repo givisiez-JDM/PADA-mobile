@@ -95,7 +95,7 @@ export const ExpandedContainer = styled(ButtonInformationVaccine)`
   height: 150px;
 `;
 
-export const ViewItemHidden = styled.View`
+export const ViewItemHidden = styled.TouchableHighlight`
   position: absolute;
   right: 5px;
   top: 5px;

@@ -5,8 +5,6 @@ export const ContainerViewCheckBox = styled.TouchableHighlight`
   flex-direction: row;
   column-gap: 10px;
   align-items: center;
-  margin-top: 20px;
-  margin-bottom: 125px;
 `;
 
 export const ButtonViewCheckBox = styled.View`
@@ -24,8 +22,9 @@ export const Check = styled.View`
   border-radius: 2px;
   justify-content: center;
   align-items: center;
-  border-color: ${({ checked }) => (checked ? "#4C7ABB" : "#4C7ABB")};
-  background: ${({ checked }) => (checked ? "#4C7ABB" : "#F1F2F3")};
+  border-color: ${({ checked }) => (checked ? "#FFFFFF" : "#4C7ABB")};
+  background: ${({ checked }) =>
+    checked ? "#4C7ABB" : "rgba(255,255,255,0.42)"};
 
   &:hover {
     background: transparent;
@@ -33,7 +32,7 @@ export const Check = styled.View`
 `;
 
 export const TitleCheck = styled.Text`
-  color: #273047;
-  font-size: 18px;
-  font-weight: 300;
+  font-weight: 700;
+  font-size: 15px;
+  color: #ffffff;
 `;

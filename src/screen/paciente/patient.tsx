@@ -7,9 +7,9 @@ import { TData, getDataUserStorage } from "../../service/requests";
 import storePatient from "../../store/storePatient";
 
 const Patient = () => {
-  const patient: TData = storePatient.getState();
+  const patient: any = storePatient.getState();
 
-  const [, setRoleUser] = useState("");
+  const [roleUser, setRoleUser] = useState("");
   const [name, setName] = useState("");
   getDataUserStorage({ setRoleUser, setName });
 
@@ -21,18 +21,19 @@ const Patient = () => {
           backButton={true}
           buttonVaccine={true}
           typeHeader="patient"
+          photo={patient.photo}
         />
         <DataPatient
-          name={""}
-          telefone={""}
-          email={""}
-          data_nascimento={""}
-          dosagem={""}
-          alergias={[]}
-          periodicidade={""}
-          metodo={""}
-          inicio={""}
-          fim={""}
+          name={patient.name}
+          telefone={patient.telephone}
+          email={patient.email}
+          data_nascimento={patient.birthDate}
+          dosagem={patient.dosagem}
+          alergias={patient.alergias}
+          periodicidade={patient.periodicidade}
+          metodo={patient.metodo}
+          inicio={patient.inicio}
+          fim={patient.fim}
         />
       </Scroll>
       <TabBar />

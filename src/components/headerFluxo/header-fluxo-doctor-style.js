@@ -35,7 +35,7 @@ export const TitleHeaderDoctor = styled.Text`
 export const ContainerInfoDoctor = styled.View`
   display: flex;
   flex-direction: row;
-`
+`;
 
 export const ContainerImageDoctor = styled.View`
   flex: 1 0;
@@ -47,12 +47,13 @@ export const ContainerImageDoctor = styled.View`
 `;
 
 export const ImageDoctor = styled.Image.attrs({
-    resizeMode: "stretch",
-  })`
-    width: 66px;
-    height: 66px;
-    z-index: 1;
-  `;
+  resizeMode: "cover",
+})`
+  border-radius: 50px;
+  width: 66px;
+  height: 66px;
+  z-index: 1;
+`;
 
 export const ContainerSubtitles = styled.View`
   flex: 2 0;
@@ -67,11 +68,13 @@ export const SubTitleHeaderName = styled.Text`
   font-weight: 700;
   font-size: 20px;
   color: #ffffff;
+  margin-left: -15px;
 `;
 
-export const SubTitleHeaderSpecialty  = styled.Text`
-flex: 1 0;
-font-style: normal;
-font-size: 20px;
-color: #ffffff;
+export const SubTitleHeaderSpecialty = styled.Text`
+  flex: 1 0;
+  font-style: normal;
+  font-size: 20px;
+  color: #ffffff;
+  margin-left: -15px;
 `;
