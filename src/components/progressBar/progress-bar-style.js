@@ -1,7 +1,7 @@
 import styled from "styled-components/native";
 
 export const ContainerComponentProgressBar = styled.View`
-  width: 236px;
+  width: ${(props) => props.width};
   height: 8px;
   background-color: #4c7abb;
   border-radius: 20px;

@@ -5,6 +5,7 @@ import {
   ContainerItemsLegends,
   ContainerLegend,
   ContainerProgressBar,
+  ContainerSubTitleProgressBar,
   ContainerVaccinesView,
   TextContainerLegend,
   TextSubTitleProgressBar,
@@ -18,12 +19,22 @@ import ItemLegend from "../../components/itemLegend/item-legend";
 import TabBar from "../../components/buttonTabBar/buttonTabBar";
 import ProgressBar from "../../components/progressBar/progress-bar";
 import storePatient from "../../store/storePatient";
+import ModalPhaseVaccine from "../../components/modalPhaseVaccine/modal-phase-vaccine";
 
 const MyVaccines = () => {
   const [roleUser, setRoleUser] = useState("");
   const [progress, setProgress] = useState(20);
   const [name, setName] = useState("");
   const patient: any = storePatient.getState();
+  const [visible, setVisible] = useState(false);
+
+  const onOpen = () => {
+    setVisible(true);
+  };
+
+  const onClose = () => {
+    setVisible(false);
+  };
   getDataUserStorage({ setRoleUser, setName });
 
   const arrayLegend = [
@@ -100,8 +111,11 @@ const MyVaccines = () => {
         <ContainerPrincipal>
           <ContainerProgressBar>
             <TextTitleProgressBar>Você está na Fase 1</TextTitleProgressBar>
-            <ProgressBar progress={progress} />
-            <TextSubTitleProgressBar>Mais detalhes</TextSubTitleProgressBar>
+            <ProgressBar progress={progress} width="236px" />
+            <ContainerSubTitleProgressBar onPress={onOpen}>
+              <TextSubTitleProgressBar>Mais detalhes</TextSubTitleProgressBar>
+            </ContainerSubTitleProgressBar>
+            <ModalPhaseVaccine visible={visible} onClose={onClose} />
           </ContainerProgressBar>
 
           <ContainerItemInformationVaccine>

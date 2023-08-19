@@ -32,10 +32,13 @@ export const TextTitleProgressBar = styled.Text`
   margin-top: 5px;
 `;
 
-export const TextSubTitleProgressBar = styled.Text`
+export const ContainerSubTitleProgressBar = styled.TouchableOpacity`
   position: absolute;
   right: 20px;
   top: 10px;
+`;
+
+export const TextSubTitleProgressBar = styled.Text`
   height: 12px;
   font-weight: 400;
   font-size: 8px;
