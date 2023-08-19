@@ -52,7 +52,11 @@ const ItemVaccine = (props: {
           <TextHiddenContent>{props.description}</TextHiddenContent>
         </HiddenContent>
       </ButtonInformationVaccine>
-      <ModalCheckVaccines visible={visible} onClose={onClose} />
+      <ModalCheckVaccines
+        visible={visible}
+        onClose={onClose}
+        typeCheck={props.color}
+      />
     </>
   );
 };

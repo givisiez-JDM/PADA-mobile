@@ -1,5 +1,6 @@
 import { Text } from "react-native";
 import {
+  ButtonClose,
   ContainerContentModalPhase,
   ContainerDateInfo,
   ContainerModalPhaseVaccines,
@@ -10,6 +11,7 @@ import {
   ContainerSubTitleInfo,
   ContainerSubTitleInfo1,
   ContainerSubTitleInfo2,
+  ImagePhaseInfo,
   TextPercent,
   TextPhasesInfo,
   TextSubTitle,
@@ -19,6 +21,8 @@ import {
 } from "./modal-phase-vaccine-style";
 import ProgressBar from "../progressBar/progress-bar";
 import { useState } from "react";
+import HiddenPhase from "../../assets/checkPhases.png";
+import Icon from "react-native-vector-icons/Ionicons";
 
 const ModalPhaseVaccine = (props: {
   visible: boolean;
@@ -33,13 +37,18 @@ const ModalPhaseVaccine = (props: {
       onRequestClose={props.onClose}
     >
       <ContainerContentModalPhase>
+        <ButtonClose onPress={props.onClose}>
+          <Icon name="close" color="#000" size={20} />
+        </ButtonClose>
         <TextTitleModalPhase>Fase de Tratamento</TextTitleModalPhase>
         <ContainerPhases>
           <ContainerPhasesInfo>
             <TextPhasesInfo>Fase 1</TextPhasesInfo>
+            <ImagePhaseInfo source={HiddenPhase} expanded={false} />
           </ContainerPhasesInfo>
           <ContainerPhasesInfo>
             <TextPhasesInfo>Fase 2</TextPhasesInfo>
+            <ImagePhaseInfo source={HiddenPhase} expanded={true} />
           </ContainerPhasesInfo>
         </ContainerPhases>
 

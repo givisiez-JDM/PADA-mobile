@@ -13,11 +13,22 @@ import { useState } from "react";
 const ModalCheckVaccines = (props: {
   visible: boolean;
   onClose: () => void;
+  typeCheck: string;
 }) => {
   const [selectedCheckbox, setSelectedCheckbox] = useState(null);
 
   const handleCheckboxSelection = (index: any) => {
-    setSelectedCheckbox(index);
+    let number: any;
+    if (index === "#bbf7ac") {
+      number = 0;
+    }
+    if (index === "#FCE0AA") {
+      number = 1;
+    }
+    if (index === "#F19A9A") {
+      number = 2;
+    }
+    return number;
   };
 
   return (
@@ -36,22 +47,37 @@ const ModalCheckVaccines = (props: {
           <CheckBox
             title="Apliquei na data correta"
             size="24"
-            checked={selectedCheckbox === 0}
-            setChecked={() => handleCheckboxSelection(0)}
+            checked={
+              props.typeCheck !== "#FCE0AA" &&
+              props.typeCheck !== "#F19A9A" &&
+              props.typeCheck === "#bbf7ac"
+                ? true
+                : false
+            }
           />
 
           <CheckBox
             title="Apliquei com atraso"
             size="24"
-            checked={selectedCheckbox === 1}
-            setChecked={() => handleCheckboxSelection(1)}
+            checked={
+              props.typeCheck !== "#bbf7ac" &&
+              props.typeCheck !== "#F19A9A" &&
+              props.typeCheck === "#FCE0AA"
+                ? true
+                : false
+            }
           />
 
           <CheckBox
             title="Não Apliquei"
             size="24"
-            checked={selectedCheckbox === 2}
-            setChecked={() => handleCheckboxSelection(2)}
+            checked={
+              props.typeCheck !== "#bbf7ac" &&
+              props.typeCheck !== "#FCE0AA" &&
+              props.typeCheck === "#F19A9A"
+                ? true
+                : false
+            }
           />
         </ContainerCheckItemsModal>
       </ContainerContentModal>

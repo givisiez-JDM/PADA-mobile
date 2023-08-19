@@ -2,6 +2,12 @@ import styled from "styled-components/native";
 
 export const ContainerModalPhaseVaccines = styled.Modal``;
 
+export const ButtonClose = styled.TouchableOpacity`
+  position: absolute;
+  right: 20px;
+  top: 20px;
+`;
+
 export const ContainerContentModalPhase = styled.View`
   position: absolute;
   top: 25%;
@@ -35,6 +41,7 @@ export const ContainerPhases = styled.View`
 
 export const ContainerPhasesInfo = styled.View`
   flex-direction: row;
+  align-items: center;
   column-gap: 10px;
   width: 80px;
   height: 30px;
@@ -49,6 +56,14 @@ export const TextPhasesInfo = styled.Text`
   font-size: 16px;
   line-height: 23px;
   color: #ffffff;
+`;
+
+export const ImagePhaseInfo = styled.Image`
+  margin-left: -5px;
+  width: 8.6px;
+  height: 7px;
+  transform: ${({ expanded }) =>
+    expanded ? "rotate(180deg)" : "rotate(0deg)"};
 `;
 
 export const ContainerSubTitleInfo = styled.View`
