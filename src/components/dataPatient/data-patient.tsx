@@ -38,6 +38,28 @@ const DataPatient = (props: {
     return <SubTitlePatientAllergies>{item}</SubTitlePatientAllergies>;
   };
 
+  const formatDateString = (dateString: string) => {
+    const parts = dateString.split("-");
+    if (parts.length === 3) {
+      const year = parts[0];
+      const month = parts[1];
+      const day = parts[2];
+      return `${day}/${month}/${year}`;
+    }
+    return JSON.stringify(dateString);
+  };
+
+  const formatPhoneNumber = (phoneNumber: string) => {
+    const cleaned = ("" + phoneNumber).replace(/\D/g, "");
+    const match = cleaned.match(/^(\d{2})(\d{5})(\d{4})$/);
+
+    if (match) {
+      return `(${match[1]}) ${match[2]}-${match[3]}`;
+    }
+
+    return JSON.stringify(phoneNumber);
+  };
+
   return (
     <ContainerDataPatient>
       <ContainerData>
@@ -46,7 +68,7 @@ const DataPatient = (props: {
       </ContainerData>
       <ContainerData>
         <TitleDataPatient>Telefone</TitleDataPatient>
-        <SubTitlePatient>{props.telefone}</SubTitlePatient>
+        <SubTitlePatient>{formatPhoneNumber(props.telefone)}</SubTitlePatient>
       </ContainerData>
       <ContainerData>
         <TitleDataPatient>Email</TitleDataPatient>
@@ -54,7 +76,9 @@ const DataPatient = (props: {
       </ContainerData>
       <ContainerData>
         <TitleDataPatient>Data de Nascimento</TitleDataPatient>
-        <SubTitlePatient>{props.data_nascimento}</SubTitlePatient>
+        <SubTitlePatient>
+          {formatDateString(props.data_nascimento)}
+        </SubTitlePatient>
       </ContainerData>
       <ContainerData>
         <TitleDataPatient>Dosagem do Medicamento</TitleDataPatient>

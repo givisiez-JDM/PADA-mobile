@@ -15,35 +15,18 @@ import ProfissionalSaude from "../../assets/profissionalSaude.png";
 import Perfil from "../../assets/imgPerfil.png";
 import TabBar from "../../components/buttonTabBar/buttonTabBar";
 import { FlatList } from "react-native";
-import { ImageSourcePropType } from "react-native";
 import {
-  TDoctor,
   getDataUserStorage,
   getDoctorById,
   getPatientDoctorId,
 } from "../../service/requests";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import store from "../../store/store";
 import storePatient from "../../store/storePatient";
-
-interface Item {
-  image: ImageSourcePropType;
-  title: string;
-  text: string;
-}
 
 const TelaPrincipal = () => {
   const [roleUser, setRoleUser] = useState("");
   const [name, setName] = useState("");
-  const patient: any = storePatient.getState();
-
-  const getUserPatient = async () => {
-    try {
-      await getPatientDoctorId(false);
-    } catch (err: unknown) {
-      console.log(err);
-    }
-  };
+  const [patient, setPatient]: any = useState({});
 
   const getDoctorId = async () => {
     try {
@@ -55,11 +38,24 @@ const TelaPrincipal = () => {
   };
 
   useEffect(() => {
-    getUserPatient();
+    let isMounted = true;
+    const fetchDataPatient = async () => {
+      await getPatientDoctorId(false);
+      if (isMounted) {
+        setPatient(storePatient.getState());
+      }
+    };
+    const fetchPatientInterval = setInterval(fetchDataPatient, 1000);
+
     getDoctorId();
+
+    return () => {
+      isMounted = false;
+      clearInterval(fetchPatientInterval);
+    };
   }, []);
 
-  let role = roleUser;
+  let role: any = roleUser;
   getDataUserStorage({ setRoleUser, setName });
 
   const array = [

@@ -252,7 +252,7 @@ export const IconWrapper = styled.View`
   background: rgba(218, 218, 218, 1);
   width: 35px;
   height: 47.5px;
-  display: flex;
+
   justify-content: center;
   align-items: center;
   border-top-left-radius: 5px;
@@ -263,7 +263,7 @@ export const IconWrapperCalendar = styled.View`
   background: rgba(218, 218, 218, 1);
   width: 50px;
   height: 47.5px;
-  display: flex;
+
   justify-content: center;
   align-items: center;
   border-top-right-radius: 5px;

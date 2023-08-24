@@ -46,7 +46,7 @@ export const loginUser = async (
 ) => {
   try {
     const response = await apiPADA
-      .post("/login/patient", {
+      .post("/login/patients", {
         email,
         password,
       })
@@ -86,7 +86,7 @@ export const patientResponse = async () => {
     let tokenUser: string | any = await AsyncStorage.getItem("token");
 
     await apiPADA
-      .get(`/patient/${JSON.parse(id)}`, {
+      .get(`/patients/${JSON.parse(id)}`, {
         headers: {
           Authorization: JSON.parse(tokenUser),
         },
@@ -111,7 +111,7 @@ export const createUser = async (
 ) => {
   try {
     await apiPADA
-      .post("/doctor", {
+      .post("/doctors", {
         name: user.name,
         email: user.email,
         password: user.password,
@@ -174,7 +174,7 @@ export const getPatientDoctorId = async (doctorId: boolean) => {
     let tokenUser: string | any = await AsyncStorage.getItem("token");
 
     await apiPADA
-      .get(`/patient/${JSON.parse(id)}`, {
+      .get(`/patients/${JSON.parse(id)}`, {
         headers: {
           Authorization: JSON.parse(tokenUser),
         },
@@ -212,7 +212,7 @@ export const getDoctorById = async (id: string) => {
   try {
     let tokenUser: string | any = await AsyncStorage.getItem("token");
     await apiPADA
-      .get(`/doctor/${JSON.parse(id)}`, {
+      .get(`/doctors/${JSON.parse(id)}`, {
         headers: {
           Authorization: JSON.parse(tokenUser),
         },

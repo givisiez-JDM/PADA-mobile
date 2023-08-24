@@ -25,7 +25,7 @@ export const ViewInformationDate = styled.View`
   height: 35px;
   margin-top: 5px;
   border-right-width: 1px;
-  border-left-width: 1px;
+  border-left-width: 4px;
   border-left-color: ${({ colorBorderLeft }) => colorBorderLeft};
   border-right-color: #4c7abb;
 `;
