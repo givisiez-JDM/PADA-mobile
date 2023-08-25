@@ -42,11 +42,5 @@ jobs:
           ./gradlew assembleRelease
           cd ..
 
-      - name: Stop Gradlew
-        run: |
-          cd android
-          ./gradlew --stop
-          cd..
-
       - name: Build Expo Project
         run: eas build --platform android # ou yarn expo build:ios
