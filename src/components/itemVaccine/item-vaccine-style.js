@@ -15,10 +15,10 @@ export const ButtonInformationVaccine = styled.TouchableOpacity`
   background: #ffffff;
   border-bottom-width: 2px;
   border-bottom-color: rgba(76, 122, 187, 0.5);
-  //border-bottom: 2px solid rgba(76, 122, 187, 0.5);
 `;
 
 export const ViewInformationDate = styled.View`
+  flex: 1;
   display: flex;
   flex-direction: column;
   width: 120px;
@@ -31,6 +31,8 @@ export const ViewInformationDate = styled.View`
 `;
 
 export const ContainerNameVaccine = styled.View`
+  flex: 1;
+  display: flex;
   position: absolute;
   top: 5px;
   left: 132px;

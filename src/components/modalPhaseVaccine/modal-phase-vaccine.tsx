@@ -1,4 +1,4 @@
-import { Text } from "react-native";
+import { Animated } from "react-native";
 import {
   ButtonClose,
   ContainerContentModalPhase,
@@ -20,7 +20,7 @@ import {
   TextTitleModalProgressBar,
 } from "./modal-phase-vaccine-style";
 import ProgressBar from "../progressBar/progress-bar";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import HiddenPhase from "../../assets/checkPhases.png";
 import Icon from "react-native-vector-icons/Ionicons";
 
@@ -29,16 +29,44 @@ const ModalPhaseVaccine = (props: {
   onClose: () => void;
 }) => {
   const [progress, setProgress] = useState(20);
+  const [animation] = useState(new Animated.Value(0));
+  useEffect(() => {
+    if (props.visible) {
+      Animated.timing(animation, {
+        toValue: 1,
+        duration: 100,
+        useNativeDriver: false,
+      }).start();
+    } else {
+      Animated.timing(animation, {
+        toValue: -1,
+        duration: 300,
+        useNativeDriver: false,
+      }).start(async () => {
+        await props.onClose;
+        animation.setValue(0);
+      });
+    }
+  }, [props.visible]);
+
+  const translateX = animation.interpolate({
+    inputRange: [0, 1],
+    outputRange: [300, 0],
+  });
+
   return (
     <ContainerModalPhaseVaccines
-      animationType="slide"
       transparent={true}
       visible={props.visible}
       onRequestClose={props.onClose}
     >
-      <ContainerContentModalPhase>
+      <ContainerContentModalPhase
+        style={{
+          transform: [{ translateX: translateX }],
+        }}
+      >
         <ButtonClose onPress={props.onClose}>
-          <Icon name="close" color="#000" size={20} />
+          <Icon name="chevron-forward-outline" color="#000" size={20} />
         </ButtonClose>
         <TextTitleModalPhase>Fase de Tratamento</TextTitleModalPhase>
         <ContainerPhases>

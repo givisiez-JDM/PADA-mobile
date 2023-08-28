@@ -1,17 +1,25 @@
 import styled from "styled-components/native";
+import { Animated } from "react-native";
 
 export const ContainerModalPhaseVaccines = styled.Modal``;
 
 export const ButtonClose = styled.TouchableOpacity`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: absolute;
   right: 20px;
   top: 20px;
+  width: 30px;
+  height: 30px;
+  background: #fff;
+  border-radius: 50px;
 `;
 
-export const ContainerContentModalPhase = styled.View`
+export const ContainerContentModalPhase = styled(Animated.View)`
   position: absolute;
   top: 25%;
-  left: 7%;
+  right: 0%;
   display: flex;
   flex-direction: column;
   row-gap: 10px;
