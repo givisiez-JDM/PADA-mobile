@@ -29,24 +29,13 @@ const ModalPhaseVaccine = (props: {
   onClose: () => void;
 }) => {
   const [progress, setProgress] = useState(20);
-  const [animation] = useState(new Animated.Value(0));
+  const [animation] = useState(new Animated.Value(props.visible ? 1 : 0));
   useEffect(() => {
-    if (props.visible) {
-      Animated.timing(animation, {
-        toValue: 1,
-        duration: 100,
-        useNativeDriver: false,
-      }).start();
-    } else {
-      Animated.timing(animation, {
-        toValue: -1,
-        duration: 300,
-        useNativeDriver: false,
-      }).start(async () => {
-        await props.onClose;
-        animation.setValue(0);
-      });
-    }
+    Animated.timing(animation, {
+      toValue: props.visible ? 1 : 0,
+      duration: 100,
+      useNativeDriver: false,
+    }).start();
   }, [props.visible]);
 
   const translateX = animation.interpolate({
