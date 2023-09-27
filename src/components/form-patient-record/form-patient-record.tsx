@@ -39,6 +39,7 @@ const FormPatientRecord = ({
           onChangeText={handleInputChange}
           value={state}
           placeholder={placeholder}
+          placeholderTextColor="#4C7ABB"
           secureTextEntry={
             placeholder === "Senha" || placeholder === "Repetir Senha"
               ? true

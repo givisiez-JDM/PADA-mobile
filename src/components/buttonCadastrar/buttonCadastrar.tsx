@@ -10,7 +10,7 @@ function ButtonDoctor() {
   return (
     <TouchableOpacity onPress={() => navigation.navigate("Cadastro")}>
       <ButtonCadastrarContainer>
-        <TextButton>Cadastre- se</TextButton>
+        <TextButton>Cadastre-se</TextButton>
       </ButtonCadastrarContainer>
     </TouchableOpacity>
   );
