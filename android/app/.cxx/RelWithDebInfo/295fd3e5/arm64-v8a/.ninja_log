@@ -35,3 +35,5 @@
 60796	64555	1692881558186689158	/home/joaovictor/Projetos_React/React_Native/projeto_pada/padamobile/android/app/build/intermediates/cxx/RelWithDebInfo/295fd3e5/obj/arm64-v8a/libreact_codegen_rnsvg.so	415addf3e4c511f1
 1	90893	1692881581314638169	CMakeFiles/appmodules.dir/home/joaovictor/Projetos_React/React_Native/projeto_pada/padamobile/android/app/build/generated/rncli/src/main/jni/rncli.cpp.o	1219106d31cac631
 91209	93715	1692881587314624485	/home/joaovictor/Projetos_React/React_Native/projeto_pada/padamobile/android/app/build/intermediates/cxx/RelWithDebInfo/295fd3e5/obj/arm64-v8a/libappmodules.so	d68e82916400ee2c
+1	22	0	/home/joaovictor/Projetos_React/React_Native/projeto_pada/padamobile/android/app/.cxx/RelWithDebInfo/295fd3e5/arm64-v8a/CMakeFiles/cmake.verify_globs	3dec7d19c4389df2
+0	5	0	clean	b0aa568b4c38d3dd
