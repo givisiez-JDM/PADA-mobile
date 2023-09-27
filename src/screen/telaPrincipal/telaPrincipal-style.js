@@ -2,19 +2,29 @@ import styled from "styled-components/native";
 
 export const ContainerSafePrincipal = styled.SafeAreaView`
   flex: 1;
-  
 `;
 
 export const ContainerPrincipal = styled.View`
   display: flex;
-  flex-direction: row;
-  column-gap: 40px;
+  justify-content: center;
   width: 100%;
   height: 90%;
-  align-items: center;
-  justify-content: flex-start;
   z-index: 0;
-  background:rgba(#d1d1d1, .2) ;
+  background: rgba(#d1d1d1, 0.2);
+`;
+
+export const ContainerListTagFluxo = styled.View`
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const ContainerListDoctor = styled.View`
+  display: flex;
+  width: 100%;
+  margin-left: 12%;
+  margin-top: -45%;
 `;
 
 export const ContainerTelaPrincipal = styled.View`

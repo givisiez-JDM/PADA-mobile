@@ -11,25 +11,55 @@ import {
   ContainerFormInputsPatients,
   ContainerSafe,
   Scroll,
+  ContainerFooterBottom,
 } from "./cadastro-style";
 
 import FormPatientRecord from "../../components/form-patient-record/form-patient-record";
 import { validar } from "../../config/validates";
-import CheckBox from "../../components/checkBox/checkBox";
+import checkFlag from "../../assets/checkflag.png";
+import errorFlag from "../../assets/errorflag.png";
 import Logo from "../../assets/logo.png";
 
 import { Platform } from "react-native";
+import ModalInfo from "../../components/modalInfo/modal-info";
+import LoadingModal from "../../components/loadingModal/loading-modal";
+import { User, createUser } from "../../service/requests";
 
 const PatientRecord = () => {
+  const [name, setName] = useState("");
   const [mail, setMail] = useState("");
   const [pass, setPass] = useState("");
   const [repeatPass, setRepeatPass] = useState("");
-
+  const [errorName, setErrorName] = useState("");
   const [errorMail, setErrorMail] = useState("");
   const [errorPass, setErrorPass] = useState("");
   const [errorRepeatPass, setErrorRepeatPass] = useState("");
+  const [modalVisible, setModalVisible] = useState(false);
+  const [flag, setFlag] = useState("");
+  const [mesageTextModal, setMessageTextModal] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  const openLoading = () => {
+    setLoading(true);
+  };
+
+  const closeLoading = () => {
+    setLoading(false);
+  };
+
+  const openModal = () => {
+    setModalVisible(true);
+  };
+
+  const closeModal = () => {
+    setModalVisible(false);
+  };
 
   const handleInputChange = (name: string, value: string) => {
+    if (name === "Nome de usuário") {
+      setName(value);
+      setErrorName("");
+    }
     if (name === "E-mail") {
       setMail(value);
       setErrorMail("");
@@ -45,19 +75,38 @@ const PatientRecord = () => {
   };
 
   const arrayNamePlaceholder = [
+    ["person", name, "Nome de usuário", errorName],
     ["mail", mail, "E-mail", errorMail],
     ["key", pass, "Senha", errorPass],
     ["key", repeatPass, "Repetir Senha", errorRepeatPass],
   ];
 
-  const savePatient = () => {
+  const savePatient = async () => {
     if (
       validar(
-        { mail, pass, repeatPass },
-        { setErrorMail, setErrorPass, setErrorRepeatPass }
+        { name, mail, pass, repeatPass },
+        { setErrorName, setErrorMail, setErrorPass, setErrorRepeatPass }
       )
     ) {
-      console.log("Foi");
+      const user: User = {
+        name: name,
+        email: mail,
+        password: pass,
+      };
+      createUser(
+        user,
+        {
+          setFlag,
+          setName,
+          setMail,
+          setPass,
+          setRepeatPass,
+          setMessageTextModal,
+        },
+        openLoading,
+        closeLoading,
+        openModal
+      );
     }
   };
 
@@ -84,9 +133,6 @@ const PatientRecord = () => {
               )
             )}
           </ContainerFormInputsPatients>
-
-          <CheckBox />
-
           <Button
             onPress={() => {
               savePatient();
@@ -94,9 +140,17 @@ const PatientRecord = () => {
           >
             <TextButton>Cadastre-se</TextButton>
           </Button>
+          <LoadingModal visible={loading} onClose={closeLoading} />
+          <ModalInfo
+            visible={modalVisible}
+            onClose={closeModal}
+            image={flag === "check" ? checkFlag : errorFlag}
+            text={mesageTextModal}
+          />
         </ContainerFormPatient>
-
-        <FooterCurto />
+        <ContainerFooterBottom>
+          <FooterCurto />
+        </ContainerFooterBottom>
       </Scroll>
     </ContainerSafe>
   );

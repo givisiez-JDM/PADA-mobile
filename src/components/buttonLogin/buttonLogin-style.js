@@ -2,12 +2,13 @@ import styled from "styled-components/native";
 
 export const ButtonLoginContainer = styled.View`
   display: flex;
+
   justify-content: center;
   align-items: center;
   width: 220px;
   height: 44px;
   border-radius: 50px;
-  background: #4C7ABB;
+  background: #4c7abb;
   border: none;
   text-align: center;
   margin-bottom: 7px;
@@ -24,15 +25,14 @@ export const TextButton = styled.Text`
   font-weight: bold;
   padding: 2px;
   font-weight: bold;
- text-align: center;
- 
+  text-align: center;
 `;
 
 export const ButtonImageIcon = styled.View`
-margin: 12px;
-padding: 3px;
-padding-bottom: 2px;
+  position: relative;
+  left: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
 `;
-
-
-

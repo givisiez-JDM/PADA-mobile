@@ -11,7 +11,7 @@ export const Scroll = styled.ScrollView`
 
 export const ContainerFormPatient = styled.View`
   display: flex;
-  margin-top: 40%;
+  margin-top: 35%;
   flex-direction: column;
   row-gap: 5px;
   justify-content: center;
@@ -73,7 +73,8 @@ export const Button = styled.TouchableOpacity`
   width: 180px;
   height: 50px;
   position: relative;
-  bottom: 100px;
+  bottom: -50px;
+  margin-bottom: 100px;
   border-radius: 50px;
   background: #4c7abb;
   border: none;
@@ -90,4 +91,8 @@ export const TextButton = styled.Text`
   color: #fff;
   font-size: 22px;
   font-weight: bold;
+`;
+
+export const ContainerFooterBottom = styled.View`
+  margin-top: 18px;
 `;

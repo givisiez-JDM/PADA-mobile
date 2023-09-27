@@ -25,5 +25,4 @@ export const ContainerBack = styled.TouchableOpacity`
   justify-content: center;
   align-items: center;
   z-index: 3;
-  cursor: pointer;
 `;
