@@ -22,6 +22,7 @@ import {
 } from "../../service/requests";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import storePatient from "../../store/storePatient";
+import apiPADA from "../../service/api";
 
 const TelaPrincipal = () => {
   const [roleUser, setRoleUser] = useState("");
@@ -42,7 +43,23 @@ const TelaPrincipal = () => {
     const fetchDataPatient = async () => {
       await getPatientDoctorId(false);
       if (isMounted) {
-        setPatient(storePatient.getState());
+        //setPatient(storePatient.getState());
+        try {
+          let id: string | any = await AsyncStorage.getItem("id");
+          let tokenUser: string | any = await AsyncStorage.getItem("token");
+
+          await apiPADA
+            .get(`/patients/${JSON.parse(id)}`, {
+              headers: {
+                Authorization: JSON.parse(tokenUser),
+              },
+            })
+            .then((response: any) => {
+              AsyncStorage.setItem("@patient", JSON.stringify(response.data));
+            });
+        } catch (err) {
+          console.log("Error:", err);
+        }
       }
     };
     const fetchPatientInterval = setInterval(fetchDataPatient, 1000);

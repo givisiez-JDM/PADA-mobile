@@ -19,16 +19,13 @@ export interface TDoctor {
 }
 
 export interface TData {
+  id: string;
   name: string;
-  telefone: string;
+  telephone: string;
   email: string;
-  data_nascimento: string;
-  dosagem: string;
-  alergias: string[];
-  periodicidade: string;
-  metodo: string;
-  inicio: string;
-  fim: string;
+  birthDate: string;
+  photo: any;
+  doctorId: string;
 }
 
 export interface User {
@@ -186,20 +183,21 @@ export const getPatientDoctorId = async (doctorId: boolean) => {
             JSON.stringify(response.data.doctorId)
           );
         } else {
-          const imageBuffer = response.data.photo.data;
+          //AsyncStorage.setItem("@patient", JSON.stringify(response.data));
+          /*const imageBuffer = response.data.photo.data;
           const base64Image = Buffer.from(imageBuffer).toString("utf8");
           const aux = {
             id: response.data.id,
             name: response.data.name,
             email: response.data.email,
-            photo: base64Image,
+            photo: "",
             telephone: response.data.telephone,
             birthDate: response.data.birthDate,
             doctorId: response.data.doctorId,
-          };
+          };*/
           storePatient.dispatch({
             type: "UPDATE_PATIENT",
-            payload: aux,
+            payload: response.data,
           });
         }
       });
@@ -218,8 +216,9 @@ export const getDoctorById = async (id: string) => {
         },
       })
       .then((response: any) => {
-        const imageBuffer = response.data.photo.data;
-        const base64Image = Buffer.from(imageBuffer).toString("utf8");
+        //const imageBuffer = response.data.photo.data;
+        console.log(response.data);
+        /*const base64Image = Buffer.from(imageBuffer).toString("utf8");
         const aux = {
           id: response.data.id,
           name: response.data.name,
@@ -228,10 +227,10 @@ export const getDoctorById = async (id: string) => {
           about: response.data.about,
           CRM: response.data.CRM,
           specialty: response.data.specialty,
-        };
+        };*/
         store.dispatch({
           type: "UPDATE_DOCTOR",
-          payload: aux,
+          payload: response.data,
         });
       });
   } catch (err: unknown) {
