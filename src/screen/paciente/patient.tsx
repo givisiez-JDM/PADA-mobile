@@ -30,12 +30,12 @@ const Patient = () => {
           telefone={patient.telephone}
           email={patient.email}
           data_nascimento={patient.birthDate}
-          dosagem={"patient.dosagem"}
-          alergias={["patient.alergias"]}
-          periodicidade={"patient.periodicidade"}
-          metodo={"patient.metodo"}
-          inicio={"patient.inicio"}
-          fim={"patient.fim"}
+          dosagem={patient.dosage}
+          alergias={patient.allergies}
+          periodicidade={patient.frequency}
+          metodo={patient.method}
+          inicio={patient.startTreatment}
+          fim={patient.endTreatment}
         />
       </Scroll>
       <TabBar />
