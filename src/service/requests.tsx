@@ -183,6 +183,7 @@ export const getPatientDoctorId = async (doctorId: boolean) => {
             JSON.stringify(response.data.doctorId)
           );
         } else {
+          getTreatmentsPatient(response.data.id);
           //AsyncStorage.setItem("@patient", JSON.stringify(response.data));
           /*const imageBuffer = response.data.photo.data;
           const base64Image = Buffer.from(imageBuffer).toString("utf8");
@@ -217,7 +218,7 @@ export const getDoctorById = async (id: string) => {
       })
       .then((response: any) => {
         //const imageBuffer = response.data.photo.data;
-        console.log(response.data);
+        //console.log(response.data);
         /*const base64Image = Buffer.from(imageBuffer).toString("utf8");
         const aux = {
           id: response.data.id,
@@ -235,6 +236,20 @@ export const getDoctorById = async (id: string) => {
       });
   } catch (err: unknown) {
     console.log(err);
+  }
+};
+
+export const getTreatmentsPatient = async (id: number) => {
+  try {
+  } catch (error: unknown) {
+    console.error(error);
+  }
+};
+
+export const getPhasesTreatment = async (id: number) => {
+  try {
+  } catch (error: unknown) {
+    console.error(error);
   }
 };
 
