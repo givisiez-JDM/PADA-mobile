@@ -248,7 +248,7 @@ export const getTreatmentsPatient = async (id: number) => {
 
 export const getPhasesTreatment = async (id: number) => {
   try {
-    // foi
+    await apiPADA.get("");
   } catch (error: unknown) {
     console.error(error);
   }
