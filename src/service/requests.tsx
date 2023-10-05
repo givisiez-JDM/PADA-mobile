@@ -248,6 +248,7 @@ export const getTreatmentsPatient = async (id: number) => {
 
 export const getPhasesTreatment = async (id: number) => {
   try {
+    // foi
   } catch (error: unknown) {
     console.error(error);
   }
