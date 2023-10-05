@@ -7,6 +7,12 @@ const rootPatient = (
     photo: "",
     birthDate: "",
     doctorId: "",
+    dosage: "",
+    frequency:"",
+    startTreatment: "",
+    endTreatment: "",
+    allergies: [],
+    method: "",
   },
   action: any
 ) => {

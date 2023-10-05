@@ -5,17 +5,7 @@
     "version": "1.0.0",
     "assetBundlePatterns": [
       "**/*"
-    ],
-    "extra": {
-      "eas": {
-        "projectId": "e1de84ff-3a42-4a81-97dd-61566debcb8b"
-      }
-    },
-    "android": {
-      "package": "com.br0wnd3r.padamobile"
-    },
-    "ios": {
-      "bundleIdentifier": "com.br0wnd3r.padamobile"
-    }
+    ]
+    
   }
 }
