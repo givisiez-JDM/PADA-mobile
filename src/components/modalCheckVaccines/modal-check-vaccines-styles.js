@@ -10,13 +10,13 @@ export const ButtonClose = styled.TouchableOpacity`
 
 export const ContainerContentModal = styled.View`
   position: absolute;
-  top: 25%;
-  left: 7%;
+  bottom: 0%;
+  left: 0%;
   display: flex;
   flex-direction: column;
   row-gap: 10px;
   align-items: center;
-  width: 360px;
+  width: 410px;
   height: 251px;
   border-top-right-radius: 30px;
   border-top-left-radius: 30px;

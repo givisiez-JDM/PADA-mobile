@@ -43,8 +43,8 @@ const TelaPrincipal = () => {
     const fetchDataPatient = async () => {
       await getPatientDoctorId(false);
       if (isMounted) {
-        //setPatient(storePatient.getState());
-        try {
+        setPatient(storePatient.getState());
+        /*try {
           let id: string | any = await AsyncStorage.getItem("id");
           let tokenUser: string | any = await AsyncStorage.getItem("token");
 
@@ -59,7 +59,7 @@ const TelaPrincipal = () => {
             });
         } catch (err) {
           console.log("Error:", err);
-        }
+        }*/
       }
     };
     const fetchPatientInterval = setInterval(fetchDataPatient, 1000);

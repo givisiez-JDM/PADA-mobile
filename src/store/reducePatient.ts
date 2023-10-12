@@ -8,7 +8,7 @@ const rootPatient = (
     birthDate: "",
     doctorId: "",
     dosage: "",
-    frequency:"",
+    frequency: "",
     startTreatment: "",
     endTreatment: "",
     allergies: [],

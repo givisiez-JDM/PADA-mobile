@@ -189,11 +189,13 @@ export const getPatientDoctorId = async (doctorId: boolean) => {
             JSON.stringify(response.data.doctorId)
           );
         } else {
+          const imageBuffer = response.data.photo.data;
+          const base64Image = Buffer.from(imageBuffer).toString("base64");
           let aux = {
             id: response.data.id,
             name: response.data.name,
             email: response.data.email,
-            photo: "",
+            photo: base64Image,
             telephone: response.data.telephone,
             birthDate: response.data.birthDate,
             doctorId: response.data.doctorId,
@@ -261,9 +263,8 @@ export const getDoctorById = async (id: string) => {
         },
       })
       .then((response: any) => {
-        //const imageBuffer = response.data.photo.data;
-        //console.log(response.data);
-        /*const base64Image = Buffer.from(imageBuffer).toString("utf8");
+        const imageBuffer = response.data.photo.data;
+        const base64Image = Buffer.from(imageBuffer).toString("base64");
         const aux = {
           id: response.data.id,
           name: response.data.name,
@@ -272,10 +273,10 @@ export const getDoctorById = async (id: string) => {
           about: response.data.about,
           CRM: response.data.CRM,
           specialty: response.data.specialty,
-        };*/
+        };
         store.dispatch({
           type: "UPDATE_DOCTOR",
-          payload: response.data,
+          payload: aux,
         });
       });
   } catch (err: unknown) {

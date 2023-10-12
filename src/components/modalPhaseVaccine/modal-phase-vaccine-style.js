@@ -10,22 +10,21 @@ export const ButtonClose = styled.TouchableOpacity`
   position: absolute;
   right: 20px;
   top: 20px;
-  width: 30px;
-  height: 30px;
+  width: 25px;
+  height: 25px;
   background: #fff;
   border-radius: 50px;
 `;
 
 export const ContainerContentModalPhase = styled(Animated.View)`
   position: absolute;
-  top: 25%;
   right: 0%;
   display: flex;
   flex-direction: column;
   row-gap: 10px;
   align-items: center;
-  width: 360px;
-  height: 481px;
+  width: 410px;
+  height: 460px;
   border-bottom-left-radius: 30px;
   border-top-left-radius: 30px;
   background: #4c7abb;
@@ -36,13 +35,13 @@ export const TextTitleModalPhase = styled.Text`
   font-size: 18px;
   line-height: 26px;
   color: #ffffff;
-  margin-top: 20px;
+  margin-top: 10px;
 `;
 
 export const ContainerPhases = styled.View`
   position: relative;
   top: 20px;
-  left: -100px;
+  left: -120px;
   flex-direction: column;
   row-gap: 10px;
 `;
@@ -79,7 +78,7 @@ export const ContainerSubTitleInfo = styled.View`
   row-gap: 5px;
   position: relative;
   top: 40px;
-  left: -55px;
+  left: -75px;
 `;
 
 export const ContainerSubTitleInfo1 = styled.View`
@@ -87,7 +86,7 @@ export const ContainerSubTitleInfo1 = styled.View`
   row-gap: 5px;
   position: relative;
   top: 40px;
-  left: -35px;
+  left: -55px;
 `;
 
 export const ContainerSubTitleInfo2 = styled.View`
@@ -95,7 +94,7 @@ export const ContainerSubTitleInfo2 = styled.View`
   row-gap: 5px;
   position: relative;
   top: 40px;
-  left: -45px;
+  left: -65px;
 `;
 
 export const TextTitle = styled.Text`
@@ -120,7 +119,7 @@ export const TextSubTitle = styled.Text`
 export const ContainerModalProgressBar = styled.View`
   position: relative;
   top: 45px;
-  left: -25px;
+  left: -55px;
   width: 223px;
   height: 69px;
   background: #ffffff;

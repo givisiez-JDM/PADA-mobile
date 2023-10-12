@@ -23,7 +23,7 @@ const Patient = () => {
           backButton={true}
           buttonVaccine={true}
           typeHeader="patient"
-          //photo={patient.photo}
+          photo={patient.photo}
         />
         <DataPatient
           name={patient.name}
