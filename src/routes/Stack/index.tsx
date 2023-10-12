@@ -1,5 +1,5 @@
 import React from "react";
-
+import SplashScreen from "../../screen/splashScreen/splashScreen";
 import LoginCadastro from "../../screen/loginCadastro/loginCadastro";
 import Login from "../../screen/login/login";
 import { propsNavigationStack } from "./Models";
@@ -17,7 +17,7 @@ const { Navigator, Screen } =
 export default function () {
   return (
     <Navigator
-      initialRouteName="LoginCadastro"
+      initialRouteName="SplashScreen"
       screenOptions={{ headerShown: false }}
     >
       <Screen name="LoginCadastro" component={LoginCadastro} />
@@ -29,6 +29,7 @@ export default function () {
         name="ProfissionalResponsavel"
         component={ProfissionalResponsavel}
       />
+      <Screen name="SplashScreen" component={SplashScreen}/>
       <Screen name="MyVaccines" component={MyVaccines} />
       {/* <Screen name="TabRoutes" component={TabRoutes} /> */}
     </Navigator>
