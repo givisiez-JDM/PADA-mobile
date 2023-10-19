@@ -25,7 +25,6 @@ export const ContainerLogin = styled.View`
   height: 50px;
   border-radius: 50px;
   background: #fff;
-  margin-bottom: 15px;
   margin-top: 15px;
   border: 2px #4c7abb;
  

@@ -56,14 +56,7 @@ const PatientRecord = () => {
   };
 
   const handleInputChange = (name: string, value: string) => {
-    if (name === "Nome de usuário") {
-      setName(value);
-      setErrorName("");
-    }
-    if (name === "E-mail") {
-      setMail(value);
-      setErrorMail("");
-    }
+   
     if (name === "Senha") {
       setPass(value);
       setErrorPass("");
@@ -75,8 +68,7 @@ const PatientRecord = () => {
   };
 
   const arrayNamePlaceholder = [
-    ["person", name, "Nome de usuário", errorName],
-    ["mail", mail, "E-mail", errorMail],
+    
     ["key", pass, "Senha", errorPass],
     ["key", repeatPass, "Repetir Senha", errorRepeatPass],
   ];
@@ -84,7 +76,7 @@ const PatientRecord = () => {
   const savePatient = async () => {
     if (
       validar(
-        { name, mail, pass, repeatPass },
+        { pass, repeatPass },
         { setErrorName, setErrorMail, setErrorPass, setErrorRepeatPass }
       )
     ) {
@@ -97,8 +89,6 @@ const PatientRecord = () => {
         user,
         {
           setFlag,
-          setName,
-          setMail,
           setPass,
           setRepeatPass,
           setMessageTextModal,
@@ -116,7 +106,7 @@ const PatientRecord = () => {
         <Header back={true} />
         <ContainerFormPatient>
           <ImageLogo source={Logo} />
-          <TitleForm>Crie sua conta</TitleForm>
+          <TitleForm>Crie sua senha</TitleForm>
           <ContainerFormInputsPatients>
             {arrayNamePlaceholder.map(
               ([icon, valueState, place, err], index: number) => (
@@ -138,7 +128,7 @@ const PatientRecord = () => {
               savePatient();
             }}
           >
-            <TextButton>Cadastre-se</TextButton>
+            <TextButton>Confirmar</TextButton>
           </Button>
           <LoadingModal visible={loading} onClose={closeLoading} />
           <ModalInfo

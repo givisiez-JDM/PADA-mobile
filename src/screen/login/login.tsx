@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import {
+  ButtonSenha,
   ContainerFooterBottom,
   ContainerMain,
   ContainerSafe,
@@ -19,6 +20,7 @@ import { ContainerFormInputsPatients } from "../cadastro/cadastro-style";
 import FormPatientLoginRecord from "../../components/form-patient-login/form-patient-login";
 
 import { Platform } from "react-native";
+import { Text } from "react-native";
 
 const PatientLogin = () => {
   const [mail, setMail] = useState("");
@@ -71,6 +73,7 @@ const PatientLogin = () => {
             setErrorMail={setErrorMail}
             setErrorPass={setErrorPass}
           />
+          <ButtonSenha>Esqueceu sua senha?</ButtonSenha>
         </ContainerMain>
         <ContainerFooterBottom>
           <FooterCurto />
