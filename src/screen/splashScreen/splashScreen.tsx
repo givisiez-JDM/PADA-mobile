@@ -13,12 +13,12 @@ import Loading from '../../components/loading/loading';
 const SplashScreen: React.FC = () => {
 const navigation = useNavigation<propsStack>();
 
-    useEffect(() => {
+    // useEffect(() => {
  
-        setTimeout(() => {
-            navigation.navigate("LoginCadastro");
-        }, 3000);
-    }, []);
+    //     setTimeout(() => {
+    //         navigation.navigate("LoginCadastro");
+    //     }, 3000);
+    // }, []);
 
     return (
       <SafeAreaView>
