@@ -29,10 +29,12 @@ export const Check = styled.View`
   &:hover {
     background: transparent;
   }
+  margin-top: 20px;
 `;
 
 export const TitleCheck = styled.Text`
-  font-weight: 700;
+  font-weight: 400;
   font-size: 15px;
-  color: #ffffff;
+  color: #4C7ABB;
+  margin-top: 20px;
 `;

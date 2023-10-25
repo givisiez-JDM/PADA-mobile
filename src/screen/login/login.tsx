@@ -21,12 +21,15 @@ import FormPatientLoginRecord from "../../components/form-patient-login/form-pat
 
 import { Platform } from "react-native";
 import { Text } from "react-native";
+import CheckBox from "../../components/checkBox/checkBox";
 
 const PatientLogin = () => {
   const [mail, setMail] = useState("");
   const [pass, setPass] = useState("");
   const [errorMail, setErrorMail] = useState("");
   const [errorPass, setErrorPass] = useState("");
+
+  const [checked, setChecked] = useState(false)
 
   const arrayNamePlaceholder = [
     [logoEmail, mail, "E-mail", errorMail],
@@ -43,6 +46,8 @@ const PatientLogin = () => {
       setErrorPass("");
     }
   };
+
+  
 
   return (
     <ContainerSafe behavior={Platform.OS === "ios" ? "padding" : "height"}>
@@ -67,6 +72,16 @@ const PatientLogin = () => {
             )}
           </ContainerFormInputsPatients>
 
+        <CheckBox
+        title="Lembre da senha"
+        size="20px"
+        checked={checked} 
+        setChecked={setChecked} 
+        >
+        
+        </CheckBox>
+
+       
           <ButtonEntrar
             mail={mail}
             pass={pass}

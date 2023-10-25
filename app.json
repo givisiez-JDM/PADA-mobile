@@ -6,9 +6,13 @@
     "assetBundlePatterns": [
       "**/*"
     ],
-    "splash" : {
-      "image" : ""
+    "splash": {
+      "image": ""
+    },
+    "extra": {
+      "eas": {
+        "projectId": "510f4bc6-0534-48bd-81f0-f1aed5fb1e53"
+      }
     }
+  }
 }
-}
- 

@@ -9,14 +9,14 @@ const CheckBox = (props: {
   title: string;
   size: string;
   checked: boolean;
-  setChecked?: React.Dispatch<React.SetStateAction<boolean>>;
+  setChecked?: any;
 }) => {
-  /*const handleCheckbox = () => {
+  const handleCheckbox = () => {
     props.setChecked(!props.checked);
-  };*/
+  };
   return (
     <ContainerViewCheckBox
-      /*onPress={handleCheckbox}*/ underlayColor="#00000000"
+      onPress={handleCheckbox} underlayColor="#00000000"
     >
       <ButtonViewCheckBox>
         <Check checked={props.checked} size={props.size}>

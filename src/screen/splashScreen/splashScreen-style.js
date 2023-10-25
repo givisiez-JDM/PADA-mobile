@@ -10,5 +10,12 @@ export const ContainerSplashScreen = styled.View`
   height: 100%;
 
 `
+
+export const ViewSplash = styled.View`
+margin-top: 10px;
+margin-bottom: -50px;
+`
+
+
 ;
 
