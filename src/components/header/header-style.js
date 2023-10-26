@@ -11,7 +11,7 @@ export const ImageHeader = styled.Image.attrs({
 })`
   width: ${(props) => props.screenWidth};
   height: 200px;
-  z-index: 1;
+  z-index: -1;
 `;
 
 export const ContainerBack = styled.TouchableOpacity`

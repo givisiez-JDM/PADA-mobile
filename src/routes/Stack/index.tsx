@@ -10,6 +10,7 @@ import PatientList from "../../screen/listaPacientes/lista-pacientes";
 import Patient from "../../screen/paciente/patient";
 import ProfissionalResponsavel from "../../screen/profissionalResponsável/profissionalResponsável";
 import MyVaccines from "../../screen/minhasVacinas/my-vaccines";
+import CodigoCelular from "../../screen/codigoCelular/codigo-celular";
 
 const { Navigator, Screen } =
   createNativeStackNavigator<propsNavigationStack>();
@@ -17,7 +18,7 @@ const { Navigator, Screen } =
 export default function () {
   return (
     <Navigator
-      initialRouteName="SplashScreen"
+      initialRouteName="CodePhone"
       screenOptions={{ headerShown: false }}
     >
       <Screen name="LoginCadastro" component={LoginCadastro} />
@@ -29,8 +30,9 @@ export default function () {
         name="ProfissionalResponsavel"
         component={ProfissionalResponsavel}
       />
-      <Screen name="SplashScreen" component={SplashScreen}/>
+      <Screen name="SplashScreen" component={SplashScreen} />
       <Screen name="MyVaccines" component={MyVaccines} />
+      <Screen name="CodePhone" component={CodigoCelular} />
       {/* <Screen name="TabRoutes" component={TabRoutes} /> */}
     </Navigator>
   );

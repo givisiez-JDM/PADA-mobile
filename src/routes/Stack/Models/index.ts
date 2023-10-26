@@ -14,6 +14,7 @@ export type propsNavigationStack = {
   ProfissionalResponsavel: undefined;
   MyVaccines: undefined;
   SplashScreen: undefined;
+  CodePhone: undefined;
 };
 
 export type propsStack = NativeStackNavigationProp<propsNavigationStack>;
