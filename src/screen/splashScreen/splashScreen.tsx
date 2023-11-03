@@ -15,7 +15,7 @@ const navigation = useNavigation<propsStack>();
     useEffect(() => {
  
         setTimeout(() => {
-            navigation.navigate("Login");
+            navigation.navigate("LoginCadastro");
         }, 3000);
     }, []);
 

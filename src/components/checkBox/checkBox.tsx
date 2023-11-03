@@ -5,7 +5,7 @@ import {
   TitleCheck,
 } from "./checkBox-style";
 import Icon from "react-native-vector-icons/Ionicons";
-const CheckBox = (props: {
+const CheckBox : any = (props: {
   title: string;
   size: string;
   checked: boolean;
