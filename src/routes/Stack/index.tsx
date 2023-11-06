@@ -12,13 +12,14 @@ import ProfissionalResponsavel from '../../screen/profissionalResponsável/profi
 import MyVaccines from '../../screen/minhasVacinas/my-vaccines';
 import CodigoCelular from '../../screen/codigoCelular/codigo-celular';
 import RedefinirSenha from '../../screen/redefinirSenha/redefinirSenha';
+import TelaSucesso from '../../screen/telaSucesso/telaSucesso';
 
 const { Navigator, Screen } =
     createNativeStackNavigator<propsNavigationStack>();
 
 export default function () {
     return (
-        <Navigator initialRouteName="SplashScreen" screenOptions={{ headerShown: false }}>
+        <Navigator initialRouteName="TelaSucesso" screenOptions={{ headerShown: false }}>
             <Screen name="LoginCadastro" component={LoginCadastro} />
             <Screen name="Login" component={Login} />
             <Screen name="Cadastro" component={PatientRecord} />
@@ -32,6 +33,7 @@ export default function () {
             <Screen name="MyVaccines" component={MyVaccines} />
             <Screen name="CodePhone" component={CodigoCelular} />
             <Screen name="RedefinirSenha" component={RedefinirSenha} />
+            <Screen name="TelaSucesso" component={TelaSucesso} />
             {/* <Screen name="TabRoutes" component={TabRoutes} /> */}
         </Navigator>
     );
