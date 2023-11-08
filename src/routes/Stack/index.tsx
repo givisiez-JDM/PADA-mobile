@@ -12,6 +12,7 @@ import ProfissionalResponsavel from '../../screen/profissionalResponsável/profi
 import MyVaccines from '../../screen/minhasVacinas/my-vaccines';
 import CodigoCelular from '../../screen/codigoCelular/codigo-celular';
 import RedefinirSenha from '../../screen/redefinirSenha/redefinirSenha';
+import RecuperacaoSenha from '../../screen/recuperacaoSenha/recuperacaoSenha';
 
 const { Navigator, Screen } =
     createNativeStackNavigator<propsNavigationStack>();
@@ -32,6 +33,7 @@ export default function () {
             <Screen name="MyVaccines" component={MyVaccines} />
             <Screen name="CodePhone" component={CodigoCelular} />
             <Screen name="RedefinirSenha" component={RedefinirSenha} />
+            <Screen name="RecuperacaoSenha" component={RecuperacaoSenha} />
             {/* <Screen name="TabRoutes" component={TabRoutes} /> */}
         </Navigator>
     );
