@@ -19,7 +19,7 @@ const { Navigator, Screen } =
 
 export default function () {
     return (
-        <Navigator initialRouteName="TelaSucesso" screenOptions={{ headerShown: false }}>
+        <Navigator initialRouteName="SplashScreen" screenOptions={{ headerShown: false }}>
             <Screen name="LoginCadastro" component={LoginCadastro} />
             <Screen name="Login" component={Login} />
             <Screen name="Cadastro" component={PatientRecord} />
