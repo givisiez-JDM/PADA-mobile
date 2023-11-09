@@ -3,12 +3,13 @@ import styled from "styled-components/native";
 export const ContainerSafePrincipalPacientes = styled.KeyboardAvoidingView`
   flex: 1;
   display: flex;
-  background: #d1d1d1;
+  background: #ffffff;
 `;
 
 export const ContainerGeral = styled.View`
   display: flex;
-  margin-top: 230px;
+  margin-top: 150px;
+  align-items: center;
 `;
 
 export const TextTitleSucesso = styled.Text`
@@ -16,9 +17,11 @@ export const TextTitleSucesso = styled.Text`
   font-weight: 500;
   color: #334C76;
 `;
+
 export const TextSucesso = styled.Text`
   font-size: 16px;
   font-weight: 300;
+  margin-top: 25px;
   color: #334C76;
 `;
 
@@ -32,10 +35,7 @@ export const ButtonEntrar = styled.View`
   background: #4C7ABB;
   border: none;
   text-align: center;
-  //margin-bottom: 7px;
-  margin-top: 60px;
-  margin-bottom: 40px;
-
+  margin-top: 25px;
   &:hover {
     background: #b4b4b4;
   }
@@ -51,6 +51,5 @@ export const TextButtonEntrar = styled.Text`
 `;
 
 export const ImageSucesso = styled.Image`
-  margin-top: 150px;
-  margin-bottom: 30px;
+  margin-top: 25px;
 `;
