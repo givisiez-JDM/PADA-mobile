@@ -1,7 +1,6 @@
 import styled from "styled-components/native";
 
 export const ContainerSafe = styled.KeyboardAvoidingView`
-  flex: 1;
   display: flex;
 `;
 
@@ -64,6 +63,7 @@ export const ContainerCode = styled.View`
 `;
 
 export const CodeInput = styled.TextInput`
+  text-align: center;
   background: #e1e0e0;
   width: 30px;
   height: 40px;

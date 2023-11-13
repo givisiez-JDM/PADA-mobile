@@ -5,7 +5,7 @@ import {
   TitleCheck,
 } from "./checkBox-style";
 import Icon from "react-native-vector-icons/Ionicons";
-const CheckBox = (props: {
+const CheckBox: any = (props: {
   title: string;
   size: string;
   checked: boolean;
@@ -15,9 +15,7 @@ const CheckBox = (props: {
     props.setChecked(!props.checked);
   };
   return (
-    <ContainerViewCheckBox
-      onPress={handleCheckbox} underlayColor="#00000000"
-    >
+    <ContainerViewCheckBox onPress={handleCheckbox} underlayColor="#00000000">
       <ButtonViewCheckBox>
         <Check checked={props.checked} size={props.size}>
           {props.checked ? (

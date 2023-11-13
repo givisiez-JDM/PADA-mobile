@@ -47,11 +47,11 @@ const CodigoCelular = () => {
           </SubTitleInformationCodigo>
 
           <ContainerCode>
-            {codes.map((code, index) => (
+            {codes.map((code: any, index) => (
               <CodeInput
                 key={index}
                 value={code}
-                onChangeText={(text: string) => handleCodeChange(text, index)}
+                onChangeText={(text: any) => handleCodeChange(text, index)}
                 keyboardType="default"
                 maxLength={1}
                 ref={(input: any) => (codeInputs.current[index] = input)}
