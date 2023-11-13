@@ -15,7 +15,7 @@ export type propsNavigationStack = {
   MyVaccines: undefined;
   SplashScreen: undefined;
   CodePhone: undefined;
-  TelaSucesso: undefined;
+  RedefinirSenha: undefined;
   RecuperacaoSenha: undefined;
 };
 

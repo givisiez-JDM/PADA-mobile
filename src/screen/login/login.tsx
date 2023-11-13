@@ -19,9 +19,11 @@ import { ContainerFormInputsPatients } from "../cadastro/cadastro-style";
 
 import FormPatientLoginRecord from "../../components/form-patient-login/form-patient-login";
 
-import { Platform } from "react-native";
+import { Platform, TouchableOpacity } from "react-native";
 import { Text } from "react-native";
 import CheckBox from "../../components/checkBox/checkBox";
+import { useNavigation } from "@react-navigation/native";
+import { propsStack } from "../../routes/Stack/Models";
 
 const PatientLogin = () => {
   const [mail, setMail] = useState("");
@@ -47,7 +49,7 @@ const PatientLogin = () => {
     }
   };
 
-  
+  const navigation = useNavigation<propsStack>();
 
   return (
     <ContainerSafe behavior={Platform.OS === "ios" ? "padding" : "height"}>
@@ -88,7 +90,11 @@ const PatientLogin = () => {
             setErrorMail={setErrorMail}
             setErrorPass={setErrorPass}
           />
-          <ButtonSenha>Esqueceu sua senha?</ButtonSenha>
+          <TouchableOpacity onPress={() => navigation.navigate("RedefinirSenha")}>
+
+            <ButtonSenha>Esqueceu sua senha?</ButtonSenha>
+          </TouchableOpacity>
+          
         </ContainerMain>
         <ContainerFooterBottom>
           <FooterCurto />
