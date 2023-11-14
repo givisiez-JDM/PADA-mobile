@@ -1,32 +1,13 @@
-import {
-  ButtonEmailSenhaContainer,
-} from "./inputGeral-style";
+import { ButtonEmailSenhaContainer } from "./inputGeral-style";
 import React from "react";
-import {  TextInput, View } from "react-native";
-
-
-
+import { View } from "react-native";
 
 const InputGeral = () => {
-
   return (
-    <View>     
-      <ButtonEmailSenhaContainer>
-
-        <TextInput
-        placeholder='E-mail'
-        >
-
-        </TextInput>
-        
-      </ButtonEmailSenhaContainer>  
-  
-
+    <View>
+      <ButtonEmailSenhaContainer placeholder="Email" />
     </View>
   );
-
-}
-
-
+};
 
 export default InputGeral;
