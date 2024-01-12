@@ -179,7 +179,7 @@ export const TextButtonNextVaccine = styled.Text`
 
 export const IconButtonNextVaccine = styled.View`
   position: relative;
-  right: 5;
+  right: 5px;
   display: flex;
   width: 20.4px;
   height: 21.18px;

@@ -17,7 +17,7 @@ export const ContainerContentModal = styled.View`
   row-gap: 10px;
   align-items: center;
   width: 410px;
-  height: 251px;
+  height: 300px;
   border-top-right-radius: 30px;
   border-top-left-radius: 30px;
   background: #4c7abb;

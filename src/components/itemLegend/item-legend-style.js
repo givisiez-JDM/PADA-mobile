@@ -2,8 +2,9 @@ import styled from "styled-components/native";
 
 export const ContainerItemLegend = styled.View`
   flex-direction: row;
-  column-gap: 10px;
-`;
+  column-gap: 5px;
+  align-items: center;
+  `;
 
 export const BoxLegend = styled.View`
   width: 9.68px;
@@ -14,6 +15,6 @@ export const BoxLegend = styled.View`
 
 export const TextItemLegend = styled.Text`
   font-weight: 700;
-  font-size: 8px;
+  font-size: 10px;
   color: #273047;
 `;

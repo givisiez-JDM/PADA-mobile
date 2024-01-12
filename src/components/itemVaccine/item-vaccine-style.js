@@ -10,7 +10,7 @@ export const ContainerItemInformationVaccine = styled.View`
 `;
 
 export const ButtonInformationVaccine = styled.TouchableOpacity`
-  width: 322.67px;
+  width: 370px;
   height: ${({ expanded }) => (expanded ? "91.25px" : "48.68px")};
   background: #ffffff;
   border-bottom-width: 2px;
@@ -21,7 +21,7 @@ export const ViewInformationDate = styled.View`
   flex: 1;
   display: flex;
   flex-direction: column;
-  width: 120px;
+  width: 150px;
   height: 35px;
   margin-top: 5px;
   border-right-width: 1px;
@@ -35,7 +35,7 @@ export const ContainerNameVaccine = styled.View`
   display: flex;
   position: absolute;
   top: 5px;
-  left: 132px;
+  left: 170px;
   width: 160px;
   height: 22px;
   background: rgba(76, 122, 187, 0.1);
@@ -44,7 +44,7 @@ export const ContainerNameVaccine = styled.View`
 
 export const TextNameVaccine = styled.Text`
   font-weight: 500;
-  font-size: 12px;
+  font-size: 13px;
   color: #273047;
   margin-left: 10px;
   margin-top: 2px;
@@ -88,7 +88,7 @@ export const TextHiddenContent = styled.Text`
   width: 150px;
   height: 52px;
   font-weight: 300;
-  font-size: 8px;
+  font-size: 10px;
   line-height: 10px;
   color: #273047;
 `;
@@ -99,15 +99,15 @@ export const ExpandedContainer = styled(ButtonInformationVaccine)`
 
 export const ViewItemHidden = styled.TouchableHighlight`
   position: absolute;
-  right: 5px;
+  right: 15px;
   top: 5px;
   width: 9.09px;
   height: 18.26px;
 `;
 
 export const ImageHidden = styled.Image`
-  width: 9.09px;
-  height: 18.26px;
+  width: 18px;
+  height: 25px;
   transform: ${({ expanded }) =>
     expanded ? "rotate(180deg)" : "rotate(0deg)"};
 `;
