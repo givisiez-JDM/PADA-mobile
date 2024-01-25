@@ -39,14 +39,17 @@ const DataPatient = (props: {
   };
 
   const formatDateString = (dateString: string) => {
-    const parts = dateString.split("-");
-    if (parts.length === 3) {
-      const year = parts[0];
-      const month = parts[1];
-      const day = parts[2];
-      return `${day}/${month}/${year}`;
+    if (dateString) {
+      const parts = dateString.split("-");
+      if (parts.length === 3) {
+        const year = parts[0];
+        const month = parts[1];
+        const day = parts[2];
+        return `${day}/${month}/${year}`;
+      }
+      return JSON.stringify(dateString);
     }
-    return JSON.stringify(dateString);
+    return "Data não definida"; // ou qualquer valor padrão desejado
   };
 
   const formatPhoneNumber = (phoneNumber: string) => {
