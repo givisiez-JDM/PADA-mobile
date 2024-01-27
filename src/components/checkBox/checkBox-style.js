@@ -35,6 +35,6 @@ export const Check = styled.View`
 export const TitleCheck = styled.Text`
   font-weight: 400;
   font-size: 15px;
-  color: #4C7ABB;
+  color: #ffffff;
   margin-top: 20px;
 `;
