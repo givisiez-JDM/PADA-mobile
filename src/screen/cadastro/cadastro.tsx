@@ -1,6 +1,6 @@
 import { useState } from "react";
-import FooterCurto from "../../components/footer/footer";
-import Header from "../../components/header/header";
+import FooterCurto from "../../components/Footers/footer/footer";
+import Header from "../../components/Headers/header/header";
 
 import {
   Button,
@@ -14,15 +14,15 @@ import {
   ContainerFooterBottom,
 } from "./cadastro-style";
 
-import FormPatientRecord from "../../components/form-patient-record/form-patient-record";
+import FormPatientRecord from "../../components/Forms/form-patient-record/form-patient-record";
 import { validar } from "../../config/validates";
-import checkFlag from "../../assets/checkflag.png";
-import errorFlag from "../../assets/errorflag.png";
-import Logo from "../../assets/logo.png";
+import checkFlag from "../../assets/image-icons/checkflag.png";
+import errorFlag from "../../assets/image-icons/errorflag.png";
+import Logo from "../../assets/logo/logo.png";
 
 import { Platform } from "react-native";
-import ModalInfo from "../../components/modalInfo/modal-info";
-import LoadingModal from "../../components/loadingModal/loading-modal";
+import ModalInfo from "../../components/Modals/modalInfo/modal-info";
+import LoadingModal from "../../components/Bars/loadingModal/loading-modal";
 import { User, createUser } from "../../service/requests";
 
 const PatientRecord = () => {
@@ -56,7 +56,7 @@ const PatientRecord = () => {
   };
 
   const handleInputChange = (name: string, value: string) => {
-   
+
     if (name === "Senha") {
       setPass(value);
       setErrorPass("");
@@ -68,7 +68,7 @@ const PatientRecord = () => {
   };
 
   const arrayNamePlaceholder = [
-    
+
     ["key", pass, "Senha", errorPass],
     ["key", repeatPass, "Repetir Senha", errorRepeatPass],
   ];

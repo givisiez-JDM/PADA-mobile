@@ -1,10 +1,10 @@
+import React from "react";
 import {
-  ButtonViewCheckBox,
-  Check,
-  ContainerViewCheckBox,
-  TitleCheck,
+  ButtonViewCheckBox, Check,
+  ContainerViewCheckBox, TitleCheck,
 } from "./checkBox-style";
 import Icon from "react-native-vector-icons/Ionicons";
+
 const CheckBox: any = (props: {
   title: string;
   size: string;

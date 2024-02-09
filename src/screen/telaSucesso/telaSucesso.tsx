@@ -8,10 +8,10 @@ import {
   TextSucesso,
   TextTitleSucesso,
 } from "./telaSucesso-style";
-import Header from "../../components/header/header";
-import FooterCodigoCelular from "../../components/footerCodigoCelular/footer-codigo-celular";
+import Header from "../../components/Headers/header/header";
+import FooterCodigoCelular from "../../components/Footers/footerCodigoCelular/footer-codigo-celular";
 import React from "react";
-import Sucesso from "../../assets/sucesso.png";
+import Sucesso from "../../assets/image-icons/sucesso.png";
 
 const TelaSucesso = () => {
   return (

@@ -1,11 +1,11 @@
 import React, { Fragment, useEffect } from "react";
 import { ContainerMain } from "./loginCadastro-style";
-import logo from "../../assets/logo.png";
+import logo from "../../assets/logo/logo.png";
 import { Image } from "react-native";
-import ButtonLogin from "../../components/buttonLogin/buttonLogin";
-import ButtonCadastrar from "../../components/buttonCadastrar/buttonCadastrar";
-import Header from "../../components/header/header";
-import FooterLongo from "../../components/footerLongo/footerLongo";
+import ButtonLogin from "../../components/Buttons/buttonLogin/buttonLogin";
+import ButtonCadastrar from "../../components/Buttons/buttonCadastrar/buttonCadastrar";
+import Header from "../../components/Headers/header/header";
+import FooterLongo from "../../components/Footers/footerLongo/footerLongo";
 import { ContainerTelaPrincipal } from "../telaPrincipal/telaPrincipal-style";
 import { checkLoginStatus } from "../../service/requests";
 import { useNavigation } from "@react-navigation/native";
@@ -26,13 +26,11 @@ const LoginCadastro = () => {
   return (
     <ContainerTelaPrincipal>
       <Header back={false} />
-
       <ContainerMain>
         <Image source={logo}></Image>
         <ButtonLogin />
         <ButtonCadastrar />
       </ContainerMain>
-
       <FooterLongo />
     </ContainerTelaPrincipal>
   );

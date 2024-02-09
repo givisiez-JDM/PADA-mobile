@@ -1,29 +1,25 @@
 import React, { useState } from "react";
+import { Platform, TouchableOpacity, Text } from "react-native";
+import { useNavigation } from "@react-navigation/native";
+
+import { propsStack } from "../../routes/Stack/Models";
+
 import {
   ButtonSenha,
-  ContainerFooterBottom,
-  ContainerMain,
-  ContainerSafe,
-  ImageIconLogo,
-  Scroll,
+  ContainerMain, ContainerSafe, ImageIconLogo, Scroll
 } from "./login-style";
-import logo from "../../assets/logo.png";
-
-import Header from "../../components/header/header";
-import FooterCurto from "../../components/footer/footer";
-import logoEmail from "../../assets/logoEmail.png";
-import logoSenha from "../../assets/logoSenha.png";
-import ButtonEntrar from "../../components/buttonEntrar/buttonEntrar";
 
 import { ContainerFormInputsPatients } from "../cadastro/cadastro-style";
 
-import FormPatientLoginRecord from "../../components/form-patient-login/form-patient-login";
+import logo from "../../assets/logo/logo.png";
+import logoEmail from "../../assets/logo/logoEmail.png";
+import logoSenha from "../../assets/logo/logoSenha.png";
 
-import { Platform, TouchableOpacity } from "react-native";
-import { Text } from "react-native";
+import Header from "../../components/Headers/header/header";
+import FooterCurto from "../../components/Footers/footerLongo/footerLongo";
+import ButtonEntrar from "../../components/Buttons/buttonEntrar/buttonEntrar";
+import FormPatientLoginRecord from "../../components/Forms/form-patient-login/form-patient-login";
 import CheckBox from "../../components/checkBox/checkBox";
-import { useNavigation } from "@react-navigation/native";
-import { propsStack } from "../../routes/Stack/Models";
 
 const PatientLogin = () => {
   const [mail, setMail] = useState("");
@@ -73,17 +69,13 @@ const PatientLogin = () => {
               )
             )}
           </ContainerFormInputsPatients>
-
-        <CheckBox
-        title="Lembre da senha"
-        size="20px"
-        checked={checked} 
-        setChecked={setChecked} 
-        >
-        
-        </CheckBox>
-
-       
+          <CheckBox
+            title="Lembre da senha"
+            size="20px"
+            checked={checked}
+            setChecked={setChecked}
+          >
+          </CheckBox>
           <ButtonEntrar
             mail={mail}
             pass={pass}
@@ -91,14 +83,10 @@ const PatientLogin = () => {
             setErrorPass={setErrorPass}
           />
           <TouchableOpacity onPress={() => navigation.navigate("RedefinirSenha")}>
-
             <ButtonSenha>Esqueceu sua senha?</ButtonSenha>
           </TouchableOpacity>
-          
         </ContainerMain>
-        <ContainerFooterBottom>
-          <FooterCurto />
-        </ContainerFooterBottom>
+        <FooterCurto />
       </Scroll>
     </ContainerSafe>
   );

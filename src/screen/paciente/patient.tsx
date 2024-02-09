@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import TabBar from "../../components/buttonTabBar/buttonTabBar";
-import DataPatient from "../../components/dataPatient/data-patient";
-import HeaderFluxo from "../../components/headerFluxo/header-fluxo";
+import TabBar from "../../components/Buttons/buttonTabBar/buttonTabBar";
+import DataPatient from "../../components/Patients/dataPatient/data-patient";
+import HeaderFluxo from "../../components/Headers/headerFluxo/header-fluxo";
 import { ContainerSafePrincipalPaciente, Scroll } from "./patient-style";
 import { TData, getDataUserStorage } from "../../service/requests";
 import storePatient from "../../store/storePatient";

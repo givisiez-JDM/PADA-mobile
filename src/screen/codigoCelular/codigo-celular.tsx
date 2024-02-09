@@ -13,8 +13,8 @@ import {
   TitleInformationCodigo,
   TitleMainCodigo,
 } from "./codigo-celular-style";
-import Header from "../../components/header/header";
-import FooterCodigoCelular from "../../components/footerCodigoCelular/footer-codigo-celular";
+import Header from "../../components/Headers/header/header";
+import FooterCodigoCelular from "../../components/Footers/footerCodigoCelular/footer-codigo-celular";
 import { useRef, useState } from "react";
 
 const CodigoCelular = () => {

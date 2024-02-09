@@ -66,13 +66,9 @@ export const PatientInput = styled.TextInput`
   padding: 10px;
 `;
 
-export const ContainerFooterBottom = styled.View`
-  margin-top: 15px;
-`;
-
 export const ButtonSenha = styled.Text`
 font-size: 18px;
 font-weight: 300;
 margin-bottom: 33px;
 margin-top: -20px;
-`
+`;

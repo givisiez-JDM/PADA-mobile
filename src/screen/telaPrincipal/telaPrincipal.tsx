@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import HeaderFluxo from "../../components/headerFluxo/header-fluxo";
+import HeaderFluxo from "../../components/Headers/headerFluxo/header-fluxo";
 import {
   ContainerListDoctor,
   ContainerListTagFluxo,
@@ -8,12 +8,12 @@ import {
 } from "./telaPrincipal-style";
 import TagFluxo from "../../components/tagFluxo/tag-fluxo";
 
-import Coracao from "../../assets/imgCoracao.png";
-import Remedio from "../../assets/imgRemedio.png";
-import Paciente from "../../assets/imgPaciente.png";
-import ProfissionalSaude from "../../assets/profissionalSaude.png";
-import Perfil from "../../assets/imgPerfil.png";
-import TabBar from "../../components/buttonTabBar/buttonTabBar";
+import Coracao from "../../assets/image-icons/imgCoracao.png";
+import Remedio from "../../assets/image-icons/imgRemedio.png";
+import Paciente from "../../assets/image-icons/imgPaciente.png";
+import ProfissionalSaude from "../../assets/image-icons/profissionalSaude.png";
+import Perfil from "../../assets/image-icons/imgPerfil.png";
+import TabBar from "../../components/Buttons/buttonTabBar/buttonTabBar";
 import { FlatList } from "react-native";
 import {
   getDataUserStorage,
