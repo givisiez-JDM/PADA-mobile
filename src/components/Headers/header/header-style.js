@@ -10,14 +10,15 @@ export const ImageHeader = styled.Image.attrs({
 `;
 
 export const BackgroundHeaderContainer = styled.TouchableOpacity`
-  position: absolute;
-  width: 25px;
-  height: 25px;
-  left: 15px;
-  top: 10px;
-  background: #fff;
-  border-radius: 50px;
-  justify-content: center;
-  align-items: center;
-  z-index: 3;
+position:absolute;
+top:30px;
+left:15px;
+
+width: 25px;
+height: 25px;
+
+background: #fff;
+border-radius: 50px;
+justify-content: center;
+align-items: center;
 `;

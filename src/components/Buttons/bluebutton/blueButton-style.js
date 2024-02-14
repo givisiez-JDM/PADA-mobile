@@ -1,28 +1,28 @@
 import styled from "styled-components/native";
 
-export const ButtonLoginContainer = styled.View`
-  display: flex;
-  justify-content: center;
-  align-items: center;
+export const ButtonBlueContainer = styled.View`
   width: 220px;
-  height: 44px;
+  padding: 8px 17px;
+    
+  margin-top:20px;
+  
   border-radius: 50px;
+
   background: #4c7abb;
   border: none;
-  text-align: center;
-  margin-top:20px;
+
   &:hover {
     background: #b4b4b4;
   }
 `;
 
-export const TextButton = styled.Text`
-  color: #fff;
-  font-size: 22px;
-  font-weight: bold;
-  padding: 2px;
-  font-weight: bold;
-  text-align: center;
+export const TextBlueButton = styled.Text`
+text-align: center;
+
+font-size: 22px;
+font-weight: bold; 
+
+color: #fff;
 `;
 
 export const ButtonImageIcon = styled.View`

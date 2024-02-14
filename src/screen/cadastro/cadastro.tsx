@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import FooterCurto from "../../components/Footers/footer/footer";
 import Header from "../../components/Headers/header/header";
 

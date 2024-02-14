@@ -1,12 +1,13 @@
 import React, { useState } from "react";
-import { Platform, TouchableOpacity, Text } from "react-native";
+import { Platform, TouchableOpacity, Image } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
 import { propsStack } from "../../routes/Stack/Models";
 
 import {
   ButtonSenha,
-  ContainerMain, ContainerSafe, ImageIconLogo, Scroll
+  ContainerLogin,
+  ContainerSafe, Scroll
 } from "./login-style";
 
 import { ContainerFormInputsPatients } from "../cadastro/cadastro-style";
@@ -16,18 +17,23 @@ import logoEmail from "../../assets/logo/logoEmail.png";
 import logoSenha from "../../assets/logo/logoSenha.png";
 
 import Header from "../../components/Headers/header/header";
-import FooterCurto from "../../components/Footers/footerLongo/footerLongo";
-import ButtonEntrar from "../../components/Buttons/buttonEntrar/buttonEntrar";
+import FooterCurto from "../../components/Footers/footer/footer";
 import FormPatientLoginRecord from "../../components/Forms/form-patient-login/form-patient-login";
 import CheckBox from "../../components/checkBox/checkBox";
+import BlueButton from "../../components/Buttons/bluebutton/BlueButton";
+import LoadingModal from "../../components/Bars/loadingModal/loading-modal";
+import { validar } from "../../config/validates";
+import { loginUser } from "../../service/requests";
 
 const PatientLogin = () => {
+  const navigation = useNavigation<propsStack>();
+
   const [mail, setMail] = useState("");
   const [pass, setPass] = useState("");
   const [errorMail, setErrorMail] = useState("");
   const [errorPass, setErrorPass] = useState("");
-
   const [checked, setChecked] = useState(false)
+  const [loading, setLoading] = useState(false);
 
   const arrayNamePlaceholder = [
     [logoEmail, mail, "E-mail", errorMail],
@@ -45,14 +51,28 @@ const PatientLogin = () => {
     }
   };
 
-  const navigation = useNavigation<propsStack>();
+  const openLoading = () => {
+    setLoading(true);
+  };
+
+  const closeLoading = () => {
+    setLoading(false);
+  };
+
+  const Logar = () => {
+    if (validar({ mail, pass }, { setErrorMail, setErrorPass })) {
+      console.log(mail, pass);
+      loginUser(mail, pass, openLoading, closeLoading, navigation);
+    }
+  };
 
   return (
     <ContainerSafe behavior={Platform.OS === "ios" ? "padding" : "height"}>
       <Scroll>
         <Header back={true} />
-        <ContainerMain>
-          <ImageIconLogo source={logo} />
+        <ContainerLogin>
+          <Image source={logo} />
+
           <ContainerFormInputsPatients>
             {arrayNamePlaceholder.map(
               ([icon, valueState, place, err], index: number) => (
@@ -69,23 +89,25 @@ const PatientLogin = () => {
               )
             )}
           </ContainerFormInputsPatients>
+
           <CheckBox
-            title="Lembre da senha"
+            title="Lembrar senha"
             size="20px"
             checked={checked}
             setChecked={setChecked}
-          >
-          </CheckBox>
-          <ButtonEntrar
-            mail={mail}
-            pass={pass}
-            setErrorMail={setErrorMail}
-            setErrorPass={setErrorPass}
           />
+
+          <TouchableOpacity onPress={Logar}>
+            <BlueButton buttontext={'Entrar'} />
+          </TouchableOpacity >
+
+          <LoadingModal visible={loading} onClose={closeLoading} />
+
           <TouchableOpacity onPress={() => navigation.navigate("RedefinirSenha")}>
             <ButtonSenha>Esqueceu sua senha?</ButtonSenha>
           </TouchableOpacity>
-        </ContainerMain>
+
+        </ContainerLogin>
         <FooterCurto />
       </Scroll>
     </ContainerSafe>

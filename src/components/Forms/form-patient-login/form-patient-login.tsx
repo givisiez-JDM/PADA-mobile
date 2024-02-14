@@ -30,7 +30,7 @@ const FormPatientLoginRecord = ({
     <ContainerFormPatientRecord>
       <ContainerLogin>
         <ImageLogo>
-          <Image source={imageButton}></Image>
+          <Image source={imageButton} />
         </ImageLogo>
         <PatientInput
           onChangeText={handleInputChange}
@@ -38,7 +38,7 @@ const FormPatientLoginRecord = ({
           placeholder={placeholder}
           placeholderTextColor="#4c7abb"
           secureTextEntry={placeholder === "Senha" ? true : false}
-        ></PatientInput>
+        />
       </ContainerLogin>
 
       {err !== "" && (

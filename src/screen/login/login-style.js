@@ -1,12 +1,11 @@
 import styled from "styled-components/native";
 
-export const ContainerMain = styled.View`
-  display: flex;
-  margin-top: 35%;
-  flex-direction: column;
-  justify-content: center;
+
+export const ContainerLogin = styled.View`
+  flex: 1;
   align-items: center;
-  text-align: center;
+  gap:10px;
+  width: 100%;
 `;
 
 export const TextAcesso = styled.Text`
@@ -60,15 +59,14 @@ export const TextInput = styled.View`
 `;
 
 export const PatientInput = styled.TextInput`
-  flex: 1 0;
+  flex: 1;
   font-size: 15px;
   font-weight: 500;
   padding: 10px;
 `;
 
 export const ButtonSenha = styled.Text`
-font-size: 18px;
-font-weight: 300;
-margin-bottom: 33px;
-margin-top: -20px;
+  font-weight: 300;
+  font-size: 15px;
+  color: #000000;
 `;

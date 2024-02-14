@@ -16,11 +16,11 @@ const Header = (props: { back: boolean }) => {
     <Fragment>
       <StatusBar barStyle="light-content" backgroundColor="#000" />
       <HeaderContainer screenWidth={JSON.stringify(screenWidth) + "px"}>
+        <ImageHeader source={headerCurtoImg} />
         {props.back === true ? (
           <BackgroundHeaderContainer onPress={() => { navigation.goBack() }}>
             <Icon name="chevron-back-outline" color="#000" />
           </BackgroundHeaderContainer>) : null}
-        <ImageHeader source={headerCurtoImg} />
       </HeaderContainer>
     </Fragment>
   )

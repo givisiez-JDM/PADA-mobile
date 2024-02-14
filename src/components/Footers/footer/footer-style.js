@@ -6,7 +6,7 @@ export const ContainerFooter = styled.View`
 export const ImageFooterCurto = styled.Image.attrs({
   resizeMode: "stretch",
 })`
-  height: 100px;
+  height: 120px;
 `;
 
 export const FooterText = styled.Text`
