@@ -1,4 +1,4 @@
-import HeaderFluxo from "../../components/headerFluxo/header-fluxo";
+import HeaderFluxo from "../../components/Headers/headerFluxo/header-fluxo";
 import { Scroll } from "../paciente/patient-style";
 import {
   ContainerItemInformationVaccine,
@@ -12,14 +12,14 @@ import {
   TextTitleProgressBar,
 } from "./my-vaccines-styles";
 import { ContainerPrincipal } from "../telaPrincipal/telaPrincipal-style";
-import ItemVaccine from "../../components/itemVaccine/item-vaccine";
+import ItemVaccine from "../../components/Cards/itemVaccine/item-vaccine";
 import { useEffect, useState } from "react";
 import { getDataUserStorage } from "../../service/requests";
-import ItemLegend from "../../components/itemLegend/item-legend";
-import TabBar from "../../components/buttonTabBar/buttonTabBar";
-import ProgressBar from "../../components/progressBar/progress-bar";
+import ItemLegend from "../../components/Cards/itemLegend/item-legend";
+import TabBar from "../../components/Buttons/buttonTabBar/buttonTabBar";
+import ProgressBar from "../../components/Bars/progressBar/progress-bar";
 import storePatient from "../../store/storePatient";
-import ModalPhaseVaccine from "../../components/modalPhaseVaccine/modal-phase-vaccine";
+import ModalPhaseVaccine from "../../components/Modals/modalPhaseVaccine/modal-phase-vaccine";
 
 const MyVaccines = () => {
   const [roleUser, setRoleUser] = useState("");

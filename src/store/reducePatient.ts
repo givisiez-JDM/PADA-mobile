@@ -2,15 +2,17 @@ const rootPatient = (
   state: any = {
     id: "",
     name: "",
-    telefone:"",
+    telephone: "",
     email: "",
-    data_nascimento: "",
-    dosagem:"",
-    alergias:"",
-    periodicidade:"",
-    metodo:"",
-    inicio:"",
-    fim:""
+    photo: "",
+    birthDate: "",
+    doctorId: "",
+    dosage: "",
+    frequency: "",
+    startTreatment: "",
+    endTreatment: "",
+    allergies: [],
+    method: "",
   },
   action: any
 ) => {
@@ -25,5 +27,4 @@ const rootPatient = (
   }
 };
 
-
-export default rootPatient
+export default rootPatient;
