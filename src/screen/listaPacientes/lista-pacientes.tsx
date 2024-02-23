@@ -1,13 +1,13 @@
 import { Platform } from "react-native";
-import AddPatient from "../../components/addPatient/add-patient";
+import AddPatient from "../../components/Patients/addPatient/add-patient";
 import GridMenu from "../../components/grid-menu/grid-menu";
-import HeaderFluxo from "../../components/headerFluxo/header-fluxo";
+import HeaderFluxo from "../../components/Headers/headerFluxo/header-fluxo";
 import {
   ContainerPacientes,
   ContainerSafePrincipalPacientes,
   ScrollPacientes,
 } from "./lista-pacientes-style";
-import TabBar from "../../components/buttonTabBar/buttonTabBar";
+import TabBar from "../../components/Buttons/buttonTabBar/buttonTabBar";
 
 const PatientList = () => {
   return (

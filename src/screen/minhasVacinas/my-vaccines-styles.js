@@ -10,9 +10,11 @@ export const ContainerProgressBar = styled.View`
   display: flex;
   flex-direction: column;
   position: absolute;
-  width: 316px;
+  
+  width: 90%;
   height: 50px;
-  left: 12.5%;
+  left: 5%;
+  right: 5%;
   top: 150px;
   background: #ffffff;
   //box-shadow: 4px 4px 9px rgba(0, 0, 0, 0.25);
@@ -41,7 +43,7 @@ export const ContainerSubTitleProgressBar = styled.TouchableOpacity`
 export const TextSubTitleProgressBar = styled.Text`
   height: 12px;
   font-weight: 400;
-  font-size: 8px;
+  font-size: 10px;
   color: #273047;
   border-bottom-width: 1px;
   border-bottom-color: #d9d9d9;

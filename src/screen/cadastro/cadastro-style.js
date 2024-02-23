@@ -25,14 +25,15 @@ export const ImageLogo = styled.Image`
 `;
 
 export const TitleForm = styled.Text`
+  margin-top: 50px;
   color: #4c7abb;
   font-size: 25px;
   margin-bottom: 5px;
-  font-weight: 700;
+  font-weight: 600;
 `;
 
 export const ContainerFormInputsPatients = styled.View`
-  margin-top: 25px;
+  margin-top: 2px;
 `;
 
 export const ContainerViewCheckBox = styled.TouchableHighlight`
@@ -73,8 +74,9 @@ export const Button = styled.TouchableOpacity`
   width: 180px;
   height: 50px;
   position: relative;
-  bottom: -50px;
-  margin-bottom: 100px;
+  bottom: -20px;
+  margin-top: 20px;
+  margin-bottom: 135px;
   border-radius: 50px;
   background: #4c7abb;
   border: none;
@@ -95,4 +97,5 @@ export const TextButton = styled.Text`
 
 export const ContainerFooterBottom = styled.View`
   margin-top: 18px;
+ 
 `;
