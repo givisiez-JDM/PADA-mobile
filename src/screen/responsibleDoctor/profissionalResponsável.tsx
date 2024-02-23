@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import TabBar from "../../components/Buttons/buttonTabBar/buttonTabBar";
 import DataDoctor from "../../components/Patients/dataDoctor/data-doctor";
-import HeaderFluxo from "../../components/Headers/headerFluxo/header-fluxo";
+import HeaderFluxo from "../../components/Headers/HeaderHome/header-home";
 import {
   ContainerSafePrincipalPaciente,
   Scroll,

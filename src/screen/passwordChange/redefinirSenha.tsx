@@ -13,10 +13,10 @@ import logo from "../../assets/logo/logo.png";
 import Header from "../../components/Headers/header/header";
 import FooterCurto from "../../components/Footers/footer/footer";
 import { useNavigation } from "@react-navigation/native";
-import { ContainerSafe, ImageIconLogo, Scroll } from "../login/login-style";
-import { ContainerTelaPrincipal } from "../telaPrincipal/telaPrincipal-style";
+import { ContainerSafe, ImageIconLogo, Scroll } from "../Login/login-style";
+import { ContainerTelaPrincipal } from "../Home/telaPrincipal-style";
 import InputGeral from "../../components/Forms/inputGeral/inputGeral";
-import { TextButton } from "../cadastro/cadastro-style";
+import { TextButton } from "../PasswordCriation/cadastro-style";
 import { propsStack } from "../../routes/Stack/Models";
 import { Platform } from "react-native";
 
