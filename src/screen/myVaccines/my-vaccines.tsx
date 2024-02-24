@@ -1,5 +1,5 @@
-import HeaderFluxo from "../../components/Headers/headerFluxo/header-fluxo";
-import { Scroll } from "../paciente/patient-style";
+import HeaderFluxo from "../../components/Headers/HeaderHome/header-home";
+import { Scroll } from "../Patient/patient-style";
 import {
   ContainerItemInformationVaccine,
   ContainerItemsLegends,
@@ -11,7 +11,7 @@ import {
   TextSubTitleProgressBar,
   TextTitleProgressBar,
 } from "./my-vaccines-styles";
-import { ContainerPrincipal } from "../telaPrincipal/telaPrincipal-style";
+import { ContainerPrincipal } from "../Home/telaPrincipal-style";
 import ItemVaccine from "../../components/Cards/itemVaccine/item-vaccine";
 import { useEffect, useState } from "react";
 import { getDataUserStorage } from "../../service/requests";

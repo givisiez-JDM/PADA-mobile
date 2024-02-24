@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import TabBar from "../../components/Buttons/buttonTabBar/buttonTabBar";
 import DataPatient from "../../components/Patients/dataPatient/data-patient";
-import HeaderFluxo from "../../components/Headers/headerFluxo/header-fluxo";
+import HeaderHome from "../../components/Headers/HeaderHome/header-home";
 import { ContainerSafePrincipalPaciente, Scroll } from "./patient-style";
 import { TData, getDataUserStorage } from "../../service/requests";
 import storePatient from "../../store/storePatient";
@@ -18,7 +18,7 @@ const Patient = () => {
   return (
     <ContainerSafePrincipalPaciente>
       <Scroll>
-        <HeaderFluxo
+        <HeaderHome
           title={`Olá, ${name}`}
           backButton={true}
           buttonVaccine={true}

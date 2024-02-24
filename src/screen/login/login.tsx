@@ -10,7 +10,7 @@ import {
   ContainerSafe, Scroll
 } from "./login-style";
 
-import { ContainerFormInputsPatients } from "../cadastro/cadastro-style";
+import { ContainerFormInputsPatients } from "../PasswordCriation/cadastro-style";
 
 import logo from "../../assets/logo/logo.png";
 import logoEmail from "../../assets/logo/logoEmail.png";
