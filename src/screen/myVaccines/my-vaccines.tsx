@@ -1,4 +1,4 @@
-import HeaderFluxo from "../../components/Headers/HeaderHome/header-home";
+import HeaderVaccine from "../../components/Headers/HeaderHome/header-home";
 import { Scroll } from "../Patient/patient-style";
 import {
   ContainerItemInformationVaccine,
@@ -101,7 +101,7 @@ const MyVaccines = () => {
   return (
     <ContainerVaccinesView>
       <Scroll>
-        <HeaderFluxo
+        <HeaderVaccine
           title={`Olá, ${name}`}
           backButton={true}
           buttonVaccine={false}
