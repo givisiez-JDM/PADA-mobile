@@ -1,6 +1,8 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import TelaPrincipal from "../../screen/telaPrincipal/telaPrincipal";
+
 import { Image } from "react-native";
+import TelaPrincipal from "../../screen/home/telaPrincipal";
+import PatientLogin from "../../screen/patient-login/patientLogin";
 
 const { Screen, Navigator } = createBottomTabNavigator();
 
@@ -34,8 +36,8 @@ export function TabRoutes() {
         }}
       ></Screen>
       <Screen
-        name="Login"
-        component={TelaPrincipal}
+        name="PatientLogin"
+        component={PatientLogin}
         options={{
           tabBarLabel: "Sair",
           tabBarIcon: ({ focused }) => getOverviewTabIcon(focused, "out"),

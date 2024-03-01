@@ -1,7 +1,7 @@
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 
 export type propsNavigationStack = {
-  LoginCadastro: undefined;
+  PatientLogin: undefined;
   Login?: {
     name: string;
   };

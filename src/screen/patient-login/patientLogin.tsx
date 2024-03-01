@@ -10,7 +10,7 @@ import {
   ContainerSafe, Scroll
 } from "./login-style";
 
-import { ContainerFormInputsPatients } from "../password-creation/cadastro-style";
+
 
 import logo from "../../assets/logo/logo.png";
 import logoEmail from "../../assets/logo/logoEmail.png";
@@ -24,6 +24,8 @@ import BlueButton from "../../components/Buttons/bluebutton/BlueButton";
 import LoadingModal from "../../components/Bars/loadingModal/loading-modal";
 import { validar } from "../../config/validates";
 import { loginUser } from "../../service/requests";
+import { ContainerFormInputsPatients } from "../password-creation/cadastro-style";
+
 
 const PatientLogin = () => {
   const navigation = useNavigation<propsStack>();
@@ -69,7 +71,7 @@ const PatientLogin = () => {
   return (
     <ContainerSafe behavior={Platform.OS === "ios" ? "padding" : "height"}>
       <Scroll>
-        <Header back={true} />
+        <Header back={false} />
         <ContainerLogin>
           <Image source={logo} />
 
