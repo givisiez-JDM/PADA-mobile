@@ -15,7 +15,7 @@ const SplashScreen: React.FC = () => {
   useEffect(() => {
 
     setTimeout(() => {
-      navigation.navigate("LoginCadastro");
+      navigation.navigate("PatientLogin");
     }, 3000);
   }, []);
 

@@ -2,9 +2,9 @@ import React, { Fragment, useState } from "react";
 import Header from "../../components/Headers/header/header";
 import FooterCurto from "../../components/Footers/footer/footer";
 import { useNavigation } from "@react-navigation/native";
-import { ContainerSafe, Scroll } from "../Login/login-style";
-import { ContainerTelaPrincipal } from "../Home/telaPrincipal-style";
-import { TextButton } from "../PasswordCriation/cadastro-style";
+import { ContainerSafe, Scroll } from "../login/login-style";
+import { ContainerTelaPrincipal } from "../home/telaPrincipal-style";
+import { TextButton } from "../password-creation/cadastro-style";
 import { propsStack } from "../../routes/Stack/Models";
 import { Platform, TextInput, View } from "react-native";
 import {
@@ -14,7 +14,7 @@ import {
   ButtonEmailSenhaContainer,
   TextRecuperacao,
 } from "./recuperacaoSenha-style";
-import { TextEnviaremos } from "../PasswordRedefine/redefinirSenha-style";
+import { TextEnviaremos } from "../password-redefine/redefinirSenha-style";
 import footerSenhaImg from "../../assets/footerSenha.png";
 import { ContainerFooter } from "../../components/Footers/footerLongo/footerLongo-style";
 import FooterLongo from "../../components/Footers/footerLongo/footerLongo";

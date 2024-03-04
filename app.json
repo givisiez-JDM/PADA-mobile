@@ -7,9 +7,7 @@
       "**/*"
     ],
     "extra": {
-      "eas": {
-        "projectId": "e1de84ff-3a42-4a81-97dd-61566debcb8b"
-      }
+      "eas": {}
     },
     "android": {
       "package": "com.br0wnd3r.padamobile"

@@ -16,7 +16,7 @@ import { useNavigation } from "@react-navigation/native";
 import { ContainerSafe, ImageIconLogo, Scroll } from "../Login/login-style";
 import { ContainerTelaPrincipal } from "../Home/telaPrincipal-style";
 import InputGeral from "../../components/Forms/inputGeral/inputGeral";
-import { TextButton } from "../PasswordCriation/cadastro-style";
+import { TextButton } from "../password-creation/cadastro-style";
 import { propsStack } from "../../routes/Stack/Models";
 import { Platform } from "react-native";
 
