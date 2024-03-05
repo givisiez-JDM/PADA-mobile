@@ -11,3 +11,4 @@ Changelog
 - [PADA-189](https://givisiez.atlassian.net/browse/PADA-216): Create Medication Controll Header Layout
 
 ## Fix
+- [PADA-209](https://givisiez.atlassian.net/browse/PADA-216): Modified MyVaccines screen, components and style

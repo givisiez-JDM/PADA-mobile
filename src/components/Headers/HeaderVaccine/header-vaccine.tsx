@@ -1,29 +1,13 @@
 import React, { useState } from "react";
 import {
-  ButtonNextVaccine,
-  ButtonRemember,
   ContainerBackFluxo,
-  ContainerButtonsHeaderFluxo,
-  ContainerDataPatient,
-  ContainerHeaderFluxo,
-  ContainerHeaderInformationPerson,
-  ContainerHeaderVaccines,
+  ContainerHeaderVaccineFluxo,
   ContainerImagePerson,
-  ContainerInputCalendarVaccines,
-  ContainerSafeHeader,
-  ContainerTitles,
-  IconButtonNextVaccine,
-  IconTime,
-  IconWrapper,
-  IconWrapperCalendar,
-  ImageCalendar,
+  ContainerInputVaccines,
   ImagePerson,
   InputCalendarVaccines,
-  SubTitleHeaderFluxo,
-  TextButtonNextVaccine,
-  TextButtonRemember,
-  TextButtonVaccine,
-  TextDataPatient,
+  InputWrapper,
+  MainContainerVaccine,
   TitleHeaderFluxo,
   TitleHeaderVaccines,
 } from "./header-vaccine-style";
@@ -32,8 +16,7 @@ import Icon from "react-native-vector-icons/Ionicons";
 import { useNavigation } from "@react-navigation/native";
 import { propsStack } from "../../../routes/Stack/Models";
 import Person from "../../../assets/image-icons/imgUserItem.png";
-import Calendar from "../../../assets/image-icons/calendar.png";
-import Time from "../../../assets/image-icons/time.png";
+import { ContainerSafeHeader } from "../HeaderHome/header-home-style";
 
 const HeaderVaccine = (props: {
   title: string | undefined;
@@ -48,58 +31,45 @@ const HeaderVaccine = (props: {
   return (
     <ContainerSafeHeader>
       <StatusBar barStyle="light-content" backgroundColor="#000" />
-      <ContainerHeaderFluxo>
+      <ContainerHeaderVaccineFluxo>
         {props.backButton === true ? (
           <ContainerBackFluxo onPress={() => navigation.goBack()}>
             <Icon name="chevron-back-outline" color="#000" />
           </ContainerBackFluxo>
         ) : null}
-        <ContainerHeaderInformationPerson>
-          <ContainerImagePerson>
-            <ImagePerson
-              source={
-                props.photo
-                  ? { uri: `data:image/jpeg;base64,${props.photo}` }
-                  : Person
-              }
+        <ContainerImagePerson>
+          <ImagePerson source={
+            props.photo ? { uri: `data:image/jpeg;base64,${props.photo}` } : Person}
+          />
+          <TitleHeaderFluxo>{props.title}</TitleHeaderFluxo>
+        </ContainerImagePerson>
+        <ContainerInputVaccines>
+          <TitleHeaderVaccines>
+            Busque em seu histórico:
+          </TitleHeaderVaccines>
+          <InputWrapper>
+            <Icon
+              name="search"
+              size={25}
+              color="#36454F"
             />
-          </ContainerImagePerson>
-          <ContainerHeaderVaccines>
-            <TitleHeaderFluxo>{props.title}</TitleHeaderFluxo>
-            <TitleHeaderVaccines>
-              Busque em seu histórico
-            </TitleHeaderVaccines>
-            <ContainerInputCalendarVaccines>
-              <IconWrapper>
-                <Icon
-                  name="search"
-                  size={25}
-                  color="#36454F"
-                  style={{ marginLeft: 5 }}
-                />
-              </IconWrapper>
-              <InputCalendarVaccines
-                onChangeText={(text: string) => {
-                  setDate(text);
-                }}
-                value={date}
-                placeholder="Data"
-                placeholderTextColor="#A9A9A9"
-              />
-              <ImageCalendar source={Calendar} />
-              <IconWrapperCalendar>
-                <Icon
-                  name="calendar"
-                  size={25}
-                  color="#36454F"
-                  style={{ marginRight: 10 }}
-                />
-              </IconWrapperCalendar>
-            </ContainerInputCalendarVaccines>
-          </ContainerHeaderVaccines>
-        </ContainerHeaderInformationPerson>
-      </ContainerHeaderFluxo>
-    </ContainerSafeHeader>
+            <InputCalendarVaccines
+              onChangeText={(text: string) => {
+                setDate(text);
+              }}
+              value={date}
+              placeholder="Data"
+              placeholderTextColor="#A9A9A9"
+            />
+            <Icon
+              name="calendar"
+              size={25}
+              color="#36454F"
+            />
+          </InputWrapper>
+        </ContainerInputVaccines>
+      </ContainerHeaderVaccineFluxo>
+    </ContainerSafeHeader >
   )
 };
 

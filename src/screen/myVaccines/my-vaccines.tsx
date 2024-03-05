@@ -1,17 +1,18 @@
-import HeaderVaccine from "../../components/Headers/HeaderHome/header-home";
-import { Scroll } from "../Patient/patient-style";
+import HeaderVaccine from "../../components/Headers/HeaderVaccine/header-vaccine";
+
+
 import {
   ContainerItemInformationVaccine,
   ContainerItemsLegends,
   ContainerLegend,
   ContainerProgressBar,
-  ContainerSubTitleProgressBar,
+  ContainerTextProgressBar,
   ContainerVaccinesView,
   TextContainerLegend,
   TextSubTitleProgressBar,
   TextTitleProgressBar,
 } from "./my-vaccines-styles";
-import { ContainerPrincipal } from "../Home/telaPrincipal-style";
+import { ContainerPrincipal } from "../home/telaPrincipal-style";
 import ItemVaccine from "../../components/Cards/itemVaccine/item-vaccine";
 import { useEffect, useState } from "react";
 import { getDataUserStorage } from "../../service/requests";
@@ -20,6 +21,7 @@ import TabBar from "../../components/Buttons/buttonTabBar/buttonTabBar";
 import ProgressBar from "../../components/Bars/progressBar/progress-bar";
 import storePatient from "../../store/storePatient";
 import ModalPhaseVaccine from "../../components/Modals/modalPhaseVaccine/modal-phase-vaccine";
+import { Scroll } from "../patient/patient-style";
 
 const MyVaccines = () => {
   const [roleUser, setRoleUser] = useState("");
@@ -110,11 +112,11 @@ const MyVaccines = () => {
         />
         <ContainerPrincipal>
           <ContainerProgressBar>
-            <TextTitleProgressBar>Você está na Fase 1</TextTitleProgressBar>
+            <ContainerTextProgressBar>
+              <TextTitleProgressBar>Você está na Fase 1</TextTitleProgressBar>
+              <TextSubTitleProgressBar onPress={onOpen}>Mais detalhes</TextSubTitleProgressBar>
+            </ContainerTextProgressBar>
             <ProgressBar progress={progress} width="236px" />
-            <ContainerSubTitleProgressBar onPress={onOpen}>
-              <TextSubTitleProgressBar>Mais detalhes</TextSubTitleProgressBar>
-            </ContainerSubTitleProgressBar>
             <ModalPhaseVaccine visible={visible} onClose={onClose} />
           </ContainerProgressBar>
 

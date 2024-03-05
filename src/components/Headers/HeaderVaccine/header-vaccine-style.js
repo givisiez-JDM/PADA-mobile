@@ -1,15 +1,14 @@
 import styled, { css } from "styled-components/native";
 
-export const ContainerSafeHeader = styled.View`
+export const MainContainerVaccine = styled.View`
   flex: 1;
-  z-index: 1;
+  margin-botton:20px;
 `;
 
-export const ContainerHeaderFluxo = styled.View`
-  display: flex;
-  flex-direction: column;
-  row-gap: 10px;
-  width: 100%;
+export const ContainerHeaderVaccineFluxo = styled.View`
+display:flex;  
+padding:30px 20px 5px 20px;
+
   height: 200px;
   background: #4c7abb;
   border-bottom-left-radius: 20px;
@@ -26,22 +25,9 @@ export const ContainerButtonVaccine = styled.View`
   border-radius: 50px;
 `;
 
-export const ContainerHeaderInformationPerson = styled.View`
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-`;
-
 export const ContainerImagePerson = styled.View`
   display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  width: 66px;
-  height: 66px;
-  left: 40px;
-  top: 40px;
+  flex-direction:row;
   border-radius: 50px;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 `;
@@ -52,7 +38,6 @@ export const ImagePerson = styled.Image.attrs({
   border-radius: 50px;
   width: 80px;
   height: 80px;
-  z-index: 1;
 `;
 
 export const ContainerShadowVaccine = styled.View`
@@ -81,15 +66,14 @@ export const TextButtonVaccine = styled.Text`
 
 export const ContainerBackFluxo = styled.TouchableOpacity`
   position: absolute;
-  width: 25px;
-  height: 25px;
-  right: 15px;
-  top: 23px;
+  width: 30px;
+  height: 30px;
+  right: 30px;
+  top: 25px;
   background: #fff;
   border-radius: 50px;
   justify-content: center;
   align-items: center;
-  z-index: 3;
 `;
 
 export const ContainerTitles = styled.View`
@@ -106,6 +90,7 @@ export const ContainerInputSearch = styled.View`
 `;
 
 export const TitleHeaderFluxo = styled.Text`
+margin-top:15px;
   font-style: normal;
   font-weight: 700;
   font-size: 20px;
@@ -222,16 +207,14 @@ export const IconTime = styled.Image.attrs({
   transform: rotate(179.15deg);
 `;
 
-export const ContainerHeaderVaccines = styled.View`
+export const ContainerInputVaccines = styled.View`
   display: flex;
-  flex-direction: column;
-  position: relative;
-  left: -100px;
-  top: 35px;
+  gap:5px;
+  padding:10px;
 `;
 
 export const TitleHeaderVaccines = styled.Text`
-  color: #273047;
+  color: #ffffff;
   //font-family: Noto Sans KR;
   font-size: 16px;
   font-weight: 700;
@@ -241,37 +224,23 @@ export const ContainerInputCalendarVaccines = styled.View`
   display: flex;
   flex-direction: row;
   align-items: center;
-  height: 47.5px;
 `;
 
 export const InputCalendarVaccines = styled.TextInput`
-  background: rgba(218, 218, 218, 1);
-  width: 280px;
-  height: 47.5px;
-  color: rgba(39, 48, 71, 0.5);
-  font-size: 15px;
-  font-weight: 400;
+width:70%;
+font-size: 15px;
+font-weight: 400;
+color: rgba(39, 48, 71, 0.5);
+background: rgba(218, 218, 218, 1);
 `;
 
-export const IconWrapper = styled.View`
-  background: rgba(218, 218, 218, 1);
-  width: 35px;
-  height: 47.5px;
-  justify-content: center;
-  align-items: center;
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
+export const InputWrapper = styled.View`
+display:flex;
+flex-direction:row;
+justify-content:space-evenly;
+padding: 10px 10px 10px 0px;
+border-radius: 5px;
+background: rgba(218, 218, 218, 1);
 `;
 
-export const IconWrapperCalendar = styled.View`
-  background: rgba(218, 218, 218, 1);
-  width: 50px;
-  height: 47.5px;
-  justify-content: center;
-  align-items: center;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
-  position: relative;
-  left: -1px;
-  z-index: 5;
-`;
+
