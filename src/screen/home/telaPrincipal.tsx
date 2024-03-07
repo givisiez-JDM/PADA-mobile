@@ -63,13 +63,14 @@ const TelaPrincipal = () => {
       }
     };
     // const fetchPatientInterval = setInterval(fetchDataPatient, 1000);
+    // const fetchPatientInterval = setInterval(fetchDataPatient, 1000);
 
     getDoctorId();
 
-    return () => {
-      isMounted = false;
-      clearInterval(fetchPatientInterval);
-    };
+    // return () => {
+    //   isMounted = false;
+    //   clearInterval(fetchPatientInterval);
+    // };
   }, []);
 
   let role: any = roleUser;
@@ -109,24 +110,14 @@ const TelaPrincipal = () => {
         photo={patient.photo}
       />
       <ContainerPrincipal>
-        {role.length === 9 ? (
-          <ContainerListTagFluxo>
-            <FlatList
-              data={array}
-              renderItem={renderItem}
-              keyExtractor={(item) => item.title}
-              numColumns={2}
-            />
-          </ContainerListTagFluxo>
-        ) : (
-          <ContainerListDoctor>
-            <TagFluxo
-              imageTag={Paciente}
-              title={"Pacientes"}
-              text={"Conheça cada um dos seus pacientes"}
-            />
-          </ContainerListDoctor>
-        )}
+        <ContainerListTagFluxo>
+          <FlatList
+            data={array}
+            renderItem={renderItem}
+            keyExtractor={(item) => item.title}
+            numColumns={2}
+          />
+        </ContainerListTagFluxo>
       </ContainerPrincipal>
       <TabBar />
     </ContainerSafePrincipal>

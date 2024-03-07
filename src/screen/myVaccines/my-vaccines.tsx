@@ -13,6 +13,7 @@ import {
   TextTitleProgressBar,
 } from "./my-vaccines-styles";
 import { ContainerPrincipal } from "../home/telaPrincipal-style";
+import { ContainerPrincipal } from "../home/telaPrincipal-style";
 import ItemVaccine from "../../components/Cards/itemVaccine/item-vaccine";
 import { useEffect, useState } from "react";
 import { getDataUserStorage } from "../../service/requests";

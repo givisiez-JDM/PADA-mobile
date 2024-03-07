@@ -2,7 +2,11 @@ import React from "react";
 import SplashScreen from "../../screen/splash-screen/splashScreen";
 
 
+import SplashScreen from "../../screen/splash-screen/splashScreen";
+
+
 import { propsNavigationStack } from "./Models";
+
 
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Patient from "../../screen/patient/patient";
@@ -38,6 +42,8 @@ export default function () {
       />
       <Screen name="SplashScreen" component={SplashScreen} />
       <Screen name="MyVaccines" component={MyVaccines} />
+
+
 
 
       <Screen name="RecuperacaoSenha" component={RecuperacaoSenha} />
