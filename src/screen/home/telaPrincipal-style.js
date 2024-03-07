@@ -5,12 +5,11 @@ export const ContainerSafePrincipal = styled.SafeAreaView`
 `;
 
 export const ContainerPrincipal = styled.View`
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  height: 90%;
-  z-index: 0;
-  background: rgba(#d1d1d1, 0.2);
+display:flex;
+gap:15px;
+padding-left:20px;
+padding-right:20px;
+background: rgba(#d1d1d1, 0.2);
 `;
 
 export const ContainerListTagFluxo = styled.View`
