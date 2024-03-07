@@ -16,7 +16,7 @@ import Icon from "react-native-vector-icons/Ionicons";
 import { useNavigation } from "@react-navigation/native";
 import { propsStack } from "../../../routes/Stack/Models";
 import Person from "../../../assets/image-icons/imgUserItem.png";
-import { ContainerSafeHeader } from "../HeaderHome/header-home-style";
+import { ContainerSafeHeader } from "../header-home/header-home-style";
 
 const HeaderVaccine = (props: {
   title: string | undefined;
