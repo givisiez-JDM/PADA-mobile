@@ -59,7 +59,7 @@ export const TextInput = styled.View`
 `;
 
 export const PatientInput = styled.TextInput`
-  flex: 1;
+width:100%;
   font-size: 15px;
   font-weight: 500;
   padding: 10px;

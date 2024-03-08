@@ -6,7 +6,8 @@ export const ContainerSafePrincipal = styled.SafeAreaView`
 
 export const ContainerPrincipal = styled.View`
 display:flex;
-gap:15px;
+gap:20px;
+margin-top:15px;
 padding-left:20px;
 padding-right:20px;
 background: rgba(#d1d1d1, 0.2);
@@ -28,12 +29,10 @@ export const ContainerListDoctor = styled.View`
 
 export const ContainerTelaPrincipal = styled.View`
   display: flex;
-  flex-direction: column;
   width: 100%;
   height: 100%;
   justify-content: center;
   align-items: center;
-  z-index: 0;
   background: #fff;
 `;
 

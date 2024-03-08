@@ -13,6 +13,7 @@ import { Image, Text } from "react-native";
 import { ImageSource } from "react-native-vector-icons/Icon";
 import { ImageLogo } from "../../Buttons/buttonEmailSenha/buttonEmailSenha-style";
 import { InputLogin, PatientInput } from "../../../screen/login/login-style";
+import InputGeral from "../inputGeral/inputGeral";
 
 interface PatientRecordValues {
   placeholder: string;
@@ -22,9 +23,9 @@ interface PatientRecordValues {
   imageButton: ImageSource;
 }
 
-const FormPatientLoginRecord = ({
-  imageButton, placeholder,
+const FormPatientLoginRecord = ({ imageButton, placeholder,
   handleInputChange, state, err }: PatientRecordValues) => {
+
   return (
     <ContainerFormPatientRecord>
       <ContainerLogin>

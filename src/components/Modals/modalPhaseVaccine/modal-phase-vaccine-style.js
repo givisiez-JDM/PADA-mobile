@@ -20,7 +20,6 @@ export const ContainerContentModalPhase = styled(Animated.View)`
   position: absolute;
   right: 0%;
   display: flex;
-  flex-direction: column;
   row-gap: 10px;
   align-items: center;
   width: 410px;

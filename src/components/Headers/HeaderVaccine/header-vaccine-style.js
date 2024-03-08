@@ -7,8 +7,7 @@ export const MainContainerVaccine = styled.View`
 
 export const ContainerHeaderVaccineFluxo = styled.View`
 display:flex;  
-padding:30px 20px 5px 20px;
-
+padding:30px 20px 10px 20px;
   height: 200px;
   background: #4c7abb;
   border-bottom-left-radius: 20px;

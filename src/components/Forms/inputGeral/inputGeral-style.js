@@ -2,17 +2,17 @@ import styled from "styled-components/native";
 
 export const ButtonEmailSenhaContainer = styled.TextInput`
   display: flex;
-  width: 240px;
+  width: 80%;
   height: 50px;
-  border-radius: 50px;
-  background: #fff;
   margin-bottom: 30px;
   margin-top: 30px;
-  border: 1.5px #334c76;
-  color: #4c7abb;
+  padding-left: 20px;
   font-size: 20px;
   font-weight: lighter;
-  padding-left: 20px;
+  color: #4c7abb;
+  border-radius: 10px;
+  border: 2px #334c76;
+  background: #fff;
 `;
 
 export const ImageLogo = styled.View`

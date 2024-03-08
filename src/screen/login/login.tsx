@@ -69,7 +69,7 @@ const PatientLogin = () => {
   return (
     <ContainerSafe behavior={Platform.OS === "ios" ? "padding" : "height"}>
       <Scroll>
-        <Header back={true} />
+        <Header back={false} />
         <ContainerLogin>
           <Image source={logo} />
 
