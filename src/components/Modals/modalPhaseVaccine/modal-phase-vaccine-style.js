@@ -1,55 +1,48 @@
 import styled from "styled-components/native";
 import { Animated } from "react-native";
 
-export const ContainerModalPhaseVaccines = styled.Modal``;
+export const ContainerModalPhaseVaccines = styled.Modal`
+
+`;
 
 export const ButtonClose = styled.TouchableOpacity`
-  display: flex;
-  justify-content: center;
-  align-items: center;
   position: absolute;
-  right: 20px;
-  top: 20px;
-  width: 25px;
-  height: 25px;
+  top:28px;
+  right: 28px;
+  width: 15px;
+  height: 15px;
   background: #fff;
   border-radius: 50px;
 `;
 
 export const ContainerContentModalPhase = styled(Animated.View)`
-  position: absolute;
-  right: 0%;
   display: flex;
-  row-gap: 10px;
-  align-items: center;
-  width: 410px;
-  height: 460px;
+  padding: 20px;
+  gap: 10px;
   border-bottom-left-radius: 30px;
   border-top-left-radius: 30px;
   background: #4c7abb;
 `;
 
 export const TextTitleModalPhase = styled.Text`
+  align-self: center;
   font-weight: 900;
   font-size: 18px;
   line-height: 26px;
+  margin-bottom: 20px;
   color: #ffffff;
-  margin-top: 10px;
 `;
 
 export const ContainerPhases = styled.View`
-  position: relative;
-  top: 20px;
-  left: -120px;
-  flex-direction: column;
-  row-gap: 10px;
+  gap: 10px;
+  margin-bottom: 10px;
 `;
 
 export const ContainerPhasesInfo = styled.View`
   flex-direction: row;
   align-items: center;
-  column-gap: 10px;
-  width: 80px;
+  gap: 10px;
+
   height: 30px;
   border-left-width: 4px;
   border-left-color: #e3e3e3;
@@ -65,7 +58,7 @@ export const TextPhasesInfo = styled.Text`
 `;
 
 export const ImagePhaseInfo = styled.Image`
-  margin-left: -5px;
+
   width: 8.6px;
   height: 7px;
   transform: ${({ expanded }) =>
@@ -73,27 +66,18 @@ export const ImagePhaseInfo = styled.Image`
 `;
 
 export const ContainerSubTitleInfo = styled.View`
-  flex-direction: column;
-  row-gap: 5px;
-  position: relative;
-  top: 40px;
-  left: -75px;
+margin-bottom: 10px;
+  gap: 5px;
 `;
 
 export const ContainerSubTitleInfo1 = styled.View`
-  flex-direction: column;
-  row-gap: 5px;
-  position: relative;
-  top: 40px;
-  left: -55px;
+gap: 5px;
 `;
 
 export const ContainerSubTitleInfo2 = styled.View`
-  flex-direction: column;
-  row-gap: 5px;
-  position: relative;
-  top: 40px;
-  left: -65px;
+margin-bottom: 10px;
+gap: 5px;
+  
 `;
 
 export const TextTitle = styled.Text`
@@ -116,17 +100,14 @@ export const TextSubTitle = styled.Text`
 `;
 
 export const ContainerModalProgressBar = styled.View`
-  position: relative;
-  top: 45px;
-  left: -55px;
   width: 223px;
   height: 69px;
   background: #ffffff;
-  shadow-color: rgba(0, 0, 0, 0.25);
+  /* shadow-color: rgba(0, 0, 0, 0.25);
   shadow-offset: 9px 9px;
   shadow-opacity: 1;
-  shadow-radius: 30px;
-  elevation: 10;
+  shadow-radius: 30px; */
+  /* elevation: 10; */
   box-shadow: 4px 4px 9px rgba(0, 0, 0, 0.25);
   border-radius: 20px;
 `;

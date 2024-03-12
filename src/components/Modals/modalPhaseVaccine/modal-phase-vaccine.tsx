@@ -55,10 +55,10 @@ const ModalPhaseVaccine = (props: {
           transform: [{ translateX: translateX }],
         }}
       >
+        <TextTitleModalPhase>Fase de Tratamento</TextTitleModalPhase>
         <ButtonClose onPress={props.onClose}>
           <Icon name="chevron-forward-outline" color="#000" size={20} />
         </ButtonClose>
-        <TextTitleModalPhase>Fase de Tratamento</TextTitleModalPhase>
         <ContainerPhases>
           <ContainerPhasesInfo>
             <TextPhasesInfo>Fase 1</TextPhasesInfo>
@@ -71,7 +71,7 @@ const ModalPhaseVaccine = (props: {
         </ContainerPhases>
 
         <ContainerSubTitleInfo>
-          <TextTitle>Duração do Tratamento</TextTitle>
+          <TextTitle>Duração da Fase</TextTitle>
           <ContainerDateInfo>
             <TextSubTitle>Início {"     "} 27/10/2023</TextSubTitle>
             <TextSubTitle>Fim {"        "} 27/05/2024</TextSubTitle>
