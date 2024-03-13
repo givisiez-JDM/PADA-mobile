@@ -1,8 +1,8 @@
 import styled, { css } from "styled-components/native";
 
 export const ContainerSafeHeader = styled.View`
-  flex: 1;
-  z-index: 1;
+  flex:1px;
+  margin-botton:20px;
 `;
 
 export const ContainerHeaderFluxo = styled.View`

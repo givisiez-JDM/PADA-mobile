@@ -46,10 +46,10 @@ const ItemVaccine = (props: {
         </ViewInformationDate>
         <ContainerNameVaccine>
           <TextNameVaccine>{props.nameVaccine}</TextNameVaccine>
+          <ViewItemHidden onPress={toggleExpand}>
+            <ImageHidden source={Hidden} expanded={expanded} />
+          </ViewItemHidden>
         </ContainerNameVaccine>
-        <ViewItemHidden onPress={toggleExpand} underlayColor="transparent">
-          <ImageHidden source={Hidden} expanded={expanded} />
-        </ViewItemHidden>
 
         <HiddenContent expanded={expanded}>
           <TextHiddenContent>{props.description}</TextHiddenContent>

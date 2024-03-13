@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import HeaderFluxo from "../../components/Headers/header-home/header-home";
+import HeaderHome from "../../components/Headers/HeaderHome/header-home";
 import {
   ContainerListDoctor,
   ContainerListTagFluxo,
@@ -63,6 +63,7 @@ const TelaPrincipal = () => {
       }
     };
     // const fetchPatientInterval = setInterval(fetchDataPatient, 1000);
+    // const fetchPatientInterval = setInterval(fetchDataPatient, 1000);
 
     getDoctorId();
 
@@ -77,9 +78,9 @@ const TelaPrincipal = () => {
 
   const array = [
     {
-      image: Coracao,
-      title: "Minha saúde",
-      text: "Seu histórico de saúde",
+      image: Perfil,
+      title: "Meu perfil",
+      text: "Suas informações de cadastro",
     },
     {
       image: Remedio,
@@ -90,12 +91,7 @@ const TelaPrincipal = () => {
       image: ProfissionalSaude,
       title: "Profissional de saúde",
       text: "Conheça o especialista",
-    },
-    {
-      image: Perfil,
-      title: "Meu perfil",
-      text: "Suas informações de cadastro",
-    },
+    }
   ];
 
   const renderItem = ({ item }: any): any => {
@@ -106,7 +102,7 @@ const TelaPrincipal = () => {
 
   return (
     <ContainerSafePrincipal>
-      <HeaderFluxo
+      <HeaderHome
         title={`Olá, ${name}`}
         backButton={true}
         buttonVaccine={true}
