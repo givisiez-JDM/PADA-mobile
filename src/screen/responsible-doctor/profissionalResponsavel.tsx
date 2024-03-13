@@ -14,6 +14,7 @@ import {
 } from "../../service/requests";
 import store from "../../store/store";
 import { Buffer } from "buffer";
+import React from "react";
 
 const ProfissionalResponsavel = () => {
   const doctor: TDoctor = store.getState();

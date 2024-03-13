@@ -47,7 +47,7 @@ const HeaderVaccine = (props: {
   }
 
   return (
-    <ContainerHeaderVaccineFluxo>
+    <ContainerSafeHeader>
       <StatusBar barStyle="light-content" backgroundColor="#000" />
       <ContainerHeaderVaccineFluxo>
         {props.backButton === true ? (
