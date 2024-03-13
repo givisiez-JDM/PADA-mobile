@@ -1,27 +1,18 @@
 import React, { useState } from "react";
 import {
-  ContainerBackFluxo,
-  ContainerHeaderVaccineFluxo,
-  ContainerImagePerson,
-  ContainerInputVaccines,
-  ImagePerson,
-  InputCalendarVaccines,
-  InputWrapper,
-  MainContainerVaccine,
-  TitleHeaderFluxo,
-  TitleHeaderVaccines,
+  ContainerBackFluxo, ContainerHeaderVaccineFluxo,
+  ContainerImagePerson, ContainerInputVaccines,
+  ImagePerson, InputCalendarVaccines, InputWrapper,
+  TitleHeaderFluxo, TitleHeaderVaccines
 } from "./header-vaccine-style";
 import { Platform, StatusBar, TouchableOpacity } from "react-native";
 import Icon from "react-native-vector-icons/Ionicons";
 import { useNavigation } from "@react-navigation/native";
 import { propsStack } from "../../../routes/Stack/Models";
 import Person from "../../../assets/image-icons/imgUserItem.png";
-import { ContainerSafeHeader } from "../HeaderHome/header-home-style";
-
-import Calendar from "../../../assets/image-icons/calendar.png";
-import Time from "../../../assets/image-icons/time.png";
-import RNDateTimePicker, { DateTimePickerEvent } from "@react-native-community/datetimepicker";
-
+import { ContainerSafeHeader } from "../header-home/header-home-style";
+import
+DateTimePicker, { DateTimePickerEvent } from "@react-native-community/datetimepicker";
 
 const HeaderVaccine = (props: {
   title: string | undefined;
@@ -31,7 +22,8 @@ const HeaderVaccine = (props: {
   photo?: any;
 }) => {
   const navigation = useNavigation<propsStack>();
-  const [date, setDate] = useState<Date | string>("");
+  // const [date, setDate] = useState<Date | string>("");
+  const [date, setDate] = useState(new Date());
   const [showPicker, setShowPicker] = useState(false);
   const [inputValue, setInputValue] = useState<string>("Data");
 
@@ -39,12 +31,20 @@ const HeaderVaccine = (props: {
     setShowPicker(true);
   };
 
-  const onChange = (event: DateTimePickerEvent, selectedDate?: Date | undefined) => {
+  // const onChange = (event: DateTimePickerEvent, selectedDate?: Date | undefined) => {
+  //   const currentDate = selectedDate || date;
+  //   setShowPicker(Platform.OS === 'ios'); // Hide the picker in iOS
+  //   setDate(currentDate);
+  //   setInputValue(currentDate.toLocaleString());
+  // };
+
+  const onChange = (event: DateTimePickerEvent, selectedDate?: Date) => {
     const currentDate = selectedDate || date;
-    setShowPicker(Platform.OS === 'ios'); // Hide the picker in iOS
+
+    setShowPicker(Platform.OS === 'ios');
     setDate(currentDate);
-    setInputValue(currentDate.toLocaleString());
-  };
+    setInputValue(currentDate.toLocaleDateString());
+  }
 
   return (
     <ContainerSafeHeader>
@@ -59,47 +59,42 @@ const HeaderVaccine = (props: {
           <ImagePerson source={
             props.photo ? { uri: `data:image/jpeg;base64,${props.photo}` } : Person}
           />
-          <TitleHeaderFluxo>{props.title}</TitleHeaderFluxo> 
-          </ContainerImagePerson>
-          <ContainerInputVaccines>
-            <TitleHeaderFluxo>{props.title}</TitleHeaderFluxo>
-            <TitleHeaderVaccines>
-              Busque em seu histórico
-            </TitleHeaderVaccines>
-            <TouchableOpacity onPress={handleInputClick}>
+          <TitleHeaderFluxo>{props.title}</TitleHeaderFluxo>
+        </ContainerImagePerson>
+        <ContainerInputVaccines>
+          <TitleHeaderVaccines>
+            Busque em seu histórico
+          </TitleHeaderVaccines>
+          <TouchableOpacity onPress={handleInputClick}>
             <InputWrapper>
-              <IconWrapper>
-                <Icon
-                  name="search"
-                  size={25}
-                  color="#36454F"
-                  style={{ marginLeft: 5 }}
-                />
-              </IconWrapper>
+              <Icon
+                name="search"
+                size={25}
+                color="#36454F"
+                style={{ marginLeft: 5 }}
+              />
               <InputCalendarVaccines
-               value={inputValue}
-               placeholder="Data"
-               placeholderTextColor="#A9A9A9" />
-              <ImageCalendar source={Calendar} />
-              <IconWrapperCalendar>
-                <Icon
-                  name="calendar"
-                  size={25}
-                  color="#36454F"
-                  style={{ marginRight: 10 }}  />
-              </IconWrapperCalendar>
+                value={inputValue}
+                placeholder="Data"
+              />
+              <Icon
+                name="calendar"
+                size={25}
+                color="#36454F"
+                style={{ marginRight: 10 }} />
             </InputWrapper>
-            </TouchableOpacity>
-            {showPicker && (
-            <RNDateTimePicker
-            value={date}
-            mode="date"
-            display="default"
-            onChange={onChange}/>
-)}
-          </ContainerInputVaccines>
+          </TouchableOpacity>
+          {showPicker && (
+            <DateTimePicker
+              value={date}
+              mode={"date"}
+              display="default"
+              onChange={onChange} />
+          )}
+        </ContainerInputVaccines>
       </ContainerHeaderVaccineFluxo>
     </ContainerSafeHeader>
+  )
 };
 
 export default HeaderVaccine;

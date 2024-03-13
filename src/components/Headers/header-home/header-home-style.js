@@ -2,7 +2,7 @@ import styled, { css } from "styled-components/native";
 
 export const ContainerSafeHeader = styled.View`
   flex:1px;
-  margin-botton:20px;
+  margin-bottom:20px;
 `;
 
 export const ContainerHeaderFluxo = styled.View`
@@ -65,10 +65,10 @@ export const ContainerShadowVaccine = styled.View`
   border-radius: 50px;
   background-color: #76a7ed;
   opacity: 0.8;
-  shadow-color: #000;
+  /* shadow-color: #000;
   shadow-offset: 0px 4px;
   shadow-opacity: 1;
-  shadow-radius: 4;
+  shadow-radius: 4; */
 `;
 
 export const TextButtonVaccine = styled.Text`
@@ -272,6 +272,5 @@ export const IconWrapperCalendar = styled.View`
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
   position: relative;
-  left: -1px;
-  z-index: 5;
+  
 `;

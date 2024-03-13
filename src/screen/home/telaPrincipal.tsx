@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import HeaderHome from "../../components/Headers/HeaderHome/header-home";
+import HeaderHome from "../../components/Headers/header-home/header-home";
 import {
   ContainerListDoctor,
   ContainerListTagFluxo,

@@ -29,11 +29,11 @@ export const ContainerProgressBar = styled.View`
   
   background: #ffffff;
   //box-shadow: 4px 4px 9px rgba(0, 0, 0, 0.25);
-  elevation: 5; /* Isso adicionará sombreamento no Android */
+  /* elevation: 5;  Isso adicionará sombreamento no Android 
   shadow-color: rgba(0, 0, 0, 0.25);
   shadow-offset: 4px 2px;
   shadow-opacity: 0.3;
-  border-radius: 5px;
+  border-radius: 5px; */
 `;
 
 export const TextTitleProgressBar = styled.Text`
@@ -45,7 +45,7 @@ export const TextTitleProgressBar = styled.Text`
 export const ContainerTextProgressBar = styled.View`
 display:flex;
 flex-direction:row;
-align-itens:center;
+align-items:center;
 justify-content: space-between;
 `;
 // export const TextTitleProgressBar = styled.Text`
