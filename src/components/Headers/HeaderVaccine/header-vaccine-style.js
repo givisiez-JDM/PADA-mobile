@@ -50,10 +50,10 @@ export const ContainerShadowVaccine = styled.View`
   border-radius: 50px;
   background-color: #76a7ed;
   opacity: 0.8;
-  shadow-color: #000;
-  shadow-offset: 0px 4px;
-  shadow-opacity: 1;
-  shadow-radius: 4;
+  //shadow-color: #000;
+  //shadow-offset: 0px 4px;
+  //shadow-opacity: 1;
+  //shadow-radius: 4;
 `;
 
 export const TextButtonVaccine = styled.Text`
