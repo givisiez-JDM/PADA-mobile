@@ -1,11 +1,9 @@
 import React, { useState } from "react";
 import {
-  ButtonAvancar,
   ContainerEnviaremos,
   ImageIconLogoRedefinir,
-  TextEnviaremos,
-  TextEnviaremos1,
-  TextRedefinir,
+  SubtittleRedefinePass,
+  TitleRedefinePass,
   ContainerFooterBottom,
 } from "./redefinirSenha-style";
 import logo from "../../assets/logo/logo.png";
@@ -13,12 +11,13 @@ import logo from "../../assets/logo/logo.png";
 import Header from "../../components/Headers/header/header";
 import FooterCurto from "../../components/Footers/footer/footer";
 import { useNavigation } from "@react-navigation/native";
-import { ContainerSafe, ImageIconLogo, Scroll } from "../Login/login-style";
-import { ContainerTelaPrincipal } from "../Home/telaPrincipal-style";
+import { ContainerSafe, ImageIconLogo, Scroll } from "../login/login-style";
+import { ContainerTelaPrincipal } from "../home/telaPrincipal-style";
 import InputGeral from "../../components/Forms/inputGeral/inputGeral";
 import { TextButton } from "../password-creation/cadastro-style";
 import { propsStack } from "../../routes/Stack/Models";
 import { Platform } from "react-native";
+import BlueButton from "../../components/Buttons/bluebutton/BlueButton";
 
 const RedefinirSenha = () => {
   const navigation = useNavigation<propsStack>();
@@ -29,21 +28,14 @@ const RedefinirSenha = () => {
         <ContainerTelaPrincipal>
           <Header back={true} />
           <ImageIconLogoRedefinir source={logo} />
-          <TextRedefinir>Redefinir senha</TextRedefinir>
           <ContainerEnviaremos>
-            <TextEnviaremos>Enviaremos um código de 6 dígitos </TextEnviaremos>
-            <TextEnviaremos1>para você no seu e-mail.</TextEnviaremos1>
+            <TitleRedefinePass>Redefinir senha</TitleRedefinePass>
+            <SubtittleRedefinePass>Enviaremos um código de 6 dígitos para você no seu e-mail.</SubtittleRedefinePass>
           </ContainerEnviaremos>
 
-          <InputGeral />
-
-          <ButtonAvancar>
-            <TextButton>Avançar</TextButton>
-          </ButtonAvancar>
-
-          <ContainerFooterBottom>
-            <FooterCurto />
-          </ContainerFooterBottom>
+          <InputGeral inputtext={'Email'} />
+          <BlueButton buttontext={'Avançar'}></BlueButton>
+          <FooterCurto />
         </ContainerTelaPrincipal>
       </Scroll>
     </ContainerSafe>

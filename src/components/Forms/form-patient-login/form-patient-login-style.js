@@ -13,7 +13,6 @@ export const ContainerInput = styled.View`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  
 `;
 
 export const ContainerLogin = styled.View`
@@ -23,11 +22,10 @@ export const ContainerLogin = styled.View`
   align-items: center;
   width: 240px;
   height: 50px;
-  border-radius: 50px;
+  border-radius: 10px;
   background: #fff;
   margin-top: 15px;
   border: 2px #4c7abb;
- 
 `;
 
 export const ContainerIconInput = styled.TextInput`

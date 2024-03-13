@@ -89,11 +89,7 @@ export const ContainerItemInformationVaccine = styled.View`
 // `;
 
 export const ContainerLegend = styled.View`
-  display: flex;
-  flex-direction: column;
-  row-gap: 10px;
-  margin-top: 180px;
-  margin-left: 50px;
+  gap: 10px;
 `;
 
 export const TextContainerLegend = styled.Text`

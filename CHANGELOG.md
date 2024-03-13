@@ -15,4 +15,6 @@ Changelog
 - [PADA-216](https://givisiez.atlassian.net/browse/PADA-216): Fix conflict and import errors
 - [PADA-209](https://givisiez.atlassian.net/browse/PADA-216): Modified MyVaccines screen, components and style
 - [PADA-216](https://givisiez.atlassian.net/browse/PADA-216): Fix conflict and import errors
+- [PADA-63](https://givisiez.atlassian.net/browse/PADA-63): Fix Modal treatment phases styles
+- [PADA-187](https://givisiez.atlassian.net/browse/PADA-187): Fix Layout myVaccines and headerVaccines
 
