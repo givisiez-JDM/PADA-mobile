@@ -27,13 +27,14 @@ import {
   TitleHeaderFluxo,
   TitleHeaderVaccines,
 } from "./header-vaccine-style";
-import { StatusBar } from "react-native";
+import { Platform, StatusBar, TouchableOpacity } from "react-native";
 import Icon from "react-native-vector-icons/Ionicons";
 import { useNavigation } from "@react-navigation/native";
 import { propsStack } from "../../../routes/Stack/Models";
 import Person from "../../../assets/image-icons/imgUserItem.png";
 import Calendar from "../../../assets/image-icons/calendar.png";
 import Time from "../../../assets/image-icons/time.png";
+import RNDateTimePicker, { DateTimePickerEvent } from "@react-native-community/datetimepicker";
 
 const HeaderVaccine = (props: {
   title: string | undefined;
@@ -43,7 +44,20 @@ const HeaderVaccine = (props: {
   photo?: any;
 }) => {
   const navigation = useNavigation<propsStack>();
-  const [date, setDate] = useState("");
+  const [date, setDate] = useState<Date | string>("");
+  const [showPicker, setShowPicker] = useState(false);
+  const [inputValue, setInputValue] = useState<string>("Data");
+
+  const handleInputClick = () => {
+    setShowPicker(true);
+  };
+
+  const onChange = (event: DateTimePickerEvent, selectedDate?: Date | undefined) => {
+    const currentDate = selectedDate || date;
+    setShowPicker(Platform.OS === 'ios'); // Hide the picker in iOS
+    setDate(currentDate);
+    setInputValue(currentDate.toLocaleString());
+  };
 
   return (
     <ContainerSafeHeader>
@@ -69,6 +83,7 @@ const HeaderVaccine = (props: {
             <TitleHeaderVaccines>
               Busque em seu histórico
             </TitleHeaderVaccines>
+            <TouchableOpacity onPress={handleInputClick}>
             <ContainerInputCalendarVaccines>
               <IconWrapper>
                 <Icon
@@ -79,28 +94,31 @@ const HeaderVaccine = (props: {
                 />
               </IconWrapper>
               <InputCalendarVaccines
-                onChangeText={(text: string) => {
-                  setDate(text);
-                }}
-                value={date}
-                placeholder="Data"
-                placeholderTextColor="#A9A9A9"
-              />
+               value={inputValue}
+               placeholder="Data"
+               placeholderTextColor="#A9A9A9" />
               <ImageCalendar source={Calendar} />
               <IconWrapperCalendar>
                 <Icon
                   name="calendar"
                   size={25}
                   color="#36454F"
-                  style={{ marginRight: 10 }}
-                />
+                  style={{ marginRight: 10 }}  />
               </IconWrapperCalendar>
             </ContainerInputCalendarVaccines>
+            </TouchableOpacity>
+            {showPicker && (
+            <RNDateTimePicker
+            value={date}
+            mode="date"
+            display="default"
+            onChange={onChange}/>
+)}
           </ContainerHeaderVaccines>
         </ContainerHeaderInformationPerson>
       </ContainerHeaderFluxo>
     </ContainerSafeHeader>
-  )
+  );
 };
 
 export default HeaderVaccine;
