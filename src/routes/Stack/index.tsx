@@ -6,16 +6,13 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Patient from "../../screen/patient/patient";
 import PatientRecord from "../../screen/password-creation/cadastro";
 import TelaPrincipal from "../../screen/home/telaPrincipal";
-import ProfissionalResponsavel from "../../screen/responsible-doctor/profissionalResponsável";
+import ProfissionalResponsavel from "../../screen/responsible-doctor/profissionalResponsavel";
 import MyVaccines from "../../screen/myVaccines/my-vaccines";
 
 import RedefinirSenha from "../../screen/password-redefine/redefinirSenha";
 import RecuperacaoSenha from "../../screen/password-recovery/recuperacaoSenha";
 import TelaSucesso from "../../screen/password-recovery-success/telaSucesso";
 import PatientLogin from "../../screen/login/login";
-
-
-
 
 const { Navigator, Screen } =
   createNativeStackNavigator<propsNavigationStack>();
@@ -26,7 +23,6 @@ export default function () {
       initialRouteName="SplashScreen"
       screenOptions={{ headerShown: false }}
     >
-
       <Screen name="Login" component={PatientLogin} />
       <Screen name="Cadastro" component={PatientRecord} />
       <Screen name="TelaPrincipal" component={TelaPrincipal} />

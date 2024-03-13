@@ -62,7 +62,7 @@ const HeaderHome = (props: {
     <ContainerSafeHeader>
       <StatusBar barStyle="light-content" backgroundColor="#000" />
       <ContainerHeaderFluxo>
-        {props.backButton === true ? (
+        {props.backButton === false ? (
           <ContainerBackFluxo onPress={() => navigation.goBack()}>
             <Icon name="chevron-back-outline" color="#000" />
           </ContainerBackFluxo>
