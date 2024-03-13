@@ -1,26 +1,15 @@
 import React from "react";
 import SplashScreen from "../../screen/splash-screen/splashScreen";
-
-
-import SplashScreen from "../../screen/splash-screen/splashScreen";
-
-
 import { propsNavigationStack } from "./Models";
-
-
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Patient from "../../screen/patient/patient";
 import PatientRecord from "../../screen/password-creation/cadastro";
 import TelaPrincipal from "../../screen/home/telaPrincipal";
-import ProfissionalResponsavel from "../../screen/responsibleDoctor/profissionalResponsável";
+import ProfissionalResponsavel from "../../screen/responsible-doctor/profissionalResponsável";
 import MyVaccines from "../../screen/myVaccines/my-vaccines";
-
-import RecuperacaoSenha from "../../screen/passwordRecovery/recuperacaoSenha";
-import TelaSucesso from "../../screen/passwordRecoverySuccess/telaSucesso";
+import RecuperacaoSenha from "../../screen/password-recovery/recuperacaoSenha";
+import TelaSucesso from "../../screen/password-recovery-success/telaSucesso";
 import PatientLogin from "../../screen/login/login";
-
-
-
 
 const { Navigator, Screen } =
   createNativeStackNavigator<propsNavigationStack>();
@@ -31,7 +20,6 @@ export default function () {
       initialRouteName="SplashScreen"
       screenOptions={{ headerShown: false }}
     >
-
       <Screen name="Login" component={PatientLogin} />
       <Screen name="Cadastro" component={PatientRecord} />
       <Screen name="TelaPrincipal" component={TelaPrincipal} />

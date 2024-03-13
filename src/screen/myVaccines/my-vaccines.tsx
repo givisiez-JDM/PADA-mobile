@@ -1,6 +1,5 @@
 import HeaderVaccine from "../../components/Headers/HeaderVaccine/header-vaccine";
 
-
 import {
   ContainerItemInformationVaccine,
   ContainerItemsLegends,
@@ -23,6 +22,7 @@ import ProgressBar from "../../components/Bars/progressBar/progress-bar";
 import storePatient from "../../store/storePatient";
 import ModalPhaseVaccine from "../../components/Modals/modalPhaseVaccine/modal-phase-vaccine";
 import { Scroll } from "../patient/patient-style";
+import React from "react";
 
 const MyVaccines = () => {
   const [roleUser, setRoleUser] = useState("");

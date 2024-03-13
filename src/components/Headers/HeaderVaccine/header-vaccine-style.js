@@ -1,15 +1,8 @@
 import styled, { css } from "styled-components/native";
 
-export const MainContainerVaccine = styled.View`
-  flex: 1;
-  margin-botton:20px;
-`;
-
 export const ContainerHeaderVaccineFluxo = styled.View`
-display:flex;  
-padding:30px 20px 5px 20px;
-
-  height: 200px;
+  display: flex;
+  padding:30px 20px 0px 20px;
   background: #4c7abb;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 10px;
@@ -128,7 +121,6 @@ export const TextDataPatient = styled.Text`
 export const ImageCalendar = styled.Image.attrs({
   resizeMode: "stretch",
 })`
-  z-index: 1;
 `;
 
 export const ContainerButtonsHeaderFluxo = styled.View`
@@ -232,6 +224,10 @@ font-size: 15px;
 font-weight: 400;
 color: rgba(39, 48, 71, 0.5);
 background: rgba(218, 218, 218, 1);
+
+::placeholder{
+ color: "#A9A9A9";
+}
 `;
 
 export const InputWrapper = styled.View`
