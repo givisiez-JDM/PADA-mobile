@@ -23,6 +23,8 @@ import ProgressBar from "../../components/Bars/progressBar/progress-bar";
 import storePatient from "../../store/storePatient";
 import ModalPhaseVaccine from "../../components/Modals/modalPhaseVaccine/modal-phase-vaccine";
 import { Scroll } from "../patient/patient-style";
+import { treatmentResponse } from "../../service/treatament/treatment-service";
+import { Vacine } from "../../models/vacine";
 
 const MyVaccines = () => {
   const [roleUser, setRoleUser] = useState("");
@@ -30,6 +32,7 @@ const MyVaccines = () => {
   const [name, setName] = useState("");
   const patient: any = storePatient.getState();
   const [visible, setVisible] = useState(false);
+  const [vacines, setVacines] = useState<Vacine[]>([]);
 
   const onOpen = () => {
     setVisible(true);
@@ -91,15 +94,19 @@ const MyVaccines = () => {
     },
   ];
 
-  /*useEffect(() => {
-    const interval = setInterval(() => {
-      if (progress < 100) {
-        setProgress(progress + 10);
-      } else {
-        clearInterval(interval);
-      }
-    });
-  }, [progress]);*/
+  const filterData = (data:Date) => {
+    console.log()
+  };
+
+  useEffect(() => {
+    async function fetchData() {
+      const response = await treatmentResponse();
+      setVacines(response)
+    }
+    fetchData();
+  }, []); 
+
+
 
   return (
     <ContainerVaccinesView>
@@ -122,14 +129,14 @@ const MyVaccines = () => {
           </ContainerProgressBar>
 
           <ContainerItemInformationVaccine>
-            {array.map((item, index) => (
+            {vacines.map((item, index) => (
               <ItemVaccine
                 key={index}
-                data={item.data}
-                time={item.time}
-                nameVaccine={item.nameVaccine}
-                description={item.description}
-                color={item.color}
+                data={item.scheduledDate.toString()}
+                time={item.applicationDate}
+                nameVaccine={item.title}
+                description={item.observation}
+                color={item.status}
               />
             ))}
           </ContainerItemInformationVaccine>

@@ -26,9 +26,7 @@ export const ContainerVaccinesView = styled.SafeAreaView`
 
 export const ContainerProgressBar = styled.View`
   padding:10px;
-  
   background: #ffffff;
-  //box-shadow: 4px 4px 9px rgba(0, 0, 0, 0.25);
   elevation: 5; /* Isso adicionará sombreamento no Android */
   shadow-color: rgba(0, 0, 0, 0.25);
   shadow-offset: 4px 2px;
