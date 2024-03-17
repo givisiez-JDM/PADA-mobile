@@ -9,11 +9,12 @@ import {
 import Icon from "react-native-vector-icons/Ionicons";
 import CheckBox from "../../checkBox/checkBox";
 import { useState } from "react";
+import React from "react";
 
 const ModalCheckVaccines = (props: {
   visible: boolean;
   onClose: () => void;
-  typeCheck: string;
+  // typeCheck: string;
 }) => {
   const [selectedCheckbox, setSelectedCheckbox] = useState(null);
 
@@ -43,7 +44,7 @@ const ModalCheckVaccines = (props: {
           <Icon name="close" color="#000" size={20} />
         </ButtonClose>
         <TextTitleModal>Monitore seu tratamento</TextTitleModal>
-        <ContainerCheckItemsModal>
+        {/* <ContainerCheckItemsModal>
           <CheckBox
             title="Apliquei na data correta"
             size="24"
@@ -79,7 +80,7 @@ const ModalCheckVaccines = (props: {
                 : false
             }
           />
-        </ContainerCheckItemsModal>
+        </ContainerCheckItemsModal> */}
       </ContainerContentModal>
     </ContainerModalCheckVaccines>
   );

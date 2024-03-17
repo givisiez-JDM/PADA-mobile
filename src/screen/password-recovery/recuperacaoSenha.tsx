@@ -14,11 +14,12 @@ import {
   ButtonEmailSenhaContainer,
   TextRecuperacao,
 } from "./recuperacaoSenha-style";
-import { TextEnviaremos } from "../password-redefine/redefinirSenha-style";
+import { TextEnviaremos1 } from "../password-redefine/redefinirSenha-style";
 import footerSenhaImg from "../../assets/footerSenha.png";
 import { ContainerFooter } from "../../components/Footers/footerLongo/footerLongo-style";
 import FooterLongo from "../../components/Footers/footerLongo/footerLongo";
 import FooterSenha from "../../components/Footers/footerSenha/footerSenha";
+import { TextEnviaremos } from "../password-change/redefinirSenha-style";
 
 const RecuperacaoSenha = () => {
   const navigation = useNavigation<propsStack>();

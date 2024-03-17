@@ -17,8 +17,8 @@ import TabBar from "../../components/Buttons/buttonTabBar/buttonTabBar";
 import { FlatList } from "react-native";
 import {
   getDataUserStorage,
-  getDoctorById,
-  getPatientDoctorId,
+  getDoctorInfo,
+  getPatientInfo,
 } from "../../service/requests";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import storePatient from "../../store/storePatient";
@@ -32,7 +32,7 @@ const TelaPrincipal = () => {
   const getDoctorId = async () => {
     try {
       let id: string | any = await AsyncStorage.getItem("doctorId");
-      await getDoctorById(id);
+      await getDoctorInfo(id);
     } catch (err: unknown) {
       console.log(err);
     }
@@ -41,7 +41,7 @@ const TelaPrincipal = () => {
   useEffect(() => {
     let isMounted = true;
     const fetchDataPatient = async () => {
-      await getPatientDoctorId(false);
+      await getPatientInfo();
       if (isMounted) {
         setPatient(storePatient.getState());
         /*try {

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Platform, TouchableOpacity, Image } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
@@ -66,6 +66,11 @@ const PatientLogin = () => {
     }
   };
 
+  useEffect(() => {
+
+
+  }, []);
+
   return (
     <ContainerSafe behavior={Platform.OS === "ios" ? "padding" : "height"}>
       <Scroll>
@@ -103,7 +108,7 @@ const PatientLogin = () => {
 
           <LoadingModal visible={loading} onClose={closeLoading} />
 
-          <TouchableOpacity onPress={() => navigation.navigate("RedefinirSenha")}>
+          <TouchableOpacity onPress={() => navigation.navigate("RecuperacaoSenha")}>
             <ButtonSenha>Esqueceu sua senha?</ButtonSenha>
           </TouchableOpacity>
 

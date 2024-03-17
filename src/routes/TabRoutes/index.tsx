@@ -3,6 +3,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Image } from "react-native";
 import TelaPrincipal from "../../screen/home/telaPrincipal";
 import PatientLogin from "../../screen/patient-login/patientLogin";
+import React from "react";
 
 const { Screen, Navigator } = createBottomTabNavigator();
 

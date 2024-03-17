@@ -15,7 +15,7 @@ import {
 import { ContainerPrincipal } from "../home/telaPrincipal-style";
 import ItemVaccine from "../../components/Cards/itemVaccine/item-vaccine";
 import { useEffect, useState } from "react";
-import { getDataUserStorage } from "../../service/requests";
+import { getDataUserStorage, getPatientInfo } from "../../service/requests";
 import ItemLegend from "../../components/Cards/itemLegend/item-legend";
 import TabBar from "../../components/Buttons/buttonTabBar/buttonTabBar";
 import ProgressBar from "../../components/Bars/progressBar/progress-bar";
@@ -25,20 +25,10 @@ import { Scroll } from "../patient/patient-style";
 import React from "react";
 
 const MyVaccines = () => {
-  const [roleUser, setRoleUser] = useState("");
   const [progress, setProgress] = useState(20);
   const [name, setName] = useState("");
   const patient: any = storePatient.getState();
   const [visible, setVisible] = useState(false);
-
-  const onOpen = () => {
-    setVisible(true);
-  };
-
-  const onClose = () => {
-    setVisible(false);
-  };
-  getDataUserStorage({ setRoleUser, setName });
 
   const arrayLegend = [
     {
@@ -59,39 +49,18 @@ const MyVaccines = () => {
     },
   ];
 
-  const array = [
-    {
-      data: "05 de Julho de 2023",
-      time: "10:30 AM",
-      nameVaccine: "Vacina 1",
-      description: "Observações",
-      color: "#bbf7ac",
-    },
-    {
-      data: "12 de Julho de 2023",
-      time: "11:45 AM",
-      nameVaccine: "Vacina 2",
-      description: "Observações",
-      color: "#FCE0AA",
-    },
-    {
-      data: "19 de Julho de 2023",
-      time: "10:30 AM",
-      nameVaccine: "Vacina 3",
-      description:
-        "Infelizmente, não pude tomar a vacina devido a questões de saúde. Estava me sentindo mal desde a ultima aplicação. Priorizei minha recuperação!",
-      color: "#F19A9A",
-    },
-    {
-      data: "26 de Julho de 2023",
-      time: "10:30 AM",
-      nameVaccine: "Vacina 4",
-      description: "Observações",
-      color: "#D2D2D2",
-    },
-  ];
+  const onOpen = () => {
+    setVisible(true);
+  };
 
-  /*useEffect(() => {
+  const onClose = () => {
+    setVisible(false);
+  };
+
+  getDataUserStorage({ setName });
+
+
+  useEffect(() => {
     const interval = setInterval(() => {
       if (progress < 100) {
         setProgress(progress + 10);
@@ -99,7 +68,8 @@ const MyVaccines = () => {
         clearInterval(interval);
       }
     });
-  }, [progress]);*/
+
+  }, [progress]);
 
   return (
     <ContainerVaccinesView>
@@ -109,7 +79,7 @@ const MyVaccines = () => {
           backButton={true}
           buttonVaccine={false}
           typeHeader="patient"
-          photo={patient.photo}
+          photo={patient.patientInfo.photo}
         />
         <ContainerPrincipal>
           <ContainerProgressBar>
@@ -122,16 +92,18 @@ const MyVaccines = () => {
           </ContainerProgressBar>
 
           <ContainerItemInformationVaccine>
-            {array.map((item, index) => (
+            {patient.vaccinesInfo.map((vaccine: any) => (
               <ItemVaccine
-                key={index}
-                data={item.data}
-                time={item.time}
-                nameVaccine={item.nameVaccine}
-                description={item.description}
-                color={item.color}
+                key={vaccine.id}
+                applicationDate={vaccine.applicationDate}
+                scheduledDate={vaccine.scheduledDate}
+                nameVaccine={vaccine.tittle}
+                description={vaccine.observation}
+                // color={vaccine.status}
+                status={vaccine.status}
               />
             ))}
+
           </ContainerItemInformationVaccine>
 
           <ContainerLegend>

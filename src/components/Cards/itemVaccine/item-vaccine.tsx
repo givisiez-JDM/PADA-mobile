@@ -17,11 +17,12 @@ import Hidden from "../../../assets/image-icons/down-filled-triangular-arrow.png
 import ModalCheckVaccines from "../../Modals/modalCheckVaccines/modal-check-vaccines";
 
 const ItemVaccine = (props: {
-  data: string;
-  time: string;
+  applicationDate: string;
+  scheduledDate: string;
   nameVaccine: string;
   description: string;
-  color: string;
+  // color: string;
+  status: string;
 }) => {
   const [expanded, setExpanded] = useState(false);
   const [visible, setVisible] = useState(false);
@@ -40,9 +41,9 @@ const ItemVaccine = (props: {
   return (
     <>
       <ButtonInformationVaccine onPress={onOpen} expanded={expanded}>
-        <ViewInformationDate colorBorderLeft={props.color}>
-          <TextDateInformation>{props.data}</TextDateInformation>
-          <TextHourInformation>{props.time}</TextHourInformation>
+        <ViewInformationDate /*colorBorderLeft={props.color}*/>
+          <TextDateInformation>{props.applicationDate}</TextDateInformation>
+          <TextHourInformation>{props.scheduledDate}</TextHourInformation>
         </ViewInformationDate>
         <ContainerNameVaccine>
           <TextNameVaccine>{props.nameVaccine}</TextNameVaccine>
@@ -58,7 +59,7 @@ const ItemVaccine = (props: {
       <ModalCheckVaccines
         visible={visible}
         onClose={onClose}
-        typeCheck={props.color}
+      // typeCheck={props.color}
       />
     </>
   );

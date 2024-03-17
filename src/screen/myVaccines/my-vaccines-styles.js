@@ -5,25 +5,6 @@ export const ContainerVaccinesView = styled.SafeAreaView`
   background: rgba(209, 209, 209, 0.2);
 `;
 
-// export const ContainerProgressBar = styled.View`
-//   display: flex;
-//   flex-direction: column;
-//   position: absolute;
-
-//   width: 90%;
-//   height: 50px;
-//   left: 5%;
-//   right: 5%;
-//   top: 150px;
-//   background: #ffffff;
-//   //box-shadow: 4px 4px 9px rgba(0, 0, 0, 0.25);
-//   elevation: 5; /* Isso adicionará sombreamento no Android */
-//   shadow-color: rgba(0, 0, 0, 0.25);
-//   shadow-offset: 4px 2px;
-//   shadow-opacity: 0.3;
-//   border-radius: 5px;
-// `;
-
 export const ContainerProgressBar = styled.View`
   padding:10px;
   
@@ -48,21 +29,6 @@ flex-direction:row;
 align-items:center;
 justify-content: space-between;
 `;
-// export const TextTitleProgressBar = styled.Text`
-//   font-weight: 700;
-//   font-size: 15px;
-//   color: #273047;
-//   transform: rotate(0.03deg);
-//   margin-left: 10px;
-//   margin-top: 5px;
-// `;
-
-// export const ContainerSubTitleProgressBar = styled.TouchableOpacity`
-//   position: absolute;
-//   right: 20px;
-//   top: 10px;
-// `;
-
 
 export const TextSubTitleProgressBar = styled.Text`
   font-weight: 400;
@@ -75,18 +41,8 @@ export const TextSubTitleProgressBar = styled.Text`
 
 export const ContainerItemInformationVaccine = styled.View`
 
-
-
-
 `;
-// export const ContainerItemInformationVaccine = styled.View`
-// display: flex;
-// flex-direction: column;
-// justify-content: center;
-// align-items: center;
-// width:200px;
-// margin-top: 170px;
-// `;
+
 
 export const ContainerLegend = styled.View`
   gap: 10px;
