@@ -1,21 +1,16 @@
 import React, { useState } from "react";
 import { Platform, TouchableOpacity, Image } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-
 import { propsStack } from "../../routes/Stack/Models";
-
 import {
   ButtonSenha,
   ContainerLogin,
   ContainerSafe, Scroll
 } from "./login-style";
-
 import { ContainerFormInputsPatients } from "../password-creation/cadastro-style";
-
 import logo from "../../assets/logo/logo.png";
 import logoEmail from "../../assets/logo/logoEmail.png";
 import logoSenha from "../../assets/logo/logoSenha.png";
-
 import Header from "../../components/Headers/header/header";
 import FooterCurto from "../../components/Footers/footer/footer";
 import FormPatientLoginRecord from "../../components/Forms/form-patient-login/form-patient-login";
@@ -72,23 +67,21 @@ const PatientLogin = () => {
         <Header back={false} />
         <ContainerLogin>
           <Image source={logo} />
-
-          <ContainerFormInputsPatients>
+          <ContainerFormInputsPatients />
+            
             {arrayNamePlaceholder.map(
               ([icon, valueState, place, err], index: number) => (
                 <FormPatientLoginRecord
-                  imageButton={icon}
-                  placeholder={place}
-                  handleInputChange={(text: string) => {
-                    handleInputChange(place, text);
-                  }}
-                  state={valueState}
-                  err={err}
-                  key={index}
-                />
+                        imageButton={icon}
+                        placeholder={place}
+                        handleInputChange={(text: string) => {
+                            handleInputChange(place, text);
+                        } }
+                        state={valueState}
+                        err={err}
+                        key={index} showPassword={false}                />
               )
             )}
-          </ContainerFormInputsPatients>
 
           <CheckBox
             title="Lembrar senha"

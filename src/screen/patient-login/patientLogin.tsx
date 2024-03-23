@@ -83,11 +83,10 @@ const PatientLogin = () => {
                   placeholder={place}
                   handleInputChange={(text: string) => {
                     handleInputChange(place, text);
-                  }}
+                  } }
                   state={valueState}
                   err={err}
-                  key={index}
-                />
+                  key={index} showPassword={false}                />
               )
             )}
           </ContainerFormInputsPatients>

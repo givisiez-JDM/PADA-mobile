@@ -17,4 +17,5 @@ Changelog
 - [PADA-216](https://givisiez.atlassian.net/browse/PADA-216): Fix conflict and import errors
 - [PADA-63](https://givisiez.atlassian.net/browse/PADA-63): Fix Modal treatment phases styles
 - [PADA-187](https://givisiez.atlassian.net/browse/PADA-187): Fix Layout myVaccines and headerVaccines
+- [PADA-244](https://givisiez.atlassian.net/browse/PADA-244): Add password toggle function
 
