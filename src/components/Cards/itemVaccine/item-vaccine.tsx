@@ -15,6 +15,7 @@ import {
 
 import Hidden from "../../../assets/image-icons/down-filled-triangular-arrow.png";
 import ModalCheckVaccines from "../../Modals/modalCheckVaccines/modal-check-vaccines";
+import { Colors } from "react-native/Libraries/NewAppScreen";
 
 const ItemVaccine = (props: {
   data: string;
@@ -22,6 +23,7 @@ const ItemVaccine = (props: {
   nameVaccine: string;
   description: string;
   color: string;
+  status: string;
 }) => {
   const [expanded, setExpanded] = useState(false);
   const [visible, setVisible] = useState(false);
@@ -37,6 +39,9 @@ const ItemVaccine = (props: {
   const toggleExpand = () => {
     setExpanded(!expanded);
   };
+
+  
+  
   return (
     <>
       <ButtonInformationVaccine onPress={onOpen} expanded={expanded}>
@@ -59,6 +64,7 @@ const ItemVaccine = (props: {
         visible={visible}
         onClose={onClose}
         typeCheck={props.color}
+        status={props.status}
       />
     </>
   );

@@ -25,11 +25,11 @@ import { Scroll } from "../patient/patient-style";
 import React from "react";
 
 const MyVaccines = () => {
-  const [roleUser, setRoleUser] = useState("");
   const [progress, setProgress] = useState(20);
   const [name, setName] = useState("");
   const patient: any = storePatient.getState();
   const [visible, setVisible] = useState(false);
+  const [borderColor, setborderColor] = useState("#fff")
 
   const onOpen = () => {
     setVisible(true);
@@ -38,7 +38,6 @@ const MyVaccines = () => {
   const onClose = () => {
     setVisible(false);
   };
-  getDataUserStorage({ setRoleUser, setName });
 
   const arrayLegend = [
     {
@@ -59,6 +58,20 @@ const MyVaccines = () => {
     },
   ];
 
+
+
+
+  
+  const updateColors = (vacines:any) => {
+      vacines.map((item:any) => {
+      const { status} = item;
+      if (status === "aplicado") setborderColor('#bbf7ac');
+      if (status === "não aplicado") setborderColor('#FCE0AA');
+      if (status === "agendado") setborderColor('#F19A9A');
+      if (status === "aplicado em atraso") setborderColor('#bbf7ac')
+    });
+  };
+  
   const array = [
     {
       data: "05 de Julho de 2023",
@@ -66,6 +79,7 @@ const MyVaccines = () => {
       nameVaccine: "Vacina 1",
       description: "Observações",
       color: "#bbf7ac",
+      status: "aplicado"
     },
     {
       data: "12 de Julho de 2023",
@@ -73,6 +87,7 @@ const MyVaccines = () => {
       nameVaccine: "Vacina 2",
       description: "Observações",
       color: "#FCE0AA",
+      status: "não aplicado"
     },
     {
       data: "19 de Julho de 2023",
@@ -81,6 +96,7 @@ const MyVaccines = () => {
       description:
         "Infelizmente, não pude tomar a vacina devido a questões de saúde. Estava me sentindo mal desde a ultima aplicação. Priorizei minha recuperação!",
       color: "#F19A9A",
+      status: "agendado"
     },
     {
       data: "26 de Julho de 2023",
@@ -88,10 +104,15 @@ const MyVaccines = () => {
       nameVaccine: "Vacina 4",
       description: "Observações",
       color: "#D2D2D2",
+      status: "aplicado em atraso"
     },
   ];
+  
 
-  /*useEffect(() => {
+  
+
+
+  useEffect(() => {
     const interval = setInterval(() => {
       if (progress < 100) {
         setProgress(progress + 10);
@@ -99,7 +120,7 @@ const MyVaccines = () => {
         clearInterval(interval);
       }
     });
-  }, [progress]);*/
+  }, [progress]);
 
   return (
     <ContainerVaccinesView>
@@ -130,6 +151,7 @@ const MyVaccines = () => {
                 nameVaccine={item.nameVaccine}
                 description={item.description}
                 color={item.color}
+                status={item.status}
               />
             ))}
           </ContainerItemInformationVaccine>

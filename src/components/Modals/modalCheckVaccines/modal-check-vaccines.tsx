@@ -4,33 +4,28 @@ import {
   ContainerContentModal,
   ContainerModalCheckVaccines,
   TextTitleModal,
+  TextInputModal,
+
 } from "./modal-check-vaccines-styles";
 
 import Icon from "react-native-vector-icons/Ionicons";
 import CheckBox from "../../checkBox/checkBox";
 import { useState } from "react";
+import React = require("react");
+
 
 const ModalCheckVaccines = (props: {
   visible: boolean;
   onClose: () => void;
   typeCheck: string;
+  status: string;
 }) => {
   const [selectedCheckbox, setSelectedCheckbox] = useState(null);
 
-  const handleCheckboxSelection = (index: any) => {
-    let number: any;
-    if (index === "#bbf7ac") {
-      number = 0;
-    }
-    if (index === "#FCE0AA") {
-      number = 1;
-    }
-    if (index === "#F19A9A") {
-      number = 2;
-    }
-    return number;
-  };
+ 
 
+
+  
   return (
     <ContainerModalCheckVaccines
       animationType="slide"
@@ -44,6 +39,8 @@ const ModalCheckVaccines = (props: {
         </ButtonClose>
         <TextTitleModal>Monitore seu tratamento</TextTitleModal>
         <ContainerCheckItemsModal>
+          
+
           <CheckBox
             title="Apliquei na data correta"
             size="24"
@@ -52,7 +49,7 @@ const ModalCheckVaccines = (props: {
                 props.typeCheck !== "#F19A9A" &&
                 props.typeCheck === "#bbf7ac"
                 ? true
-                : false
+                : false 
             }
           />
 
@@ -80,6 +77,7 @@ const ModalCheckVaccines = (props: {
             }
           />
         </ContainerCheckItemsModal>
+        <TextInputModal placeholder="Observações"/>  
       </ContainerContentModal>
     </ContainerModalCheckVaccines>
   );
