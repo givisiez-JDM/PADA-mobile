@@ -2,29 +2,22 @@ import React from "react";
 import {
   ContainerErrorText,
   ContainerFormPatientRecord,
-  ContainerIconInput,
-  ContainerInput,
   ContainerLogin,
-  Input,
   InputText,
 } from "./form-patient-login-style";
-import { GestureResponderEvent, Image, Text, TouchableOpacity } from "react-native";
 import Icon from "react-native-vector-icons/Ionicons";
-import { ImageLogo } from "../../Buttons/buttonEmailSenha/buttonEmailSenha-style";
-import { InputLogin, PatientInput } from "../../../screen/login/login-style";
-import InputGeral from "../inputGeral/inputGeral";
-import { ImageSource } from "react-native-vector-icons/Icon";
+import { PatientInput } from "../../../screen/login/login-style";
+
 
 interface PatientRecordValues {
   placeholder: string;
   handleInputChange: any;
   state: any;
   err: any;
-  imageButton: ImageSource;
   showPassword: boolean;
 }
 
-const FormPatientLoginRecord = ({ imageButton, placeholder,
+const FormPatientLoginRecord = ({ placeholder,
   handleInputChange, state, err}: PatientRecordValues) => {
   const [showPassword, setShowPassword] = React.useState(false);
 

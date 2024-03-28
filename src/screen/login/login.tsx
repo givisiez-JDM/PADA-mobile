@@ -31,8 +31,8 @@ const PatientLogin = () => {
   const [loading, setLoading] = useState(false);
 
   const arrayNamePlaceholder = [
-    [logoEmail, mail, "E-mail", errorMail],
-    [logoSenha, pass, "Senha", errorPass],
+    [ mail, "E-mail", errorMail],
+    [ pass, "Senha", errorPass],
   ];
 
   const handleInputChange = (name: string, value: string) => {
@@ -70,16 +70,15 @@ const PatientLogin = () => {
           <ContainerFormInputsPatients />
             
             {arrayNamePlaceholder.map(
-              ([icon, valueState, place, err], index: number) => (
+              ([ valueState, place, err]) => (
                 <FormPatientLoginRecord
-                        imageButton={icon}
                         placeholder={place}
                         handleInputChange={(text: string) => {
                             handleInputChange(place, text);
                         } }
                         state={valueState}
                         err={err}
-                        key={index} showPassword={false}                />
+                        showPassword={false}                />
               )
             )}
 
