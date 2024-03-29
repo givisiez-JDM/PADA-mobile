@@ -6,6 +6,7 @@ import {
   ModalComponent,
   TextModal,
 } from "./modal-info-style";
+import React from "react";
 
 const ModalInfo = (props: {
   visible: boolean;

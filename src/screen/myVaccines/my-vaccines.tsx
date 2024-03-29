@@ -103,7 +103,6 @@ const MyVaccines = () => {
                 status={vaccine.status}
               />
             ))}
-
           </ContainerItemInformationVaccine>
 
           <ContainerLegend>

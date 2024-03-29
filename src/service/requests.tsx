@@ -159,9 +159,6 @@ export const getPatientInfo = async () => {
       payload: aux
     });
 
-
-
-
     return aux;
   } catch (err: unknown) {
     console.log(err);

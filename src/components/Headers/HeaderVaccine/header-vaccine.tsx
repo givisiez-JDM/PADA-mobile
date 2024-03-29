@@ -22,7 +22,6 @@ const HeaderVaccine = (props: {
   photo?: any;
 }) => {
   const navigation = useNavigation<propsStack>();
-  // const [date, setDate] = useState<Date | string>("");
   const [date, setDate] = useState(new Date());
   const [showPicker, setShowPicker] = useState(false);
   const [inputValue, setInputValue] = useState<string>("Data");
@@ -30,13 +29,6 @@ const HeaderVaccine = (props: {
   const handleInputClick = () => {
     setShowPicker(true);
   };
-
-  // const onChange = (event: DateTimePickerEvent, selectedDate?: Date | undefined) => {
-  //   const currentDate = selectedDate || date;
-  //   setShowPicker(Platform.OS === 'ios'); // Hide the picker in iOS
-  //   setDate(currentDate);
-  //   setInputValue(currentDate.toLocaleString());
-  // };
 
   const onChange = (event: DateTimePickerEvent, selectedDate?: Date) => {
     const currentDate = selectedDate || date;
