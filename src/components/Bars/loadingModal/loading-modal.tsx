@@ -2,9 +2,11 @@ import React from "react";
 
 import GIF from "react-native-gif";
 
-import { ContainerModalLoading, LoadingComponent } from "./loading-modal-style";
+import { LoadingComponent } from "./loading-modal-style";
 
 import gifLoading from "../../../assets/images/loading-waiting.gif";
+import { ActivityIndicator } from "react-native";
+import { ViewSplash } from "@/src/screen/splash-screen/splashScreen-style";
 
 const LoadingModal = (props: { visible: boolean; onClose: () => void }) => {
   return (
@@ -14,8 +16,7 @@ const LoadingModal = (props: { visible: boolean; onClose: () => void }) => {
       visible={props.visible}
       onRequestClose={props.onClose}
     >
-      <ContainerModalLoading>
-        <GIF
+      {/* <GIF
           source={gifLoading}
           resizeMode="contain"
           style={{
@@ -25,8 +26,10 @@ const LoadingModal = (props: { visible: boolean; onClose: () => void }) => {
             justifyContent: "center",
             alignItems: "center",
           }}
-        />
-      </ContainerModalLoading>
+        /> */}
+      <ViewSplash>
+        <ActivityIndicator />
+      </ViewSplash>
     </LoadingComponent>
   );
 };

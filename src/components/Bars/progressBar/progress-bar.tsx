@@ -7,7 +7,7 @@ import {
 
 const ProgressBar = (props: { progress: number; width: string }) => {
   return (
-    <ContainerComponentProgressBar style={{ width: `${props.width}` }}>
+    <ContainerComponentProgressBar>
       <Progress progress={props.progress}>
         <NeonSide />
       </Progress>

@@ -3,18 +3,16 @@ import { useEffect } from 'react';
 import { useNavigation } from "@react-navigation/native";
 import { propsStack } from '../../routes/Stack/Models';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import FooterSplashUp from '../../components/Footers/footerSplashUp/footerSplashUp';
-import { ImageFooterSplashDown } from '../../components/Footers/footerSplashDown/footerSplashDown-style';
 import { ContainerSplashScreen, ViewSplash } from './splashScreen-style';
-import FooterSplashDown from '../../components/Footers/footerSplashDown/footerSplashDown';
+import Footer from '../../components/Footers/footer/footer';
 import Loading from '../../components/Bars/loading/loading';
 import React from 'react';
+import Header from '@/src/components/Headers/header/header';
 
 const SplashScreen: React.FC = () => {
   const navigation = useNavigation<propsStack>();
 
   useEffect(() => {
-
     setTimeout(() => {
       navigation.navigate("Login");
     }, 3000);
@@ -23,12 +21,12 @@ const SplashScreen: React.FC = () => {
   return (
     <SafeAreaView>
       <ContainerSplashScreen>
-        <FooterSplashUp />
+        <Header back={false} />
         <ViewSplash>
-          <ActivityIndicator size="large" style={{ transform: [{ scaleX: 3 }, { scaleY: 3 }] }} color="#76A7ED" />
+          <ActivityIndicator />
+          {/* <Loading /> */}
         </ViewSplash>
-        {/* <Loading /> */}
-        <FooterSplashDown />
+        <Footer />
       </ContainerSplashScreen>
     </SafeAreaView>
   );

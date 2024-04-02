@@ -69,7 +69,7 @@ const MyVaccines = () => {
       }
     });
 
-  }, [progress]);
+  }, []);
 
   return (
     <ContainerVaccinesView>

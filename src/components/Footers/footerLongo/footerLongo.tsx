@@ -5,9 +5,8 @@ import footerLongoImg from "../../../assets/images/footer/footerLongo.png";
 import { ContainerFooter, ImageFooterLongo } from "./footerLongo-style";
 
 const FooterLongo = () => {
-  const screenWidth = Dimensions.get("window").width;
   return (
-    <ContainerFooter screenWidth={JSON.stringify(screenWidth) + "px"} >
+    <ContainerFooter>
       <ImageFooterLongo source={footerLongoImg} />
     </ContainerFooter >
   );

@@ -9,7 +9,7 @@ const Footer = () => {
   const screenWidth = Dimensions.get("window").width;
 
   return (
-    <ContainerFooter screenWidth={JSON.stringify(screenWidth) + "px"}>
+    <ContainerFooter>
       <ImageFooterCurto source={footerCurtoImg} />
     </ContainerFooter>
   )

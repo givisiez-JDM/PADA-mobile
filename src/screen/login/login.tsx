@@ -12,8 +12,6 @@ import {
 import { ContainerFormInputsPatients } from "../password-creation/cadastro-style";
 
 import logo from "../../assets/images/logo/logo.png";
-import logoEmail from "../../assets/images/logo/logoEmail.png";
-import logoSenha from "../../assets/images/logo/logoSenha.png";
 
 import Header from "../../components/Headers/header/header";
 import FooterCurto from "../../components/Footers/footer/footer";
@@ -35,8 +33,8 @@ const PatientLogin = () => {
   const [loading, setLoading] = useState(false);
 
   const arrayNamePlaceholder = [
-    [logoEmail, mail, "E-mail", errorMail],
-    [logoSenha, pass, "Senha", errorPass],
+    [mail, "E-mail", errorMail],
+    [pass, "Senha", errorPass],
   ];
 
   const handleInputChange = (name: string, value: string) => {
@@ -79,16 +77,15 @@ const PatientLogin = () => {
 
           <ContainerFormInputsPatients>
             {arrayNamePlaceholder.map(
-              ([icon, valueState, place, err], index: number) => (
+              ([valueState, place, err], index: number) => (
                 <FormPatientLoginRecord
-                  imageButton={icon}
                   placeholder={place}
                   handleInputChange={(text: string) => {
                     handleInputChange(place, text);
                   }}
                   state={valueState}
                   err={err}
-                />
+                  key={index} />
               )
             )}
           </ContainerFormInputsPatients>
@@ -113,6 +110,7 @@ const PatientLogin = () => {
         </ContainerLogin>
         <FooterCurto />
       </Scroll>
+
     </ContainerSafe>
   );
 };
