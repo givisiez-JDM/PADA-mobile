@@ -1,4 +1,3 @@
-import { useState } from "react";
 import {
   ContainerErrorText,
   ContainerFormPatientRecord,
@@ -9,7 +8,7 @@ import {
   InputText,
 } from "./form-patient-record-style";
 import Icon from "react-native-vector-icons/Ionicons";
-import { Text } from "react-native";
+import React from "react";
 
 interface PatientRecordValues {
   iconName: string;

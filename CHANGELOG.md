@@ -10,6 +10,7 @@ Changelog
 - [PADA-216](https://givisiez.atlassian.net/browse/PADA-216): Add myvaccines, passChange and login stylesheets - add HeaderHome
 - [PADA-189](https://givisiez.atlassian.net/browse/PADA-189): Create Medication Controll Header Layout
 - [PADA-210](https://givisiez.atlassian.net/browse/PADA-210): Create date filter
+- [PADA-244](https://givisiez.atlassian.net/browse/PADA-244): Add password toggle function
 
 ## Fix
 - [PADA-216](https://givisiez.atlassian.net/browse/PADA-216): Fix conflict and import errors
@@ -17,4 +18,5 @@ Changelog
 - [PADA-216](https://givisiez.atlassian.net/browse/PADA-216): Fix conflict and import errors
 - [PADA-63](https://givisiez.atlassian.net/browse/PADA-63): Fix Modal treatment phases styles
 - [PADA-187](https://givisiez.atlassian.net/browse/PADA-187): Fix Layout myVaccines and headerVaccines
+
 

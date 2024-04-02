@@ -109,7 +109,7 @@ const PatientRecord = () => {
           <TitleForm>Crie sua senha</TitleForm>
           <ContainerFormInputsPatients>
             {arrayNamePlaceholder.map(
-              ([icon, valueState, place, err], index: number) => (
+              ([icon, valueState, place, err]) => (
                 <FormPatientRecord
                   iconName={icon}
                   placeholder={place}
@@ -118,7 +118,6 @@ const PatientRecord = () => {
                   }}
                   state={valueState}
                   err={err}
-                  key={index}
                 />
               )
             )}
