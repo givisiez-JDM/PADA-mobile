@@ -27,8 +27,9 @@ import React from "react";
 const MyVaccines = () => {
   const [progress, setProgress] = useState(20);
   const [name, setName] = useState("");
-  const patient: any = storePatient.getState();
   const [visible, setVisible] = useState(false);
+  const patient: any = storePatient.getState();
+  const [colorBorderLeft, setColorBorderLeft]: any = useState('');
 
   const arrayLegend = [
     {
@@ -58,7 +59,6 @@ const MyVaccines = () => {
   };
 
   getDataUserStorage({ setName });
-
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -99,8 +99,9 @@ const MyVaccines = () => {
                 scheduledDate={vaccine.scheduledDate}
                 nameVaccine={vaccine.tittle}
                 description={vaccine.observation}
-                // color={vaccine.status}
                 status={vaccine.status}
+                colorBorderLeft={colorBorderLeft}
+                setColorBorderLeft={setColorBorderLeft}
               />
             ))}
           </ContainerItemInformationVaccine>
@@ -109,7 +110,7 @@ const MyVaccines = () => {
             <TextContainerLegend>LEGENDA</TextContainerLegend>
             <ContainerItemsLegends>
               {arrayLegend.map(
-                (item: { text: string; color: string }, index: number) => (
+                (item: { text: string; color: string }) => (
                   <ItemLegend color={item.color} text={item.text} />
                 )
               )}

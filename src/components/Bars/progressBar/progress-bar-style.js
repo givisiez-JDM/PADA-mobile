@@ -25,10 +25,10 @@ export const NeonSide = styled.View`
   height: 18px;
   border-radius: 50px;
   background: rgba(255, 255, 255, 0.1);
-  shadow-color: rgba(54, 201, 248, 1);
+  /* shadow-color: rgba(54, 201, 248, 1);
   shadow-offset: 10px 10px;
   shadow-opacity: 1;
   shadow-radius: 30px;
   blur-radius: 30px;
-  elevation: 30;
+  elevation: 30; */
 `;

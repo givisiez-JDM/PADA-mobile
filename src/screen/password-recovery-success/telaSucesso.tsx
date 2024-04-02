@@ -11,7 +11,7 @@ import {
 import Header from "../../components/Headers/header/header";
 import FooterCodigoCelular from "../../components/Footers/footerCodigoCelular/footer-codigo-celular";
 import React from "react";
-import Sucesso from "../../assets/image-icons/sucesso.png";
+import Sucesso from "../../assets/images/image-icons/sucesso.png";
 
 const TelaSucesso = () => {
   return (

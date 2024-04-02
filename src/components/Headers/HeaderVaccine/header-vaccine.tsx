@@ -9,7 +9,7 @@ import { Platform, StatusBar, TouchableOpacity } from "react-native";
 import Icon from "react-native-vector-icons/Ionicons";
 import { useNavigation } from "@react-navigation/native";
 import { propsStack } from "../../../routes/Stack/Models";
-import Person from "../../../assets/image-icons/imgUserItem.png";
+import Person from "../../../assets/images/image-icons/imgUserItem.png";
 import { ContainerSafeHeader } from "../header-home/header-home-style";
 import
 DateTimePicker, { DateTimePickerEvent } from "@react-native-community/datetimepicker";

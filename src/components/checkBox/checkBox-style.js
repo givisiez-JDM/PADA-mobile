@@ -8,8 +8,8 @@ export const ButtonViewCheckBox = styled.TouchableHighlight`
 `;
 
 export const Check = styled.View`
-  width: ${({ size }) => size};
-  height: ${({ size }) => size};
+  width: ${({ size }) => size + 'px'};
+  height: ${({ size }) => size + 'px'};
 
   border-width: 1px;
   border-radius: 2px;

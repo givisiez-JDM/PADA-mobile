@@ -12,9 +12,9 @@ import {
 
 
 
-import logo from "../../assets/logo/logo.png";
-import logoEmail from "../../assets/logo/logoEmail.png";
-import logoSenha from "../../assets/logo/logoSenha.png";
+import logo from "../../assets/images/logo/logo.png";
+import logoEmail from "../../assets/images/logo/logoEmail.png";
+import logoSenha from "../../assets/images/logo/logoSenha.png";
 
 import Header from "../../components/Headers/header/header";
 import FooterCurto from "../../components/Footers/footer/footer";
@@ -86,7 +86,6 @@ const PatientLogin = () => {
                   }}
                   state={valueState}
                   err={err}
-                  key={index}
                 />
               )
             )}

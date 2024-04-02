@@ -2,7 +2,7 @@ import React from "react";
 
 import { Dimensions } from "react-native";
 
-import footerSenhaImg from "../../../assets/footer/footerSenha.png"
+import footerSenhaImg from "../../../assets/images/footer/footerSenha.png"
 
 import { ContainerFooter, ImageFooterLongo } from "./footerSenha-style"
 

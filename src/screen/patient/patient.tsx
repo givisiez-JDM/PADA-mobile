@@ -22,7 +22,6 @@ const Patient = () => {
           title={`Olá, ${name}`}
           backButton={true}
           buttonVaccine={true}
-          typeHeader="patient"
           photo={patient.photo}
         />
         <DataPatient

@@ -10,9 +10,9 @@ const { Screen, Navigator } = createBottomTabNavigator();
 export function TabRoutes() {
   const getOverviewTabIcon = (focused: boolean, nome: string) => {
     if (nome === "home") {
-      return <Image source={require("../../assets/home.png")} />;
+      return <Image source={require("../../assets/images/home.png")} />;
     } else {
-      return <Image source={require("../../assets/logOut.png")} />;
+      return <Image source={require("../../assets/images/logOut.png")} />;
     }
   };
 

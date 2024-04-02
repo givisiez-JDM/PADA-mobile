@@ -4,7 +4,7 @@ import GIF from "react-native-gif";
 
 import { ContainerModalLoading, LoadingComponent } from "./loading-modal-style";
 
-import gifLoading from "../../../assets/loading-waiting.gif";
+import gifLoading from "../../../assets/images/loading-waiting.gif";
 
 const LoadingModal = (props: { visible: boolean; onClose: () => void }) => {
   return (

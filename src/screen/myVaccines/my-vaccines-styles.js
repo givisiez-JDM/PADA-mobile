@@ -40,7 +40,7 @@ export const TextSubTitleProgressBar = styled.Text`
 // border-bottom-color: #d9d9d9;
 
 export const ContainerItemInformationVaccine = styled.View`
-
+  width:400px;
 `;
 
 

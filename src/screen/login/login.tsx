@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Platform, TouchableOpacity, Image } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
 import { propsStack } from "../../routes/Stack/Models";
-
 import {
   ButtonSenha,
   ContainerLogin,
@@ -12,9 +11,9 @@ import {
 
 import { ContainerFormInputsPatients } from "../password-creation/cadastro-style";
 
-import logo from "../../assets/logo/logo.png";
-import logoEmail from "../../assets/logo/logoEmail.png";
-import logoSenha from "../../assets/logo/logoSenha.png";
+import logo from "../../assets/images/logo/logo.png";
+import logoEmail from "../../assets/images/logo/logoEmail.png";
+import logoSenha from "../../assets/images/logo/logoSenha.png";
 
 import Header from "../../components/Headers/header/header";
 import FooterCurto from "../../components/Footers/footer/footer";
@@ -89,7 +88,6 @@ const PatientLogin = () => {
                   }}
                   state={valueState}
                   err={err}
-                  key={index}
                 />
               )
             )}
@@ -120,3 +118,4 @@ const PatientLogin = () => {
 };
 
 export default PatientLogin;
+

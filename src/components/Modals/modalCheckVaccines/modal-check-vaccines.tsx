@@ -8,15 +8,16 @@ import {
 
 import Icon from "react-native-vector-icons/Ionicons";
 import CheckBox from "../../checkBox/checkBox";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import React from "react";
 
 const ModalCheckVaccines = (props: {
   visible: boolean;
   onClose: () => void;
-  // typeCheck: string;
+  status: string;
 }) => {
-  const [selectedCheckbox, setSelectedCheckbox] = useState(null);
+  const [selectedCheckbox, setSelectedCheckbox] = useState(false);
+  const [colorBorderLeft, setColorBorderLeft] = useState('');
 
   const handleCheckboxSelection = (index: any) => {
     let number: any;
@@ -32,6 +33,10 @@ const ModalCheckVaccines = (props: {
     return number;
   };
 
+  useEffect(() => {
+
+  }, [])
+
   return (
     <ContainerModalCheckVaccines
       animationType="slide"
@@ -44,43 +49,32 @@ const ModalCheckVaccines = (props: {
           <Icon name="close" color="#000" size={20} />
         </ButtonClose>
         <TextTitleModal>Monitore seu tratamento</TextTitleModal>
-        {/* <ContainerCheckItemsModal>
-          <CheckBox
+        <ContainerCheckItemsModal>
+
+          {/* <CheckBox
             title="Apliquei na data correta"
             size="24"
-            checked={
-              props.typeCheck !== "#FCE0AA" &&
-                props.typeCheck !== "#F19A9A" &&
-                props.typeCheck === "#bbf7ac"
-                ? true
-                : false
-            }
+            status='aplicada'
+            checked={selectedCheckbox}
+            setSelectedCheckbox={setSelectedCheckbox}
           />
 
           <CheckBox
             title="Apliquei com atraso"
             size="24"
-            checked={
-              props.typeCheck !== "#bbf7ac" &&
-                props.typeCheck !== "#F19A9A" &&
-                props.typeCheck === "#FCE0AA"
-                ? true
-                : false
-            }
+            status='aplicada em atraso'
+            checked={selectedCheckbox}
+            setSelectedCheckbox={setSelectedCheckbox}
           />
 
           <CheckBox
             title="Não Apliquei"
             size="24"
-            checked={
-              props.typeCheck !== "#bbf7ac" &&
-                props.typeCheck !== "#FCE0AA" &&
-                props.typeCheck === "#F19A9A"
-                ? true
-                : false
-            }
-          />
-        </ContainerCheckItemsModal> */}
+            status='não aplicada'
+            checked={selectedCheckbox}
+            setSelectedCheckbox={setSelectedCheckbox}
+          /> */}
+        </ContainerCheckItemsModal>
       </ContainerContentModal>
     </ContainerModalCheckVaccines>
   );

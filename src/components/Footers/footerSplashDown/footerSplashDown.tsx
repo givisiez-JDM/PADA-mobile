@@ -1,6 +1,6 @@
 
 import { ImageFooterSplashDown } from "./footerSplashDown-style";
-import elipse2 from "../../../assets/elipses/elipse2.png"
+import elipse2 from "../../../assets/images/elipses/elipse2.png"
 import React from "react";
 
 const FooterSplashDown = () => {

@@ -153,7 +153,6 @@ export const getPatientInfo = async () => {
       doctorInfo
     };
 
-
     storePatient.dispatch({
       type: "UPDATE_PATIENT",
       payload: aux

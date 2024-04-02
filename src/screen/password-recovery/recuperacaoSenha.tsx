@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react";
+import React from "react";
 import Header from "../../components/Headers/header/header";
 import FooterCurto from "../../components/Footers/footer/footer";
 import { useNavigation } from "@react-navigation/native";
@@ -15,7 +15,7 @@ import {
   TextRecuperacao,
 } from "./recuperacaoSenha-style";
 import { TextEnviaremos1 } from "../password-redefine/redefinirSenha-style";
-import footerSenhaImg from "../../assets/footerSenha.png";
+import footerSenhaImg from "../../assets/images/footerSenha.png";
 import { ContainerFooter } from "../../components/Footers/footerLongo/footerLongo-style";
 import FooterLongo from "../../components/Footers/footerLongo/footerLongo";
 import FooterSenha from "../../components/Footers/footerSenha/footerSenha";

@@ -8,6 +8,7 @@ import { ImageFooterSplashDown } from '../../components/Footers/footerSplashDown
 import { ContainerSplashScreen, ViewSplash } from './splashScreen-style';
 import FooterSplashDown from '../../components/Footers/footerSplashDown/footerSplashDown';
 import Loading from '../../components/Bars/loading/loading';
+import React from 'react';
 
 const SplashScreen: React.FC = () => {
   const navigation = useNavigation<propsStack>();

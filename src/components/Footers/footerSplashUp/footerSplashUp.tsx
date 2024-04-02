@@ -1,6 +1,6 @@
 import React from "react";
 import { ImageFooterSplashUp } from "./footerSplashUp-style";
-import elipse1 from "../../../assets/elipses/elipse1.png"
+import elipse1 from "../../../assets/images/elipses/elipse1.png"
 import { SafeAreaView } from "react-native-safe-area-context";
 
 const FooterSplashUp = () => {

@@ -10,8 +10,8 @@ import {
 } from "./buttonTabBar-style";
 
 import { Alert, Image } from "react-native";
-import home from "../../../assets/image-icons/home.png";
-import Logout from "../../../assets/image-icons/logOut.png";
+import home from "../../../assets/images/image-icons/home.png";
+import Logout from "../../../assets/images/image-icons/logOut.png";
 import { useNavigation } from "@react-navigation/native";
 import { propsStack } from "../../../routes/Stack/Models";
 import { RemoveStorage } from "../../../service/requests";

@@ -3,17 +3,31 @@
     "name": "padamobile",
     "slug": "padamobile",
     "version": "1.0.0",
+    "orientation": "portrait",
+    "scheme": "myapp",
+    "userInterfaceStyle": "automatic",
+    "splash": {
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
     "assetBundlePatterns": [
       "**/*"
     ],
-    "extra": {
-      "eas": {}
+    "ios": {
+      "supportsTablet": true
     },
     "android": {
-      "package": "com.br0wnd3r.padamobile"
+      "adaptiveIcon": {
+        "backgroundColor": "#ffffff"
+      }
     },
-    "ios": {
-      "bundleIdentifier": "com.br0wnd3r.padamobile"
+    "web": {
+      "bundler": "metro",
+      "output": "static",
+      "favicon": "./assets/images/favicon.png"
+    },
+    "experiments": {
+      "typedRoutes": true
     }
   }
 }

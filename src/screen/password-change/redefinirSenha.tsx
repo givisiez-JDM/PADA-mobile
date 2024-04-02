@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   ButtonAvancar,
   ContainerEnviaremos,
@@ -8,13 +8,13 @@ import {
   TextRedefinir,
   ContainerFooterBottom,
 } from "./redefinirSenha-style";
-import logo from "../../assets/logo/logo.png";
+import logo from "../../assets/images/logo/logo.png";
 
 import Header from "../../components/Headers/header/header";
 import FooterCurto from "../../components/Footers/footer/footer";
 import { useNavigation } from "@react-navigation/native";
-import { ContainerSafe, ImageIconLogo, Scroll } from "../Login/login-style";
-import { ContainerTelaPrincipal } from "../Home/telaPrincipal-style";
+import { ContainerSafe, ImageIconLogo, Scroll } from "../login/login-style";
+import { ContainerTelaPrincipal } from "../home/telaPrincipal-style";
 import InputGeral from "../../components/Forms/inputGeral/inputGeral";
 import { TextButton } from "../password-creation/cadastro-style";
 import { propsStack } from "../../routes/Stack/Models";
@@ -35,7 +35,7 @@ const RedefinirSenha = () => {
             <TextEnviaremos1>para você no seu e-mail.</TextEnviaremos1>
           </ContainerEnviaremos>
 
-          <InputGeral />
+          <InputGeral inputtext={undefined} />
 
           <ButtonAvancar>
             <TextButton>Avançar</TextButton>
