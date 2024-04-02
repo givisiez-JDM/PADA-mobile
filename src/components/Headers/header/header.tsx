@@ -12,7 +12,7 @@ const Header = (props: { back: boolean }) => {
   const navigation = useNavigation<propsStack>();
 
   return (
-    <>
+    <Fragment>
       <StatusBar barStyle="light-content" backgroundColor="#000" />
       <HeaderContainer>
         <ImageHeader source={headerCurtoImg} />
@@ -21,7 +21,7 @@ const Header = (props: { back: boolean }) => {
             <Icon name="chevron-back-outline" color="#000" />
           </BackgroundHeaderContainer>) : null}
       </HeaderContainer>
-    </>
+    </Fragment>
   )
 }
 

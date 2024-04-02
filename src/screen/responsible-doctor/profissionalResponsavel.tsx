@@ -1,38 +1,32 @@
 import { useState, useEffect } from "react";
 import TabBar from "../../components/Buttons/buttonTabBar/buttonTabBar";
 import DataDoctor from "../../components/Patients/dataDoctor/data-doctor";
-import HeaderFluxo from "../../components/Headers/header-home/header-home";
+import HeaderFluxo from "../../components/Headers/headerFluxo/header-fluxo";
 import {
   ContainerSafePrincipalPaciente,
   Scroll,
 } from "./profissionalResponsavel-style";
-import {
-  TDoctor,
-  getDataUserStorage,
-  getDoctorById,
-  getPatientDoctorId,
-} from "../../service/requests";
-import store from "../../store/store";
-import { Buffer } from "buffer";
+
 import React from "react";
+import storePatient from "@/src/store/storePatient";
 
 const ProfissionalResponsavel = () => {
-  const doctor: TDoctor = store.getState();
+  const patient: any = storePatient.getState();
 
   return (
     <ContainerSafePrincipalPaciente>
       <Scroll>
         <HeaderFluxo
-          title={doctor.name}
+          title={patient.doctorInfo.name}
           backButton={true}
           buttonVaccine={true}
-          typeHeader="doctor"
-          photo={doctor.photo}
+          photo={patient.doctorInfo.photo}
+          typeHeader='doctor'
         />
         <DataDoctor
-          crm={doctor.CRM}
-          sobre={doctor.about}
-          especialidade={doctor.specialty}
+          crm={patient.doctorInfo.CRM}
+          sobre={patient.doctorInfo.about}
+          especialidade={patient.doctorInfo.specialty}
         />
       </Scroll>
       <TabBar />

@@ -5,7 +5,6 @@ import { propsStack } from '../../routes/Stack/Models';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { ContainerSplashScreen, ViewSplash } from './splashScreen-style';
 import Footer from '../../components/Footers/footer/footer';
-import Loading from '../../components/Bars/loading/loading';
 import React from 'react';
 import Header from '@/src/components/Headers/header/header';
 
@@ -15,7 +14,7 @@ const SplashScreen: React.FC = () => {
   useEffect(() => {
     setTimeout(() => {
       navigation.navigate("Login");
-    }, 3000);
+    }, 2000);
   }, []);
 
   return (
@@ -24,7 +23,6 @@ const SplashScreen: React.FC = () => {
         <Header back={false} />
         <ViewSplash>
           <ActivityIndicator />
-          {/* <Loading /> */}
         </ViewSplash>
         <Footer />
       </ContainerSplashScreen>

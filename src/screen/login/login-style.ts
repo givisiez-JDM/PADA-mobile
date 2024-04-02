@@ -21,7 +21,6 @@ export const TextAcesso = styled.Text`
 
 export const ButtonImageIcon = styled.View`
   margin: 12px;
-  //padding: 3px;
   padding-bottom: 2px;
 `;
 
@@ -31,7 +30,7 @@ export const ImageIconLogo = styled.Image`
 `;
 
 export const ContainerSafe = styled.KeyboardAvoidingView`
-  display: flex;
+  flex: 1;
 `;
 
 export const Scroll = styled.ScrollView`
@@ -58,7 +57,7 @@ export const TextInput = styled.View`
 `;
 
 export const PatientInput = styled.TextInput`
-width:100%;
+  width:100%;
   font-size: 15px;
   font-weight: 500;
   padding: 10px;

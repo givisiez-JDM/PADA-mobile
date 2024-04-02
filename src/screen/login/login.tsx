@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Platform, TouchableOpacity, Image } from "react-native";
+import { Platform, TouchableOpacity, Image, ActivityIndicator } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
 import { propsStack } from "../../routes/Stack/Models";
@@ -69,7 +69,7 @@ const PatientLogin = () => {
   }, []);
 
   return (
-    <ContainerSafe behavior={Platform.OS === "ios" ? "padding" : "height"}>
+    <ContainerSafe>
       <Scroll>
         <Header back={false} />
         <ContainerLogin>
@@ -98,7 +98,9 @@ const PatientLogin = () => {
           />
 
           <TouchableOpacity onPress={Logar}>
-            <BlueButton buttontext={'Entrar'} />
+            <BlueButton
+              buttontext={"Entrar"}
+            />
           </TouchableOpacity >
 
           <LoadingModal visible={loading} onClose={closeLoading} />

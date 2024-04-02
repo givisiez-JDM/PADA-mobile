@@ -80,62 +80,12 @@ const HeaderFluxo = (props: {
             </ContainerImagePerson>
             <ContainerTitles>
               <TitleHeaderFluxo>{props.title}</TitleHeaderFluxo>
-              {props.backButton === true && props.buttonVaccine === true ? (
-                <>
-                  <SubTitleHeaderFluxo>
-                    Sua próxima consulta está agendada para:
-                  </SubTitleHeaderFluxo>
-                  <ContainerDataPatient>
-                    <ImageCalendar source={Calendar} />
-                    <TextDataPatient>12/10/2023</TextDataPatient>
-                  </ContainerDataPatient>
-                  <ContainerButtonsHeaderFluxo>
-                    <ButtonNextVaccine>
-                      <TextButtonNextVaccine>
-                        Sua próxima vacina: 01/05{" "}
-                      </TextButtonNextVaccine>
-                      <IconButtonNextVaccine>
-                        <Icon name="chevron-back-outline" color="#000" />
-                      </IconButtonNextVaccine>
-                    </ButtonNextVaccine>
-                    <ButtonRemember activeOpacity={0.8}>
-                      <TextButtonRemember>Lembrar</TextButtonRemember>
-                      <IconTime source={Time} />
-                    </ButtonRemember>
-                  </ContainerButtonsHeaderFluxo>
-                </>
-              ) : (
-                <ContainerHeaderVaccines>
-                  <TitleHeaderVaccines>
-                    Busque em seu histórico
-                  </TitleHeaderVaccines>
-                  <ContainerInputCalendarVaccines>
-                    <IconWrapper>
-                      <Icon
-                        name="search"
-                        size={25}
-                        color="#36454F"
-                        style={{ marginLeft: 5 }}
-                      />
-                    </IconWrapper>
-                    <InputCalendarVaccines
-                      onChangeText={(text: string) => {
-                        setDate(text);
-                      }}
-                      value={date}
-                      placeholder="Data"
-                      placeholderTextColor="#A9A9A9"
-                    />
-                    <IconWrapperCalendar>
-                      <Icon
-                        name="calendar"
-                        size={25}
-                        color="#36454F"
-                        style={{ marginRight: 10 }}
-                      />
-                    </IconWrapperCalendar>
-                  </ContainerInputCalendarVaccines>
-                </ContainerHeaderVaccines>
+              {props.backButton === true && props.buttonVaccine === true && (
+
+                <SubTitleHeaderFluxo>
+                  Histórico de vacinas
+                </SubTitleHeaderFluxo>
+
               )}
             </ContainerTitles>
           </ContainerHeaderInformationPerson>

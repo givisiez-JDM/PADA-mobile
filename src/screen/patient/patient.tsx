@@ -1,40 +1,36 @@
 import React, { useEffect, useState } from "react";
 import TabBar from "../../components/Buttons/buttonTabBar/buttonTabBar";
 import DataPatient from "../../components/Patients/dataPatient/data-patient";
-import HeaderHome from "../../components/Headers/header-home/header-home";
+import HeaderFluxo from "../../components/Headers/headerFluxo/header-fluxo";
 import { ContainerSafePrincipalPaciente, Scroll } from "./patient-style";
 import { TData, getDataUserStorage } from "../../service/requests";
 import storePatient from "../../store/storePatient";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const Patient = () => {
-  //const [patient, setPatient] = useState<any>({});
-  //var patient: any = {};
-  const patient: TData = storePatient.getState();
-  const [roleUser, setRoleUser] = useState("");
-  const [name, setName] = useState("");
-  getDataUserStorage({ setRoleUser, setName });
+  const patient: any = storePatient.getState();
 
   return (
     <ContainerSafePrincipalPaciente>
       <Scroll>
-        <HeaderHome
-          title={`Olá, ${name}`}
+        <HeaderFluxo
+          title={`${patient.patientInfo.name}`}
           backButton={true}
           buttonVaccine={true}
-          photo={patient.photo}
+          photo={patient.patientInfo.photo}
+          typeHeader='patient'
         />
         <DataPatient
-          name={patient.name}
-          telefone={patient.telephone}
-          email={patient.email}
-          data_nascimento={patient.birthDate}
-          dosagem={patient.dosage}
-          alergias={patient.allergies}
-          periodicidade={patient.frequency}
-          metodo={patient.method}
-          inicio={patient.startTreatment}
-          fim={patient.endTreatment}
+          name={patient.patientInfo.name}
+          telefone={patient.patientInfo.telephone}
+          email={patient.patientInfo.email}
+          data_nascimento={patient.patientInfo.birthDate}
+          dosagem={patient.treatmentInfo.dosage}
+          alergias={patient.treatmentInfo.allergies}
+          periodicidade={patient.treatmentInfo.frequency}
+          metodo={patient.treatmentInfo.method}
+          inicio={patient.treatmentInfo.startTreatment}
+          fim={patient.treatmentInfo.endTreatment}
         />
       </Scroll>
       <TabBar />

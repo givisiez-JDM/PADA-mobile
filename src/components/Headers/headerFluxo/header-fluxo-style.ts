@@ -7,10 +7,7 @@ export const ContainerSafeHeader = styled.View`
 
 export const ContainerHeaderFluxo = styled.View`
   display: flex;
-  flex-direction: column;
-  row-gap: 10px;
-  width: 100%;
-  height: 200px;
+  height: 160px;
   background: #4c7abb;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 10px;
@@ -29,19 +26,13 @@ export const ContainerButtonVaccine = styled.View`
 export const ContainerHeaderInformationPerson = styled.View`
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  align-items: center;
+  gap:30px;
+  padding: 30px 0px 0px 20px;
 `;
 
 export const ContainerImagePerson = styled.View`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
   width: 66px;
   height: 66px;
-  left: 40px;
-  top: 40px;
   border-radius: 50px;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 `;
@@ -94,11 +85,11 @@ export const ContainerBackFluxo = styled.TouchableOpacity`
 
 export const ContainerTitles = styled.View`
   display: flex;
-  flex-direction: column;
-  row-gap: 5px;
-  position: absolute;
-  left: 125px;
-  top: 50px;
+  justify-content: center;
+  margin-top: 20px;
+  gap: 20px;
+  border-bottom-width: 2px;
+  border-bottom-color: #d9d9d9;
 `;
 
 export const ContainerInputSearch = styled.View`
@@ -114,13 +105,13 @@ export const TitleHeaderFluxo = styled.Text`
 `;
 
 export const SubTitleHeaderFluxo = styled.Text`
+  align-self: center;
   font-style: normal;
-  font-weight: 500;
-  font-size: 10px;
-  line-height: 14px;
-  width: 133px;
-  height: 29px;
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 22px;
   color: #ffffff;
+  
 `;
 
 export const ContainerDataPatient = styled.View`

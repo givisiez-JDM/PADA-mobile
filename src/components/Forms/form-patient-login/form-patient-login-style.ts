@@ -4,7 +4,6 @@ export const ContainerFormPatientRecord = styled.View`
   display: flex;
   flex-direction: column;
   row-gap: 2px;
-  
 `;
 
 export const ContainerInput = styled.View`
