@@ -14,12 +14,14 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.givisiez.padamobile"
     },
     "android": {
       "adaptiveIcon": {
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.givisiez.padamobile"
     },
     "web": {
       "bundler": "metro",
@@ -28,6 +30,11 @@
     },
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "eas": {
+        "projectId": "a84aef0d-40e3-4c57-9bfe-f8d20aaccbdb"
+      }
     }
   }
 }

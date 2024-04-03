@@ -18,4 +18,4 @@ Changelog
 - [PADA-63](https://givisiez.atlassian.net/browse/PADA-63): Fix Modal treatment phases styles
 - [PADA-187](https://givisiez.atlassian.net/browse/PADA-187): Fix Layout myVaccines and headerVaccines
 - [PADA-211](https://givisiez.atlassian.net/browse/PADA-211): Fix and Update dependencies - Refactor all expo project - Convert all JS to TS files - Start including missing types to prevent errors.
-
+- [PADA-211](https://givisiez.atlassian.net/browse/PADA-211): Fix app.json and eas.json for apk build.
