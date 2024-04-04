@@ -24,7 +24,6 @@ export default function () {
       screenOptions={{ headerShown: false }}
     >
       <Screen name="Login" component={PatientLogin} />
-      <Screen name="Cadastro" component={PatientRecord} />
       <Screen name="TelaPrincipal" component={TelaPrincipal} />
       <Screen name="Paciente" component={Patient} />
       <Screen
@@ -34,7 +33,7 @@ export default function () {
       <Screen name="SplashScreen" component={SplashScreen} />
       <Screen name="MyVaccines" component={MyVaccines} />
 
-      <Screen name="RedefinirSenha" component={RedefinirSenha} />
+      {/* <Screen name="RedefinirSenha" component={RedefinirSenha} /> */}
       <Screen name="RecuperacaoSenha" component={RecuperacaoSenha} />
       <Screen name="TelaSucesso" component={TelaSucesso} />
       {/* <Screen name="TabRoutes" component={TabRoutes} /> */}

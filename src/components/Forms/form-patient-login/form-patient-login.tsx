@@ -18,7 +18,7 @@ interface PatientRecordValues {
 }
 
 const FormPatientLoginRecord = ({ placeholder,
-  handleInputChange, state, err}: PatientRecordValues) => {
+  handleInputChange, state, err }: PatientRecordValues) => {
   const [showPassword, setShowPassword] = React.useState(false);
 
   const toggleShowPassword = () => {
@@ -34,16 +34,16 @@ const FormPatientLoginRecord = ({ placeholder,
           placeholder={placeholder}
           placeholderTextColor="#4c7abb"
           secureTextEntry={!showPassword && placeholder === "Senha"}
+        />
+        {["Senha", "Confirme sua Senha", "Nova senha"].includes(placeholder) && (
+          <Icon
+            name={showPassword ? "eye-off-outline" : "eye-outline"}
+            size={25}
+            color="black"
+            onPress={toggleShowPassword}
+            style={{ position: "absolute", right: 10, top: 11 }}
           />
-          {["Senha", "Confirme sua Senha", "Nova senha"].includes(placeholder) && (
-            <Icon
-              name={showPassword ? "eye-off-outline" : "eye-outline"}
-              size={25}
-              color="black"
-              onPress={toggleShowPassword}
-              style={{ position: "absolute", right: 10, top: 11 }}
-            />
-          )}
+        )}
       </ContainerLogin>
 
       {err !== "" && (

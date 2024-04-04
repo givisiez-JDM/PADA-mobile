@@ -1,10 +1,10 @@
 import React from 'react';
 import { ButtonBlueContainer, TextBlueButton } from './blueButton-style';
 
-const BlueButton = ({ buttontext }) => {
+const BlueButton = (props: { buttontext: string }) => {
   return (
     <ButtonBlueContainer>
-      <TextBlueButton>{buttontext}</TextBlueButton>
+      <TextBlueButton>{props.buttontext}</TextBlueButton>
     </ButtonBlueContainer>
   )
 };

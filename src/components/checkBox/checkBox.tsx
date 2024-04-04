@@ -1,12 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import {
-  ButtonViewCheckBox, Check,
-  ContainerViewCheckBox, TitleCheck,
+  ButtonViewCheckBox, Check, TitleCheck,
 } from "./checkBox-style";
 import Icon from "react-native-vector-icons/Ionicons";
 
 const CheckBox: any = (props: {
-  title: string, size: string, checked: boolean, setChecked?: any
+  title: string, size: string, checked: boolean, setChecked?: any, setSelectedCheckbox: boolean
 }) => {
 
   const handleCheckbox = () => {
@@ -14,7 +13,7 @@ const CheckBox: any = (props: {
   }
 
   return (
-    <ButtonViewCheckBox onPress={handleCheckbox} underlayColor="#00000000">
+    <ButtonViewCheckBox onPress={handleCheckbox} style={{ underlayColor: "#00000000" }}>
       <>
         <Check checked={props.checked} size={props.size}>
           {props.checked ? (

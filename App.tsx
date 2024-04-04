@@ -15,8 +15,8 @@ export default function App() {
 
   lockScreenOrientation();
   return (
-    <Provider store={store}>
-      <NavigationContainer>
+    <Provider store={store} children={undefined}>
+      <NavigationContainer children={undefined}>
         <Route />
       </NavigationContainer>
     </Provider>

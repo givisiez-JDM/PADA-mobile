@@ -16,14 +16,14 @@ import {
 
 import FormPatientRecord from "../../components/Forms/form-patient-record/form-patient-record";
 import { validar } from "../../config/validates";
-import checkFlag from "../../assets/image-icons/checkflag.png";
-import errorFlag from "../../assets/image-icons/errorflag.png";
-import Logo from "../../assets/logo/logo.png";
+import checkFlag from "../../assets/images/image-icons/checkflag.png";
+import errorFlag from "../../assets/images/image-icons/errorflag.png";
+import Logo from "../../assets/images/logo/logo.png";
 
 import { Platform } from "react-native";
 import ModalInfo from "../../components/Modals/modalInfo/modal-info";
 import LoadingModal from "../../components/Bars/loadingModal/loading-modal";
-import { User, createUser } from "../../service/requests";
+import { User } from "../../service/requests";
 
 const PatientRecord = () => {
   const [name, setName] = useState("");

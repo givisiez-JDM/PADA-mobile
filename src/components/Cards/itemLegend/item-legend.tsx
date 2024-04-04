@@ -1,3 +1,4 @@
+import React from "react";
 import {
   BoxLegend,
   ContainerItemLegend,
@@ -7,7 +8,7 @@ import {
 const ItemLegend = (props: { text: string; color: string }) => {
   return (
     <ContainerItemLegend>
-      <BoxLegend color={props.color} />
+      <BoxLegend style={{ color: `${props.color}` }} />
       <TextItemLegend>{props.text}</TextItemLegend>
     </ContainerItemLegend>
   );

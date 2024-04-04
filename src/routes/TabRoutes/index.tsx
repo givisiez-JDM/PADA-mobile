@@ -3,15 +3,16 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Image } from "react-native";
 import TelaPrincipal from "../../screen/home/telaPrincipal";
 import PatientLogin from "../../screen/patient-login/patientLogin";
+import React from "react";
 
 const { Screen, Navigator } = createBottomTabNavigator();
 
 export function TabRoutes() {
   const getOverviewTabIcon = (focused: boolean, nome: string) => {
     if (nome === "home") {
-      return <Image source={require("../../assets/home.png")} />;
+      return <Image source={require("../../assets/images/home.png")} />;
     } else {
-      return <Image source={require("../../assets/logOut.png")} />;
+      return <Image source={require("../../assets/images/logOut.png")} />;
     }
   };
 

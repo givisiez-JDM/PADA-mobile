@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   ContainerEnviaremos,
   ImageIconLogoRedefinir,
@@ -6,7 +6,7 @@ import {
   TitleRedefinePass,
   ContainerFooterBottom,
 } from "./redefinirSenha-style";
-import logo from "../../assets/logo/logo.png";
+import logo from "../../assets/images/logo/logo.png";
 
 import Header from "../../components/Headers/header/header";
 import FooterCurto from "../../components/Footers/footer/footer";

@@ -1,15 +1,15 @@
-import React, { Fragment } from "react";
+import React from "react";
 import { Dimensions } from "react-native";
 
-import footerCurtoImg from "../../../assets/footer/footerCurto.png";
+import footerCurtoImg from "../../../assets/images/footer/footerCurto.png";
 
-import { ContainerFooter, ImageFooterCurto, FooterText } from "./footer-style";
+import { ContainerFooter, ImageFooterCurto } from "./footer-style";
 
 const Footer = () => {
   const screenWidth = Dimensions.get("window").width;
 
   return (
-    <ContainerFooter screenWidth={JSON.stringify(screenWidth) + "px"}>
+    <ContainerFooter>
       <ImageFooterCurto source={footerCurtoImg} />
     </ContainerFooter>
   )

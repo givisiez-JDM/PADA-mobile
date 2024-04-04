@@ -4,10 +4,11 @@ import {
   TextFlagFluxo,
   TitleTagFluxo,
 } from "./tag-fluxo-style";
-import { ImageSource } from "react-native-vector-icons/Icon";
 import { Image } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { propsStack } from "../../routes/Stack/Models";
+import React from "react";
+import { ImageSource } from "react-native-vector-icons/Icon";
 
 const TagFluxo = (props: {
   title: string;
@@ -17,9 +18,6 @@ const TagFluxo = (props: {
   const navigation = useNavigation<propsStack>();
 
   const navigateScreens = () => {
-    if (props.title === "Pacientes") {
-      navigation.navigate("ListaPacientes");
-    }
     if (props.title === "Meu perfil") {
       navigation.navigate("Paciente");
     }
