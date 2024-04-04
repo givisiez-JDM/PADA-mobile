@@ -32,7 +32,7 @@ const RecuperacaoSenha = () => {
 
           <TextRecuperacao>Recuperação de senha</TextRecuperacao>
           <ContainerCrie>
-            <TextEnviaremos>Crie sua nova senha abaixo</TextEnviaremos>
+            <TextEnviaremos1>Crie sua nova senha abaixo</TextEnviaremos1>
           </ContainerCrie>
 
           <View>

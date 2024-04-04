@@ -8,6 +8,7 @@ import {
   TextButtonPatient,
   TitleDataPatient,
 } from "./data-patient-style";
+import React from "react";
 
 interface TData {
   name: string;

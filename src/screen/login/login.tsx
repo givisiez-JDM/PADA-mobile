@@ -1,14 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { Platform, TouchableOpacity, Image, ActivityIndicator } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-
 import { propsStack } from "../../routes/Stack/Models";
 import {
   ButtonSenha,
   ContainerLogin,
   ContainerSafe, Scroll
 } from "./login-style";
-
 import { ContainerFormInputsPatients } from "../password-creation/cadastro-style";
 
 import logo from "../../assets/images/logo/logo.png";
@@ -74,21 +72,20 @@ const PatientLogin = () => {
         <Header back={false} />
         <ContainerLogin>
           <Image source={logo} />
+          <ContainerFormInputsPatients />
 
-          <ContainerFormInputsPatients>
-            {arrayNamePlaceholder.map(
-              ([valueState, place, err], index: number) => (
-                <FormPatientLoginRecord
-                  placeholder={place}
-                  handleInputChange={(text: string) => {
-                    handleInputChange(place, text);
-                  }}
-                  state={valueState}
-                  err={err}
-                  key={index} />
-              )
-            )}
-          </ContainerFormInputsPatients>
+          {arrayNamePlaceholder.map(
+            ([valueState, place, err]) => (
+              <FormPatientLoginRecord
+                placeholder={place}
+                handleInputChange={(text: string) => {
+                  handleInputChange(place, text);
+                }}
+                state={valueState}
+                err={err}
+                showPassword={false} />
+            )
+          )}
 
           <CheckBox
             title="Lembrar senha"
@@ -118,4 +115,3 @@ const PatientLogin = () => {
 };
 
 export default PatientLogin;
-

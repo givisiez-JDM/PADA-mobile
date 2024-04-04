@@ -86,7 +86,7 @@ const PatientLogin = () => {
                   }}
                   state={valueState}
                   err={err}
-                />
+                  key={index} showPassword={false} />
               )
             )}
           </ContainerFormInputsPatients>
