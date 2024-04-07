@@ -10,6 +10,7 @@ import { useNavigation } from "@react-navigation/native";
 import { propsStack } from "../../../routes/Stack/Models";
 
 import { ImageSource } from "react-native-vector-icons/Icon";
+import { ButtonBlueContainer } from "../bluebutton/blueButton-style";
 
 
 
@@ -21,7 +22,7 @@ function ButtonEmailSenha(props: {
   const navigation = useNavigation<propsStack>();
   return (
     <View>
-      <ButtonEmailSenhaContainer>
+      <ButtonBlueContainer>
 
         <ButtonImageIcon>
           <ImageLogo>
@@ -36,7 +37,7 @@ function ButtonEmailSenha(props: {
 
         </TextInput>
 
-      </ButtonEmailSenhaContainer>
+      </ButtonBlueContainer>
 
 
     </View>
