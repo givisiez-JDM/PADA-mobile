@@ -4,14 +4,15 @@ import { TouchableOpacity } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
 import { propsStack } from "../../../routes/Stack/Models";
+import { ButtonBlueContainer, TextBlueButton } from "../bluebutton/blueButton-style";
 
-function ButtonDoctor() {
+function ButtonDoctor(props: { buttonText: string }) {
   const navigation = useNavigation<propsStack>();
   return (
     <TouchableOpacity onPress={() => navigation.navigate("Cadastro")}>
-      <ButtonCadastrarContainer>
-        <TextButton>Cadastre-se</TextButton>
-      </ButtonCadastrarContainer>
+      <ButtonBlueContainer>
+        <TextBlueButton>{props.buttonText}</TextBlueButton>
+      </ButtonBlueContainer>
     </TouchableOpacity>
   );
 }
