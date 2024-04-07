@@ -103,7 +103,7 @@ const PatientLogin = () => {
           <LoadingModal visible={loading} onClose={closeLoading} />
 
           <TouchableOpacity onPress={() => navigation.navigate("RecuperacaoSenha")}>
-            <ButtonSenha>Esqueceu sua senha?</ButtonSenha>
+            <BlueButton buttontext="Esqueceu sua senha?" />
           </TouchableOpacity>
 
         </ContainerLogin>
