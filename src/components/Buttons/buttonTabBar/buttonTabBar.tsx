@@ -15,6 +15,7 @@ import Logout from "../../../assets/images/image-icons/logOut.png";
 import { useNavigation } from "@react-navigation/native";
 import { propsStack } from "../../../routes/Stack/Models";
 import { RemoveStorage } from "../../../service/requests";
+import { TextBlueButton } from "../bluebutton/blueButton-style";
 
 const TabBar = () => {
   const navigation = useNavigation<propsStack>();
@@ -41,7 +42,7 @@ const TabBar = () => {
           <ImageLogo>
             <Image source={home}></Image>
           </ImageLogo>
-          <TextButtonTabBarInicio>{"Início"}</TextButtonTabBarInicio>
+          <TextBlueButton>{"Início"}</TextBlueButton>
         </CustomTouchableOpacity>
       </ButtonTabBarHome>
 
@@ -50,7 +51,7 @@ const TabBar = () => {
           <ImageLogo>
             <Image source={Logout}></Image>
           </ImageLogo>
-          <TextButtonTabBarLogout>{"Sair"}</TextButtonTabBarLogout>
+          <TextBlueButton>{"Sair"}</TextBlueButton>
         </CustomTouchableOpacity>
       </ButtonTabBarLogout>
     </ContainerTabBar>
