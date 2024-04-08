@@ -8,6 +8,7 @@ export const ImageHeader = styled.Image.attrs({
   resizeMode: "stretch",
 })`
   height: 160px;
+  width: 100%;
 `;
 
 export const BackgroundHeaderContainer = styled.TouchableOpacity`
