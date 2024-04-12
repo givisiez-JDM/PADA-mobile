@@ -19,7 +19,7 @@ import logoSenha from "../../assets/images/logo/logoSenha.png";
 import Header from "../../components/Headers/header/header";
 import FooterCurto from "../../components/Footers/footer/footer";
 import FormPatientLoginRecord from "../../components/Forms/form-patient-login/form-patient-login";
-import CheckBox from "../../components/checkBox/checkBox";
+import Check from "../../components/Check/check";
 import BlueButton from "../../components/Buttons/bluebutton/BlueButton";
 import LoadingModal from "../../components/Bars/loadingModal/loading-modal";
 import { validar } from "../../config/validates";
@@ -79,7 +79,6 @@ const PatientLogin = () => {
             {arrayNamePlaceholder.map(
               ([icon, valueState, place, err], index: number) => (
                 <FormPatientLoginRecord
-                  imageButton={icon}
                   placeholder={place}
                   handleInputChange={(text: string) => {
                     handleInputChange(place, text);
@@ -91,12 +90,13 @@ const PatientLogin = () => {
             )}
           </ContainerFormInputsPatients>
 
-          <CheckBox
+          <Check
             title="Lembrar senha"
             size="20px"
             checked={checked}
-            setChecked={setChecked}
-          />
+            setChecked={setChecked} onChange={function (selectedOption: string): void {
+              throw new Error("Function not implemented.");
+            } } options={[]} multiple={false}          />
 
           <TouchableOpacity onPress={Logar}>
             <BlueButton buttontext={'Entrar'} />

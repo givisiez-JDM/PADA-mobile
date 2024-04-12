@@ -18,7 +18,7 @@ export const ContainerContentModal = styled.View`
   align-items: center;
   width: 100%;
   padding: 10px;
-  padding-bottom: 50px;
+  padding-bottom: 70px;
   border-top-right-radius: 30px;
   border-top-left-radius: 30px;
   background: #4c7abb;
@@ -40,19 +40,20 @@ export const ContainerCheckItemsModal = styled.View`
 export const TextInputModal = styled.TextInput.attrs({
   placeholderTextColor: '#ffffff',
   multiline: true,
-  textAlignVertical: 'top'
+  textAlignVertical: 'top',
+  numberOfLines: 5,
+  
  })`
   margin-top: 10px;
   width: 75%;
-  height: 40%;
+  max-height: 140px;
+  height: 80%;
   background-color: #94afd6;
   border-radius: 8px;
   color: #ffffff;
-  text-align: left;
-  padding-bottom: 90px;
-  padding-left: 10px;
-  padding-right:10px;
   font-size: 12px;
+  padding: 10px;
+  overflow: hidden;
   line-height: 18px;
 `;
 
