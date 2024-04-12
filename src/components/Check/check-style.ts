@@ -1,13 +1,13 @@
 import styled, { css } from "styled-components/native";
 
 export const CheckContainer = styled.View`
-  margin: 10px;
+  margin: 8px;
 `;
 
 export const CheckOption = styled.View`
   flex-direction: row;
   align-items: center;
-  margin-top: 20px;
+  margin-top: 10px;
 `;
 
 export const TitleCheck = styled.Text`

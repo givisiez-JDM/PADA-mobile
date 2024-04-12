@@ -10,14 +10,14 @@ export const ButtonClose = styled.TouchableOpacity`
 
 export const ContainerContentModal = styled.View`
   position: absolute;
-  bottom: 25%;
+  bottom: 8%;
   left: 0%;
   display: flex;
   flex-direction: column;
   row-gap: 10px;
   align-items: center;
   width: 100%;
-  padding: 20px;
+  padding: 10px;
   padding-bottom: 50px;
   border-top-right-radius: 30px;
   border-top-left-radius: 30px;
@@ -34,11 +34,29 @@ export const TextTitleModal = styled.Text`
 
 export const ContainerCheckItemsModal = styled.View`
   flex-direction: column;
-  row-gap: 10px;
-  margin-top: -20px;
+  row-gap: 20px;
+`;
+
+export const TextInputModal = styled.TextInput.attrs({
+  placeholderTextColor: '#ffffff',
+  multiline: true,
+  textAlignVertical: 'top'
+ })`
+  margin-top: 10px;
+  width: 75%;
+  height: 40%;
+  background-color: #94afd6;
+  border-radius: 8px;
+  color: #ffffff;
+  text-align: left;
+  padding-bottom: 90px;
+  padding-left: 10px;
+  padding-right:10px;
+  font-size: 12px;
+  line-height: 18px;
 `;
 
 export const TextOption = styled.Text`
   font-size: 15px;
-  color: #ffffff; /* Cor branca */
+  color: #ffffff; 
 `;

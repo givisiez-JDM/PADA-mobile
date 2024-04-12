@@ -3,6 +3,7 @@ import {
   ContainerCheckItemsModal,
   ContainerContentModal,
   ContainerModalCheckVaccines,
+  TextInputModal,
   TextTitleModal,
 } from "./modal-check-vaccines-styles";
 
@@ -66,7 +67,7 @@ const ModalCheckVaccines = (props: {
         <ButtonClose onPress={props.onClose}>
           <Icon name="close" color="#000" size={20} />
         </ButtonClose>
-        <TextTitleModal>Monitore seu tratamento</TextTitleModal>
+        <TextTitleModal>Monitore seu tratamento:</TextTitleModal>
         <ContainerCheckItemsModal>
         <Check
             options={multipleOptions}
@@ -75,6 +76,7 @@ const ModalCheckVaccines = (props: {
               throw new Error("Function not implemented.");
             } }          />
         </ContainerCheckItemsModal>
+        <TextInputModal placeholder="Observações"/> 
       </ContainerContentModal>
     </ContainerModalCheckVaccines>
   );
