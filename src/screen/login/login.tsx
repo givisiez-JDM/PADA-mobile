@@ -14,7 +14,7 @@ import logo from "../../assets/images/logo/logo.png";
 import Header from "../../components/Headers/header/header";
 import FooterCurto from "../../components/Footers/footer/footer";
 import FormPatientLoginRecord from "../../components/Forms/form-patient-login/form-patient-login";
-import CheckBox from "../../components/checkBox/checkBox";
+import Check from "../../components/Check/check";
 import BlueButton from "../../components/Buttons/bluebutton/BlueButton";
 import LoadingModal from "../../components/Bars/loadingModal/loading-modal";
 import { validar } from "../../config/validates";
@@ -29,6 +29,8 @@ const PatientLogin = () => {
   const [errorPass, setErrorPass] = useState("");
   const [checked, setChecked] = useState(false)
   const [loading, setLoading] = useState(false);
+
+  const individualOption = [{ id: 1, text: "Lembrar senha"}];
 
   const arrayNamePlaceholder = [
     [mail, "E-mail", errorMail],
@@ -87,12 +89,9 @@ const PatientLogin = () => {
             )
           )}
 
-          <CheckBox
-            title="Lembrar senha"
-            size="20px"
-            checked={checked}
-            setChecked={setChecked}
-          />
+  <Check options={individualOption} onChange={() => setChecked(true)} title={""} size={""} checked={false} multiple={false} setChecked={function (checked: boolean): void {
+            throw new Error("Function not implemented.");
+          } }  />
 
           <TouchableOpacity onPress={Logar}>
             <BlueButton

@@ -10,21 +10,22 @@ export const ButtonClose = styled.TouchableOpacity`
 
 export const ContainerContentModal = styled.View`
   position: absolute;
-  bottom: 0%;
+  bottom: 25%;
   left: 0%;
   display: flex;
   flex-direction: column;
   row-gap: 10px;
   align-items: center;
-  width: 410px;
-  height: 300px;
+  width: 100%;
+  padding: 20px;
+  padding-bottom: 50px;
   border-top-right-radius: 30px;
   border-top-left-radius: 30px;
   background: #4c7abb;
 `;
 
 export const TextTitleModal = styled.Text`
-  margin-top: 50px;
+  margin-top: 20px;
   font-weight: 700;
   font-size: 20px;
   line-height: 29px;
@@ -34,5 +35,10 @@ export const TextTitleModal = styled.Text`
 export const ContainerCheckItemsModal = styled.View`
   flex-direction: column;
   row-gap: 10px;
-  margin-top: 10px;
+  margin-top: -20px;
+`;
+
+export const TextOption = styled.Text`
+  font-size: 15px;
+  color: #ffffff; /* Cor branca */
 `;
