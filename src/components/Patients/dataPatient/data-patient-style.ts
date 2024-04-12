@@ -61,3 +61,7 @@ export const SubTitlePatientAllergies = styled.Text`
   margin-top: 10px;
   margin-right: 50px;
 `;
+
+export const ButtonTouch = styled.TouchableOpacity`
+  margin: 20px;
+`;

@@ -13,6 +13,7 @@ import RedefinirSenha from "../../screen/password-redefine/redefinirSenha";
 import RecuperacaoSenha from "../../screen/password-recovery/recuperacaoSenha";
 import TelaSucesso from "../../screen/password-recovery-success/telaSucesso";
 import PatientLogin from "../../screen/login/login";
+import ChangePass from "../../screen/password-change/change-password";
 
 const { Navigator, Screen } =
   createNativeStackNavigator<propsNavigationStack>();
@@ -33,7 +34,7 @@ export default function () {
       <Screen name="SplashScreen" component={SplashScreen} />
       <Screen name="MyVaccines" component={MyVaccines} />
 
-      {/* <Screen name="RedefinirSenha" component={RedefinirSenha} /> */}
+      <Screen name="ChangePass" component={ChangePass} />
       <Screen name="RecuperacaoSenha" component={RecuperacaoSenha} />
       <Screen name="TelaSucesso" component={TelaSucesso} />
       {/* <Screen name="TabRoutes" component={TabRoutes} /> */}

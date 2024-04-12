@@ -19,7 +19,7 @@ import footerSenhaImg from "../../assets/images/footerSenha.png";
 import { ContainerFooter } from "../../components/Footers/footerLongo/footerLongo-style";
 import FooterLongo from "../../components/Footers/footerLongo/footerLongo";
 import FooterSenha from "../../components/Footers/footerSenha/footerSenha";
-import { TextEnviaremos } from "../password-change/redefinirSenha-style";
+import { TextEnviaremos } from "../password-change/change-password-style";
 
 const RecuperacaoSenha = () => {
   const navigation = useNavigation<propsStack>();
