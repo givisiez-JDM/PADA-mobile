@@ -10,7 +10,7 @@ export const ButtonClose = styled.TouchableOpacity`
 
 export const ContainerContentModal = styled.View`
   position: absolute;
-  bottom: 8%;
+  bottom: 60px;
   left: 0%;
   display: flex;
   flex-direction: column;
@@ -18,7 +18,7 @@ export const ContainerContentModal = styled.View`
   align-items: center;
   width: 100%;
   padding: 10px;
-  padding-bottom: 70px;
+  padding-bottom: 50px;
   border-top-right-radius: 30px;
   border-top-left-radius: 30px;
   background: #4c7abb;
@@ -41,13 +41,12 @@ export const TextInputModal = styled.TextInput.attrs({
   placeholderTextColor: '#ffffff',
   multiline: true,
   textAlignVertical: 'top',
-  numberOfLines: 5,
+  numberOfLines: 10,
   
  })`
   margin-top: 10px;
   width: 75%;
-  max-height: 140px;
-  height: 80%;
+  max-height: 130px;
   background-color: #94afd6;
   border-radius: 8px;
   color: #ffffff;
