@@ -98,6 +98,7 @@ const PatientLogin = () => {
               throw new Error("Function not implemented.");
             } } options={[]} multiple={false}          />
 
+
           <TouchableOpacity onPress={Logar}>
             <BlueButton buttontext={'Entrar'} />
           </TouchableOpacity >

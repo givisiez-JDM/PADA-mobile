@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Platform, TouchableOpacity, Image, ActivityIndicator } from "react-native";
+import { Platform, TouchableOpacity, Image, ActivityIndicator, ViewStyle } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { propsStack } from "../../routes/Stack/Models";
 import {
@@ -14,11 +14,12 @@ import logo from "../../assets/images/logo/logo.png";
 import Header from "../../components/Headers/header/header";
 import FooterCurto from "../../components/Footers/footer/footer";
 import FormPatientLoginRecord from "../../components/Forms/form-patient-login/form-patient-login";
-import Check from "../../components/Check/check";
 import BlueButton from "../../components/Buttons/bluebutton/BlueButton";
 import LoadingModal from "../../components/Bars/loadingModal/loading-modal";
 import { validar } from "../../config/validates";
 import { loginUser } from "../../service/requests";
+import { CheckContainer, CheckOption, CheckTouch, TitleCheck, CheckTouchOption, CheckOptionStyle } from "../../components/Check/check-style";
+import Icon from 'react-native-vector-icons/Ionicons';
 
 const PatientLogin = () => {
   const navigation = useNavigation<propsStack>();
@@ -89,9 +90,18 @@ const PatientLogin = () => {
             )
           )}
 
-  <Check options={individualOption} onChange={() => setChecked(true)} title={""} size={""} checked={false} multiple={false} setChecked={function (checked: boolean): void {
-            throw new Error("Function not implemented.");
-          } }  />
+<CheckContainer>
+  {individualOption.map((op) => (
+    <React.Fragment key={op.id}>
+      <CheckOptionStyle>
+        <CheckTouchOption selected={checked} onPress={() => setChecked(!checked)}>
+          {checked && <Icon name="checkmark-sharp" color="#7c9dcb" size={17} />}
+        </CheckTouchOption>
+      </CheckOptionStyle>
+      <TitleCheck style={{color: "#7c9dcb", fontWeight: "300"}}>{op.text}</TitleCheck>
+    </React.Fragment>
+  ))}
+</CheckContainer>
 
           <TouchableOpacity onPress={Logar}>
             <BlueButton

@@ -3,7 +3,7 @@ import { CheckContainer, CheckOption, CheckTouch, TitleCheck } from "../Check/ch
 import Icon from 'react-native-vector-icons/Ionicons';
 
 const Check = (props: { onChange: (selectedOption: string) => void; options: any[]; 
-  title: string; size: string; checked: boolean; multiple: boolean; setChecked: (checked: boolean) => void;}) => {
+  title: string; size: string; checked: boolean; multiple: boolean;  setChecked: (checked: boolean) => void;}) => {
   const [selected, setSelected] = useState("");
 
   function toggle(id: string) {

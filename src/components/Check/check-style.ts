@@ -10,6 +10,12 @@ export const CheckOption = styled.View`
   margin-top: 10px;
 `;
 
+export const CheckOptionStyle = styled.View`
+  flex-direction: row;
+  align-items: center;
+  margin-top: 1px;
+`;
+
 export const TitleCheck = styled.Text`
 margin-top: -20px;
   margin-left: 30px;
@@ -35,3 +41,11 @@ export const CheckTouch = styled.TouchableOpacity<{ selected: boolean }>`
 
 `;
 
+export const CheckTouchOption = styled.TouchableOpacity<{ selected: boolean }>`
+  height: 20px;
+  width: 20px;
+  justify-content: center;
+  align-items: center;
+  border-width: 1px;
+  background-color: #ffff;
+`;
