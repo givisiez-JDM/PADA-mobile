@@ -37,7 +37,7 @@ const FormPatientLoginRecord = ({ placeholder,
         />
         {["Senha", "Confirme sua Senha", "Nova senha"].includes(placeholder) && (
           <Icon
-            name={showPassword ? "eye-off-outline" : "eye-outline"}
+            name={showPassword ? "eye-outline" : "eye-off-outline"}
             size={25}
             color="black"
             onPress={toggleShowPassword}

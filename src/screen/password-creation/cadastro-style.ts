@@ -1,5 +1,9 @@
 import styled from "styled-components/native";
 
+interface CheckProps {
+  checked: boolean;
+}
+
 export const ContainerSafe = styled.KeyboardAvoidingView`
   flex: 1;
   display: flex;
@@ -53,7 +57,7 @@ export const ButtonViewCheckBox = styled.View`
   align-items: center;
 `;
 
-export const Check = styled.View`
+export const Check = styled.View<CheckProps>`
   width: 15px;
   height: 15px;
   border-width: 1px;
