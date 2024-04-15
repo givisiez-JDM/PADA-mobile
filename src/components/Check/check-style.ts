@@ -17,11 +17,19 @@ export const CheckOptionStyle = styled.View`
 `;
 
 export const TitleCheck = styled.Text`
-margin-top: -20px;
+  margin-top: -20px;
   margin-left: 30px;
   font-weight: 600;
   font-size: 15px;
   color: #ffff;
+`;
+
+export const TitleCheckOption = styled.Text`
+  margin-top: -1px;
+  margin-left: 10px;
+  font-weight: 300;
+  font-size: 15px;
+  color: #7c9dcb;
 `;
 
 export const CheckTouch = styled.TouchableOpacity<{ selected: boolean }>`

@@ -20,6 +20,7 @@ import { validar } from "../../config/validates";
 import { loginUser } from "../../service/requests";
 import { CheckContainer, CheckOption, CheckTouch, TitleCheck, CheckTouchOption, CheckOptionStyle } from "../../components/Check/check-style";
 import Icon from 'react-native-vector-icons/Ionicons';
+import Check from "@/src/components/Check/check";
 
 const PatientLogin = () => {
   const navigation = useNavigation<propsStack>();
@@ -90,18 +91,11 @@ const PatientLogin = () => {
             )
           )}
 
-<CheckContainer>
-  {individualOption.map((op) => (
-    <React.Fragment key={op.id}>
-      <CheckOptionStyle>
-        <CheckTouchOption selected={checked} onPress={() => setChecked(!checked)}>
-          {checked && <Icon name="checkmark-sharp" color="#7c9dcb" size={17} />}
-        </CheckTouchOption>
-      </CheckOptionStyle>
-      <TitleCheck style={{color: "#7c9dcb", fontWeight: "300"}}>{op.text}</TitleCheck>
-    </React.Fragment>
-  ))}
-</CheckContainer>
+            <Check
+            options={individualOption}
+            onChange={(selectedOption: string) => console.log("Selected option:", selectedOption)} title={""} size={""} checked={false} multiple={false} setChecked={function (checked: boolean): void {
+              throw new Error("Function not implemented.");
+            } }          />
 
           <TouchableOpacity onPress={Logar}>
             <BlueButton

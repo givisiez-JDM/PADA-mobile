@@ -146,3 +146,7 @@ const PatientRecord = () => {
 };
 
 export default PatientRecord;
+function createUser(user: User, arg1: { setFlag: React.Dispatch<React.SetStateAction<string>>; setPass: React.Dispatch<React.SetStateAction<string>>; setRepeatPass: React.Dispatch<React.SetStateAction<string>>; setMessageTextModal: React.Dispatch<React.SetStateAction<string>>; }, openLoading: () => void, closeLoading: () => void, openModal: () => void) {
+  throw new Error("Function not implemented.");
+}
+
