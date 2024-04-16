@@ -17,12 +17,7 @@ export const ContainerProgressBar = styled.View`
   border-radius: 5px; */
 `;
 
-export const TextTitleProgressBar = styled.Text`
-  font-weight: 700;
-  font-size: 15px;
-  color: #273047;
-  transform: rotate(0.03deg);
-`;
+
 export const ContainerTextProgressBar = styled.View`
 display:flex;
 flex-direction:row;

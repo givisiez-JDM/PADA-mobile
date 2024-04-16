@@ -19,13 +19,10 @@ import {
   ImageCalendar,
   ImagePerson,
   InputCalendarVaccines,
-  SubTitleHeaderFluxo,
-  TextButtonNextVaccine,
   TextButtonRemember,
   TextButtonVaccine,
   TextDataPatient,
   TitleHeaderFluxo,
-  TitleHeaderVaccines,
 } from "./header-home-style";
 import { StatusBar } from "react-native";
 import Icon from "react-native-vector-icons/Ionicons";
@@ -35,6 +32,7 @@ import Person from "../../../assets/images/image-icons/imgUserItem.png";
 import Calendar from "../../../assets/images/image-icons/calendar.png";
 import Time from "../../../assets/images/image-icons/time.png";
 import storePatient from "../../../store/storePatient";
+import { SubTitleHeaderFluxo, SubtitlePrincipal, TextHeaderTitle, TitleHeaderVaccines } from "@/src/theme/textColor/styletextColor";
 
 const HeaderHome = (props: {
   title: string | undefined;
@@ -67,7 +65,7 @@ const HeaderHome = (props: {
             />
           </ContainerImagePerson>
           <ContainerTitles>
-            <TitleHeaderFluxo>{props.title}</TitleHeaderFluxo>
+            <TextHeaderTitle>{props.title}</TextHeaderTitle>
             {props.backButton === true && props.buttonVaccine === true ? (
               <>
                 <SubTitleHeaderFluxo>
@@ -79,9 +77,10 @@ const HeaderHome = (props: {
                 </ContainerDataPatient>
                 <ContainerButtonsHeaderFluxo>
                   <ButtonNextVaccine>
-                    <TextButtonNextVaccine>
-                      Sua próxima vacina: {patient.vaccinesInfo[0].scheduledDate.split(' ')[0]}
-                    </TextButtonNextVaccine>
+                    <SubtitlePrincipal>
+                      Sua próxima vacina:
+        
+                    </SubtitlePrincipal>
                     <IconButtonNextVaccine>
                       <Icon name="chevron-back-outline" color="#000" />
                     </IconButtonNextVaccine>

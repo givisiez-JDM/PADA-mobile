@@ -157,7 +157,8 @@ export const getPatientInfo = async () => {
       type: "UPDATE_PATIENT",
       payload: aux
     });
-
+    
+    
     return aux;
   } catch (err: unknown) {
     console.log(err);

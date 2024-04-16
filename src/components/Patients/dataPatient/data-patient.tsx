@@ -9,6 +9,7 @@ import {
   TitleDataPatient,
 } from "./data-patient-style";
 import React from "react";
+import { BaseText, BoldTextTitle } from "@/src/theme/textColor/styletextColor";
 
 interface TData {
   name: string;
@@ -67,29 +68,29 @@ const DataPatient = (props: {
   return (
     <ContainerDataPatient>
       <ContainerData>
-        <TitleDataPatient>Nome</TitleDataPatient>
-        <SubTitlePatient>{props.name}</SubTitlePatient>
+        <BoldTextTitle>Nome</BoldTextTitle>
+        <BaseText>{props.name}</BaseText>
       </ContainerData>
       <ContainerData>
-        <TitleDataPatient>Telefone</TitleDataPatient>
-        <SubTitlePatient>{formatPhoneNumber(props.telefone)}</SubTitlePatient>
+        <BoldTextTitle>Telefone</BoldTextTitle>
+        <BaseText>{formatPhoneNumber(props.telefone)}</BaseText>
       </ContainerData>
       <ContainerData>
-        <TitleDataPatient>Email</TitleDataPatient>
-        <SubTitlePatient>{props.email}</SubTitlePatient>
+        <BoldTextTitle>Email</BoldTextTitle>
+        <BaseText>{props.email}</BaseText>
       </ContainerData>
       <ContainerData>
-        <TitleDataPatient>Data de Nascimento</TitleDataPatient>
-        <SubTitlePatient>
+        <BoldTextTitle>Data de Nascimento</BoldTextTitle>
+        <BaseText>
           {formatDateString(props.data_nascimento)}
-        </SubTitlePatient>
+        </BaseText>
       </ContainerData>
       <ContainerData>
-        <TitleDataPatient>Dosagem do Medicamento</TitleDataPatient>
-        <SubTitlePatient>{props.dosagem}</SubTitlePatient>
+        <BoldTextTitle>Dosagem do Medicamento</BoldTextTitle>
+        <BaseText>{props.dosagem}</BaseText>
       </ContainerData>
       <ContainerData>
-        <TitleDataPatient>Alergias</TitleDataPatient>
+        <BoldTextTitle>Alergias</BoldTextTitle>
         <FlatList
           data={props.alergias}
           renderItem={itemAllergies}
@@ -98,19 +99,19 @@ const DataPatient = (props: {
         />
       </ContainerData>
       <ContainerData>
-        <TitleDataPatient>Periodicidade do Tratamento</TitleDataPatient>
-        <SubTitlePatient>{props.periodicidade}</SubTitlePatient>
+        <BoldTextTitle>Periodicidade do Tratamento</BoldTextTitle>
+        <BaseText>{props.periodicidade}</BaseText>
       </ContainerData>
       <ContainerData>
-        <TitleDataPatient>Método de Tratamento</TitleDataPatient>
-        <SubTitlePatient>{props.metodo}</SubTitlePatient>
+        <BoldTextTitle>Método de Tratamento</BoldTextTitle>
+        <BaseText>{props.metodo}</BaseText>
       </ContainerData>
       <ContainerData>
-        <TitleDataPatient>Duração do Tratamento</TitleDataPatient>
-        <SubTitlePatient>
+        <BoldTextTitle>Duração do Tratamento</BoldTextTitle>
+        <BaseText>
           Início: {formatDateString(props.inicio)}
-        </SubTitlePatient>
-        <SubTitlePatient>Fim: {formatDateString(props.fim)}</SubTitlePatient>
+        </BaseText>
+        <BaseText>Fim: {formatDateString(props.fim)}</BaseText>
       </ContainerData>
     </ContainerDataPatient>
   );

@@ -20,3 +20,7 @@ Changelog
 - [PADA-187](https://givisiez.atlassian.net/browse/PADA-187): Fix Layout myVaccines and headerVaccines
 - [PADA-211](https://givisiez.atlassian.net/browse/PADA-211): Fix and Update dependencies - Refactor all expo project - Convert all JS to TS files - Start including missing types to prevent errors.
 - [PADA-211](https://givisiez.atlassian.net/browse/PADA-211): Fix app.json and eas.json for apk build.
+
+## refactor 
+
+- [PADA-255](https://givisiez.atlassian.net/browse/PADA-255): refactor elements types fonts styles. 
