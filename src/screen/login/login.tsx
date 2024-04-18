@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Platform, TouchableOpacity, Image, ActivityIndicator } from "react-native";
+import { Platform, TouchableOpacity, Image, ActivityIndicator, Text } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { propsStack } from "../../routes/Stack/Models";
 import {
@@ -103,7 +103,8 @@ const PatientLogin = () => {
           <LoadingModal visible={loading} onClose={closeLoading} />
 
           <TouchableOpacity onPress={() => navigation.navigate("RecuperacaoSenha")}>
-            <BlueButton buttontext="Esqueceu sua senha?" />
+            <ButtonSenha>Esqueceu sua senha?</ButtonSenha>
+
           </TouchableOpacity>
 
         </ContainerLogin>
