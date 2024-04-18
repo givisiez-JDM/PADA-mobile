@@ -64,7 +64,9 @@ export const PatientInput = styled.TextInput`
 `;
 
 export const ButtonSenha = styled.Text`
-  font-weight: 300;
+  font-weight: 350;
   font-size: 15px;
-  color: #000000;
+  color: #334C76;
+  font-family: "Noto Sans KR";
+
 `;
