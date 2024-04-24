@@ -24,3 +24,5 @@ Changelog
 ## refactor 
 
 - [PADA-255](https://givisiez.atlassian.net/browse/PADA-255): refactor elements types fonts styles. 
+
+- [PADA-255](https://givisiez.atlassian.net/browse/PADA-255): refactor: header, footer and splash image. 
