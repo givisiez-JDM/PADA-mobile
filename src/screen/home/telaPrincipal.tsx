@@ -15,6 +15,7 @@ import { FlatList } from "react-native";
 import { getDataUserStorage } from "../../service/requests";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import storePatient from "../../store/storePatient";
+import ImageUser from "../../assets/images/image-icons/imgUserItem.png"
 
 const TelaPrincipal = () => {
   const [name, setName] = useState("");
@@ -56,7 +57,7 @@ const TelaPrincipal = () => {
         title={`Olá, ${name}`}
         backButton={true}
         buttonVaccine={true}
-        photo={patient.patientInfo.photo}
+        photo={ImageUser}
       />
       <ContainerPrincipal>
         <ContainerListTagFluxo>

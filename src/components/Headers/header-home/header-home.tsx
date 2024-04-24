@@ -20,9 +20,7 @@ import {
   ImagePerson,
   InputCalendarVaccines,
   TextButtonRemember,
-  TextButtonVaccine,
   TextDataPatient,
-  TitleHeaderFluxo,
 } from "./header-home-style";
 import { StatusBar } from "react-native";
 import Icon from "react-native-vector-icons/Ionicons";
@@ -41,7 +39,7 @@ const HeaderHome = (props: {
   photo?: any;
 }) => {
   const navigation = useNavigation<propsStack>();
-  const [date, setDate] = useState("");
+  const [date, setDate] = useState<string>("");
   const patient: any = storePatient.getState();
 
   return (

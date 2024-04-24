@@ -156,7 +156,9 @@ export const getPatientInfo = async () => {
     storePatient.dispatch({
       type: "UPDATE_PATIENT",
       payload: aux
+      
     });
+    
     
     
     return aux;
