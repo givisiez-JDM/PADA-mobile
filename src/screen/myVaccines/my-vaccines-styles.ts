@@ -46,6 +46,7 @@ export const ContainerItemInformationVaccine = styled.View`
 
 export const ContainerLegend = styled.View`
   gap: 10px;
+  margin-bottom: 30px;
 `;
 
 export const TextContainerLegend = styled.Text`

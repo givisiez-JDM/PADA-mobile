@@ -8,7 +8,7 @@ import {
 const ItemLegend = (props: { text: string; color: string }) => {
   return (
     <ContainerItemLegend>
-      <BoxLegend style={{ color: `${props.color}` }} />
+      <BoxLegend color={props.color} /> 
       <TextItemLegend>{props.text}</TextItemLegend>
     </ContainerItemLegend>
   );

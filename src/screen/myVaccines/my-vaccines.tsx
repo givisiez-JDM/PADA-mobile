@@ -109,15 +109,13 @@ const MyVaccines = () => {
           </ContainerItemInformationVaccine>
 
           <ContainerLegend>
-            <TextContainerLegend>LEGENDA</TextContainerLegend>
-            <ContainerItemsLegends>
-              {arrayLegend.map(
-                (item: { text: string; color: string }) => (
-                  <ItemLegend color={item.color} text={item.text} />
-                )
-              )}
-            </ContainerItemsLegends>
-          </ContainerLegend>
+        <TextContainerLegend>LEGENDA</TextContainerLegend>
+        <ContainerItemsLegends>
+          {arrayLegend.map((item) => (
+            <ItemLegend key={item.text} color={item.color} text={item.text} />
+          ))}
+        </ContainerItemsLegends>
+      </ContainerLegend>
         </ContainerPrincipal>
       </Scroll>
       <TabBar />
