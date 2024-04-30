@@ -25,19 +25,20 @@ import ModalInfo from "../../components/Modals/modalInfo/modal-info";
 import LoadingModal from "../../components/Bars/loadingModal/loading-modal";
 import { User } from "../../service/requests";
 
+// adicionado tipagem
 const PatientRecord = () => {
-  const [name, setName] = useState("");
-  const [mail, setMail] = useState("");
-  const [pass, setPass] = useState("");
-  const [repeatPass, setRepeatPass] = useState("");
-  const [errorName, setErrorName] = useState("");
-  const [errorMail, setErrorMail] = useState("");
-  const [errorPass, setErrorPass] = useState("");
-  const [errorRepeatPass, setErrorRepeatPass] = useState("");
-  const [modalVisible, setModalVisible] = useState(false);
-  const [flag, setFlag] = useState("");
-  const [mesageTextModal, setMessageTextModal] = useState("");
-  const [loading, setLoading] = useState(false);
+  const [name, setName] = useState<string>("");
+  const [mail, setMail] = useState<string>("");
+  const [pass, setPass] = useState<string>("");
+  const [repeatPass, setRepeatPass] = useState<string>("");
+  const [errorName, setErrorName] = useState<string>("");
+  const [errorMail, setErrorMail] = useState<string>("");
+  const [errorPass, setErrorPass] = useState<string>("");
+  const [errorRepeatPass, setErrorRepeatPass] = useState<string>("");
+  const [modalVisible, setModalVisible] = useState<boolean>(false);
+  const [flag, setFlag] = useState<string>("");
+  const [mesageTextModal, setMessageTextModal] = useState<string>("");
+  const [loading, setLoading] = useState<boolean>(false);
 
   const openLoading = () => {
     setLoading(true);
@@ -55,7 +56,7 @@ const PatientRecord = () => {
     setModalVisible(false);
   };
 
-  const handleInputChange = (name: string, value: string) => {
+  const handleInputChange = (name: string, value: string): void => {
 
     if (name === "Senha") {
       setPass(value);
@@ -73,7 +74,7 @@ const PatientRecord = () => {
     ["key", repeatPass, "Repetir Senha", errorRepeatPass],
   ];
 
-  const savePatient = async () => {
+  const savePatient = async (): Promise<void> => {
     if (
       validar(
         { pass, repeatPass },

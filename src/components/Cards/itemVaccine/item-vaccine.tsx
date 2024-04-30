@@ -15,6 +15,7 @@ import {
 
 import Hidden from "../../../assets/images/image-icons/down-filled-triangular-arrow.png";
 import ModalCheckVaccines from "../../Modals/modalCheckVaccines/modal-check-vaccines";
+import { TextDataVaccine } from "@/src/theme/textColor/styletextColor";
 
 const ItemVaccine = (props: {
   applicationDate: string;
@@ -28,17 +29,11 @@ const ItemVaccine = (props: {
   const [expanded, setExpanded] = useState(false);
   const [visible, setVisible] = useState(false);
 
-  const onOpen = () => {
-    setVisible(true);
-  };
+  const onOpen = () => {setVisible(true);};
 
-  const onClose = () => {
-    setVisible(false);
-  };
+  const onClose = () => {setVisible(false);};
 
-  const toggleExpand = () => {
-    setExpanded(!expanded);
-  };
+  const toggleExpand = () => {setExpanded(!expanded);};
 
 
   const setStatusColor = (status: string) => {
@@ -58,8 +53,8 @@ const ItemVaccine = (props: {
     <>
       <ButtonInformationVaccine onPress={onOpen} expanded={expanded}>
         <ViewInformationDate colorBorderLeft={props.colorBorderLeft}>
-          <TextDateInformation>{props.applicationDate ? `${props.applicationDate.split(' ')[0]}` : `data_aplicacao`}</TextDateInformation>
-          <TextHourInformation>{props.scheduledDate ? `${props.scheduledDate.split(' ')[0]}` : `data`}</TextHourInformation>
+          <TextDataVaccine>{props.applicationDate ? `${props.applicationDate.split(' ')[0]}` : `data_aplicacao`}</TextDataVaccine>
+          <TextDataVaccine>{props.scheduledDate ? `${props.scheduledDate.split(' ')[0]}` : `data`}</TextDataVaccine>
         </ViewInformationDate>
         <ContainerNameVaccine>
           <TextNameVaccine>{props.nameVaccine}</TextNameVaccine>

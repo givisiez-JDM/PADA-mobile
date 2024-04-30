@@ -16,8 +16,9 @@ const ModalCheckVaccines = (props: {
   onClose: () => void;
   status: string;
 }) => {
-  const [selectedCheckbox, setSelectedCheckbox] = useState(false);
-  const [colorBorderLeft, setColorBorderLeft] = useState('');
+  //tipagem adicionada
+  const [selectedCheckbox, setSelectedCheckbox] = useState<boolean>(false);
+  const [colorBorderLeft, setColorBorderLeft] = useState<string>('');
 
   const handleCheckboxSelection = (index: any) => {
     let number: any;

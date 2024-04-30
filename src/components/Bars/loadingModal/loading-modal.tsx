@@ -5,14 +5,16 @@ import { ContainerModalLoading, LoadingComponent } from "./loading-modal-style";
 import { ActivityIndicator } from "react-native";
 import { ViewSplash } from "@/src/screen/splash-screen/splashScreen-style";
 
-const LoadingModal = (props: { visible: boolean; onClose: () => void }) => {
+//tipagem adicionada
+const LoadingModal = ({ visible, onClose }: { visible: boolean; onClose: () => void }) => {
   return (
     <LoadingComponent
       animationType="slide"
       transparent={false}
-      visible={props.visible}
-      onRequestClose={props.onClose}
+      visible={visible}
+      onRequestClose={onClose}
     >
+
       <ContainerModalLoading>
         <ViewSplash>
           <ActivityIndicator />

@@ -9,6 +9,7 @@ import { useNavigation } from "@react-navigation/native";
 import { propsStack } from "../../routes/Stack/Models";
 import React from "react";
 import { ImageSource } from "react-native-vector-icons/Icon";
+import { TextCard, TitleCard } from "@/src/theme/textColor/styletextColor";
 
 const TagFluxo = (props: {
   title: string;
@@ -34,8 +35,8 @@ const TagFluxo = (props: {
       <ImageTagFluxo>
         <Image source={props.imageTag} />
       </ImageTagFluxo>
-      <TitleTagFluxo>{props.title}</TitleTagFluxo>
-      <TextFlagFluxo>{props.text}</TextFlagFluxo>
+      <TitleCard>{props.title}</TitleCard>
+      <TextCard>{props.text}</TextCard>
     </ContainerTagFluxo>
   );
 };

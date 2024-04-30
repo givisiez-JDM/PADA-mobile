@@ -5,6 +5,9 @@ import {
   SubTitleDoctor,
   TitleDataDoctor,
 } from "./data-doctor-style";
+import { BoldTextTitle, BaseText} from "../../../theme/textColor/styletextColor";
+import React from "react";
+
 
 interface TData {
   crm: string;
@@ -20,16 +23,16 @@ const DataDoctor = (props: {
   return (
     <ContainerDataDoctor>
       <ContainerData>
-        <TitleDataDoctor>CRM</TitleDataDoctor>
-        <SubTitleDoctor>CRM - {props.crm}</SubTitleDoctor>
+        <BoldTextTitle>CRM</BoldTextTitle>
+        <BaseText>CRM - {props.crm}</BaseText>
       </ContainerData>
       <ContainerData>
-        <TitleDataDoctor>SOBRE</TitleDataDoctor>
-        <SubTitleDoctor>{props.sobre}</SubTitleDoctor>
+        <BoldTextTitle>SOBRE</BoldTextTitle>
+        <BaseText>{props.sobre}</BaseText>
       </ContainerData>
       <ContainerData>
-        <TitleDataDoctor>Especialidade</TitleDataDoctor>
-        <SubTitleDoctor>{props.especialidade}</SubTitleDoctor>
+        <BoldTextTitle>Especialidade</BoldTextTitle>
+        <BaseText>{props.especialidade}</BaseText>
       </ContainerData>
     </ContainerDataDoctor>
   );

@@ -20,15 +20,16 @@ import LoadingModal from "../../components/Bars/loadingModal/loading-modal";
 import { validar } from "../../config/validates";
 import { loginUser } from "../../service/requests";
 
+//tipagem adicionada//
 const PatientLogin = () => {
   const navigation = useNavigation<propsStack>();
 
-  const [mail, setMail] = useState("");
-  const [pass, setPass] = useState("");
-  const [errorMail, setErrorMail] = useState("");
-  const [errorPass, setErrorPass] = useState("");
-  const [checked, setChecked] = useState(false)
-  const [loading, setLoading] = useState(false);
+  const [mail, setMail] = useState<string>("");
+  const [pass, setPass] = useState<string>("");
+  const [errorMail, setErrorMail] = useState<string>("");
+  const [errorPass, setErrorPass] = useState<string>("");
+  const [checked, setChecked] = useState<boolean>(false)
+  const [loading, setLoading] = useState<boolean>(false);
 
   const arrayNamePlaceholder = [
     [mail, "E-mail", errorMail],

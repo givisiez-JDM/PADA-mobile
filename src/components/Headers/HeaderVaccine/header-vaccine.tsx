@@ -13,6 +13,7 @@ import Person from "../../../assets/images/image-icons/imgUserItem.png";
 import { ContainerSafeHeader } from "../header-home/header-home-style";
 import
 DateTimePicker, { DateTimePickerEvent } from "@react-native-community/datetimepicker";
+import { BoldTextTitle, TextHeaderTitle } from "@/src/theme/textColor/styletextColor";
 
 const HeaderVaccine = (props: {
   title: string | undefined;
@@ -51,12 +52,12 @@ const HeaderVaccine = (props: {
           <ImagePerson source={
             props.photo ? { uri: `data:image/jpeg;base64,${props.photo}` } : Person}
           />
-          <TitleHeaderFluxo>{props.title}</TitleHeaderFluxo>
+          <TextHeaderTitle>{props.title}</TextHeaderTitle>
         </ContainerImagePerson>
         <ContainerInputVaccines>
-          <TitleHeaderVaccines>
+          <BoldTextTitle>
             Busque em seu histórico
-          </TitleHeaderVaccines>
+          </BoldTextTitle>
           <TouchableOpacity onPress={handleInputClick}>
             <InputWrapper>
               <Icon

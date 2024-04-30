@@ -9,13 +9,12 @@ import {
   ContainerVaccinesView,
   TextContainerLegend,
   TextSubTitleProgressBar,
-  TextTitleProgressBar,
 } from "./my-vaccines-styles";
 
 import { ContainerPrincipal } from "../home/telaPrincipal-style";
 import ItemVaccine from "../../components/Cards/itemVaccine/item-vaccine";
 import { useEffect, useState } from "react";
-import { getDataUserStorage, getPatientInfo } from "../../service/requests";
+import { getDataUserStorage} from "../../service/requests";
 import ItemLegend from "../../components/Cards/itemLegend/item-legend";
 import TabBar from "../../components/Buttons/buttonTabBar/buttonTabBar";
 import ProgressBar from "../../components/Bars/progressBar/progress-bar";
@@ -23,31 +22,22 @@ import storePatient from "../../store/storePatient";
 import ModalPhaseVaccine from "../../components/Modals/modalPhaseVaccine/modal-phase-vaccine";
 import { Scroll } from "../patient/patient-style";
 import React from "react";
+import { TextTitleProgressBar } from "@/src/theme/textColor/styletextColor";
 
+//tipagem adicionada
 const MyVaccines = () => {
-  const [progress, setProgress] = useState(20);
-  const [name, setName] = useState("");
-  const [visible, setVisible] = useState(false);
+  const [progress, setProgress] = useState<number>(20);
+  const [name, setName] = useState<string>("");
+  const [visible, setVisible] = useState<boolean>(false);
   const patient: any = storePatient.getState();
-  const [colorBorderLeft, setColorBorderLeft]: any = useState('');
+  const [colorBorderLeft, setColorBorderLeft]: any = useState<string>('');
 
-  const arrayLegend = [
-    {
-      text: "Aplicada",
-      color: "#5CED38",
-    },
-    {
-      text: "Aplicada em atraso",
-      color: "#FACB71",
-    },
-    {
-      text: "Não aplicada",
-      color: "#E85656",
-    },
-    {
-      text: "Agendada",
-      color: "#B4B4B4",
-    },
+
+  const arrayLegend: {text:string; color:string }[] = [
+    {text: "Aplicada",color: "#5CED38",},
+    {text: "Aplicada em atraso",color: "#FACB71",},
+    {text: "Não aplicada",color: "#E85656",},
+    {text: "Agendada",color: "#B4B4B4",},
   ];
 
   const onOpen = () => {
@@ -71,8 +61,9 @@ const MyVaccines = () => {
 
   }, []);
 
-  return (
+  return (   
     <ContainerVaccinesView>
+       
       <Scroll>
         <HeaderVaccine
           title={`Olá, ${name}`}
@@ -91,6 +82,7 @@ const MyVaccines = () => {
             <ModalPhaseVaccine visible={visible} onClose={onClose} />
           </ContainerProgressBar>
 
+           
           <ContainerItemInformationVaccine>
             {patient.vaccinesInfo.map((vaccine: any) => (
               <ItemVaccine

@@ -47,6 +47,7 @@ import {
   SubTitleHeaderSpecialty,
   TitleHeaderDoctor,
 } from "./header-fluxo-doctor-style";
+import { SubtitleText, TextHeaderTitle } from "@/src/theme/textColor/styletextColor";
 
 const HeaderFluxo = (props: {
   title: string | undefined;
@@ -79,7 +80,7 @@ const HeaderFluxo = (props: {
               />
             </ContainerImagePerson>
             <ContainerTitles>
-              <TitleHeaderFluxo>{props.title}</TitleHeaderFluxo>
+              <TextHeaderTitle>{props.title}</TextHeaderTitle>
               {props.backButton === true && props.buttonVaccine === true && (
 
                 <SubTitleHeaderFluxo>
@@ -93,7 +94,8 @@ const HeaderFluxo = (props: {
 
         {props.typeHeader === "doctor" && (
           <ContainerHeaderInformationDoctor>
-            <TitleHeaderDoctor>Profissional responsável</TitleHeaderDoctor>
+            
+            <TextHeaderTitle>Profissional responsável</TextHeaderTitle>
             <ContainerInfoDoctor>
               <ContainerImageDoctor>
                 <ImageDoctor
@@ -104,10 +106,13 @@ const HeaderFluxo = (props: {
                   }
                 />
               </ContainerImageDoctor>
+
               <ContainerSubtitles>
-                <SubTitleHeaderName>{props.title}</SubTitleHeaderName>
-                <SubTitleHeaderSpecialty>Clínico Geral</SubTitleHeaderSpecialty>
+                <TextHeaderTitle>{props.title}</TextHeaderTitle>
+                <SubtitleText>Clínico Geral</SubtitleText>
               </ContainerSubtitles>
+
+
             </ContainerInfoDoctor>
           </ContainerHeaderInformationDoctor>
         )}

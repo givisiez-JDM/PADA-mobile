@@ -21,6 +21,10 @@ export const ContainerHeaderInformationDoctor = styled.View`
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+  margin-left:20px;
+  padding:25px;
+  gap:5px;
+ 
 `;
 
 export const TitleHeaderDoctor = styled.Text`
@@ -35,13 +39,16 @@ export const TitleHeaderDoctor = styled.Text`
 export const ContainerInfoDoctor = styled.View`
   display: flex;
   flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding-left:-20px;
+  
 `;
 
 export const ContainerImageDoctor = styled.View`
   flex: 1 0;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  
   border-radius: 50px;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 `;
@@ -52,29 +59,23 @@ export const ImageDoctor = styled.Image.attrs({
   border-radius: 50px;
   width: 66px;
   height: 66px;
-  z-index: 1;
 `;
 
+
+//esse é o local
 export const ContainerSubtitles = styled.View`
-  flex: 2 0;
-  display: flex;
-  flex-direction: column;
-  row-gap: 5px;
+padding-right:130px;
 `;
 
 export const SubTitleHeaderName = styled.Text`
-  flex: 1 0;
   font-style: normal;
   font-weight: 700;
   font-size: 20px;
   color: #ffffff;
-  margin-left: -15px;
 `;
 
 export const SubTitleHeaderSpecialty = styled.Text`
-  flex: 1 0;
   font-style: normal;
   font-size: 20px;
   color: #ffffff;
-  margin-left: -15px;
 `;

@@ -113,15 +113,6 @@ export const TitleHeaderFluxo = styled.Text`
   color: #ffffff;
 `;
 
-export const SubTitleHeaderFluxo = styled.Text`
-  font-style: normal;
-  font-weight: 500;
-  font-size: 10px;
-  line-height: 14px;
-  width: 133px;
-  height: 29px;
-  color: #ffffff;
-`;
 
 export const ContainerDataPatient = styled.View`
   display: flex;
@@ -166,16 +157,7 @@ export const ButtonNextVaccine = styled.TouchableOpacity`
   border-radius: 10px;
 `;
 
-export const TextButtonNextVaccine = styled.Text`
-  width: 85.77px;
-  height: 27.3px;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 10px;
-  line-height: 14px;
-  text-align: center;
-  color: #ffffff;
-`;
+
 
 export const IconButtonNextVaccine = styled.View`
   position: relative;
@@ -230,12 +212,7 @@ export const ContainerHeaderVaccines = styled.View`
   top: 35px;
 `;
 
-export const TitleHeaderVaccines = styled.Text`
-  color: #273047;
-  //font-family: Noto Sans KR;
-  font-size: 16px;
-  font-weight: 700;
-`;
+
 
 export const ContainerInputCalendarVaccines = styled.View`
   display: flex;
