@@ -13,6 +13,7 @@ Changelog
 - [PADA-244](https://givisiez.atlassian.net/browse/PADA-244): Add password toggle function
 
 ## Fix
+
 - [PADA-216](https://givisiez.atlassian.net/browse/PADA-216): Fix conflict and import errors
 - [PADA-209](https://givisiez.atlassian.net/browse/PADA-216): Modified MyVaccines screen, components and style
 - [PADA-216](https://givisiez.atlassian.net/browse/PADA-216): Fix conflict and import errors
@@ -20,3 +21,8 @@ Changelog
 - [PADA-187](https://givisiez.atlassian.net/browse/PADA-187): Fix Layout myVaccines and headerVaccines
 - [PADA-211](https://givisiez.atlassian.net/browse/PADA-211): Fix and Update dependencies - Refactor all expo project - Convert all JS to TS files - Start including missing types to prevent errors.
 - [PADA-211](https://givisiez.atlassian.net/browse/PADA-211): Fix app.json and eas.json for apk build.
+- [PADA-237](https://givisiez.atlassian.net/browse/PADA-237): Fix modal and change the left border color according to its status.
+
+## refactor 
+
+- [PADA-255](https://givisiez.atlassian.net/browse/PADA-255): refactor elements types fonts styles. 
