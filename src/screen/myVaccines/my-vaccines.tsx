@@ -1,5 +1,4 @@
-import HeaderVaccine from "../../components/Headers/HeaderVaccine/header-vaccine";
-
+import { useEffect, useState } from "react";
 import {
   ContainerItemInformationVaccine,
   ContainerItemsLegends,
@@ -14,7 +13,6 @@ import {
 
 import { ContainerPrincipal } from "../home/telaPrincipal-style";
 import ItemVaccine from "../../components/Cards/itemVaccine/item-vaccine";
-import { useEffect, useState } from "react";
 import { getDataUserStorage, getPatientInfo } from "../../service/requests";
 import ItemLegend from "../../components/Cards/itemLegend/item-legend";
 import TabBar from "../../components/Buttons/buttonTabBar/buttonTabBar";
@@ -23,13 +21,14 @@ import storePatient from "../../store/storePatient";
 import ModalPhaseVaccine from "../../components/Modals/modalPhaseVaccine/modal-phase-vaccine";
 import { Scroll } from "../patient/patient-style";
 import React from "react";
+import HeaderVaccine from "@/src/components/Headers/HeaderVaccine/header-vaccine";
 
 const MyVaccines = () => {
   const [progress, setProgress] = useState(20);
   const [name, setName] = useState("");
   const [visible, setVisible] = useState(false);
   const patient: any = storePatient.getState();
-  const [colorBorderLeft, setColorBorderLeft]: any = useState('');
+  const [colorBorderLeft, setColorBorderLeft] = useState("#B4B4B4"); 
 
   const arrayLegend = [
     {
@@ -54,6 +53,10 @@ const MyVaccines = () => {
     setVisible(true);
   };
 
+  const updateColorBorderLeft = (color: string) => {
+    setColorBorderLeft(color); 
+  };
+
   const onClose = () => {
     setVisible(false);
   };
@@ -69,6 +72,7 @@ const MyVaccines = () => {
       }
     });
 
+    return () => clearInterval(interval); 
   }, []);
 
   return (
@@ -100,8 +104,6 @@ const MyVaccines = () => {
                 nameVaccine={vaccine.tittle}
                 description={vaccine.observation}
                 status={vaccine.status}
-                colorBorderLeft={colorBorderLeft}
-                setColorBorderLeft={setColorBorderLeft}
               />
             ))}
           </ContainerItemInformationVaccine>

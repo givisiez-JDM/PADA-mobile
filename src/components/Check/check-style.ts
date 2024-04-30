@@ -37,16 +37,10 @@ export const CheckTouch = styled.TouchableOpacity<{ selected: boolean }>`
   width: 20px;
   justify-content: center;
   align-items: center;
-  border-width: 2px;
-  background-color: #94b4dc;
-  border-color: #94b4dc;
-
-  ${(props) =>
-    props.selected &&
-    css`
-      border-color: #ffffff;
-      `}
-
+  background-color: #94b4dc; 
+  border-width: 1px; 
+  border-color: ${({ selected }) => (selected ? '#ffffff' : 'transparent')};
+  position: relative; 
 `;
 
 export const CheckTouchOption = styled.TouchableOpacity<{ selected: boolean }>`
