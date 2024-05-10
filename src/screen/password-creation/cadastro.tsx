@@ -3,7 +3,6 @@ import FooterCurto from "../../components/Footers/footer/footer";
 import Header from "../../components/Headers/header/header";
 
 import {
-  Button,
   ContainerFormPatient,
   TextButton,
   TitleForm,
@@ -13,6 +12,7 @@ import {
   Scroll,
   ContainerFooterBottom,
 } from "./cadastro-style";
+import Button from "../../components/Buttons/button/button"
 
 import FormPatientRecord from "../../components/Forms/form-patient-record/form-patient-record";
 import { validar } from "../../config/validates";
@@ -24,6 +24,9 @@ import { Platform } from "react-native";
 import ModalInfo from "../../components/Modals/modalInfo/modal-info";
 import LoadingModal from "../../components/Bars/loadingModal/loading-modal";
 import { User } from "../../service/requests";
+import { TouchableOpacity } from "react-native-gesture-handler";
+import { useNavigation } from "expo-router";
+import { propsStack } from "@/src/routes/Stack/Models";
 
 // adicionado tipagem
 const PatientRecord = () => {
@@ -39,6 +42,7 @@ const PatientRecord = () => {
   const [flag, setFlag] = useState<string>("");
   const [mesageTextModal, setMessageTextModal] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(false);
+  const navigation = useNavigation<propsStack>();
 
   const openLoading = () => {
     setLoading(true);
@@ -86,18 +90,6 @@ const PatientRecord = () => {
         email: mail,
         password: pass,
       };
-      createUser(
-        user,
-        {
-          setFlag,
-          setPass,
-          setRepeatPass,
-          setMessageTextModal,
-        },
-        openLoading,
-        closeLoading,
-        openModal
-      );
     }
   };
 
@@ -123,13 +115,14 @@ const PatientRecord = () => {
               )
             )}
           </ContainerFormInputsPatients>
-          <Button
-            onPress={() => {
-              savePatient();
-            }}
+          <TouchableOpacity
+            onPress={() => navigation.navigate("Login")}
           >
-            <TextButton>Confirmar</TextButton>
-          </Button>
+            <Button
+              buttontext="Confirmar"
+            />
+          </TouchableOpacity>
+
           <LoadingModal visible={loading} onClose={closeLoading} />
           <ModalInfo
             visible={modalVisible}

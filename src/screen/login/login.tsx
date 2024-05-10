@@ -19,6 +19,7 @@ import BlueButton from "../../components/Buttons/bluebutton/BlueButton";
 import LoadingModal from "../../components/Bars/loadingModal/loading-modal";
 import { validar } from "../../config/validates";
 import { loginUser } from "../../service/requests";
+import Button from "@/src/components/Buttons/button/button";
 
 //tipagem adicionada//
 const PatientLogin = () => {
@@ -96,7 +97,7 @@ const PatientLogin = () => {
           />
 
           <TouchableOpacity onPress={Logar}>
-            <BlueButton
+            <Button
               buttontext={"Entrar"}
             />
           </TouchableOpacity >
