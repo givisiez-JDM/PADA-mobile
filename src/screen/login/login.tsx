@@ -1,27 +1,25 @@
 import React, { useState, useEffect } from "react";
-import { Platform, TouchableOpacity, Image, ActivityIndicator } from "react-native";
+import { TouchableOpacity, Image } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { propsStack } from "../../routes/Stack/Models";
 import {
   ButtonSenha,
   ContainerLogin,
-  ContainerSafe, Scroll
+  ContainerSafe, Scroll, FullWidthImage
 } from "./login-style";
 import { ContainerFormInputsPatients } from "../password-creation/cadastro-style";
-
 import logo from "../../assets/images/logo/logo.png";
-
-import Header from "../../components/Headers/header/header";
-import FooterCurto from "../../components/Footers/footer/footer";
 import FormPatientLoginRecord from "../../components/Forms/form-patient-login/form-patient-login";
 import CheckBox from "../../components/checkBox/checkBox";
-import BlueButton from "../../components/Buttons/bluebutton/BlueButton";
 import LoadingModal from "../../components/Bars/loadingModal/loading-modal";
 import { validar } from "../../config/validates";
 import { loginUser } from "../../service/requests";
 import Button from "@/src/components/Buttons/button/button";
 
-//tipagem adicionada//
+import headerImg from "../../assets/images/headerAndFooter/header/headerImg.png";
+import {ImageHeader} from "../../components/Headers/header/header-style";
+import footerCurto from "../../assets/images/headerAndFooter/footer/footerCurto.png"
+
 const PatientLogin = () => {
   const navigation = useNavigation<propsStack>();
 
@@ -71,7 +69,7 @@ const PatientLogin = () => {
   return (
     <ContainerSafe>
       <Scroll>
-        <Header back={false} />
+      <ImageHeader source={headerImg}/>
         <ContainerLogin>
           <Image source={logo} />
           <ContainerFormInputsPatients />
@@ -81,7 +79,7 @@ const PatientLogin = () => {
               <FormPatientLoginRecord
                 placeholder={place}
                 handleInputChange={(text: string) => {
-                  handleInputChange(place, text);
+                handleInputChange(place, text);
                 }}
                 state={valueState}
                 err={err}
@@ -107,11 +105,9 @@ const PatientLogin = () => {
           <TouchableOpacity onPress={() => navigation.navigate("RecuperacaoSenha")}>
             <ButtonSenha>Esqueceu sua senha?</ButtonSenha>
           </TouchableOpacity>
-
         </ContainerLogin>
-        <FooterCurto />
       </Scroll>
-
+      <FullWidthImage source={footerCurto}/>
     </ContainerSafe>
   );
 };

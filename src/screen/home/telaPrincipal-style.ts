@@ -8,9 +8,15 @@ export const ContainerPrincipal = styled.View`
 display:flex;
 gap:20px;
 margin-top:15px;
-padding-left:20px;
 padding-right:20px;
+padding-left: 20px;
 background: rgba(#d1d1d1, 0.2);
+background-color: #E3E3E3;
+`;
+
+export const ContainerPrincipalMenu = styled.View`
+
+  margin-bottom:20px;
 `;
 
 export const ContainerListTagFluxo = styled.View`
@@ -28,6 +34,7 @@ export const ContainerListDoctor = styled.View`
 `;
 
 export const ContainerTelaPrincipal = styled.View`
+ 
   display: flex;
   width: 100%;
   height: 100%;

@@ -16,8 +16,8 @@ import { propsStack } from "@/src/routes/Stack/Models";
 import InputGeral from "@/src/components/Forms/inputGeral/inputGeral";
 import { ContainerTelaPrincipal } from "../home/telaPrincipal-style";
 import { ContainerSafe, Scroll } from "../login/login-style";
-import Footer from "@/src/components/Footers/footer/footer";
 import Button from "@/src/components/Buttons/button/button";
+import FooterCurto from "../../assets/images/headerAndFooter/footer/footerCurto.png"
 
 const RedefinirSenha = () => {
   const navigation = useNavigation<propsStack>();
@@ -39,7 +39,9 @@ const RedefinirSenha = () => {
           <Button buttontext="Avançar" />
 
           <ContainerFooterBottom>
-            <Footer />
+
+          <FooterCurto source={FooterCurto}/>
+
           </ContainerFooterBottom>
         </ContainerTelaPrincipal>
       </Scroll>

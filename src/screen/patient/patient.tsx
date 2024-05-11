@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import TabBar from "../../components/Buttons/buttonTabBar/buttonTabBar";
 import DataPatient from "../../components/Patients/dataPatient/data-patient";
-import HeaderFluxo from "../../components/Headers/headerFluxo/header-fluxo";
 import { ContainerSafePrincipalPaciente, Scroll } from "./patient-style";
 import { TData, getDataUserStorage } from "../../service/requests";
 import storePatient from "../../store/storePatient";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import Header from "../../components/Headers/header/header"
 
 const Patient = () => {
   const patient: any = storePatient.getState();
@@ -13,12 +13,12 @@ const Patient = () => {
   return (
     <ContainerSafePrincipalPaciente>
       <Scroll>
-        <HeaderFluxo
+        <Header
           title={`${patient.patientInfo.name}`}
           backButton={true}
-          buttonVaccine={true}
+          buttonVaccine={false}
           photo={patient.patientInfo.photo}
-          typeHeader='patient'
+          typeHeader='patient-profile'
         />
         <DataPatient
           name={patient.patientInfo.name}
