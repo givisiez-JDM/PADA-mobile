@@ -6,7 +6,7 @@ import {
   ContainerSafePrincipalPaciente,
   Scroll,
 } from "./profissionalResponsavel-style";
-
+import Header from "../../components/Headers/header/header"
 import React from "react";
 import storePatient from "@/src/store/storePatient";
 
@@ -16,7 +16,7 @@ const ProfissionalResponsavel = () => {
   return (
     <ContainerSafePrincipalPaciente>
       <Scroll>
-        <HeaderFluxo
+        <Header
           title={patient.doctorInfo.name}
           backButton={true}
           buttonVaccine={true}

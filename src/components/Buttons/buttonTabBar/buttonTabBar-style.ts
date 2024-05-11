@@ -14,6 +14,11 @@ export const ButtonTabBarHome = styled.View`
   width: 50%;
 `;
 
+export const ButtonTabBarHomeSecundary = styled.View`
+  background-color: #D1D1D1;
+  width: 50%;
+`;
+
 export const CustomTouchableOpacity = styled.TouchableOpacity`
   flex-direction: column;
   align-items: center;
@@ -29,6 +34,12 @@ export const ButtonTabBarLogout = styled.View`
 
 export const TextButtonTabBarInicio = styled.Text`
   color: #fff;
+  font-size: 10px;
+  text-align: center;
+`;
+
+export const TextButtonTabBar = styled.Text`
+  color: #334c76;
   font-size: 10px;
   text-align: center;
 `;

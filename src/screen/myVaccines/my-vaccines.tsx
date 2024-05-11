@@ -1,4 +1,4 @@
-import HeaderVaccine from "../../components/Headers/HeaderVaccine/header-vaccine";
+import Header from "../../components/Headers/header/header"
 
 import {
   ContainerItemInformationVaccine,
@@ -65,8 +65,8 @@ const MyVaccines = () => {
     <ContainerVaccinesView>
        
       <Scroll>
-        <HeaderVaccine
-          title={`Olá, ${name}`}
+        <Header
+          title={name}
           backButton={true}
           buttonVaccine={false}
           typeHeader="patient"

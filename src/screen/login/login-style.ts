@@ -31,6 +31,7 @@ export const ImageIconLogo = styled.Image`
 
 export const ContainerSafe = styled.KeyboardAvoidingView`
   flex: 1;
+  background-color: #F1F2F3;
 `;
 
 export const Scroll = styled.ScrollView`
@@ -67,4 +68,10 @@ export const ButtonSenha = styled.Text`
   font-weight: 300;
   font-size: 15px;
   color: #000000;
+`;
+
+ export const FullWidthImage = styled.Image`
+  width: 100%; 
+  height: 17%;
+  
 `;

@@ -71,7 +71,7 @@ const PatientLogin = () => {
   return (
     <ContainerSafe behavior={Platform.OS === "ios" ? "padding" : "height"}>
       <Scroll>
-        <Header back={false} />
+        <Header backButton={false} />
         <ContainerLogin>
           <Image source={logo} />
 
@@ -79,7 +79,7 @@ const PatientLogin = () => {
             {arrayNamePlaceholder.map(
               ([icon, valueState, place, err], index: number) => (
                 <FormPatientLoginRecord
-                  imageButton={icon}
+                  //imageButton={icon}
                   placeholder={place}
                   handleInputChange={(text: string) => {
                     handleInputChange(place, text);
