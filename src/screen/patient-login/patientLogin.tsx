@@ -20,11 +20,11 @@ import Header from "../../components/Headers/header/header";
 import FooterCurto from "../../components/Footers/footer/footer";
 import FormPatientLoginRecord from "../../components/Forms/form-patient-login/form-patient-login";
 import CheckBox from "../../components/checkBox/checkBox";
-import BlueButton from "../../components/Buttons/bluebutton/BlueButton";
-import LoadingModal from "../../components/Bars/loadingModal/loading-modal";
 import { validar } from "../../config/validates";
 import { loginUser } from "../../service/requests";
 import { ContainerFormInputsPatients } from "../password-creation/cadastro-style";
+import Button from "@/src/components/Buttons/button/button";
+import LoadingModal from "@/src/components/Bars/loadingModal/loading-modal";
 
 
 const PatientLogin = () => {
@@ -99,7 +99,7 @@ const PatientLogin = () => {
           />
 
           <TouchableOpacity onPress={Logar}>
-            <BlueButton buttontext={'Entrar'} />
+            <Button buttontext={'Entrar'} />
           </TouchableOpacity >
 
           <LoadingModal visible={loading} onClose={closeLoading} />

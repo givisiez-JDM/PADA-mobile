@@ -1,6 +1,5 @@
 import React from "react";
 import {
-  ButtonAvancar,
   ContainerEnviaremos,
   ImageIconLogoRedefinir,
   TextEnviaremos,
@@ -10,15 +9,15 @@ import {
 } from "./redefinirSenha-style";
 import logo from "../../assets/images/logo/logo.png";
 
-import Header from "../../components/Headers/header/header";
-import FooterCurto from "../../components/Footers/footer/footer";
 import { useNavigation } from "@react-navigation/native";
-import { ContainerSafe, ImageIconLogo, Scroll } from "../login/login-style";
-import { ContainerTelaPrincipal } from "../home/telaPrincipal-style";
-import InputGeral from "../../components/Forms/inputGeral/inputGeral";
-import { TextButton } from "../password-creation/cadastro-style";
-import { propsStack } from "../../routes/Stack/Models";
 import { Platform } from "react-native";
+import Header from "@/src/components/Headers/header/header";
+import { propsStack } from "@/src/routes/Stack/Models";
+import InputGeral from "@/src/components/Forms/inputGeral/inputGeral";
+import { ContainerTelaPrincipal } from "../home/telaPrincipal-style";
+import { ContainerSafe, Scroll } from "../login/login-style";
+import Button from "@/src/components/Buttons/button/button";
+import FooterCurto from "../../assets/images/headerAndFooter/footer/footerCurto.png"
 
 const RedefinirSenha = () => {
   const navigation = useNavigation<propsStack>();
@@ -37,12 +36,12 @@ const RedefinirSenha = () => {
 
           <InputGeral inputtext={undefined} />
 
-          <ButtonAvancar>
-            <TextButton>Avançar</TextButton>
-          </ButtonAvancar>
+          <Button buttontext="Avançar" />
 
           <ContainerFooterBottom>
+
           <FooterCurto source={FooterCurto}/>
+
           </ContainerFooterBottom>
         </ContainerTelaPrincipal>
       </Scroll>

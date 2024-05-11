@@ -4,7 +4,6 @@ import {
   ImageIconLogoRedefinir,
   SubtittleRedefinePass,
   TitleRedefinePass,
-  ContainerFooterBottom,
 } from "./redefinirSenha-style";
 import logo from "../../assets/images/logo/logo.png";
 
@@ -14,10 +13,9 @@ import { useNavigation } from "@react-navigation/native";
 import { ContainerSafe, ImageIconLogo, Scroll } from "../login/login-style";
 import { ContainerTelaPrincipal } from "../home/telaPrincipal-style";
 import InputGeral from "../../components/Forms/inputGeral/inputGeral";
-import { TextButton } from "../password-creation/cadastro-style";
-import { propsStack } from "../../routes/Stack/Models";
 import { Platform } from "react-native";
-import BlueButton from "../../components/Buttons/bluebutton/BlueButton";
+import { propsStack } from "@/src/routes/Stack/Models";
+import Button from "@/src/components/Buttons/button/button";
 
 const RedefinirSenha = () => {
   const navigation = useNavigation<propsStack>();
@@ -34,7 +32,7 @@ const RedefinirSenha = () => {
           </ContainerEnviaremos>
 
           <InputGeral inputtext={'Email'} />
-          <BlueButton buttontext={'Avançar'}></BlueButton>
+          <Button buttontext={'Avançar'} />
           <FooterCurto />
         </ContainerTelaPrincipal>
       </Scroll>

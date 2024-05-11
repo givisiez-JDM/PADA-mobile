@@ -8,19 +8,18 @@ import {
   ContainerSafe, Scroll, FullWidthImage
 } from "./login-style";
 import { ContainerFormInputsPatients } from "../password-creation/cadastro-style";
-
 import logo from "../../assets/images/logo/logo.png";
-
 import FormPatientLoginRecord from "../../components/Forms/form-patient-login/form-patient-login";
 import CheckBox from "../../components/checkBox/checkBox";
-import BlueButton from "../../components/Buttons/bluebutton/BlueButton";
 import LoadingModal from "../../components/Bars/loadingModal/loading-modal";
 import { validar } from "../../config/validates";
 import { loginUser } from "../../service/requests";
+import Button from "@/src/components/Buttons/button/button";
+
 import headerImg from "../../assets/images/headerAndFooter/header/headerImg.png";
 import {ImageHeader} from "../../components/Headers/header/header-style";
 import footerCurto from "../../assets/images/headerAndFooter/footer/footerCurto.png"
-//tipagem adicionada//
+
 const PatientLogin = () => {
   const navigation = useNavigation<propsStack>();
 
@@ -96,7 +95,7 @@ const PatientLogin = () => {
           />
 
           <TouchableOpacity onPress={Logar}>
-            <BlueButton
+            <Button
               buttontext={"Entrar"}
             />
           </TouchableOpacity >
