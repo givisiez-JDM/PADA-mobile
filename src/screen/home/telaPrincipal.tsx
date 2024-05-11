@@ -1,21 +1,20 @@
 import React, { useState, useEffect } from "react";
-import HeaderHome from "../../components/Headers/header-home/header-home";
+import Header from "../../components/Headers/header/header";
 import {
   ContainerListTagFluxo,
-  ContainerPrincipal,
+  ContainerPrincipalMenu,
   ContainerSafePrincipal,
 } from "./telaPrincipal-style";
 import TagFluxo from "../../components/tagFluxo/tag-fluxo";
-
 import Remedio from "../../assets/images/image-icons/imgRemedio.png";
 import ProfissionalSaude from "../../assets/images/image-icons/profissionalSaude.png";
 import Perfil from "../../assets/images/image-icons/imgPerfil.png";
 import TabBar from "../../components/Buttons/buttonTabBar/buttonTabBar";
 import { FlatList } from "react-native";
 import { getDataUserStorage } from "../../service/requests";
-import AsyncStorage from "@react-native-async-storage/async-storage";
 import storePatient from "../../store/storePatient";
-import ImageUser from "../../assets/images/image-icons/imgUserItem.png"
+
+
 
 const TelaPrincipal = () => {
   const [name, setName] = useState("");
@@ -47,19 +46,17 @@ const TelaPrincipal = () => {
     );
   };
 
-  useEffect(() => {
-
-  }, []);
+  useEffect(() => {}, []);
 
   return (
     <ContainerSafePrincipal>
-      <HeaderHome
+      <Header
         title={`Olá, ${name}`}
         backButton={true}
         buttonVaccine={true}
-        photo={ImageUser}
+        typeHeader = "patient"
       />
-      <ContainerPrincipal>
+      <ContainerPrincipalMenu>
         <ContainerListTagFluxo>
           <FlatList
             data={array}
@@ -68,8 +65,8 @@ const TelaPrincipal = () => {
             numColumns={2}
           />
         </ContainerListTagFluxo>
-      </ContainerPrincipal>
-      <TabBar />
+      </ContainerPrincipalMenu>
+      <TabBar typeHeader="patient" />
     </ContainerSafePrincipal>
   );
 };

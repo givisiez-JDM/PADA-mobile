@@ -20,6 +20,10 @@ import { ContainerFooter } from "../../components/Footers/footerLongo/footerLong
 import FooterLongo from "../../components/Footers/footerLongo/footerLongo";
 import FooterSenha from "../../components/Footers/footerSenha/footerSenha";
 import { TextEnviaremos } from "../password-change/redefinirSenha-style";
+import headerImg from "../../assets/images/headerAndFooter/header/headerImg.png";
+import { ImageHeader } from "@/src/components/Headers/header/header-style";
+import footerCurto from "../../assets/images/headerAndFooter/footer/footerCurto.png"
+
 
 const RecuperacaoSenha = () => {
   const navigation = useNavigation<propsStack>();
@@ -28,7 +32,7 @@ const RecuperacaoSenha = () => {
     <ContainerSafe behavior={Platform.OS === "ios" ? "padding" : "height"}>
       <Scroll>
         <ContainerTelaPrincipal>
-          <Header back={true} />
+        <ImageHeader source={headerImg}/>
 
           <TextRecuperacao>Recuperação de senha</TextRecuperacao>
           <ContainerCrie>
@@ -46,8 +50,6 @@ const RecuperacaoSenha = () => {
           <ButtonContinuar>
             <TextButton>Continuar</TextButton>
           </ButtonContinuar>
-
-          <FooterSenha />
         </ContainerTelaPrincipal>
       </Scroll>
     </ContainerSafe>

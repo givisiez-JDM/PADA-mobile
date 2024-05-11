@@ -20,11 +20,9 @@ const SplashScreen: React.FC = () => {
   return (
     <SafeAreaView>
       <ContainerSplashScreen>
-        <Header back={false} />
         <ViewSplash>
           <ActivityIndicator />
         </ViewSplash>
-        <Footer />
       </ContainerSplashScreen>
     </SafeAreaView>
   );

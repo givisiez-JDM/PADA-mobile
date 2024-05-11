@@ -42,7 +42,7 @@ const RedefinirSenha = () => {
           </ButtonAvancar>
 
           <ContainerFooterBottom>
-            <FooterCurto />
+          <FooterCurto source={FooterCurto}/>
           </ContainerFooterBottom>
         </ContainerTelaPrincipal>
       </Scroll>

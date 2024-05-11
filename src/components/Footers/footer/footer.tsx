@@ -1,7 +1,7 @@
 import React from "react";
 import { Dimensions } from "react-native";
 
-import footerCurtoImg from "../../../assets/images/footer/footerCurto.png";
+import footerCurtoImg from "../../../assets/images/headerAndFooter/footer/footerCurto.png";
 
 import { ContainerFooter, ImageFooterCurto } from "./footer-style";
 
