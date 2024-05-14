@@ -73,5 +73,9 @@ export const ButtonSenha = styled.Text`
  export const FullWidthImage = styled.Image`
   width: 100%; 
   height: 17%;
-  
+`;
+
+export const FooterLogin = styled.Image`
+width: 100%; 
+height: 17%;
 `;
