@@ -18,7 +18,7 @@ export const ButtonContainer = styled.View<ButtonContainerProps>`
   };
   border-radius: 50px;
   background-color: ${(props) =>
-    props.buttontext === "Entrar" || props.buttontext === "Cadastrar" || props.buttontext === "Continuar"
+    props.buttontext === "Entrar" || props.buttontext === "Cadastrar" || props.buttontext === "Continuar" || props.buttontext === "Avançar" || props.buttontext === "Confirmar"
       ? "#4C7ABB"
       : "initial"};
 `;
