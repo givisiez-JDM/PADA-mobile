@@ -2,7 +2,7 @@ import React from "react";
 import {
   ContainerErrorText,
   ContainerFormPatientRecord,
-  ContainerLogin,
+  ContainerForm,
   InputText,
 } from "./form-patient-login-style";
 import Icon from "react-native-vector-icons/Ionicons";
@@ -27,7 +27,7 @@ const FormPatientLoginRecord = ({ placeholder,
 
   return (
     <ContainerFormPatientRecord>
-      <ContainerLogin>
+      <ContainerForm>
         <PatientInput
           onChangeText={handleInputChange}
           value={state}
@@ -44,7 +44,7 @@ const FormPatientLoginRecord = ({ placeholder,
             style={{ position: "absolute", right: 10, top: 11 }}
           />
         )}
-      </ContainerLogin>
+      </ContainerForm>
 
       {err !== "" && (
         <ContainerErrorText>
