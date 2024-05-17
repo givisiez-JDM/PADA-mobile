@@ -35,7 +35,7 @@ export function TabRoutes() {
           tabBarInactiveTintColor: "#334c76",
           tabBarStyle: { height: 60 },
         }}
-      ></Screen>
+      />
       <Screen
         name="PatientLogin"
         component={PatientLogin}
@@ -48,7 +48,7 @@ export function TabRoutes() {
           tabBarInactiveBackgroundColor: "#334c76",
           tabBarInactiveTintColor: "#fff",
         }}
-      ></Screen>
+      />
     </Navigator>
   );
 }

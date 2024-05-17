@@ -10,6 +10,16 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
+    "expo-font": {
+      "fonts": [
+        "./src/assets/fonts/NotoSansKR-Black.otf",
+        "./src/assets/fonts/NotoSansKR-Bold.otf",
+        "./src/assets/fonts/NotoSansKR-Light.otf",
+        "./src/assets/fonts/NotoSansKR-Medium.otf",
+        "./src/assets/fonts/NotoSansKR-Regular.otf",
+        "./src/assets/fonts/NotoSansKR-Thin.otf"
+      ]
+    },
     "assetBundlePatterns": [
       "**/*"
     ],
@@ -32,9 +42,7 @@
       "typedRoutes": true
     },
     "extra": {
-      "eas": {
-        "projectId": "a84aef0d-40e3-4c57-9bfe-f8d20aaccbdb"
-      }
+      "eas": {}
     }
   }
 }

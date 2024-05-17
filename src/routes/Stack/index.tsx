@@ -1,8 +1,6 @@
 import React from "react";
 import SplashScreen from "../../screen/splash-screen/splashScreen";
-import { propsNavigationStack } from "./Models";
 
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Patient from "../../screen/patient/patient";
 import PatientRecord from "../../screen/password-creation/cadastro";
 import TelaPrincipal from "../../screen/home/telaPrincipal";
@@ -14,29 +12,48 @@ import RecuperacaoSenha from "../../screen/password-recovery/recuperacaoSenha";
 import TelaSucesso from "../../screen/password-recovery-success/telaSucesso";
 import PatientLogin from "../../screen/login/login";
 
-const { Navigator, Screen } =
-  createNativeStackNavigator<propsNavigationStack>();
+const { createNativeStackNavigator } = require("@react-navigation/native-stack");
+const Stack = createNativeStackNavigator();
 
-export default function () {
+export const Router = () => {
   return (
-    <Navigator
+    <Stack.Navigator
       initialRouteName="SplashScreen"
       screenOptions={{ headerShown: false }}
     >
-      <Screen name="Login" component={PatientLogin} />
-      <Screen name="TelaPrincipal" component={TelaPrincipal} />
-      <Screen name="Paciente" component={Patient} />
-      <Screen
+      <Stack.Screen
+        name="Login"
+        component={PatientLogin}
+      />
+      <Stack.Screen
+        name="TelaPrincipal"
+        component={TelaPrincipal}
+      />
+      <Stack.Screen
+        name="Paciente"
+        component={Patient}
+      />
+      <Stack.Screen
         name="ProfissionalResponsavel"
         component={ProfissionalResponsavel}
       />
-      <Screen name="SplashScreen" component={SplashScreen} />
-      <Screen name="MyVaccines" component={MyVaccines} />
+      <Stack.Screen
+        name="SplashScreen"
+        component={SplashScreen}
+      />
+      <Stack.Screen
+        name="MyVaccines"
+        component={MyVaccines}
+      />
 
-      {/* <Screen name="RedefinirSenha" component={RedefinirSenha} /> */}
-      <Screen name="RecuperacaoSenha" component={RecuperacaoSenha} />
-      <Screen name="TelaSucesso" component={TelaSucesso} />
-      {/* <Screen name="TabRoutes" component={TabRoutes} /> */}
-    </Navigator>
+      <Stack.Screen
+        name="RecuperacaoSenha"
+        component={RecuperacaoSenha}
+      />
+      <Stack.Screen
+        name="TelaSucesso"
+        component={TelaSucesso}
+      />
+    </Stack.Navigator>
   );
 }
