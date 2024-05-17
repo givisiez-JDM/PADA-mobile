@@ -11,6 +11,7 @@ Changelog
 - [PADA-189](https://givisiez.atlassian.net/browse/PADA-189): Create Medication Controll Header Layout
 - [PADA-210](https://givisiez.atlassian.net/browse/PADA-210): Create date filter
 - [PADA-244](https://givisiez.atlassian.net/browse/PADA-244): Add password toggle function
+- [PADA-283](https://givisiez.atlassian.net/browse/PADA-283): Add font imports at app.json and app.tsx
 
 ## Fix
 - [PADA-216](https://givisiez.atlassian.net/browse/PADA-216): Fix conflict and import errors
