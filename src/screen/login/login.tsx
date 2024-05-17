@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { TouchableOpacity, Image } from "react-native";
+import { TouchableOpacity, Image, KeyboardAvoidingView, Platform, View, StyleSheet } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { propsStack } from "../../routes/Stack/Models";
 
@@ -62,8 +62,6 @@ const PatientLogin = () => {
   };
 
   useEffect(() => {
-
-
   }, []);
 
   return (
