@@ -29,6 +29,7 @@ export const ImageIconLogo = styled.Image`
 export const ContainerSafe = styled.View`
   flex: 1;
   background-color: #F1F2F3;
+
 `;
 
 export const Scroll = styled.ScrollView`

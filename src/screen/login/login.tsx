@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { TouchableOpacity, Image, KeyboardAvoidingView, Platform, View, StyleSheet } from "react-native";
+import { TouchableOpacity, Image } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { propsStack } from "../../routes/Stack/Models";
 
@@ -16,8 +16,8 @@ import FormPatientLoginRecord from "@/src/components/Forms/form-patient-login/fo
 import CheckBox from "@/src/components/checkBox/checkBox";
 import LoadingModal from "@/src/components/Bars/loadingModal/loading-modal";
 import Button from "@/src/components/Buttons/button/button";
-
-import { HeaderNFooterIMG } from "../../components/Headers/header/header-style";
+import Footer from "../../components/Footers/footerCorrect/footerCorrect";
+import Header from "../../components/Footers/footerCorrect/headerCorrect";
 
 
 const PatientLogin = () => {
@@ -66,7 +66,7 @@ const PatientLogin = () => {
 
   return (
     <ContainerSafe>
-      <HeaderNFooterIMG source={require("../../assets/images/headerAndFooter/header/headerImg.png")} resizeMode="stretch" />
+    <Header />
 
       <ContainerLogin>
         <Image source={require("../../assets/images/logo/logo.png")} />
@@ -99,9 +99,7 @@ const PatientLogin = () => {
           <ButtonSenha>Esqueceu sua senha?</ButtonSenha>
         </TouchableOpacity>
       </ContainerLogin>
-
-      <HeaderNFooterIMG source={require("../../assets/images/headerAndFooter/footer/footerlogin.png")} resizeMode="stretch" />
-
+      <Footer />
     </ContainerSafe>
   );
 };
