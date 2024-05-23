@@ -20,7 +20,7 @@
     "@react-native-community/datetimepicker": "^7.6.3",
     "@react-navigation/native": "^6.1.17",
     "axios": "^1.6.8",
-    "expo": "~50.0.14",
+    "expo": "^51.0.8",
     "expo-font": "~11.10.3",
     "expo-linking": "~6.2.2",
     "expo-router": "^3.4.8",
