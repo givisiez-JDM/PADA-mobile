@@ -8,24 +8,57 @@ export const ButtonContainer = styled.View<ButtonContainerProps>`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 220px;
+  width: ${(props) => {
+    switch (props.buttontext) {
+      case "Editar perfil":
+        return "145px";
+      case "Entrar":
+      case "Cadastrar":
+      case "Continuar":
+        return "220px";
+      default:
+        return "220px";
+    }
+  }};
   height: 40px;
-  border: 2px;
-  border-color: ${(props) =>
-    props.buttontext === "Entrar" || props.buttontext === "Cadastrar" || props.buttontext === "Continuar"
-      ? "#4C7ABB"
-      : "initial"
-  };
+  border-width: 2px;
+  border-color: ${(props) => {
+    switch (props.buttontext) {
+      case "Entrar":
+      case "Cadastrar":
+      case "Continuar":
+        return "#4C7ABB";
+      default:
+        return "initial";
+    }
+  }};
   border-radius: 50px;
-  background-color: ${(props) =>
-    props.buttontext === "Entrar" || props.buttontext === "Cadastrar" || props.buttontext === "Continuar" || props.buttontext === "Avançar" || props.buttontext === "Confirmar"
-      ? "#4C7ABB"
-      : "initial"};
+  background-color: ${(props) => {
+    switch (props.buttontext) {
+      case "Entrar":
+      case "Cadastrar":
+      case "Continuar":
+      case "Avançar":
+      case "Confirmar":
+      case "Editar perfil":
+        return "#4C7ABB";
+      default:
+        return "initial";
+    }
+  }};
 `;
 
-export const TextButton = styled.Text`
-  font-size: 22px;
+export const TextButton = styled.Text<ButtonContainerProps>`
+  font-size: ${(props) => {
+    switch (props.buttontext) {
+      case "Editar perfil":
+        return "16px";
+      default:
+        return "22px";
+    }
+  }};
   font-weight: 600;
   line-height: 36.2px;
   color: #ffffff;
+  text-align: center;
 `;
