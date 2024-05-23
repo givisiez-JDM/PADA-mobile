@@ -1,15 +1,12 @@
 import { FlatList } from "react-native";
 import {
-  ButtonPatient,
   ContainerData,
   ContainerDataPatient,
-  SubTitlePatient,
   SubTitlePatientAllergies,
-  TextButtonPatient,
-  TitleDataPatient,
 } from "./data-patient-style";
 import React from "react";
 import { BaseText, BoldTextTitle } from "@/src/theme/textColor/styletextColor";
+import Button from "../../Buttons/button/button";
 
 interface TData {
   name: string;
@@ -18,10 +15,11 @@ interface TData {
   data_nascimento: string;
   dosagem: string;
   alergias: string[];
-  periodicidade: string;
-  metodo: string;
   inicio: string;
   fim: string;
+  periodicidade: string;
+  metodo: string;
+
 }
 
 const DataPatient = (props: {
@@ -31,10 +29,10 @@ const DataPatient = (props: {
   data_nascimento: string;
   dosagem: string;
   alergias: string[];
-  periodicidade: string;
-  metodo: string;
   inicio: string;
   fim: string;
+  periodicidade: string;
+  metodo: string;
 }) => {
   const itemAllergies = ({ item }: any): any => {
     return <SubTitlePatientAllergies>{item}</SubTitlePatientAllergies>;
@@ -86,10 +84,6 @@ const DataPatient = (props: {
         </BaseText>
       </ContainerData>
       <ContainerData>
-        <BoldTextTitle>Dosagem do Medicamento</BoldTextTitle>
-        <BaseText>{props.dosagem}</BaseText>
-      </ContainerData>
-      <ContainerData>
         <BoldTextTitle>Alergias</BoldTextTitle>
         <FlatList
           data={props.alergias}
@@ -99,20 +93,19 @@ const DataPatient = (props: {
         />
       </ContainerData>
       <ContainerData>
-        <BoldTextTitle>Periodicidade do Tratamento</BoldTextTitle>
-        <BaseText>{props.periodicidade}</BaseText>
-      </ContainerData>
-      <ContainerData>
-        <BoldTextTitle>Método de Tratamento</BoldTextTitle>
-        <BaseText>{props.metodo}</BaseText>
-      </ContainerData>
-      <ContainerData>
         <BoldTextTitle>Duração do Tratamento</BoldTextTitle>
         <BaseText>
           Início: {formatDateString(props.inicio)}
         </BaseText>
         <BaseText>Fim: {formatDateString(props.fim)}</BaseText>
       </ContainerData>
+      <ContainerData>
+        <BoldTextTitle>Método de Tratamento</BoldTextTitle>
+        <BaseText>{props.metodo}</BaseText>
+      </ContainerData>
+
+      <Button buttontext="Editar perfil" />
+
     </ContainerDataPatient>
   );
 };
