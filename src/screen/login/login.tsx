@@ -2,23 +2,23 @@ import React, { useState, useEffect } from "react";
 import { TouchableOpacity, Image } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { propsStack } from "../../routes/Stack/Models";
+
+import { validar } from "../../config/validates";
+import { loginUser } from "../../service/requests";
+
 import {
   ButtonSenha,
   ContainerLogin,
-  ContainerSafe, Scroll, FullWidthImage
+  ContainerSafe,
 } from "./login-style";
-import { ContainerFormInputsPatients } from "../password-creation/cadastro-style";
-import logo from "../../assets/images/logo/logo.png";
-import FormPatientLoginRecord from "../../components/Forms/form-patient-login/form-patient-login";
-import CheckBox from "../../components/checkBox/checkBox";
-import LoadingModal from "../../components/Bars/loadingModal/loading-modal";
-import { validar } from "../../config/validates";
-import { loginUser } from "../../service/requests";
-import Button from "@/src/components/Buttons/button/button";
 
-import headerImg from "../../assets/images/headerAndFooter/header/headerImg.png";
-import {ImageHeader} from "../../components/Headers/header/header-style";
-import footerCurto from "../../assets/images/headerAndFooter/footer/footerCurto.png"
+import FormPatientLoginRecord from "@/src/components/Forms/form-patient-login/form-patient-login";
+import CheckBox from "@/src/components/checkBox/checkBox";
+import LoadingModal from "@/src/components/Bars/loadingModal/loading-modal";
+import Button from "@/src/components/Buttons/button/button";
+import Footer from "../../components/Footers/footerCorrect/footerCorrect";
+import Header from "../../components/Footers/footerCorrect/headerCorrect";
+
 
 const PatientLogin = () => {
   const navigation = useNavigation<propsStack>();
@@ -62,52 +62,44 @@ const PatientLogin = () => {
   };
 
   useEffect(() => {
-
-
   }, []);
 
   return (
     <ContainerSafe>
-      <Scroll>
-      <ImageHeader source={headerImg}/>
-        <ContainerLogin>
-          <Image source={logo} />
-          <ContainerFormInputsPatients />
+    <Header />
 
-          {arrayNamePlaceholder.map(
-            ([valueState, place, err]) => (
-              <FormPatientLoginRecord
-                placeholder={place}
-                handleInputChange={(text: string) => {
+      <ContainerLogin>
+        <Image source={require("../../assets/images/logo/logo.png")} />
+
+        {arrayNamePlaceholder.map(
+          ([valueState, place, err]) => (
+            <FormPatientLoginRecord
+              placeholder={place}
+              handleInputChange={(text: string) => {
                 handleInputChange(place, text);
-                }}
-                state={valueState}
-                err={err}
-                showPassword={false} />
-            )
-          )}
+              }}
+              state={valueState}
+              err={err}
+              showPassword={false} />
+          )
+        )}
 
-          <CheckBox
-            title="Lembrar senha"
-            size="20px"
-            checked={checked}
-            setChecked={setChecked}
-          />
+        <CheckBox
+          title="Lembrar senha"
+          size="20px"
+          checked={checked}
+          setChecked={setChecked}
+        />
 
-          <TouchableOpacity onPress={Logar}>
-            <Button
-              buttontext={"Entrar"}
-            />
-          </TouchableOpacity >
+        <Button buttontext={"Entrar"} onPress={Logar} />
 
-          <LoadingModal visible={loading} onClose={closeLoading} />
+        <LoadingModal visible={loading} onClose={closeLoading} />
 
-          <TouchableOpacity onPress={() => navigation.navigate("RecuperacaoSenha")}>
-            <ButtonSenha>Esqueceu sua senha?</ButtonSenha>
-          </TouchableOpacity>
-        </ContainerLogin>
-      </Scroll>
-      <FullWidthImage source={footerCurto}/>
+        <TouchableOpacity onPress={() => navigation.navigate("RecuperacaoSenha")}>
+          <ButtonSenha>Esqueceu sua senha?</ButtonSenha>
+        </TouchableOpacity>
+      </ContainerLogin>
+      <Footer />
     </ContainerSafe>
   );
 };

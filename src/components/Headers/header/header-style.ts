@@ -300,22 +300,13 @@ export const IconWrapperCalendar = styled.View`
   
 `;
 
-
-
-
-
-// 
-
-
-
 export const HeaderContainer = styled.View`
   width: 100%;
   height:45%;
 `;
 
-export const ImageHeader = styled.Image`
- width:100%;
-
+export const HeaderNFooterIMG = styled.ImageBackground`
+  flex: 1;
 `;
 
 export const BackgroundHeaderContainer = styled.TouchableOpacity`

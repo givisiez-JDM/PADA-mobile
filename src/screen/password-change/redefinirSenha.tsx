@@ -11,13 +11,13 @@ import logo from "../../assets/images/logo/logo.png";
 
 import { useNavigation } from "@react-navigation/native";
 import { Platform } from "react-native";
-import Header from "@/src/components/Headers/header/header";
 import { propsStack } from "@/src/routes/Stack/Models";
 import InputGeral from "@/src/components/Forms/inputGeral/inputGeral";
 import { ContainerTelaPrincipal } from "../home/telaPrincipal-style";
 import { ContainerSafe, Scroll } from "../login/login-style";
 import Button from "@/src/components/Buttons/button/button";
-import FooterCurto from "../../assets/images/headerAndFooter/footer/footerCurto.png"
+import Footer from "../../components/Footers/footerCorrect/footerCorrect";
+import Header from "../../components/Footers/footerCorrect/headerCorrect";
 
 const RedefinirSenha = () => {
   const navigation = useNavigation<propsStack>();
@@ -26,7 +26,7 @@ const RedefinirSenha = () => {
     <ContainerSafe behavior={Platform.OS === "ios" ? "padding" : "height"}>
       <Scroll>
         <ContainerTelaPrincipal>
-          <Header back={true} />
+          <Header />
           <ImageIconLogoRedefinir source={logo} />
           <TextRedefinir>Redefinir senha</TextRedefinir>
           <ContainerEnviaremos>
@@ -40,7 +40,7 @@ const RedefinirSenha = () => {
 
           <ContainerFooterBottom>
 
-          <FooterCurto source={FooterCurto}/>
+          <Footer/>
 
           </ContainerFooterBottom>
         </ContainerTelaPrincipal>
