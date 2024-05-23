@@ -8,7 +8,7 @@ interface ButtonProps {
 const Button: React.FC<ButtonProps> = ({ buttontext }) => {
     return (
         <ButtonContainer buttontext={buttontext}>
-            <TextButton>{buttontext}</TextButton>
+            <TextButton buttontext={buttontext}>{buttontext}</TextButton>
         </ButtonContainer>
     );
 };
