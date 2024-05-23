@@ -27,10 +27,11 @@ const Patient = () => {
           data_nascimento={patient.patientInfo.birthDate}
           dosagem={patient.treatmentInfo.dosage}
           alergias={patient.treatmentInfo.allergies}
-          periodicidade={patient.treatmentInfo.frequency}
-          metodo={patient.treatmentInfo.method}
           inicio={patient.treatmentInfo.startTreatment}
           fim={patient.treatmentInfo.endTreatment}
+          periodicidade={patient.treatmentInfo.frequency}
+          metodo={patient.treatmentInfo.method}
+
         />
       </Scroll>
       <TabBar />
