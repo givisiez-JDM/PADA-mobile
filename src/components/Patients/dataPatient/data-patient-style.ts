@@ -31,27 +31,6 @@ export const SubTitlePatient = styled.Text`
   color: #273047;
 `;
 
-export const ButtonPatient = styled.TouchableOpacity`
-  display: flex;
-  width: 156px;
-  height: 30px;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  background: #4c7abb;
-  border-radius: 20px;
-  margin-left: 20%;
-  margin-bottom: 50px;
-`;
-
-export const TextButtonPatient = styled.Text`
-  font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 23px;
-  color: #ffffff;
-`;
-
 export const SubTitlePatientAllergies = styled.Text`
   font-style: normal;
   font-weight: 350;
