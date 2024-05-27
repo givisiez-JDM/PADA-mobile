@@ -5,6 +5,8 @@ import { NavigationContainer } from "@react-navigation/native";
 import store from "./src/store/store";
 import { Provider } from "react-redux";
 import * as ScreenOrientation from "expo-screen-orientation";
+import { ThemeProvider } from "styled-components/native";
+import { padaTheme } from "./src/theme/pada-theme";
 
 export default function App() {
   const lockScreenOrientation = async () => {
@@ -14,11 +16,14 @@ export default function App() {
   };
 
   lockScreenOrientation();
+
   return (
-    <Provider store={store} children={undefined}>
-      <NavigationContainer children={undefined}>
-        <Route />
-      </NavigationContainer>
+    <Provider store={store}>
+      <ThemeProvider theme={padaTheme}>
+        <NavigationContainer>
+          <Route />
+        </NavigationContainer>
+      </ThemeProvider>
     </Provider>
   );
 }

@@ -5,7 +5,7 @@ import { propsStack } from "../../routes/Stack/Models";
 import {
   ButtonSenha,
   ContainerLogin,
-  ContainerSafe, FooterLogin, Scroll, 
+  ContainerSafe,Scroll, 
 } from "./login-style";
 import { ContainerFormInputsPatients } from "../password-creation/cadastro-style";
 import logo from "../../assets/images/logo/logo.png";
@@ -15,11 +15,10 @@ import LoadingModal from "../../components/Bars/loadingModal/loading-modal";
 import { validar } from "../../config/validates";
 import { loginUser } from "../../service/requests";
 import Button from "@/src/components/Buttons/button/button";
-
 import headerImg from "../../assets/images/headerAndFooter/header/headerImg.png";
 import {ImageHeader} from "../../components/Headers/header/header-style";
 import Svg, { ClipPath, Defs, Path, Rect } from "react-native-svg";
-import FooterCompleto from "../../assets/images/headerAndFooter/footer/FooterCompleto.svg"
+import {padaTheme} from "../../theme/pada-theme"
 
 
 

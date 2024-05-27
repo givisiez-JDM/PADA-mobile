@@ -1,4 +1,5 @@
 import styled, { css } from "styled-components/native";
+import {padaTheme} from "../../../theme/pada-theme"
 
 export const ContainerSafeHeader = styled.View`
   flex:1px;

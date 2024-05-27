@@ -1,120 +1,114 @@
-import styled from "styled-components/native";
+import styled from 'styled-components/native';
 
-
-//20px
-export const SubtitleText = styled.Text `
-    font-size:20px;
-    font-family: "Noto Sans KR";
-    font-weight:400;
-    color: #E3E3E3;
+export const SubtitleText = styled.Text`
+  font-size: ${props => props.theme.textSize.title};
+  font-family: ${props => props.theme.fontType.main};
+  font-weight: ${props => props.theme.textWeight.normal};
+  color: ${props => props.theme.colors.main};
 `;
 
-export const TextHeaderTitle = styled.Text `
-    font-size: 20px;
-    font-family: "Noto Sans KR";
-    font-weight: 700;
-    color: #E3E3E3;
+export const TextHeaderTitle = styled.Text`
+  font-size: ${props => props.theme.textSize.title};
+  font-family: ${props => props.theme.fontType.main};
+  font-weight: ${props => props.theme.textWeight.bold};
+  color: ${props => props.theme.colors.main};
 `;
 
 export const TitleHeaderDoctor = styled.Text`
   padding: 30px 0 15px 40px;
   font-style: normal;
-  font-weight: 700;
-  font-size: 20px;
+  font-weight: ${props => props.theme.textWeight.bold};
+  font-size: ${props => props.theme.textSize.title};
   line-height: 29px;
-  color: #ffffff;
+  color: ${props => props.theme.colors.main};
+  font-family: ${props => props.theme.fontType.main};
 `;
-//16px
+
 export const BoldTextTitle = styled.Text`
-    font-size: 16px;
-    font-family: "Noto Sans KR";
-    font-weight: 700;
-    color: #273047;
+  font-size: ${props => props.theme.textSize.textDefault};
+  font-weight: ${props => props.theme.textWeight.bold};
+  color: ${props => props.theme.colors.darkerBlue};
+  font-family: ${props => props.theme.fontType.main};
 `;
 
 export const BaseText = styled.Text`
-    font-size: 16px;
-    font-family: "Noto Sans KR";
-    font-weight: 350;
-    color: #273047;
+  font-size: ${props => props.theme.textSize.textDefault};
+  font-weight: ${props => props.theme.textWeight.soft};
+  color: ${props => props.theme.colors.darkerBlue};
+  font-family: ${props => props.theme.fontType.main};
 `;
 
 export const TitleHeaderVaccines = styled.Text`
-  color: #E3E3E3;
-  font-family: "Noto Sans KR";
-  font-size: 16px;
-  font-weight: 700;
-  padding-top:18px;
+  color: ${props => props.theme.colors.main};
+  font-size: ${props => props.theme.textSize.textDefault};
+  font-weight: ${props => props.theme.textWeight.bold};
+  padding-top: 18px;
+  font-family: ${props => props.theme.fontType.main};
 `;
-
-//15px
 
 export const TextTitleProgressBar = styled.Text`
-  font-weight: 700;
-  font-size: 15px;
-  color: #273047;
+  font-weight: ${props => props.theme.textWeight.bold};
+  font-size: ${props => props.theme.textSize.smallerTittle};
+  color: ${props => props.theme.colors.darkerBlue};
   transform: rotate(0.03deg);
+  font-family: ${props => props.theme.fontType.main};
 `;
 
-//14px
-export const TextDataVaccine = styled.Text `
-    font-size:14px;
-    font-family: "Noto Sans KR";
-    font-weight:500;
-    color: #273047;
+export const SubTitleHeaderFluxo = styled.Text`
+  font-style: normal;
+  font-weight: ${props => props.theme.textWeight.softer};
+  font-size: ${props => props.theme.textSize.smallerTittle};
+  line-height: 15px;
+  width: 140px;
+  height: 29px;
+  color: ${props => props.theme.colors.main};
+  text-decoration: underline;
+  font-family: ${props => props.theme.fontType.main};
 `;
 
-export const TextCheckBoxAllergy = styled.Text `
-    font-size:14px;
-    font-family: "Noto Sans KR";
-    font-weight:350;
-    color: #273047;
+export const TextDataVaccine = styled.Text`
+  font-size: ${props => props.theme.textSize.smallText};
+  font-weight: ${props => props.theme.textWeight.semiBold};
+  color: ${props => props.theme.colors.darkerBlue};
+  font-family: ${props => props.theme.fontType.main};
 `;
 
-export const InfoText = styled.Text `
-    font-size:14px;
-    font-family: "Noto Sans KR";
-    font-weight:300;
-    color: #273047;
+export const TextCheckBoxAllergy = styled.Text`
+  font-size: ${props => props.theme.textSize.smallText};
+  font-weight: ${props => props.theme.textWeight.soft};
+  color: ${props => props.theme.colors.darkerBlue};
+  font-family: ${props => props.theme.fontType.main};
 `;
 
-
-//12px
-export const TitleCard = styled.Text `
-    font-size: 12px;
-    font-family: "Noto Sans KR";
-    font-weight: 700;
-    color: #273047;
+export const InfoText = styled.Text`
+  font-size: ${props => props.theme.textSize.smallText};
+  font-weight: ${props => props.theme.textWeight.softer};
+  color: ${props => props.theme.colors.darkerBlue};
+  font-family: ${props => props.theme.fontType.main};
 `;
 
-
-//10px
-export const TextCard = styled.Text `
-    font-size: 10px;
-    font-family: "Noto Sans KR";
-    font-weight: 300;
-    color: #273047;
-    text-align:center;
+export const TitleCard = styled.Text`
+  font-size: ${props => props.theme.textSize.smallerText};
+  font-weight: ${props => props.theme.textWeight.bold};
+  color: ${props => props.theme.colors.darkerBlue};
+  font-family: ${props => props.theme.fontType.main};
 `;
 
-export const SubtitlePrincipal = styled.Text `
+export const TextCard = styled.Text`
+  font-size: ${props => props.theme.textSize.dropDownText};
+  font-weight: ${props => props.theme.textWeight.softer};
+  color: ${props => props.theme.colors.darkerBlue};
+  text-align: center;
+  font-family: ${props => props.theme.fontType.main};
+`;
+
+export const SubtitlePrincipal = styled.Text`
   width: 125.77px;
   height: 27.3px;
   font-style: normal;
-  font-weight: 500;
-  font-size: 10px;
+  font-weight: ${props => props.theme.textWeight.semiBold};
+  font-size: ${props => props.theme.textSize.dropDownText};
   line-height: 14px;
-  //text-align: center;
-  color: #FFFFFF;
-`;
-    
-export const SubTitleHeaderFluxo = styled.Text`
-  font-style: normal;
-  font-weight: 300;
-  font-size: 13px;
-  line-height: 15px;
-  width: 133px;
-  height: 29px;
-  color: #FFFFFF;
-  text-decoration: underline;
+  color: ${props => props.theme.colors.main};
+  font-family: ${props => props.theme.fontType.main};
 `;

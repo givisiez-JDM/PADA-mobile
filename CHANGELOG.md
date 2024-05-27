@@ -29,3 +29,5 @@ Changelog
 - [PADA-255](https://givisiez.atlassian.net/browse/PADA-255): refactor: header, footer and splash image. 
 
 - [PADA-277](https://givisiez.atlassian.net/browse/PADA-277): refactor: header, tabBar. 
+
+- [PADA-285](https://givisiez.atlassian.net/browse/PADA-285): refactor: fonts and styled. 
