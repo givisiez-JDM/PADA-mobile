@@ -11,6 +11,7 @@ import CheckBox from "../../checkBox/checkBox";
 import { useEffect, useState } from "react";
 import React from "react";
 
+
 const ModalCheckVaccines = (props: {
   visible: boolean;
   onClose: () => void;
