@@ -9,6 +9,7 @@
     }
   },
   "include": [
+    "styled.d.ts",
     "**/*.ts",
     "**/*.tsx",
     "**/*.jsx",

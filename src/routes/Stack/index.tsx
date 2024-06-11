@@ -1,8 +1,6 @@
 import React from "react";
 import SplashScreen from "../../screen/splash-screen/splashScreen";
 import { propsNavigationStack } from "./Models";
-
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Patient from "../../screen/patient/patient";
 import TelaPrincipal from "../../screen/home/telaPrincipal";
 import ProfissionalResponsavel from "../../screen/responsible-doctor/profissionalResponsavel";
@@ -13,29 +11,29 @@ import PassRecovery from "../../screen/password-recovery";
 import NewPassSuccess from "../../screen/new-pass-success";
 import PatientLogin from "../../screen/login/login";
 
-const { Navigator, Screen } =
-  createNativeStackNavigator<propsNavigationStack>();
+const { createNativeStackNavigator } = require("@react-navigation/native-stack");
+const Stack = createNativeStackNavigator();
 
-export default function () {
+export const Router = () => {
   return (
-    <Navigator
+    <Stack.Navigator
       initialRouteName="Login"
       screenOptions={{ headerShown: false }}
     >
-      <Screen name="Login" component={PatientLogin} />
-      <Screen name="TelaPrincipal" component={TelaPrincipal} />
-      <Screen name="Paciente" component={Patient} />
-      <Screen
+      <Stack.Navigator name="Login" component={PatientLogin} />
+      <Stack.Navigator name="TelaPrincipal" component={TelaPrincipal} />
+      <Stack.Navigator name="Paciente" component={Patient} />
+      <Stack.Navigator
         name="ProfissionalResponsavel"
         component={ProfissionalResponsavel}
       />
-      <Screen name="SplashScreen" component={SplashScreen} />
-      <Screen name="MyVaccines" component={MyVaccines} />
+      <Stack.Navigator name="SplashScreen" component={SplashScreen} />
+      <Stack.Navigator name="MyVaccines" component={MyVaccines} />
 
-      <Screen name="RedefinirSenha" component={RedefinirSenha} />
-      <Screen name="PassRecovery" component={PassRecovery} />
-      <Screen name="NewPassSuccess" component={NewPassSuccess} />
-      {/* <Screen name="TabRoutes" component={TabRoutes} /> */}
-    </Navigator>
+      <Stack.Navigator name="RedefinirSenha" component={RedefinirSenha} />
+      <Stack.Navigator name="PassRecovery" component={PassRecovery} />
+      <Stack.Navigator name="NewPassSuccess" component={NewPassSuccess} />
+      {/* <Stack.Navigator name="TabRoutes" component={TabRoutes} /> */}
+    </Stack.Navigator>
   );
 }
