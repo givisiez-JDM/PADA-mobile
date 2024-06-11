@@ -33,19 +33,19 @@ import {
 import { Platform, StatusBar, TouchableOpacity } from "react-native";
 import Icon from "react-native-vector-icons/Ionicons";
 import { useNavigation } from "@react-navigation/native";
-import { propsStack } from "../../../routes/Stack/Models";
-import Person from "../../../assets/images/image-icons/imgUserItem.png";
-import Calendar from "../../../assets/images/image-icons/calendar.png";
-import Time from "../../../assets/images/image-icons/time.png";
-import storePatient from "../../../store/storePatient";
+import { propsStack } from "../../routes/Stack/Models";
+
+import Person from "../../assets/images/image-icons/imgUserItem.png";
+import Calendar from "../../assets/images/image-icons/calendar.png";
+import Time from "../../assets/images/image-icons/time.png";
+import storePatient from "../../store/storePatient";
+
 import { SubTitleHeaderFluxo, SubtitlePrincipal, SubtitleText, TextHeaderTitle, TitleHeaderVaccines, TitleHeaderDoctor } from "@/src/theme/textColor/styletextColor";
-import DateTimePicker,  { DateTimePickerEvent } from "@react-native-community/datetimepicker";
-
-
+import DateTimePicker, { DateTimePickerEvent } from "@react-native-community/datetimepicker";
 
 
 const Header = (props: {
-  typeHeader?: "patient" | "doctor"| "patient-profile",
+  typeHeader?: "patient" | "doctor" | "patient-profile",
   title?: string | undefined,
   backButton: boolean,
   buttonVaccine?: boolean,
@@ -73,20 +73,17 @@ const Header = (props: {
   }
 
   return (
-
     <ContainerSafeHeader>
       <StatusBar barStyle="light-content" backgroundColor="#000" />
-       
-        {props.backButton && (
-          <ContainerBackFluxo onPress={() => navigation.goBack()}>
-            <Icon name="chevron-back-outline" color="#000" />
-          </ContainerBackFluxo>
-        )}
 
+      {props.backButton && (
+        <ContainerBackFluxo onPress={() => navigation.goBack()}>
+          <Icon name="chevron-back-outline" color="#000" />
+        </ContainerBackFluxo>
+      )}
 
-
-        {props.typeHeader === "doctor" && (
-          <ContainerHeaderFluxo>
+      {props.typeHeader === "doctor" && (
+        <ContainerHeaderFluxo>
           <ContainerHeaderInformationDoctor>
             <TitleHeaderDoctor>Profissional responsável</TitleHeaderDoctor>
             <ContainerInfoDoctor>
@@ -105,24 +102,24 @@ const Header = (props: {
               </ContainerSubtitles>
             </ContainerInfoDoctor>
           </ContainerHeaderInformationDoctor>
-          </ContainerHeaderFluxo>
-        )}
+        </ContainerHeaderFluxo>
+      )}
 
 
-        {props.typeHeader === "patient" && props.buttonVaccine && (
-          <>
+      {props.typeHeader === "patient" && props.buttonVaccine && (
+        <>
           <ContainerHeaderFluxo>
             <ContainerHeaderInformationPerson>
               <ContainerImagePersonPrincipal>
-              <ImagePerson
+                <ImagePerson
                   source={
                     props.photo
                       ? { uri: `data:image/jpeg;base64,${props.photo}` }
-                      : Person}/>
+                      : Person} />
               </ContainerImagePersonPrincipal>
 
               <ContainerTitles>
-              <TitleHeaderFluxo>{props.title}</TitleHeaderFluxo>
+                <TitleHeaderFluxo>{props.title}</TitleHeaderFluxo>
                 <SubtitlePrincipal>
                   Sua próxima consulta está agendada para:
                 </SubtitlePrincipal>
@@ -141,33 +138,33 @@ const Header = (props: {
                   </ButtonNextVaccine>
 
                   <ButtonRemember activeOpacity={0.5}  >
-                    <TextButtonRemember 
+                    <TextButtonRemember
                     >Lembrar</TextButtonRemember>
                     <IconTime source={Time} />
                   </ButtonRemember>
 
-                  
+
                 </ContainerButtonsHeaderFluxo>
               </ContainerTitles>
             </ContainerHeaderInformationPerson>
-            </ContainerHeaderFluxo>
-          </>
-        )}
+          </ContainerHeaderFluxo>
+        </>
+      )}
 
-        {props.typeHeader === "patient" && !props.buttonVaccine && (
-          <>
+      {props.typeHeader === "patient" && !props.buttonVaccine && (
+        <>
           <ContainerHeaderFluxo>
-             <ContainerImagePerson>
-                <ImagePerson
-                  source={
-                    props.photo
-                      ? { uri: `data:image/jpeg;base64,${props.photo}` }
-                      : Person}/>
-                <TitleHeaderFluxo>{props.title}</TitleHeaderFluxo>
-              </ContainerImagePerson>
+            <ContainerImagePerson>
+              <ImagePerson
+                source={
+                  props.photo
+                    ? { uri: `data:image/jpeg;base64,${props.photo}` }
+                    : Person} />
+              <TitleHeaderFluxo>{props.title}</TitleHeaderFluxo>
+            </ContainerImagePerson>
 
             <ContainerInputVaccines>
-                    
+
               <TitleHeaderVaccines>
                 Busque em seu histórico
               </TitleHeaderVaccines>
@@ -198,13 +195,13 @@ const Header = (props: {
                   onChange={onChange} />
               )}
             </ContainerInputVaccines>
-            </ContainerHeaderFluxo>
-          </>
-        )}
+          </ContainerHeaderFluxo>
+        </>
+      )}
 
 
-        {props.typeHeader === "patient-profile" && (
-          <ContainerHeaderFluxo162>
+      {props.typeHeader === "patient-profile" && (
+        <ContainerHeaderFluxo162>
           <ContainerHeaderInformationPerson>
             <ContainerImagePerson>
               <ImagePerson
@@ -214,20 +211,20 @@ const Header = (props: {
                     : Person
                 }
               />
-                <TextHeaderTitle>{props.title}</TextHeaderTitle>
+              <TextHeaderTitle>{props.title}</TextHeaderTitle>
             </ContainerImagePerson>
             <>
-            <ContainerTitlesPatiente>
+              <ContainerTitlesPatiente>
                 <SubTitleHeaderFluxo>
                   Histórico de vacinas
                 </SubTitleHeaderFluxo>
-            </ContainerTitlesPatiente>
+              </ContainerTitlesPatiente>
             </>
           </ContainerHeaderInformationPerson>
-          </ContainerHeaderFluxo162>
-        )}
-       
-    
+        </ContainerHeaderFluxo162>
+      )}
+
+
     </ContainerSafeHeader>
   );
 };

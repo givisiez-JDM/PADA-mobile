@@ -1,4 +1,4 @@
-import Header from "../../components/Headers/header/header"
+import Header from "../../components/Header/header"
 
 import {
   ContainerItemInformationVaccine,
@@ -14,9 +14,9 @@ import {
 import { ContainerPrincipal } from "../home/telaPrincipal-style";
 import ItemVaccine from "../../components/Cards/itemVaccine/item-vaccine";
 import { useEffect, useState } from "react";
-import { getDataUserStorage} from "../../service/requests";
+import { getDataUserStorage } from "../../service/requests";
 import ItemLegend from "../../components/Cards/itemLegend/item-legend";
-import TabBar from "../../components/Buttons/buttonTabBar/buttonTabBar";
+import TabBar from "../../components/TabBar/buttonTabBar";
 import ProgressBar from "../../components/Bars/progressBar/progress-bar";
 import storePatient from "../../store/storePatient";
 import ModalPhaseVaccine from "../../components/Modals/modalPhaseVaccine/modal-phase-vaccine";
@@ -33,11 +33,11 @@ const MyVaccines = () => {
   const [colorBorderLeft, setColorBorderLeft]: any = useState<string>('');
 
 
-  const arrayLegend: {text:string; color:string }[] = [
-    {text: "Aplicada",color: "#5CED38",},
-    {text: "Aplicada em atraso",color: "#FACB71",},
-    {text: "Não aplicada",color: "#E85656",},
-    {text: "Agendada",color: "#B4B4B4",},
+  const arrayLegend: { text: string; color: string }[] = [
+    { text: "Aplicada", color: "#5CED38", },
+    { text: "Aplicada em atraso", color: "#FACB71", },
+    { text: "Não aplicada", color: "#E85656", },
+    { text: "Agendada", color: "#B4B4B4", },
   ];
 
   const onOpen = () => {
@@ -61,9 +61,9 @@ const MyVaccines = () => {
 
   }, []);
 
-  return (   
+  return (
     <ContainerVaccinesView>
-       
+
       <Scroll>
         <Header
           title={name}
@@ -82,7 +82,7 @@ const MyVaccines = () => {
             <ModalPhaseVaccine visible={visible} onClose={onClose} />
           </ContainerProgressBar>
 
-           
+
           <ContainerItemInformationVaccine>
             {patient.vaccinesInfo.map((vaccine: any) => (
               <ItemVaccine

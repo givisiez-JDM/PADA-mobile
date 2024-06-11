@@ -16,8 +16,8 @@ export type propsNavigationStack = {
   SplashScreen: undefined;
   CodePhone: undefined;
   RedefinirSenha: undefined;
-  RecuperacaoSenha: undefined;
-  TelaSucesso: undefined;
+  PassRecovery: undefined;
+  NewPassSuccess: undefined;
 };
 
 export type propsStack = NativeStackNavigationProp<propsNavigationStack>;

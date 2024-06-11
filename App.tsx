@@ -5,6 +5,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import store from "./src/store/store";
 import { Provider } from "react-redux";
 import * as ScreenOrientation from "expo-screen-orientation";
+import { NativeBaseProvider } from 'native-base';
 
 export default function App() {
   const lockScreenOrientation = async () => {
@@ -15,10 +16,12 @@ export default function App() {
 
   lockScreenOrientation();
   return (
-    <Provider store={store} children={undefined}>
-      <NavigationContainer children={undefined}>
-        <Route />
-      </NavigationContainer>
-    </Provider>
+    <NativeBaseProvider>
+      <Provider store={store} children={undefined}>
+        <NavigationContainer children={undefined}>
+          <Route />
+        </NavigationContainer>
+      </Provider>
+    </NativeBaseProvider>
   );
 }

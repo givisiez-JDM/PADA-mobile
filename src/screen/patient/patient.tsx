@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
-import TabBar from "../../components/Buttons/buttonTabBar/buttonTabBar";
+import TabBar from "../../components/TabBar/buttonTabBar";
 import DataPatient from "../../components/Patients/dataPatient/data-patient";
 import { ContainerSafePrincipalPaciente, Scroll } from "./patient-style";
 import { TData, getDataUserStorage } from "../../service/requests";
 import storePatient from "../../store/storePatient";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import Header from "../../components/Headers/header/header"
+import Header from "../../components/Header/header"
 
 const Patient = () => {
   const patient: any = storePatient.getState();
@@ -37,31 +37,5 @@ const Patient = () => {
     </ContainerSafePrincipalPaciente>
   );
 };
-
-/*<DataPatient
-          name={patient.name}
-          telefone={patient.telefone}
-          email={patient.email}
-          data_nascimento={patient.data_nascimento}
-          dosagem={patient.dosagem}
-          alergias={patient.alergias}
-          periodicidade={patient.periodicidade}
-          metodo={patient.metodo}
-          inicio={patient.inicio}
-          fim={patient.fim}
-        />
-         <DataPatient
-          name={patient !== null ? patient.name : ""}
-          telefone={patient !== null ? patient.telefone : ""}
-          email={patient !== null ? patient.email : ""}
-          data_nascimento={patient !== null ? patient.data_nascimento : ""}
-          dosagem={patient !== null ? patient.dosagem : ""}
-          alergias={patient !== null ? patient.alergias : []}
-          periodicidade={patient !== null ? patient.periodicidade : ""}
-          metodo={patient !== null ? patient.metodo : ""}
-          inicio={patient !== null ? patient.inicio : ""}
-          fim={patient !== null ? patient.fim : ""}
-        />
-        */
 
 export default Patient;

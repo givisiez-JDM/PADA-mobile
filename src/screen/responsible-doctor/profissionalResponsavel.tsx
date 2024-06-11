@@ -1,12 +1,11 @@
 import { useState, useEffect } from "react";
-import TabBar from "../../components/Buttons/buttonTabBar/buttonTabBar";
+import TabBar from "../../components/TabBar/buttonTabBar";
 import DataDoctor from "../../components/Patients/dataDoctor/data-doctor";
-import HeaderFluxo from "../../components/Headers/headerFluxo/header-fluxo";
 import {
   ContainerSafePrincipalPaciente,
   Scroll,
 } from "./profissionalResponsavel-style";
-import Header from "../../components/Headers/header/header"
+import Header from "../../components/Header/header"
 import React from "react";
 import storePatient from "@/src/store/storePatient";
 

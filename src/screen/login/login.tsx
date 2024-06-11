@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { TouchableOpacity, Image } from "react-native";
+import React, { useState } from "react";
+import { TouchableOpacity, View, Image, StyleSheet } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { propsStack } from "../../routes/Stack/Models";
 
@@ -7,20 +7,17 @@ import { validar } from "../../config/validates";
 import { loginUser } from "../../service/requests";
 
 import {
-  ButtonSenha,
-  ContainerLogin,
-  ContainerSafe,
+  ButtonSenha
 } from "./login-style";
 
 import FormPatientLoginRecord from "@/src/components/Forms/form-patient-login/form-patient-login";
-import CheckBox from "@/src/components/checkBox/checkBox";
 import LoadingModal from "@/src/components/Bars/loadingModal/loading-modal";
-import Button from "@/src/components/Buttons/button/button";
-import Footer from "../../components/Footers/footerCorrect/footerCorrect";
-import Header from "../../components/Footers/footerCorrect/headerCorrect";
+import Button from "@/src/components/Button/button";
+import HeaderNFooter from "../../components/HeaderNFooterSVG/headerNfooterSVG";
+import { SafeAreaView } from "react-native-safe-area-context";
+import { Checkbox, HStack } from "native-base";
 
-
-const PatientLogin = () => {
+const Login = () => {
   const navigation = useNavigation<propsStack>();
 
   const [mail, setMail] = useState<string>("");
@@ -61,14 +58,12 @@ const PatientLogin = () => {
     }
   };
 
-  useEffect(() => {
-  }, []);
-
   return (
-    <ContainerSafe>
-    <Header />
-
-      <ContainerLogin>
+    <SafeAreaView style={{ flex: 1 }}>
+      <View style={styles.container}>
+        <HeaderNFooter
+          fill={""}
+        />
         <Image source={require("../../assets/images/logo/logo.png")} />
 
         {arrayNamePlaceholder.map(
@@ -84,24 +79,33 @@ const PatientLogin = () => {
           )
         )}
 
-        <CheckBox
-          title="Lembrar senha"
-          size="20px"
-          checked={checked}
-          setChecked={setChecked}
-        />
+        <HStack space={6}>
+          <Checkbox value="test" accessibilityLabel="This a checkbox">
+            Lembrar senha
+          </Checkbox>
+        </HStack>
 
-        <Button buttontext={"Entrar"} onPress={Logar} />
+        <Button buttontext={"Entrar"} onPress={() => Logar} />
 
         <LoadingModal visible={loading} onClose={closeLoading} />
 
-        <TouchableOpacity onPress={() => navigation.navigate("RecuperacaoSenha")}>
+        <TouchableOpacity onPress={() => navigation.navigate("PassRecovery")}>
           <ButtonSenha>Esqueceu sua senha?</ButtonSenha>
         </TouchableOpacity>
-      </ContainerLogin>
-      <Footer />
-    </ContainerSafe>
+
+      </View>
+    </SafeAreaView>
   );
 };
 
-export default PatientLogin;
+export default Login;
+
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: 10,
+  }
+})

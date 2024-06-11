@@ -12,18 +12,18 @@ import { ContainerTelaPrincipal } from "../home/telaPrincipal-style";
 import InputGeral from "../../components/Forms/inputGeral/inputGeral";
 import { Platform } from "react-native";
 import { propsStack } from "@/src/routes/Stack/Models";
-import Button from "@/src/components/Buttons/button/button"
-import Footer from "../../components/Footers/footerCorrect/footerCorrect";
-import Header from "../../components/Footers/footerCorrect/headerCorrect";;
+import Button from "@/src/components/Button/button"
+import HeaderNFooter from "../../components/HeaderNFooterSVG/headerNfooterSVG";
+
 
 const RedefinirSenha = () => {
   const navigation = useNavigation<propsStack>();
 
   return (
-    <ContainerSafe behavior={Platform.OS === "ios" ? "padding" : "height"}>
+    <ContainerSafe>
       <Scroll>
         <ContainerTelaPrincipal>
-          <Header  />
+          <HeaderNFooter fill={""} />
           <ImageIconLogoRedefinir source={logo} />
           <ContainerEnviaremos>
             <TitleRedefinePass>Redefinir senha</TitleRedefinePass>
@@ -32,7 +32,6 @@ const RedefinirSenha = () => {
 
           <InputGeral inputtext={'Email'} />
           <Button buttontext={'Avançar'} />
-          <Footer />
         </ContainerTelaPrincipal>
       </Scroll>
     </ContainerSafe>

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Header from "../../components/Headers/header/header";
+import Header from "../../components/Header/header";
 import {
   ContainerListTagFluxo,
   ContainerPrincipalMenu,
@@ -9,7 +9,7 @@ import TagFluxo from "../../components/tagFluxo/tag-fluxo";
 import Remedio from "../../assets/images/image-icons/imgRemedio.png";
 import ProfissionalSaude from "../../assets/images/image-icons/profissionalSaude.png";
 import Perfil from "../../assets/images/image-icons/imgPerfil.png";
-import TabBar from "../../components/Buttons/buttonTabBar/buttonTabBar";
+import TabBar from "../../components/TabBar/buttonTabBar";
 import { FlatList } from "react-native";
 import { getDataUserStorage } from "../../service/requests";
 import storePatient from "../../store/storePatient";
@@ -46,7 +46,7 @@ const TelaPrincipal = () => {
     );
   };
 
-  useEffect(() => {}, []);
+  useEffect(() => { }, []);
 
   return (
     <ContainerSafePrincipal>
@@ -54,7 +54,7 @@ const TelaPrincipal = () => {
         title={`Olá, ${name}`}
         backButton={true}
         buttonVaccine={true}
-        typeHeader = "patient"
+        typeHeader="patient"
       />
       <ContainerPrincipalMenu>
         <ContainerListTagFluxo>

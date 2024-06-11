@@ -1,12 +1,21 @@
 import React from "react";
 import { Image, Alert } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-import { ContainerTabBar, ButtonTabBarHome, ButtonTabBarLogout, TextButtonTabBarInicio, TextButtonTabBarLogout, CustomTouchableOpacity, ImageLogo, ButtonTabBarHomeSecundary, TextButtonTabBar } from "./buttonTabBar-style";
-import { RemoveStorage } from "../../../service/requests";
-import { propsStack } from "../../../routes/Stack/Models";
-import home from "../../../assets/images/headerAndFooter/footer/home.png";
-import Logout from "../../../assets/images/headerAndFooter/footer/logOut.png";
-import BlueHome from "../../../assets/images/headerAndFooter/footer/BlueHome.png";
+import {
+  ContainerTabBar,
+  ButtonTabBarHome,
+  ButtonTabBarLogout,
+  TextButtonTabBarInicio,
+  TextButtonTabBarLogout,
+  CustomTouchableOpacity,
+  ImageLogo,
+  ButtonTabBarHomeSecundary, TextButtonTabBar
+} from "./buttonTabBar-style";
+import { RemoveStorage } from "../../service/requests";
+import { propsStack } from "../../routes/Stack/Models";
+import home from "../../assets/images/headerAndFooter/footer/home.png";
+import Logout from "../../assets/images/headerAndFooter/footer/logOut.png";
+import BlueHome from "../../assets/images/headerAndFooter/footer/BlueHome.png";
 
 
 const TabBar = (props: { typeHeader?: string }) => {

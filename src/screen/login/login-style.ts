@@ -1,41 +1,5 @@
 import styled from "styled-components/native";
 
-export const ContainerLogin = styled.View`
-  align-items: center;
-  gap:10px;
-`;
-
-export const TextAcesso = styled.Text`
-  width: 157px;
-  height: 29px;
-  font-size: 22px;
-  line-height: 32px;
-  color: ${props => props.theme.colors.secondary};
-  font-weight: bold;
-  text-align: left;
-  margin-left: 2px;
-`;
-
-export const ButtonImageIcon = styled.View`
-  margin: 12px;
-  padding-bottom: 2px;
-`;
-
-export const ImageIconLogo = styled.Image`
-  margin-top: -20px;
-  margin-bottom: 30px;
-`;
-
-export const ContainerSafe = styled.View`
-  flex: 1;
-  background-color: #F1F2F3;
-
-`;
-
-export const Scroll = styled.ScrollView`
-  flex: 1;
-`;
-
 export const InputLogin = styled.View`
   display: flex;
   flex-direction: row;

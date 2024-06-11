@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import Footer from "../../components/Footers/footerCorrect/footerCorrect";
-import Header from "../../components/Footers/footerCorrect/headerCorrect";
+import HeaderNFooter from "../../components/HeaderNFooterSVG/headerNfooterSVG";
 
 import {
   ContainerFormPatient,
@@ -9,10 +8,9 @@ import {
   ImageLogo,
   ContainerFormInputsPatients,
   ContainerSafe,
-  Scroll,
-  ContainerFooterBottom,
+  Scroll
 } from "./cadastro-style";
-import Button from "../../components/Buttons/button/button"
+import Button from "../../components/Button/button"
 
 import FormPatientRecord from "../../components/Forms/form-patient-record/form-patient-record";
 import { validar } from "../../config/validates";
@@ -96,7 +94,9 @@ const PatientRecord = () => {
   return (
     <ContainerSafe behavior={Platform.OS === "ios" ? "padding" : "height"}>
       <Scroll>
-        <Header />
+        <HeaderNFooter
+          fill={""}
+        />
         <ContainerFormPatient>
           <ImageLogo source={Logo} />
           <TitleForm>Crie sua senha</TitleForm>
@@ -131,9 +131,7 @@ const PatientRecord = () => {
             text={mesageTextModal}
           />
         </ContainerFormPatient>
-        <ContainerFooterBottom>
-                  <Footer />
-        </ContainerFooterBottom>
+
       </Scroll>
     </ContainerSafe>
   );

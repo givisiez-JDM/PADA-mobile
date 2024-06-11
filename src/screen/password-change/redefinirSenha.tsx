@@ -15,18 +15,19 @@ import { propsStack } from "@/src/routes/Stack/Models";
 import InputGeral from "@/src/components/Forms/inputGeral/inputGeral";
 import { ContainerTelaPrincipal } from "../home/telaPrincipal-style";
 import { ContainerSafe, Scroll } from "../login/login-style";
-import Button from "@/src/components/Buttons/button/button";
-import Footer from "../../components/Footers/footerCorrect/footerCorrect";
-import Header from "../../components/Footers/footerCorrect/headerCorrect";
+import Button from "@/src/components/Button/button";
+import HeaderNFooter from "@/src/components/HeaderNFooterSVG/headerNfooterSVG";
 
 const RedefinirSenha = () => {
   const navigation = useNavigation<propsStack>();
 
   return (
-    <ContainerSafe behavior={Platform.OS === "ios" ? "padding" : "height"}>
+    <ContainerSafe>
       <Scroll>
         <ContainerTelaPrincipal>
-          <Header />
+          <HeaderNFooter
+            fill={""}
+          />
           <ImageIconLogoRedefinir source={logo} />
           <TextRedefinir>Redefinir senha</TextRedefinir>
           <ContainerEnviaremos>
@@ -39,8 +40,6 @@ const RedefinirSenha = () => {
           <Button buttontext="Avançar" />
 
           <ContainerFooterBottom>
-
-          <Footer/>
 
           </ContainerFooterBottom>
         </ContainerTelaPrincipal>
