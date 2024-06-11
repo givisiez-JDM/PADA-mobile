@@ -4,7 +4,7 @@ export const TextRecuperacao = styled.Text`
   font-size: 22px;
   font-weight: 500;
   color: #334c76;
-  margin-top: 200px;
+  margin-top: 125px;
 `;
 
 export const ContainerCrie = styled.View`

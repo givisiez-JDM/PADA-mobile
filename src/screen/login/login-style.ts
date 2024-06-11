@@ -1,11 +1,8 @@
 import styled from "styled-components/native";
 
-
 export const ContainerLogin = styled.View`
-  flex: 1;
   align-items: center;
   gap:10px;
-  width: 100%;
 `;
 
 export const TextAcesso = styled.Text`
@@ -13,7 +10,7 @@ export const TextAcesso = styled.Text`
   height: 29px;
   font-size: 22px;
   line-height: 32px;
-  color: #4c7abb;
+  color: ${props => props.theme.colors.secondary};
   font-weight: bold;
   text-align: left;
   margin-left: 2px;
@@ -29,9 +26,10 @@ export const ImageIconLogo = styled.Image`
   margin-bottom: 30px;
 `;
 
-export const ContainerSafe = styled.KeyboardAvoidingView`
+export const ContainerSafe = styled.View`
   flex: 1;
   background-color: #F1F2F3;
+
 `;
 
 export const Scroll = styled.ScrollView`
@@ -70,12 +68,11 @@ export const ButtonSenha = styled.Text`
   color: #000000;
 `;
 
- export const FullWidthImage = styled.Image`
+export const FullWidthImage = styled.Image`
   width: 100%; 
   height: 17%;
 `;
 
 export const FooterLogin = styled.Image`
 width: 100%; 
-height: 17%;
 `;

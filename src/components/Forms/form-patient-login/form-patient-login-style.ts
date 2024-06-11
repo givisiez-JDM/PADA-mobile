@@ -1,9 +1,9 @@
 import styled from "styled-components/native";
 
 export const ContainerFormPatientRecord = styled.View`
-  display: flex;
   flex-direction: column;
-  row-gap: 2px;
+  align-items: center;
+  width: 100%;
 `;
 
 export const ContainerInput = styled.View`
@@ -14,16 +14,12 @@ export const ContainerInput = styled.View`
   align-items: center;
 `;
 
-export const ContainerLogin = styled.View`
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
+export const ContainerForm = styled.View`
   align-items: center;
-  width: 240px;
-  height: 50px;
+  width: 85%;
+  height: 48px;
   border-radius: 10px;
   background: #fff;
-  margin-top: 15px;
   border: 2px #4c7abb;
 `;
 

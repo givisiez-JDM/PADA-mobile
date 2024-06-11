@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import FooterCurto from "../../components/Footers/footer/footer";
-import Header from "../../components/Headers/header/header";
+import Footer from "../../components/Footers/footerCorrect/footerCorrect";
+import Header from "../../components/Footers/footerCorrect/headerCorrect";
 
 import {
   ContainerFormPatient,
@@ -96,7 +96,7 @@ const PatientRecord = () => {
   return (
     <ContainerSafe behavior={Platform.OS === "ios" ? "padding" : "height"}>
       <Scroll>
-        <Header back={true} />
+        <Header />
         <ContainerFormPatient>
           <ImageLogo source={Logo} />
           <TitleForm>Crie sua senha</TitleForm>
@@ -132,7 +132,7 @@ const PatientRecord = () => {
           />
         </ContainerFormPatient>
         <ContainerFooterBottom>
-          <FooterCurto />
+                  <Footer />
         </ContainerFooterBottom>
       </Scroll>
     </ContainerSafe>
