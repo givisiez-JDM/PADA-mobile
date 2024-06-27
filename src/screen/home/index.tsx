@@ -1,22 +1,17 @@
 import React, { useState, useEffect } from "react";
-import Header from "../../components/Header/header";
+import Header from "../../components/Header";
 import {
   ContainerListTagFluxo,
   ContainerPrincipalMenu,
   ContainerSafePrincipal,
 } from "./telaPrincipal-style";
 import TagFluxo from "../../components/tagFluxo/tag-fluxo";
-import Remedio from "../../assets/images/image-icons/imgRemedio.png";
-import ProfissionalSaude from "../../assets/images/image-icons/profissionalSaude.png";
-import Perfil from "../../assets/images/image-icons/imgPerfil.png";
 import TabBar from "../../components/TabBar/buttonTabBar";
 import { FlatList } from "react-native";
 import { getDataUserStorage } from "../../service/requests";
 import storePatient from "../../store/storePatient";
 
-
-
-const TelaPrincipal = () => {
+const Home = () => {
   const [name, setName] = useState("");
   const patient: any = storePatient.getState();
 
@@ -24,17 +19,17 @@ const TelaPrincipal = () => {
 
   const array = [
     {
-      image: Perfil,
+      image: require('../../assets/images/image-icons/imgPerfil.png'),
       title: "Meu perfil",
       text: "Suas informações de cadastro",
     },
     {
-      image: Remedio,
+      image: require('../../assets/images/image-icons/imgRemedio.png'),
       title: "Minhas vacinas",
       text: "Seu histórico de medicamentos",
     },
     {
-      image: ProfissionalSaude,
+      image: require('../../assets/images/image-icons/profissionalSaude.png'),
       title: "Profissional de saúde",
       text: "Conheça o especialista",
     }
@@ -61,7 +56,7 @@ const TelaPrincipal = () => {
           <FlatList
             data={array}
             renderItem={renderItem}
-            keyExtractor={(item: { title: any; }) => item.title}
+            keyExtractor={item => item.title}
             numColumns={2}
           />
         </ContainerListTagFluxo>
@@ -71,4 +66,4 @@ const TelaPrincipal = () => {
   );
 };
 
-export default TelaPrincipal;
+export default Home;

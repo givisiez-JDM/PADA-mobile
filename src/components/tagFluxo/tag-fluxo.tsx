@@ -20,10 +20,10 @@ const TagFluxo = (props: {
 
   const navigateScreens = () => {
     if (props.title === "Meu perfil") {
-      navigation.navigate("Paciente");
+      navigation.navigate("Profile");
     }
     if (props.title === "Profissional de saúde") {
-      navigation.navigate("ProfissionalResponsavel");
+      navigation.navigate("Doctor");
     }
     if (props.title === "Minhas vacinas") {
       navigation.navigate("MyVaccines");

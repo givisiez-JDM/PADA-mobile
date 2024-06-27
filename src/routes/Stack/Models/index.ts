@@ -1,23 +1,21 @@
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 
 export type propsNavigationStack = {
-  PatientLogin: undefined;
   Login?: {
     name: string;
   };
-  Cadastro: undefined;
-  TelaPrincipal: undefined;
-  TabRoutes: undefined;
-  ListaPacientes: undefined;
-  MeuPerfil: undefined;
-  Paciente: undefined;
-  ProfissionalResponsavel: undefined;
-  MyVaccines: undefined;
+  Home: undefined;
+  Profile: undefined;
+  Doctor: undefined;
   SplashScreen: undefined;
-  CodePhone: undefined;
-  RedefinirSenha: undefined;
+  MyVaccines: undefined;
+  PassCreation: undefined;
+  PassChange: undefined;
+  PassRedefine: undefined;
   PassRecovery: undefined;
   NewPassSuccess: undefined;
+  TabRoutes: undefined;
+  // CodePhone: undefined;
 };
 
 export type propsStack = NativeStackNavigationProp<propsNavigationStack>;

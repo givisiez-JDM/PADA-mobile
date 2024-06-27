@@ -2,14 +2,13 @@ import styled from "styled-components/native";
 
 
 //20px
-export const SubtitleText = styled.Text `
+export const SubtitleText = styled.Text`
     font-size:20px;
-    font-family: "Noto Sans KR";
-    font-weight:400;
+    font-family: "NotoSansKR-Regular";
     color: #E3E3E3;
 `;
 
-export const TextHeaderTitle = styled.Text `
+export const TextHeaderTitle = styled.Text`
     font-size: 20px;
     font-family: "Noto Sans KR";
     font-weight: 700;
@@ -57,21 +56,21 @@ export const TextTitleProgressBar = styled.Text`
 `;
 
 //14px
-export const TextDataVaccine = styled.Text `
+export const TextDataVaccine = styled.Text`
     font-size:14px;
     font-family: "Noto Sans KR";
     font-weight:500;
     color: #273047;
 `;
 
-export const TextCheckBoxAllergy = styled.Text `
+export const TextCheckBoxAllergy = styled.Text`
     font-size:14px;
     font-family: "Noto Sans KR";
     font-weight:350;
     color: #273047;
 `;
 
-export const InfoText = styled.Text `
+export const InfoText = styled.Text`
     font-size:14px;
     font-family: "Noto Sans KR";
     font-weight:300;
@@ -80,7 +79,7 @@ export const InfoText = styled.Text `
 
 
 //12px
-export const TitleCard = styled.Text `
+export const TitleCard = styled.Text`
     font-size: 12px;
     font-family: "Noto Sans KR";
     font-weight: 700;
@@ -89,7 +88,7 @@ export const TitleCard = styled.Text `
 
 
 //10px
-export const TextCard = styled.Text `
+export const TextCard = styled.Text`
     font-size: 10px;
     font-family: "Noto Sans KR";
     font-weight: 300;
@@ -97,7 +96,7 @@ export const TextCard = styled.Text `
     text-align:center;
 `;
 
-export const SubtitlePrincipal = styled.Text `
+export const SubtitlePrincipal = styled.Text`
   width: 125.77px;
   height: 27.3px;
   font-style: normal;
@@ -107,7 +106,7 @@ export const SubtitlePrincipal = styled.Text `
   //text-align: center;
   color: #FFFFFF;
 `;
-    
+
 export const SubTitleHeaderFluxo = styled.Text`
   font-style: normal;
   font-weight: 300;

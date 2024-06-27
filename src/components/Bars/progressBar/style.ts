@@ -1,4 +1,6 @@
 import styled from "styled-components/native";
+import { StyleSheet } from "react-native";
+import { padaTheme } from "@/src/theme/pada-theme";
 
 export const ContainerComponentProgressBar = styled.View`
   width: 80%;
@@ -21,10 +23,10 @@ export const Progress = styled.View<ProgressProps>`
 `;
 
 export const NeonSide = styled.View`
-  position: absolute;
+  /* position: absolute;
   top: -5px;
   bottom: 0;
-  right: -4px;
+  right: -4px; */
   width: 18px;
   height: 18px;
   border-radius: 50px;
@@ -36,3 +38,18 @@ export const NeonSide = styled.View`
   blur-radius: 30px;
   elevation: 30; */
 `;
+const styles = StyleSheet.create({
+  container: {
+    width: 220,
+    height: 40,
+    //border: 
+    backgroundColor: padaTheme.colors.secondary
+  },
+  buttonText: {
+    fontFamily: 'NotoSansKR-Bold',
+    fontSize: 24,
+    color: padaTheme.colors.white
+  }
+})
+
+export default styles;

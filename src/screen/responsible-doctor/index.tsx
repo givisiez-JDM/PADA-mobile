@@ -5,11 +5,11 @@ import {
   ContainerSafePrincipalPaciente,
   Scroll,
 } from "./profissionalResponsavel-style";
-import Header from "../../components/Header/header"
+import Header from "../../components/Header"
 import React from "react";
 import storePatient from "@/src/store/storePatient";
 
-const ProfissionalResponsavel = () => {
+const Doctor = () => {
   const patient: any = storePatient.getState();
 
   return (
@@ -33,4 +33,4 @@ const ProfissionalResponsavel = () => {
   );
 };
 
-export default ProfissionalResponsavel;
+export default Doctor;

@@ -1,8 +1,9 @@
 import styled from "styled-components/native";
+import { padaTheme } from "@/src/theme/pada-theme";
+import { StyleSheet } from "react-native";
 
 export const LoadingComponent = styled.Modal`
 flex: 1;
- display: flex;
  justify-content: center;
  align-items: center;
  background: rgba(255, 255, 255);

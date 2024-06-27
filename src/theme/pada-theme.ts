@@ -2,8 +2,8 @@ import { DefaultTheme } from 'styled-components';
 
 
 const padaTheme: DefaultTheme = {
-    borderDefault: '2px',
-    borderRadiusButton: '50px',
+    borderDefault: 2,
+    borderRadiusButton: 50,
 
     colors: {
         main: '#E3E3E3',
@@ -40,7 +40,9 @@ const padaTheme: DefaultTheme = {
     fontType: {
         main: 'Noto Sans KR'
     }
+
 };
+
 
 
 export { padaTheme };

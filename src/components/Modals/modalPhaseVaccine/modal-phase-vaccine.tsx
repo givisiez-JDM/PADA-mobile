@@ -19,7 +19,7 @@ import {
   TextTitleModalPhase,
   TextTitleModalProgressBar,
 } from "./modal-phase-vaccine-style";
-import ProgressBar from "../../Bars/progressBar/progress-bar";
+import ProgressBar from "../../Bars/progressBar";
 import { useEffect, useState } from "react";
 import HiddenPhase from "../../../assets/images/image-icons/checkPhases.png";
 import Icon from "react-native-vector-icons/Ionicons";

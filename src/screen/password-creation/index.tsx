@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import HeaderNFooter from "../../components/HeaderNFooterSVG/headerNfooterSVG";
+import HeaderNFooter from "../../components/HeaderNFooterSVG";
 
 import {
   ContainerFormPatient,
@@ -10,7 +10,7 @@ import {
   ContainerSafe,
   Scroll
 } from "./cadastro-style";
-import Button from "../../components/Button/button"
+import Button from "../../components/Button"
 
 import FormPatientRecord from "../../components/Forms/form-patient-record/form-patient-record";
 import { validar } from "../../config/validates";
@@ -20,14 +20,14 @@ import Logo from "../../assets/images/logo/logo.png";
 
 import { Platform } from "react-native";
 import ModalInfo from "../../components/Modals/modalInfo/modal-info";
-import LoadingModal from "../../components/Bars/loadingModal/loading-modal";
+import LoadingModal from "../../components/Bars/loadingModal";
 import { User } from "../../service/requests";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { useNavigation } from "expo-router";
 import { propsStack } from "@/src/routes/Stack/Models";
 
 // adicionado tipagem
-const PatientRecord = () => {
+const PassCreation = () => {
   const [name, setName] = useState<string>("");
   const [mail, setMail] = useState<string>("");
   const [pass, setPass] = useState<string>("");
@@ -71,7 +71,6 @@ const PatientRecord = () => {
   };
 
   const arrayNamePlaceholder = [
-
     ["key", pass, "Senha", errorPass],
     ["key", repeatPass, "Repetir Senha", errorRepeatPass],
   ];
@@ -118,9 +117,7 @@ const PatientRecord = () => {
           <TouchableOpacity
             onPress={() => navigation.navigate("Login")}
           >
-            <Button
-              buttontext="Confirmar"
-            />
+            <Button text="Confirmar" />
           </TouchableOpacity>
 
           <LoadingModal visible={loading} onClose={closeLoading} />
@@ -137,4 +134,4 @@ const PatientRecord = () => {
   );
 };
 
-export default PatientRecord;
+export default PassCreation;

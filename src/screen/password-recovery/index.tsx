@@ -4,9 +4,9 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { useNavigation } from "@react-navigation/native";
 import { propsStack } from "../../routes/Stack/Models";
 import { validar } from "@/src/config/validates";
-import HeaderNFooter from "../../components/HeaderNFooterSVG/headerNfooterSVG";
-import FormPatientLoginRecord from "@/src/components/Forms/form-patient-login/form-patient-login";
-import Button from "@/src/components/Button/button";
+import HeaderNFooter from "../../components/HeaderNFooterSVG";
+import FormPatientLoginRecord from "@/src/components/Forms/form-patient-login";
+import Button from "@/src/components/Button";
 
 
 const PassRecovery = () => {
@@ -58,7 +58,7 @@ const PassRecovery = () => {
           )
         )}
 
-        <Button buttontext="Continuar" />
+        <Button text="Continuar" />
 
       </View>
 

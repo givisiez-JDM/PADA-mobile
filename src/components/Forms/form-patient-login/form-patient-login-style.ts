@@ -46,21 +46,3 @@ export const IconForm = styled.View`
   justify-content: center;
   align-items: center;
 `;
-
-export const Input = styled.TextInput`
-  width: 260px;
-  padding: 10px;
-  color: #334c76;`;
-
-export const ContainerErrorText = styled.View`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-`;
-
-export const InputText = styled.Text`
-  color: #ff0000;
-  font-size: 10px;
-  width: 250px;
-`;

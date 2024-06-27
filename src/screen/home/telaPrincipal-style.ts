@@ -34,7 +34,6 @@ export const ContainerListDoctor = styled.View`
 `;
 
 export const ContainerTelaPrincipal = styled.View`
- 
   display: flex;
   width: 100%;
   height: 100%;

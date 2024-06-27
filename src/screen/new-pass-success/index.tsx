@@ -2,8 +2,8 @@ import React from "react";
 import { View, StyleSheet, Text, Image } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
-import Button from "@/src/components/Button/button";
-import HeaderNFooter from "../../components/HeaderNFooterSVG/headerNfooterSVG";
+import Button from "@/src/components/Button";
+import HeaderNFooter from "../../components/HeaderNFooterSVG";
 
 import { useNavigation } from "@react-navigation/native";
 import { propsStack } from "@/src/routes/Stack/Models";

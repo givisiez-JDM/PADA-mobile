@@ -1,5 +1,5 @@
-import Header from "../../components/Header/header"
-
+import Header from "../../components/Header";
+import { StyleSheet, View, Text, SafeAreaView } from 'react-native';
 import {
   ContainerItemInformationVaccine,
   ContainerItemsLegends,
@@ -12,17 +12,18 @@ import {
 } from "./my-vaccines-styles";
 
 import { ContainerPrincipal } from "../home/telaPrincipal-style";
-import ItemVaccine from "../../components/Cards/itemVaccine/item-vaccine";
+import ItemVaccine from "../../components/Cards/itemVaccine";
 import { useEffect, useState } from "react";
 import { getDataUserStorage } from "../../service/requests";
-import ItemLegend from "../../components/Cards/itemLegend/item-legend";
+import ItemLegend from "../../components/Cards/itemLegend";
 import TabBar from "../../components/TabBar/buttonTabBar";
-import ProgressBar from "../../components/Bars/progressBar/progress-bar";
+import ProgressBar from "../../components/Bars/progressBar";
 import storePatient from "../../store/storePatient";
 import ModalPhaseVaccine from "../../components/Modals/modalPhaseVaccine/modal-phase-vaccine";
-import { Scroll } from "../patient/patient-style";
+import { Scroll } from "../profile/patient-style";
 import React from "react";
 import { TextTitleProgressBar } from "@/src/theme/textColor/styletextColor";
+import { padaTheme } from "@/src/theme/pada-theme";
 
 //tipagem adicionada
 const MyVaccines = () => {
@@ -62,7 +63,7 @@ const MyVaccines = () => {
   }, []);
 
   return (
-    <ContainerVaccinesView>
+    <SafeAreaView style={styles.container}>
 
       <Scroll>
         <Header
@@ -111,8 +112,41 @@ const MyVaccines = () => {
         </ContainerPrincipal>
       </Scroll>
       <TabBar />
-    </ContainerVaccinesView>
+    </SafeAreaView>
   );
 };
 
 export default MyVaccines;
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: 'rgba(209, 209, 209, 0.2)'
+  },
+  subContainer: {
+    width: '100%',
+    height: '100%',
+    alignSelf: 'center',
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: padaTheme.colors.white
+  },
+  title: {
+    fontFamily: 'NotoSansKR-Medium',
+    fontSize: 22,
+    backgroundColor: padaTheme.colors.darkBlue
+  },
+  textContainer: {
+    width: 300,
+    marginTop: 20
+  },
+  text: {
+    fontFamily: 'NotoSansKR-Thin',
+    fontSize: 18,
+    backgroundColor: padaTheme.colors.darkBlue
+  },
+  image: {
+    marginTop: 150,
+    marginBottom: 30
+  }
+})

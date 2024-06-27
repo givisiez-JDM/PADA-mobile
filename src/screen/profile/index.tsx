@@ -5,9 +5,9 @@ import { ContainerSafePrincipalPaciente, Scroll } from "./patient-style";
 import { TData, getDataUserStorage } from "../../service/requests";
 import storePatient from "../../store/storePatient";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import Header from "../../components/Header/header"
+import Header from "../../components/Header"
 
-const Patient = () => {
+const Profile = () => {
   const patient: any = storePatient.getState();
 
   return (
@@ -38,4 +38,4 @@ const Patient = () => {
   );
 };
 
-export default Patient;
+export default Profile;

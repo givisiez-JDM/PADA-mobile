@@ -29,7 +29,7 @@ import {
   ContainerInputVaccines,
   InputWrapper,
   ContainerTitlesPatiente,
-} from "./header-style";
+} from "./style";
 import { Platform, StatusBar, TouchableOpacity } from "react-native";
 import Icon from "react-native-vector-icons/Ionicons";
 import { useNavigation } from "@react-navigation/native";
@@ -53,7 +53,6 @@ const Header = (props: {
 }) => {
   const navigation = useNavigation<propsStack>();
   const patient: any = storePatient.getState();
-
 
   const [date, setDate] = useState(new Date());
   const [showPicker, setShowPicker] = useState(false);

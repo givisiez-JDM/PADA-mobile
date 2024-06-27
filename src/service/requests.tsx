@@ -59,7 +59,7 @@ export const loginUser = async (email: string, password: string,
 
     setTimeout(() => {
       if (loginResponse.status === 200) {
-        nav.navigate("TelaPrincipal");
+        nav.navigate("Home");
       }
       closeLoading();
     }, 3000);
@@ -156,11 +156,9 @@ export const getPatientInfo = async () => {
     storePatient.dispatch({
       type: "UPDATE_PATIENT",
       payload: aux
-      
+
     });
-    
-    
-    
+
     return aux;
   } catch (err: unknown) {
     console.log(err);

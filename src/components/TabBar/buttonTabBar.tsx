@@ -40,7 +40,7 @@ const TabBar = (props: { typeHeader?: string }) => {
   return props.typeHeader === "patient" ? (
     <ContainerTabBar>
       <ButtonTabBarHome>
-        <CustomTouchableOpacity onPress={() => navigation.navigate("TelaPrincipal")}>
+        <CustomTouchableOpacity onPress={() => navigation.navigate("Home")}>
           <ImageLogo>
             <Image source={home} />
           </ImageLogo>
@@ -60,7 +60,7 @@ const TabBar = (props: { typeHeader?: string }) => {
   ) : (
     <ContainerTabBar>
       <ButtonTabBarHomeSecundary>
-        <CustomTouchableOpacity onPress={() => navigation.navigate("TelaPrincipal")}>
+        <CustomTouchableOpacity onPress={() => navigation.navigate("Home")}>
           <ImageLogo>
             <Image source={BlueHome} />
           </ImageLogo>

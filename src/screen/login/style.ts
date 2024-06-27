@@ -21,9 +21,8 @@ export const TextInput = styled.View`
 
 export const PatientInput = styled.TextInput`
   width:100%;
-  font-size: 15px;
+  font-size: 24px;
   font-weight: 500;
-  padding: 10px;
 `;
 
 export const ButtonSenha = styled.Text`

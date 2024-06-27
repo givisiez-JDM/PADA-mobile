@@ -2,8 +2,8 @@ import 'styled-components';
 
 declare module 'styled-components' {
     export interface DefaultTheme {
-        borderDefault: string,
-        borderRadiusButton: string,
+        borderDefault: number,
+        borderRadiusButton: number,
 
         colors: {
             main: string,

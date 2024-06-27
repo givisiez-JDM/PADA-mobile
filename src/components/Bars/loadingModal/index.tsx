@@ -1,6 +1,6 @@
 import React from "react";
 
-import { ContainerModalLoading, LoadingComponent } from "./loading-modal-style";
+import { ContainerModalLoading, LoadingComponent } from "./style";
 
 import { ActivityIndicator } from "react-native";
 import { ViewSplash } from "@/src/screen/splash-screen/splashScreen-style";

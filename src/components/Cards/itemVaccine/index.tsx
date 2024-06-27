@@ -11,7 +11,7 @@ import {
   TextNameVaccine,
   ViewInformationDate,
   ViewItemHidden,
-} from "./item-vaccine-style";
+} from "./style";
 
 import Hidden from "../../../assets/images/image-icons/down-filled-triangular-arrow.png";
 import ModalCheckVaccines from "../../Modals/modalCheckVaccines/modal-check-vaccines";
@@ -29,11 +29,11 @@ const ItemVaccine = (props: {
   const [expanded, setExpanded] = useState(false);
   const [visible, setVisible] = useState(false);
 
-  const onOpen = () => {setVisible(true);};
+  const onOpen = () => { setVisible(true); };
 
-  const onClose = () => {setVisible(false);};
+  const onClose = () => { setVisible(false); };
 
-  const toggleExpand = () => {setExpanded(!expanded);};
+  const toggleExpand = () => { setExpanded(!expanded); };
 
 
   const setStatusColor = (status: string) => {

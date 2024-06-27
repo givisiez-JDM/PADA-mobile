@@ -1,3 +1,4 @@
+import { units } from '@/src/hooks/hooks';
 import React from 'react';
 import { Dimensions, StyleSheet, View } from 'react-native';
 import Svg, { Path } from 'react-native-svg';
@@ -8,13 +9,13 @@ interface HeaderNFooterBackSVGProps {
 
 const HeaderNFooterBackSVG: React.FC<HeaderNFooterBackSVGProps> = ({ fill }) => {
   return (
-    <View style={styles.container}>
+    <>
       <View>
         <View style={styles.box}>
           <Svg
             viewBox="0 0 360 200"
-            width={Dimensions.get('screen').width}
-            height={200}
+            width={units.vw * 100}
+            height={units.vh * 32}
             fill="none"
           >
             <Path d="M-128.136 -117.582C-131.838 -200.285 131.46 -149.764 218.646 -153.667C343.599 -224.991 375 -8.00003 361.203 78.7388C247.934 209.435 87.1826 -45.1739 43.0001 153C2.20062 336 -233.315 -141.254 -128.136 -117.582Z" fill="#4C7ABB" />
@@ -27,8 +28,8 @@ const HeaderNFooterBackSVG: React.FC<HeaderNFooterBackSVGProps> = ({ fill }) => 
         <View style={styles.box}>
           <Svg
             viewBox="0 0 360 160"
-            width={Dimensions.get('screen').width}
-            height={200}
+            width={units.vw * 100}
+            height={units.vh * 24}
             fill="none"
           >
             <Path
@@ -42,7 +43,7 @@ const HeaderNFooterBackSVG: React.FC<HeaderNFooterBackSVGProps> = ({ fill }) => 
           </Svg>
         </View>
       </View>
-    </View>
+    </>
   );
 };
 
@@ -54,7 +55,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#e3e3e3',
   },
   box: {
-    height: 150
+    height: units.vh * 20
   },
   bottom: {
     position: 'absolute',
