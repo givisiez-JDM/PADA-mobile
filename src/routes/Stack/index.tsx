@@ -1,0 +1,43 @@
+import React from "react";
+import SplashScreen from "../../screen/splash-screen/splashScreen";
+import { propsNavigationStack } from "./Models";
+
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import Patient from "../../screen/patient/patient";
+import PatientRecord from "../../screen/password-creation/cadastro";
+import TelaPrincipal from "../../screen/home/telaPrincipal";
+import ProfissionalResponsavel from "../../screen/responsible-doctor/profissionalResponsavel";
+import MyVaccines from "../../screen/myVaccines/my-vaccines";
+
+import RedefinirSenha from "../../screen/password-redefine/redefinirSenha";
+import RecuperacaoSenha from "../../screen/password-recovery/recuperacaoSenha";
+import TelaSucesso from "../../screen/password-recovery-success/telaSucesso";
+import PatientLogin from "../../screen/login/login";
+import ChangePass from "../../screen/password-change/change-password";
+
+const { Navigator, Screen } =
+  createNativeStackNavigator<propsNavigationStack>();
+
+export default function () {
+  return (
+    <Navigator
+      initialRouteName="SplashScreen"
+      screenOptions={{ headerShown: false }}
+    >
+      <Screen name="Login" component={PatientLogin} />
+      <Screen name="TelaPrincipal" component={TelaPrincipal} />
+      <Screen name="Paciente" component={Patient} />
+      <Screen
+        name="ProfissionalResponsavel"
+        component={ProfissionalResponsavel}
+      />
+      <Screen name="SplashScreen" component={SplashScreen} />
+      <Screen name="MyVaccines" component={MyVaccines} />
+
+      <Screen name="ChangePass" component={ChangePass} />
+      <Screen name="RecuperacaoSenha" component={RecuperacaoSenha} />
+      <Screen name="TelaSucesso" component={TelaSucesso} />
+      {/* <Screen name="TabRoutes" component={TabRoutes} /> */}
+    </Navigator>
+  );
+}
