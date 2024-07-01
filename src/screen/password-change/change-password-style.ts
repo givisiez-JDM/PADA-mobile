@@ -2,18 +2,32 @@ import styled from "styled-components/native";
 
 export const ContainerMain = styled.View`
   flex: 1;
-  justify-content: center;
-  align-items: center;
   width: 100%;
   height: 100%;
-  margin-top: 100px;
+  justify-content: center; 
+  align-items: center;  
 `;
 
 export const TextRedefinir = styled.Text`
   font-size: 22px;
   font-weight: 500;
-  color: #334c76;
+  color: #4C7ABB;
 `;
+
+export const ContainerTextPass = styled.View`
+  width: 90%;
+  align-items: flex-start; 
+  margin-top: 5px; 
+`;
+
+export const TextPass = styled.Text`
+  font-size: 8px;
+  font-weight: 300;
+  color: #4C7ABB;
+  text-align: left;
+  padding-left: 68px;
+`;
+
 export const TextEnviaremos = styled.Text`
   font-size: 18px;
   font-weight: 300;
@@ -26,6 +40,7 @@ export const TextEnviaremos1 = styled.Text`
   color: #334c76;
   margin-left: 40px;
 `;
+
 export const ContainerEnviaremos = styled.View`
   width: 300px;
   margin-top: 20px;
@@ -33,7 +48,6 @@ export const ContainerEnviaremos = styled.View`
 
 export const ButtonAvancar = styled.View`
   display: flex;
-
   justify-content: center;
   align-items: center;
   width: 150px;
@@ -52,6 +66,8 @@ export const ButtonAvancar = styled.View`
 export const ImageIconLogoRedefinir = styled.Image`
   margin-top: 150px;
   margin-bottom: 30px;
+  width:63px;
+  height:71px;
 `;
 
 export const ContainerFooterBottom = styled.View`

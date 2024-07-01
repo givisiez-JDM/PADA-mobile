@@ -65,3 +65,13 @@ export const SubTitlePatientAllergies = styled.Text`
 export const ButtonTouch = styled.TouchableOpacity`
   margin: 20px;
 `;
+
+export const InputEdit = styled.TextInput`
+  height: 30px;
+  border-color: black;
+  border-width: 1px;
+  width: 40%;
+  border-radius: 20px;
+  background-color: #FFFFFF;
+  padding-left: 10px; 
+`;
