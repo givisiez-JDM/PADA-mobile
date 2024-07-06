@@ -3,7 +3,7 @@ import SplashScreen from "../../screen/splash-screen/splashScreen";
 import { propsNavigationStack } from "./Models";
 import Profile from "../../screen/profile";
 import Home from "../../screen/home";
-import Doctor from "../../screen/responsible-doctor";
+import Doctor from "../../screen/doctor";
 import MyVaccines from "../../screen/myVaccines";
 
 import PassCreation from "../../screen/password-creation";
@@ -19,7 +19,7 @@ const Stack = createNativeStackNavigator();
 export const Router = () => {
   return (
     <Stack.Navigator
-      initialRouteName="Login"
+      initialRouteName="Home"
       screenOptions={{ headerShown: false }}
     >
       <Stack.Screen name="Login" component={PatientLogin} />

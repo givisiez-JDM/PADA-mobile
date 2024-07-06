@@ -1,12 +1,10 @@
 import Header from "../../components/Header";
-import { StyleSheet, View, Text, SafeAreaView } from 'react-native';
+import { StyleSheet, View, Text, SafeAreaView, ScrollView } from 'react-native';
 import {
-  ContainerItemInformationVaccine,
   ContainerItemsLegends,
   ContainerLegend,
   ContainerProgressBar,
   ContainerTextProgressBar,
-  ContainerVaccinesView,
   TextContainerLegend,
   TextSubTitleProgressBar,
 } from "./my-vaccines-styles";
@@ -20,7 +18,6 @@ import TabBar from "../../components/TabBar/buttonTabBar";
 import ProgressBar from "../../components/Bars/progressBar";
 import storePatient from "../../store/storePatient";
 import ModalPhaseVaccine from "../../components/Modals/modalPhaseVaccine/modal-phase-vaccine";
-import { Scroll } from "../profile/patient-style";
 import React from "react";
 import { TextTitleProgressBar } from "@/src/theme/textColor/styletextColor";
 import { padaTheme } from "@/src/theme/pada-theme";
@@ -30,9 +27,26 @@ const MyVaccines = () => {
   const [progress, setProgress] = useState<number>(20);
   const [name, setName] = useState<string>("");
   const [visible, setVisible] = useState<boolean>(false);
-  const patient: any = storePatient.getState();
+  // const patient: any = storePatient.getState();
   const [colorBorderLeft, setColorBorderLeft]: any = useState<string>('');
 
+  const patient = {
+    patientInfo: {
+      name: 'Juliana Nogueira',
+      photo: 'imgurl',
+      telephone: '(81)9 9999-9999',
+      email: 'email',
+      birthDate: '19/04/1991'
+    },
+    treatmentInfo: {
+      dosage: '2',
+      allergies: ['abelhas'],
+      frequency: '2',
+      method: 'vacina',
+      startTreatment: '20/08/2024',
+      endTreatment: '20/09/2024'
+    }
+  }
 
   const arrayLegend: { text: string; color: string }[] = [
     { text: "Aplicada", color: "#5CED38", },
@@ -64,14 +78,12 @@ const MyVaccines = () => {
 
   return (
     <SafeAreaView style={styles.container}>
-
-      <Scroll>
+      <ScrollView>
         <Header
-          title={name}
-          backButton={true}
-          buttonVaccine={false}
-          typeHeader="patient"
-          photo={patient.patientInfo.photo}
+          title={`${patient.patientInfo.name}`}
+          backButton
+          type="vaccines"
+        // photo={patient.patientInfo.photo}
         />
         <ContainerPrincipal>
           <ContainerProgressBar>
@@ -84,7 +96,7 @@ const MyVaccines = () => {
           </ContainerProgressBar>
 
 
-          <ContainerItemInformationVaccine>
+          {/* <ContainerItemInformationVaccine>
             {patient.vaccinesInfo.map((vaccine: any) => (
               <ItemVaccine
                 key={vaccine.id}
@@ -97,7 +109,7 @@ const MyVaccines = () => {
                 setColorBorderLeft={setColorBorderLeft}
               />
             ))}
-          </ContainerItemInformationVaccine>
+          </ContainerItemInformationVaccine> */}
 
           <ContainerLegend>
             <TextContainerLegend>LEGENDA</TextContainerLegend>
@@ -110,7 +122,7 @@ const MyVaccines = () => {
             </ContainerItemsLegends>
           </ContainerLegend>
         </ContainerPrincipal>
-      </Scroll>
+      </ScrollView>
       <TabBar />
     </SafeAreaView>
   );

@@ -17,10 +17,10 @@ const Doctor = () => {
       <Scroll>
         <Header
           title={patient.doctorInfo.name}
-          backButton={true}
-          buttonVaccine={true}
+          backButton
+          vaccineButton
           photo={patient.doctorInfo.photo}
-          typeHeader='doctor'
+          type='doctor'
         />
         <DataDoctor
           crm={patient.doctorInfo.CRM}

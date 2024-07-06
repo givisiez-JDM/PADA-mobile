@@ -18,7 +18,7 @@ const NewPassSuccess = () => {
         <Text style={styles.title}>Recuperação de senha</Text>
         <Text style={styles.subtitle}>Sua nova senha foi criada com sucesso!</Text>
         <Image style={{ marginTop: 25 }} source={require("../../assets/images/image-icons/sucesso.png")} />
-        <Button buttontext="Entrar" onPress={() => navigation.navigate("Login")} />
+        <Button text="Entrar" onPress={() => navigation.navigate("Login")} />
       </View>
     </SafeAreaView>
   );

@@ -1,3 +1,4 @@
+import { units } from "@/src/hooks/hooks";
 import styled, { css } from "styled-components/native";
 
 export const ContainerSafeHeader = styled.View`
@@ -6,7 +7,6 @@ export const ContainerSafeHeader = styled.View`
 `;
 
 export const ContainerHeaderFluxo = styled.View`
-  display: flex;
   flex-direction: column;
   row-gap: 10px;
   width: 100%;
@@ -169,44 +169,6 @@ export const ContainerDataPatient = styled.View`
   margin-top: 5px;
 `;
 
-export const TextDataPatient = styled.Text`
-  width: 133px;
-  height: 16px;
-  font-style: normal;
-  font-weight: 900;
-  font-size: 12px;
-  line-height: 17px;
-  color: #ffffff;
-`;
-
-export const ImageCalendar = styled.Image.attrs({
-  resizeMode: "stretch",
-})`
-  z-index: 1;
-`;
-
-export const ContainerButtonsHeaderFluxo = styled.View`
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  column-gap: 10px;
-`;
-
-export const ButtonNextVaccine = styled.TouchableOpacity`
-  margin-top: 5px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  width: 105px;
-  height: 34px;
-  background: rgba(118, 167, 237, 0.6);
-  border-radius: 10px;
-`;
-
-
-
 export const IconButtonNextVaccine = styled.View`
   position: relative;
   right: 5px;
@@ -220,29 +182,9 @@ export const IconButtonNextVaccine = styled.View`
   transform: rotate(179.15deg);
 `;
 
-export const ButtonRemember = styled.TouchableOpacity`
-  display: flex;
-  flex-direction: row;
-  column-gap: 5px;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  width: 73px;
-  height: 20px;
-  background: #49895b;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 10px;
-  margin-top: 5px;
-`;
 
-export const TextButtonRemember = styled.Text`
-  width: 43.4px;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 10px;
-  text-align: center;
-  color: #ffffff;
-`;
+
+
 
 export const IconTime = styled.Image.attrs({
   resizeMode: "stretch",
@@ -268,62 +210,6 @@ export const ContainerInputCalendarVaccines = styled.View`
   align-items: center;
   height: 47.5px;
 `;
-
-export const InputCalendarVaccines = styled.TextInput`
-  background: rgba(218, 218, 218, 1);
-  width: 280px;
-  height: 47.5px;
-  color: rgba(39, 48, 71, 0.5);
-  font-size: 15px;
-  font-weight: 400;
-`;
-
-export const IconWrapper = styled.View`
-  background: rgba(218, 218, 218, 1);
-  width: 35px;
-  height: 47.5px;
-  justify-content: center;
-  align-items: center;
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
-`;
-
-export const IconWrapperCalendar = styled.View`
-  background: rgba(218, 218, 218, 1);
-  width: 50px;
-  height: 47.5px;
-  justify-content: center;
-  align-items: center;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
-  position: relative;
-  
-`;
-
-export const HeaderContainer = styled.View`
-  width: 100%;
-  height:45%;
-`;
-
-export const HeaderNFooterIMG = styled.ImageBackground`
-  flex: 1;
-`;
-
-export const BackgroundHeaderContainer = styled.TouchableOpacity`
-position:absolute;
-top:15px;
-left:15px;
-
-width: 40px;
-height: 40px;
-
-background: #fff;
-border-radius: 50px;
-justify-content: center;
-align-items: center;
-`;
-
-
 
 // Doctor
 
@@ -363,10 +249,7 @@ export const ContainerSubtitles = styled.View`
 padding-right:160px;
 margin-bottom: 10px;
 gap:8px;
-
-
 `;
-
 
 // pagina principal
 
@@ -380,24 +263,4 @@ export const TextButtonNextVaccine = styled.Text`
   text-align: center;
   color: #ffffff;
 `;
-
-// my vaccines
-export const ContainerInputVaccines = styled.View`
-  display: flex;
-  gap:5px;
-  padding: 90px 13px 0
-`;
-
-export const InputWrapper = styled.View`
-display:flex;
-flex-direction:row;
-align-items:center;
-justify-content:space-evenly;
-padding: 0px 0px 5px 0px;
-border-radius: 5px;
-background: rgba(218, 218, 218, 1);
-
-`;
-
-
 

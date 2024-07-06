@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Image, SafeAreaView, ScrollView,
   StyleSheet, View, Text
@@ -11,9 +11,26 @@ import Button from "@/src/components/Button";
 import HeaderNFooter from "@/src/components/HeaderNFooterSVG";
 import { padaTheme } from "@/src/theme/pada-theme";
 import { units } from "@/src/hooks/hooks";
+import FormPatientLoginRecord from "@/src/components/Forms/form-patient-login";
 
 const PassChange = () => {
   const navigation = useNavigation<propsStack>();
+  const [pass, setPass] = useState("");
+  const [errorPass, setErrorPass] = useState("");
+
+
+  const handleInputChange = (name: string, value: string) => {
+    if (name === "Senha") {
+      setPass(value);
+      setErrorPass("");
+    }
+  };
+
+  const arrayNamePlaceholder = [
+    [pass, "Senha atual", errorPass],
+    [pass, "Nova senha", errorPass],
+    [pass, "Confirme senha", errorPass]
+  ];
 
   return (
     <SafeAreaView style={styles.container}>
@@ -23,15 +40,21 @@ const PassChange = () => {
             fill={""}
           />
           <Image source={require('../../assets/images/logo/logo.png')} style={styles.image} />
-          <Text style={styles.title}>Redefinir senha</Text>
-          <View style={styles.textContainer}>
-            <Text style={styles.text}>Enviaremos um código de 6 dígitos </Text>
-            <Text style={styles.text}>para você no seu e-mail.</Text>
-          </View>
+          <Text style={styles.title}>Alterar senha</Text>
+          {arrayNamePlaceholder.map(
+            ([valueState, place, err]) => (
+              <FormPatientLoginRecord
+                placeholder={place}
+                handleInputChange={(text: string) => {
+                  handleInputChange(place, text);
+                }}
+                state={valueState}
+                err={err}
+                showPassword={false} />
+            )
+          )}
 
-          <InputGeral inputtext={undefined} />
-
-          <Button text="Avançar" />
+          <Button text="Confirmar" onPress={() => navigation.navigate("Profile")} />
         </View>
       </ScrollView>
     </SafeAreaView>

@@ -17,7 +17,24 @@ const styles = StyleSheet.create({
     fontSize: 24,
     lineHeight: 34,
     color: padaTheme.colors.white
-  }
+  },
+  editButton: {
+    width: units.vw * 45,
+    height: units.vh * 6,
+    alignSelf: 'center',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginBottom: units.vh * 10,
+    marginTop: units.vh * 6,
+    borderRadius: units.vh * 4,
+    backgroundColor: padaTheme.colors.secondary
+  },
+  editbuttonText: {
+    fontFamily: 'NotoSansKR-Medium',
+    fontSize: 16,
+    lineHeight: 23,
+    color: padaTheme.colors.white
+  },
 })
 
 export default styles;

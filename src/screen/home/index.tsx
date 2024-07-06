@@ -1,21 +1,34 @@
 import React, { useState, useEffect } from "react";
 import Header from "../../components/Header";
-import {
-  ContainerListTagFluxo,
-  ContainerPrincipalMenu,
-  ContainerSafePrincipal,
-} from "./telaPrincipal-style";
 import TagFluxo from "../../components/tagFluxo/tag-fluxo";
 import TabBar from "../../components/TabBar/buttonTabBar";
-import { FlatList } from "react-native";
+import { FlatList, SafeAreaView, StyleSheet, View } from "react-native";
 import { getDataUserStorage } from "../../service/requests";
 import storePatient from "../../store/storePatient";
+import { units } from "@/src/hooks/hooks";
 
 const Home = () => {
   const [name, setName] = useState("");
-  const patient: any = storePatient.getState();
+  // const patient: any = storePatient.getState();
 
-  getDataUserStorage({ setName });
+  const patient = {
+    patientInfo: {
+      name: 'Juliana Nogueira',
+      photo: 'imgurl',
+      telephone: '(81)9 9999-9999',
+      email: 'email',
+      birthDate: '19/04/1991'
+    },
+    treatmentInfo: {
+      dosage: '2',
+      allergies: ['abelhas'],
+      frequency: '2',
+      method: 'vacina',
+      startTreatment: '20/08/2024',
+      endTreatment: '20/09/2024'
+    }
+  }
+  // getDataUserStorage({ setName });
 
   const array = [
     {
@@ -37,33 +50,42 @@ const Home = () => {
 
   const renderItem = ({ item }: any): any => {
     return (
-      <TagFluxo imageTag={item.image} title={item.title} text={item.text} />
+      <TagFluxo img={item.image} title={item.title} text={item.text} />
     );
   };
 
   useEffect(() => { }, []);
 
   return (
-    <ContainerSafePrincipal>
+    <SafeAreaView style={{ flex: 1 }}>
       <Header
-        title={`Olá, ${name}`}
-        backButton={true}
-        buttonVaccine={true}
-        typeHeader="patient"
+        title={`Olá, ${patient.patientInfo.name}`}
+        type="patient"
       />
-      <ContainerPrincipalMenu>
-        <ContainerListTagFluxo>
-          <FlatList
-            data={array}
-            renderItem={renderItem}
-            keyExtractor={item => item.title}
-            numColumns={2}
-          />
-        </ContainerListTagFluxo>
-      </ContainerPrincipalMenu>
+      <View style={styles.cardsContainer}>
+        <FlatList
+          data={array}
+          renderItem={renderItem}
+          keyExtractor={item => item.title}
+          numColumns={2}
+        />
+      </View>
       <TabBar typeHeader="patient" />
-    </ContainerSafePrincipal>
+    </SafeAreaView>
   );
 };
 
 export default Home;
+
+const styles = StyleSheet.create({
+  cardsContainer: {
+    flex: 1,
+    width: '90%',
+    alignSelf: 'center',
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingHorizontal: '5%',
+    paddingVertical: '2%',
+    marginBottom: units.vh * 2,
+  }
+})

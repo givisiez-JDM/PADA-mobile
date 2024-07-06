@@ -7,7 +7,6 @@ import {
 } from "./redefinirSenha-style";
 import logo from "../../assets/images/logo/logo.png";
 import { useNavigation } from "@react-navigation/native";
-import { ContainerTelaPrincipal } from "../home/telaPrincipal-style";
 import InputGeral from "../../components/Forms/inputGeral/inputGeral";
 import { Platform, SafeAreaView, ScrollView, Text, View } from "react-native";
 import { propsStack } from "@/src/routes/Stack/Models";
