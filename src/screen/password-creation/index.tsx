@@ -9,10 +9,10 @@ import {
   ContainerFormInputsPatients,
   ContainerSafe,
   Scroll
-} from "./cadastro-style";
+} from "./style";
 import Button from "../../components/Button"
 
-import FormPatientRecord from "../../components/Forms/form-patient-record/form-patient-record";
+import FormPatientRecord from "../../components/Forms/form-patient-record";
 import { validar } from "../../config/validates";
 import checkFlag from "../../assets/images/image-icons/checkflag.png";
 import errorFlag from "../../assets/images/image-icons/errorflag.png";

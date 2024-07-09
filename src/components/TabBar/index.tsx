@@ -10,7 +10,7 @@ import {
   CustomTouchableOpacity,
   ImageLogo,
   ButtonTabBarHomeSecundary, TextButtonTabBar
-} from "./buttonTabBar-style";
+} from "./style";
 import { RemoveStorage } from "../../service/requests";
 import { propsStack } from "../../routes/Stack/Models";
 import home from "../../assets/images/headerAndFooter/footer/home.png";

@@ -4,8 +4,8 @@ import {
   ContainerDataDoctor,
   SubTitleDoctor,
   TitleDataDoctor,
-} from "./data-doctor-style";
-import { BoldTextTitle, BaseText} from "../../../theme/textColor/styletextColor";
+} from "./style";
+import { BoldTextTitle, BaseText } from "../../../theme/textColor/styletextColor";
 import React from "react";
 
 

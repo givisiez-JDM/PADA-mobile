@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { useNavigation } from "@react-navigation/native";
 import { propsStack } from '../../routes/Stack/Models';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { ContainerSplashScreen, ViewSplash } from './splashScreen-style';
+import { ContainerSplashScreen, ViewSplash } from './style';
 import React from 'react';
 
 const SplashScreen: React.FC = () => {

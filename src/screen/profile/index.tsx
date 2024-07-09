@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import TabBar from "../../components/TabBar/buttonTabBar";
+import TabBar from "../../components/TabBar";
 import DataPatient from "../../components/Patients/dataPatient";
 import { TData, getDataUserStorage } from "../../service/requests";
 import storePatient from "../../store/storePatient";

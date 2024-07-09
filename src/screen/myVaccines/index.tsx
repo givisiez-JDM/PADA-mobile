@@ -7,14 +7,14 @@ import {
   ContainerTextProgressBar,
   TextContainerLegend,
   TextSubTitleProgressBar,
-} from "./my-vaccines-styles";
+} from "./style";
 
-import { ContainerPrincipal } from "../home/telaPrincipal-style";
+import { ContainerPrincipal } from "../home/style";
 import ItemVaccine from "../../components/Cards/itemVaccine";
 import { useEffect, useState } from "react";
 import { getDataUserStorage } from "../../service/requests";
 import ItemLegend from "../../components/Cards/itemLegend";
-import TabBar from "../../components/TabBar/buttonTabBar";
+import TabBar from "../../components/TabBar";
 import ProgressBar from "../../components/Bars/progressBar";
 import storePatient from "../../store/storePatient";
 import ModalPhaseVaccine from "../../components/Modals/modalPhaseVaccine/modal-phase-vaccine";

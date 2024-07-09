@@ -1,6 +1,6 @@
 import { FlatList } from "react-native-gesture-handler";
 import Patient from "../../assets/images/imgPaciente.png";
-import { ContainerGrid, ImageItem, Item, TextItem } from "./grid-menu-style";
+import { ContainerGrid, ImageItem, Item, TextItem } from "./style";
 import { ImageSourcePropType } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { propsStack } from "../../routes/Stack/Models";

@@ -1,5 +1,5 @@
 import React from "react";
-import SplashScreen from "../../screen/splash-screen/splashScreen";
+import SplashScreen from "../../screen/splash-screen";
 import { propsNavigationStack } from "./Models";
 import Profile from "../../screen/profile";
 import Home from "../../screen/home";

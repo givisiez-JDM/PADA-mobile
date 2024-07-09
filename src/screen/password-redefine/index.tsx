@@ -4,10 +4,10 @@ import {
   ImageIconLogoRedefinir,
   SubtittleRedefinePass,
   TitleRedefinePass,
-} from "./redefinirSenha-style";
+} from "./style";
 import logo from "../../assets/images/logo/logo.png";
 import { useNavigation } from "@react-navigation/native";
-import InputGeral from "../../components/Forms/inputGeral/inputGeral";
+import InputGeral from "../../components/Forms/inputGeral";
 import { Platform, SafeAreaView, ScrollView, Text, View } from "react-native";
 import { propsStack } from "@/src/routes/Stack/Models";
 import Button from "@/src/components/Button"

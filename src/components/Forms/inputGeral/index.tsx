@@ -1,8 +1,12 @@
-import { ButtonEmailSenhaContainer } from "./inputGeral-style";
+import { ButtonEmailSenhaContainer } from "./style";
 import React from "react";
 import { View } from "react-native";
 
-const InputGeral = ({ inputtext }) => {
+interface Props {
+  inputtext: string;
+}
+
+const InputGeral: React.FC<Props> = ({ inputtext }) => {
   return (
     <ButtonEmailSenhaContainer placeholder={inputtext} />
   );

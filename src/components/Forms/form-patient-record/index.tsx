@@ -6,7 +6,7 @@ import {
   IconForm,
   Input,
   InputText,
-} from "./form-patient-record-style";
+} from "./style";
 import Icon from "react-native-vector-icons/Ionicons";
 import React from "react";
 

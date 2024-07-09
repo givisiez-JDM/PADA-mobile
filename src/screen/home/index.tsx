@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Header from "../../components/Header";
 import TagFluxo from "../../components/tagFluxo/tag-fluxo";
-import TabBar from "../../components/TabBar/buttonTabBar";
+import TabBar from "../../components/TabBar";
 import { FlatList, SafeAreaView, StyleSheet, View } from "react-native";
 import { getDataUserStorage } from "../../service/requests";
 import storePatient from "../../store/storePatient";
@@ -68,6 +68,7 @@ const Home = () => {
           renderItem={renderItem}
           keyExtractor={item => item.title}
           numColumns={2}
+          scrollEnabled={false}
         />
       </View>
       <TabBar typeHeader="patient" />

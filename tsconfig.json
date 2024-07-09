@@ -15,6 +15,6 @@
     "**/*.jsx",
     ".expo/types/**/*.ts",
     "expo-env.d.ts",
-    "src/screen/home/telaPrincipal-style.ts"
+    "src/screen/home/style.ts"
   ]
 }

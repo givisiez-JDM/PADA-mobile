@@ -6,6 +6,7 @@ import { units } from "@/src/hooks/hooks";
 import Button from "../../Button";
 import { useNavigation } from "@react-navigation/native";
 import { propsStack } from "@/src/routes/Stack/Models";
+import { padaTheme } from "@/src/theme/pada-theme";
 
 interface TData {
   name: string;
@@ -35,6 +36,7 @@ const InfoData: React.FC<InfoDataProps> = ({ title, text, textSecondary, editMod
         (<View style={styles.infoContainer}>
           <BoldTextTitle>{title}</BoldTextTitle>
           <TextInput
+            style={{ backgroundColor: padaTheme.colors.white, height: 40, borderRadius: 18 }}
             value={data}
             onChangeText={() => onChangeText} />
         </View>)
@@ -51,8 +53,18 @@ const InfoData: React.FC<InfoDataProps> = ({ title, text, textSecondary, editMod
 const DataPatient: React.FC<TData> = ({ name, phone, email, birthDate, dosage, allergies,
   frequency, method, startTreatment, endTreatment }) => {
   const navigation = useNavigation<propsStack>();
-  // const itemAllergies = (allergies: string[]) => {
-  //   return <SubTitlePatientAllergies>{allergies}</SubTitlePatientAllergies>;
+
+  const [editMode, setEditMode] = useState(false);
+
+  const [editedData, setEditedData] = useState({
+    name: name,
+    telefone: phone,
+    email: email,
+    data_nascimento: birthDate,
+  });
+
+  // const itemAllergies = ({ item }) => {
+  //   return <Text>{item}</Text>;
   // };
 
   const formatDateString = (dateString: string) => {
@@ -80,20 +92,7 @@ const DataPatient: React.FC<TData> = ({ name, phone, email, birthDate, dosage, a
     return JSON.stringify(phoneNumber);
   };
 
-  const [editMode, setEditMode] = useState(false);
 
-  const [editedData, setEditedData] = useState({
-    name: name,
-    telefone: phone,
-    email: email,
-    data_nascimento: birthDate,
-    dosagem: dosage,
-    alergias: allergies,
-    periodicidade: frequency,
-    metodo: method,
-    inicio: startTreatment,
-    fim: endTreatment
-  });
 
   const handleInputChange = (key: string, value: string) => {
     setEditedData(prevState => ({
@@ -103,7 +102,7 @@ const DataPatient: React.FC<TData> = ({ name, phone, email, birthDate, dosage, a
   };
 
   const handleEditAndSave = () => {
-    editMode ? setEditMode(false) : setEditMode(true);
+    setEditMode(!editMode);
   };
 
   return (
@@ -135,16 +134,10 @@ const DataPatient: React.FC<TData> = ({ name, phone, email, birthDate, dosage, a
               data={formatDateString(birthDate)}
               onChangeText={(value: string) => handleInputChange("data_nascimento", value)}
             />
-            <InfoData title="Dosagem do Medicamento" text={dosage} />
-            <InfoData title="Alergias" text={'alergias'} />
-            <InfoData title="Periodicidade do Tratamento" text={frequency} />
-            <InfoData title="Método de Tratamento" text={method} />
-            <InfoData title="Duração do Tratamento"
-              text={`Início: ${formatDateString(startTreatment)}`}
-              textSecondary={`Fim: ${formatDateString(endTreatment)}`}
-            />
-            <InfoData title="Senha: ********" />
-            <Button type={'editar'} text={"Alterar"} onPress={() => navigation.navigate("PassChange")} />
+            <View style={{ flexDirection: 'row', marginTop: 10 }}>
+              <InfoData title="Senha: ********" />
+              <Button type={'editar'} text={"Alterar"} onPress={() => navigation.navigate("PassChange")} />
+            </View>
             <Button type={'editar'} text={"Atualizar perfil"} onPress={handleEditAndSave} />
           </View >
 

@@ -6,7 +6,7 @@ import {
 
 import { useNavigation } from "@react-navigation/native";
 import { propsStack } from "@/src/routes/Stack/Models";
-import InputGeral from "@/src/components/Forms/inputGeral/inputGeral";
+import InputGeral from "@/src/components/Forms/inputGeral";
 import Button from "@/src/components/Button";
 import HeaderNFooter from "@/src/components/HeaderNFooterSVG";
 import { padaTheme } from "@/src/theme/pada-theme";
@@ -15,21 +15,39 @@ import FormPatientLoginRecord from "@/src/components/Forms/form-patient-login";
 
 const PassChange = () => {
   const navigation = useNavigation<propsStack>();
-  const [pass, setPass] = useState("");
-  const [errorPass, setErrorPass] = useState("");
+  // const [pass, setPass] = useState("");
+  // const [errorPass, setErrorPass] = useState("");
 
+  const [actualPass, setActualPass] = useState("");
+  const [newPass, setNewPass] = useState("");
+  const [passConfirmation, setPassConfirmation] = useState("");
+  const [errorActualPass, setErrorActualPass] = useState("");
+  const [errorNewPass, setErrorNewPass] = useState("");
+  const [errorPassConfirmation, setErrorPassConfirmation] = useState("");
 
   const handleInputChange = (name: string, value: string) => {
-    if (name === "Senha") {
-      setPass(value);
-      setErrorPass("");
+    if (name === "Senha atual") {
+      setActualPass(value);
+      setErrorActualPass("");
+    } else if (name === "Nova senha") {
+      setNewPass(value);
+      setErrorNewPass("");
+    } else if (name === "Confirme senha") {
+      setPassConfirmation(value);
+      if (value !== newPass) {
+        setErrorPassConfirmation("As senhas não coincidem.");
+      } else {
+        setErrorPassConfirmation("");
+      }
     }
   };
 
+  const isValid = newPass.length > 8;
+
   const arrayNamePlaceholder = [
-    [pass, "Senha atual", errorPass],
-    [pass, "Nova senha", errorPass],
-    [pass, "Confirme senha", errorPass]
+    [actualPass, "Senha atual", errorActualPass],
+    [newPass, "Nova senha", errorNewPass],
+    [passConfirmation, "Confirme senha", errorPassConfirmation]
   ];
 
   return (

@@ -3,7 +3,7 @@ import React from "react";
 import { ContainerModalLoading, LoadingComponent } from "./style";
 
 import { ActivityIndicator } from "react-native";
-import { ViewSplash } from "@/src/screen/splash-screen/splashScreen-style";
+import { ViewSplash } from "@/src/screen/splash-screen/style";
 
 //tipagem adicionada
 const LoadingModal = ({ visible, onClose }: { visible: boolean; onClose: () => void }) => {
