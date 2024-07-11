@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import {
   ButtonClose,
   ContainerCheckItemsModal,
@@ -5,38 +6,36 @@ import {
   ContainerModalCheckVaccines,
   TextTitleModal,
 } from "./modal-check-vaccines-styles";
-
 import Icon from "react-native-vector-icons/Ionicons";
-import CheckBox from "../../checkBox/checkBox";
-import { useEffect, useState } from "react";
-import React from "react";
+import { Checkbox } from "native-base";
+import { ViewInformationDate } from "../../Cards/itemVaccine/style";
 
 const ModalCheckVaccines = (props: {
+  colorBorderLeft: string;
   visible: boolean;
   onClose: () => void;
-  status: string;
+ 
 }) => {
-  //tipagem adicionada
-  const [selectedCheckbox, setSelectedCheckbox] = useState<boolean>(false);
-  const [colorBorderLeft, setColorBorderLeft] = useState<string>('');
+  const [selectedCheckbox, setSelectedCheckbox] = useState<string | null>(null);
 
-  const handleCheckboxSelection = (index: any) => {
-    let number: any;
-    if (index === "#bbf7ac") {
-      number = 0;
-    }
-    if (index === "#FCE0AA") {
-      number = 1;
-    }
-    if (index === "#F19A9A") {
-      number = 2;
-    }
-    return number;
-  };
+  /*const handleCheckboxSelection = (value: string | null) => {
+    setSelectedCheckbox(value);
 
-  useEffect(() => {
-
-  }, [])
+    switch (value) {
+      case "aplicada":
+        props.setColorBorderLeft('#5CED38');
+        break;
+      case "aplicada em atraso":
+        props.setColorBorderLeft('#FACB71');
+        break;
+      case "não aplicada":
+        props.setColorBorderLeft('#E85656');
+        break;
+      default:
+        props.setColorBorderLeft('#000000');
+        break;
+    }
+  }; */
 
   return (
     <ContainerModalCheckVaccines
@@ -51,30 +50,30 @@ const ModalCheckVaccines = (props: {
         </ButtonClose>
         <TextTitleModal>Monitore seu tratamento</TextTitleModal>
         <ContainerCheckItemsModal>
+          <Checkbox
+            value="aplicada"
+            isChecked={selectedCheckbox === "aplicada"}
+            onChange={(isSelected) => handleCheckboxSelection(isSelected ? "aplicada" : null)}
+          >
+            Apliquei na data correta
+          </Checkbox>
 
-          {/* <CheckBox
-            title="Apliquei na data correta"
-            size="24"
-            status='aplicada'
-            checked={selectedCheckbox}
-            setSelectedCheckbox={setSelectedCheckbox}
-          />
+          <Checkbox
+            value="aplicada em atraso"
+            isChecked={selectedCheckbox === "aplicada em atraso"}
+            onChange={(isSelected) => handleCheckboxSelection(isSelected ? "aplicada em atraso" : null)}
+          >
+            Apliquei com atraso
+          </Checkbox>
 
-          <CheckBox
-            title="Apliquei com atraso"
-            size="24"
-            status='aplicada em atraso'
-            checked={selectedCheckbox}
-            setSelectedCheckbox={setSelectedCheckbox}
-          />
-
-          <CheckBox
-            title="Não Apliquei"
-            size="24"
-            status='não aplicada'
-            checked={selectedCheckbox}
-            setSelectedCheckbox={setSelectedCheckbox}
-          /> */}
+          <Checkbox
+            value="não aplicada"
+            isChecked={selectedCheckbox === "não aplicada"}
+            onChange={(isSelected) => handleCheckboxSelection(isSelected ? "não aplicada" : null)}
+          >
+            Não Apliquei
+          </Checkbox>
+          <ViewInformationDate colorBorderLeft={props.colorBorderLeft} />
         </ContainerCheckItemsModal>
       </ContainerContentModal>
     </ContainerModalCheckVaccines>

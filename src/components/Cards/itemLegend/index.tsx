@@ -1,10 +1,5 @@
 import React from "react";
 import styles from './style';
-// import {
-//   BoxLegend,
-//   ContainerItemLegend,
-//   TextItemLegend,
-// } from "./style";
 import { View, Text } from "react-native";
 
 interface BoxLegendProps {

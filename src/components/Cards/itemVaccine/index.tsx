@@ -1,13 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
+import {View, Text, StyleSheet} from "react-native"
 import {
   ButtonInformationVaccine,
-  ContainerItemInformationVaccine,
+  
   ContainerNameVaccine,
   HiddenContent,
   ImageHidden,
-  TextDateInformation,
   TextHiddenContent,
-  TextHourInformation,
   TextNameVaccine,
   ViewInformationDate,
   ViewItemHidden,
@@ -24,7 +23,7 @@ const ItemVaccine = (props: {
   description: string;
   status: string;
   colorBorderLeft: string;
-  setColorBorderLeft: string;
+  setColorBorderLeft: (color: string) => void; // Recebe a função setColorBorderLeft como prop
 }) => {
   const [expanded, setExpanded] = useState(false);
   const [visible, setVisible] = useState(false);
@@ -35,24 +34,13 @@ const ItemVaccine = (props: {
 
   const toggleExpand = () => { setExpanded(!expanded); };
 
-
-  const setStatusColor = (status: string) => {
-    let color = '';
-
-    if (status === 'aplicada') color = '#5CED38';
-    if (status === 'aplicada em atraso') color = '#FACB71';
-    if (status === 'não aplicada') color = '#E85656';
-    if (status === 'agendada') color = '#B4B4B4';
-
-    return color;
-  }
-
-  useEffect(() => {
-  }, [])
+ 
   return (
-    <>
-      <ButtonInformationVaccine onPress={onOpen} expanded={expanded}>
-        <ViewInformationDate colorBorderLeft={props.colorBorderLeft}>
+
+    
+  <View style={ isSelected= "aplicada"{borderLeftColor: "#5CED38"}}>
+   <ButtonInformationVaccine onPress={onOpen} expanded={expanded}>
+        <ViewInformationDate>
           <TextDataVaccine>{props.applicationDate ? `${props.applicationDate.split(' ')[0]}` : `data_aplicacao`}</TextDataVaccine>
           <TextDataVaccine>{props.scheduledDate ? `${props.scheduledDate.split(' ')[0]}` : `data`}</TextDataVaccine>
         </ViewInformationDate>
@@ -70,10 +58,28 @@ const ItemVaccine = (props: {
       <ModalCheckVaccines
         visible={visible}
         onClose={onClose}
-        status={props.status}
-      />
-    </>
+        colorBorderLeft={""}/>
+  </View>
+   
   );
 };
 
 export default ItemVaccine;
+
+
+const styles = StyleSheet.create ({
+  container: {
+    backgroundColor: "red"
+  }
+,
+  container2:{
+    backgroundColor: "blue"
+  }
+})
+
+
+
+
+
+
+

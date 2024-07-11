@@ -24,6 +24,7 @@ import { useEffect, useState } from "react";
 import HiddenPhase from "../../../assets/images/image-icons/checkPhases.png";
 import Icon from "react-native-vector-icons/Ionicons";
 import React from "react";
+import ProgressBarModal from "../../Bars/progressBar/progressBarModal";
 
 const ModalPhaseVaccine = (props: {
   visible: boolean;
@@ -94,7 +95,7 @@ const ModalPhaseVaccine = (props: {
           </TextTitleModalProgressBar>
           <TextPercent>0%</TextPercent>
           <ContainerPosProgress>
-            <ProgressBar progress={progress} width="203px" />
+            <ProgressBarModal progress={progress} />
           </ContainerPosProgress>
         </ContainerModalProgressBar>
       </ContainerContentModalPhase>

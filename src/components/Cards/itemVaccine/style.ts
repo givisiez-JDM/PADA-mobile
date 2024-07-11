@@ -24,15 +24,12 @@ export const ButtonInformationVaccine = styled.TouchableOpacity<ButtonInformatio
   border-bottom-color: rgba(76, 122, 187, 0.5);
 `;
 
-interface ViewInformationDateProps {
-  colorBorderLeft: string;
-}
-export const ViewInformationDate = styled.View<ViewInformationDateProps>`
+
+export const ViewInformationDate = styled.View`
   width:50%;
   padding:2px;
   border-right-width: 1px;
-  border-left-width: 4px;
-  border-left-color: ${({ colorBorderLeft }) => colorBorderLeft};
+  border-left-width: 1.58px;
   border-right-color: #4c7abb;
 `;
 

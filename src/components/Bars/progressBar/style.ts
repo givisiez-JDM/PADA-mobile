@@ -40,8 +40,8 @@ export const NeonSide = styled.View`
 `;
 const styles = StyleSheet.create({
   container: {
-    width: 220,
-    height: 40,
+    width: 236,
+    height: 8,
     //border: 
     backgroundColor: padaTheme.colors.secondary
   },
@@ -49,6 +49,13 @@ const styles = StyleSheet.create({
     fontFamily: 'NotoSansKR-Bold',
     fontSize: 24,
     color: padaTheme.colors.white
+  },
+  containerModal :{
+    width: 203,
+    height: 8,
+    backgroundColor: padaTheme.colors.secondary,
+    borderRadius: 20, 
+    marginLeft: 10,
   }
 })
 

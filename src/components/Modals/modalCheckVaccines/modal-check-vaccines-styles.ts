@@ -36,3 +36,4 @@ export const ContainerCheckItemsModal = styled.View`
   row-gap: 10px;
   margin-top: 10px;
 `;
+

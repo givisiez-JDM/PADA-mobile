@@ -1,26 +1,37 @@
-import React, { useState } from "react";
-import {
-  ButtonViewCheckBox, Check, TitleCheck,
-} from "./checkBox-style";
+import React from "react";
+import { ButtonViewCheckBox, Check, TitleCheck } from "./checkBox-style";
 import Icon from "react-native-vector-icons/Ionicons";
 
-const CheckBox: any = (props: {
-  title: string, size: string, checked: boolean, setChecked?: any, setSelectedCheckbox: boolean
-}) => {
+interface CheckBoxProps {
+  title: string;
+  size: number;
+  checked: boolean;
+  setChecked?: (checked: boolean) => void;
+}
 
+const CheckBox: React.FC<CheckBoxProps> = ({
+  title,
+  size,
+  checked,
+  setChecked,
+}) => {
   const handleCheckbox = () => {
-    props.setChecked(!props.checked);
-  }
+    if (setChecked) {
+      setChecked(!checked);
+    } else {
+      console.warn("setChecked is not provided");
+    }
+  };
 
   return (
-    <ButtonViewCheckBox onPress={handleCheckbox} style={{ underlayColor: "#00000000" }}>
+    <ButtonViewCheckBox onPress={handleCheckbox}>
       <>
-        <Check checked={props.checked} size={props.size}>
-          {props.checked ? (
+        <Check checked={checked} size={size}>
+          {checked ? (
             <Icon name="checkmark-outline" color="#FFFFFF" size={20} />
           ) : null}
         </Check>
-        <TitleCheck>{props.title}</TitleCheck>
+        <TitleCheck>{title}</TitleCheck>
       </>
     </ButtonViewCheckBox>
   );

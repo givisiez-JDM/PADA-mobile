@@ -6,9 +6,9 @@ import {
   Progress,
 } from "./style";
 
-const ProgressBar = (props: { progress: number;}) => {
+const ProgressBarModal = (props: { progress: number;}) => {
   return (
-    <View style={styles.container}>
+    <View style={styles.containerModal}>
       <Progress progress={props.progress}>
         <NeonSide />
       </Progress>
@@ -16,4 +16,4 @@ const ProgressBar = (props: { progress: number;}) => {
   );
 };
 
-export default ProgressBar;
+export default ProgressBarModal;
