@@ -19,7 +19,7 @@ const Stack = createNativeStackNavigator();
 export const Router = () => {
   return (
     <Stack.Navigator
-      initialRouteName="Login"
+      initialRouteName="SplashScreen"
       screenOptions={{ headerShown: false }}
     >
       <Stack.Screen name="Login" component={PatientLogin} />

@@ -1,6 +1,7 @@
 import styled from "styled-components/native";
 
 export const ContainerSplashScreen = styled.View`
+  
   display: flex;
   justify-content: space-between;
   background: #ffff;
@@ -10,5 +11,6 @@ export const ContainerSplashScreen = styled.View`
 
 export const ViewSplash = styled.View`
 transform: scale(3);
+flex:1
 `;
 
