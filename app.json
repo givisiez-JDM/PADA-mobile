@@ -3,8 +3,46 @@
     "name": "padamobile",
     "slug": "padamobile",
     "version": "1.0.0",
+    "orientation": "portrait",
+    "scheme": "myapp",
+    "userInterfaceStyle": "automatic",
+    "splash": {
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "expo-font": {
+      "fonts": [
+        "./src/assets/fonts/NotoSansKR-Black.otf",
+        "./src/assets/fonts/NotoSansKR-Bold.otf",
+        "./src/assets/fonts/NotoSansKR-Light.otf",
+        "./src/assets/fonts/NotoSansKR-Medium.otf",
+        "./src/assets/fonts/NotoSansKR-Regular.otf",
+        "./src/assets/fonts/NotoSansKR-Thin.otf"
+      ]
+    },
     "assetBundlePatterns": [
       "**/*"
-    ]
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.givisiez.padamobile"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#ffffff"
+      },
+      "package": "com.givisiez.padamobile"
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "static",
+      "favicon": "./assets/images/favicon.png"
+    },
+    "experiments": {
+      "typedRoutes": true
+    },
+    "extra": {
+      "eas": {}
+    }
   }
 }

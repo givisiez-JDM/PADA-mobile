@@ -1,0 +1,41 @@
+import styled from "styled-components/native";
+
+export const InputLogin = styled.View`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 240px;
+  height: 50px;
+  border-radius: 50px;
+  background: red;
+  margin-bottom: 15px;
+  border: 2px #4c7abb;
+`;
+
+export const TextInput = styled.View`
+  color: #4c7abb;
+  font-size: 22px;
+  padding: 2px;
+`;
+
+export const PatientInput = styled.TextInput`
+  width:100%;
+  font-size: 24px;
+  font-weight: 500;
+`;
+
+export const ButtonSenha = styled.Text`
+  font-weight: 300;
+  font-size: 15px;
+  color: #000000;
+`;
+
+export const FullWidthImage = styled.Image`
+  width: 100%; 
+  height: 17%;
+`;
+
+export const FooterLogin = styled.Image`
+width: 100%; 
+`;
